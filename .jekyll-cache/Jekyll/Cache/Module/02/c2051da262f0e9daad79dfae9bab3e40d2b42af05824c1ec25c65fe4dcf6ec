@@ -1,4 +1,4 @@
-I"
+I"m
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -12,8 +12,6 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
-            </li><li class="masthead__menu-item">
               <a href="/categories/#python">Python</a>
             </li><li class="masthead__menu-item">
               <a href="/year-archive/">HTML & CSS</a>
