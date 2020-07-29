@@ -1,0 +1,23 @@
+I"<p>오늘은 <code class="language-plaintext highlighter-rouge">파이썬</code>에 대하여 알아보겠습니다. 
+Python 은 배우기 쉽습니다 !!!</p>
+
+<p><code class="language-plaintext highlighter-rouge">이런글씨도 사용이 가능해요!</code>
+<a href="http://www.naver.com">네이버로 이동!</a></p>
+
+<p><code class="language-plaintext highlighter-rouge">_posts</code></p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"python 을 배워보아요!"</span><span class="p">)</span>
+
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">print</span><span class="p">(</span><span class="s2">"한솔블로그에 오신것을 환영합니다. !!!"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
+</code></pre></div></div>
+
+<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+
+:ET
