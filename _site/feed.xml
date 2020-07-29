@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T01:00:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">Python_List</title><link href="http://localhost:4000/python/List/" rel="alternate" type="text/html" title="Python_List" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/List</id><content type="html" xml:base="http://localhost:4000/python/List/">&lt;h2&gt;List&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T01:06:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">Python_List</title><link href="http://localhost:4000/python/List/" rel="alternate" type="text/html" title="Python_List" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/List</id><content type="html" xml:base="http://localhost:4000/python/List/">&lt;h2&gt;List&lt;/h2&gt;
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;List&lt;/code&gt; 에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
 
 &lt;p&gt;List는 임의의 객체(데이터)를 순서대로 저장하는 집합 자료형입니다.&lt;/p&gt;
@@ -90,9 +90,9 @@
 
 &lt;h2&gt;파이썬 페이지&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/Python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;  &lt;a href=&quot;/python/Numeric-Data-Type/&quot;&gt;숫자형 데이터 타입&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/Python.jpg&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Numeric-Data-Type/&quot;&gt;숫자형 데이터 타입&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/Python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Text-sequence/&quot;&gt;문자열&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/Python.jpg&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Text-sequence/&quot;&gt;문자열&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/Python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Text-operation/&quot;&gt;문자열 연산&lt;/a&gt;&lt;/p&gt;
 

@@ -18,7 +18,7 @@ var store = [{
         "teaser": "http://localhost:4000/assets/image/Numeric.png"
       },{
         "title": "Python Page",
-        "excerpt":" \t   파이썬 페이지     숫자형 데이터 타입   문자열   문자열 연산   In Not in   문자열 Indexing &amp; Slicing   Formatting   List  ","categories": ["Python"],
+        "excerpt":" \t   파이썬 페이지   숫자형 데이터 타입   문자열   문자열 연산   In Not in   문자열 Indexing &amp; Slicing   Formatting   List  ","categories": ["Python"],
         "tags": [],
         "url": "http://localhost:4000/python/PythonPage/",
         "teaser": "http://localhost:4000/assets/image/python.jpg"
