@@ -21,8 +21,16 @@
 <lastmod>2020-07-28T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/python/welcome/</loc>
+<loc>http://localhost:4000/welcome/welcome/</loc>
 <lastmod>2020-07-28T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/python/Formatting/</loc>
+<lastmod>2020-07-29T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/python/List/</loc>
+<lastmod>2020-07-29T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/archive-layout-with-content/</loc>
