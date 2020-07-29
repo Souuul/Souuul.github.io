@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Python_Idexing, Slicing (str Data Type) - Sol Han tech blog!</title>
-<meta name="description" content="오늘은 파이썬의 문자열 의 Idexing 과 Slicing을 알아보겠습니다.">
+<!-- begin _includes/seo.html --><title>테크블로그에 오신것을 환영합니다. - Sol Han tech blog!</title>
+<meta name="description" content="오늘은 파이썬에 대하여 알아보겠습니다.  Python 은 배우기 쉽습니다 !!!">
 
 
   <meta name="author" content="Sol Han">
@@ -19,15 +19,15 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sol Han tech blog!">
-<meta property="og:title" content="Python_Idexing, Slicing (str Data Type)">
-<meta property="og:url" content="http://localhost:4000/jekyll/minimal%20mistake/python/Idexing-Slicing/">
+<meta property="og:title" content="테크블로그에 오신것을 환영합니다.">
+<meta property="og:url" content="http://localhost:4000/python/welcome/">
 
 
-  <meta property="og:description" content="오늘은 파이썬의 문자열 의 Idexing 과 Slicing을 알아보겠습니다.">
+  <meta property="og:description" content="오늘은 파이썬에 대하여 알아보겠습니다.  Python 은 배우기 쉽습니다 !!!">
 
 
 
-  <meta property="og:image" content="https://miro.medium.com/max/2646/1*GokwxHxq5I-Myy3_ummrtw.png">
+  <meta property="og:image" content="https://cdn.pixabay.com/photo/2015/05/09/23/46/welcome-sign-760358__480.jpg">
 
 
 
@@ -44,7 +44,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/jekyll/minimal%20mistake/python/Idexing-Slicing/">
+<link rel="canonical" href="http://localhost:4000/python/welcome/">
 
 
 
@@ -299,15 +299,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Python_Idexing, Slicing (str Data Type)">
-    <meta itemprop="description" content="오늘은 파이썬의 문자열 의 Idexing 과 Slicing을 알아보겠습니다.">
+    <meta itemprop="headline" content="테크블로그에 오신것을 환영합니다.">
+    <meta itemprop="description" content="오늘은 파이썬에 대하여 알아보겠습니다. Python 은 배우기 쉽습니다 !!!">
     <meta itemprop="datePublished" content="2020-07-28T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Python_Idexing, Slicing (str Data Type)
+          <h1 id="page-title" class="page__title" itemprop="headline">테크블로그에 오신것을 환영합니다.
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -324,38 +324,28 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>오늘은 <code class="language-plaintext highlighter-rouge">파이썬</code>의 <code class="language-plaintext highlighter-rouge">문자열</code> 의 Idexing 과 Slicing을 알아보겠습니다.</p>
+        <p>오늘은 <code class="language-plaintext highlighter-rouge">파이썬</code>에 대하여 알아보겠습니다. 
+Python 은 배우기 쉽습니다 !!!</p>
 
-<p>Indexing #문자열에 번호에 해당하는 문자를 추출하려면?? 
-python은 배열이 존재 하지 않아요! 하지만 다른언어에서는 - index 사용가능합니다.
-그렇다면 파이썬의 문자열에서 번호 혹은 순서에 맞는 문자를 추출하기 위해서는 어떻게 해야할까요 ?</p>
+<p><code class="language-plaintext highlighter-rouge">이런글씨도 사용이 가능해요!</code>
+<a href="http://www.naver.com">네이버로 이동!</a></p>
 
-<p>하기 그림은 문자열에 해당되는 번호를 명시한 그림입니다.</p>
+<p><code class="language-plaintext highlighter-rouge">_posts</code></p>
 
-<figure>
-	<img src="/assets/image/index_table.png" />
-</figure>
+<p>Jekyll also offers powerful support for code snippets:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"python 을 배워보아요!"</span><span class="p">)</span>
 
-<p>그렇다면 그림에 해당하는 번호를 파이썬 코드로 구현해볼까요?</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_var</span> <span class="o">=</span> <span class="s">'HELLO'</span>
-<span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1">#E
-</span></code></pre></div></div>
-
-<p>Slicing #문자열에 범위를 선정하여 추출하려면??
-Slicing은 말 그대로 잘라내다입니다. Indexing과의 차이점은 번호가 아닌 범위로 문자열을 추출이 가능합니다.
-하기 예제를 확인하면서 익혀보도록 하겠습니다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_var</span> <span class="o">=</span> <span class="s">'HELLO'</span>
-<span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1">#HEL
-</span><span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">[</span><span class="mi">0</span><span class="p">:])</span> <span class="c1">#HELLO
-</span><span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#HELL
-</span><span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span> <span class="c1">#LO
-</span><span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">[:])</span> <span class="c1"># HELLO
-</span>
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">print</span><span class="p">(</span><span class="s2">"한솔블로그에 오신것을 환영합니다. !!!"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
 </code></pre></div></div>
 
-<p>오늘은 파이썬의 Indexing과 Slicing에 대하여 알아보았습니다.</p>
+<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+
 
         
       </section>
@@ -376,31 +366,15 @@ Slicing은 말 그대로 잘라내다입니다. Indexing과의 차이점은 번�
     
       
       
-      <a href="/tags/#data-type" class="page__taxonomy-item" rel="tag">Data Type</a><span class="sep">, </span>
+      <a href="/tags/#update" class="page__taxonomy-item" rel="tag">update</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#idexing" class="page__taxonomy-item" rel="tag">Idexing</a><span class="sep">, </span>
+      <a href="/tags/#update" class="page__taxonomy-item" rel="tag">update</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#slicing" class="page__taxonomy-item" rel="tag">Slicing</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#str" class="page__taxonomy-item" rel="tag">str</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#text-sequence" class="page__taxonomy-item" rel="tag">Text sequence</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85" class="page__taxonomy-item" rel="tag">데이터타입</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#%EB%AC%B8%EC%9E%90%EC%97%B4" class="page__taxonomy-item" rel="tag">문자열</a>
+      <a href="/tags/#%EC%97%B0%EC%8A%B5" class="page__taxonomy-item" rel="tag">연습</a>
     
     </span>
   </p>
@@ -421,14 +395,6 @@ Slicing은 말 그대로 잘라내다입니다. Indexing과의 차이점은 번�
     
       
       
-      <a href="/categories/#jekyll" class="page__taxonomy-item" rel="tag">Jekyll</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/categories/#minimal-mistake" class="page__taxonomy-item" rel="tag">Minimal mistake</a><span class="sep">, </span>
-    
-      
-      
       <a href="/categories/#python" class="page__taxonomy-item" rel="tag">Python</a>
     
     </span>
@@ -446,22 +412,22 @@ Slicing은 말 그대로 잘라내다입니다. Indexing과의 차이점은 번�
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Python_Idexing%2C+Slicing+%28str+Data+Type%29%20http%3A%2F%2Flocalhost%3A4000%2Fjekyll%2Fminimal%2520mistake%2Fpython%2FIdexing-Slicing%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%ED%85%8C%ED%81%AC%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%97%90+%EC%98%A4%EC%8B%A0%EA%B2%83%EC%9D%84+%ED%99%98%EC%98%81%ED%95%A9%EB%8B%88%EB%8B%A4.%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fwelcome%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjekyll%2Fminimal%2520mistake%2Fpython%2FIdexing-Slicing%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fwelcome%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjekyll%2Fminimal%2520mistake%2Fpython%2FIdexing-Slicing%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fwelcome%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="/python/Text-sequence/" class="pagination--pager" title="Python_Text sequence (str Data Type)
+">Previous</a>
     
     
-      <a href="/jekyll/minimal%20mistake/python/In-Not/" class="pagination--pager" title="Python_In Not in (str Data Type)
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -484,46 +450,12 @@ Slicing은 말 그대로 잘라내다입니다. Indexing과의 차이점은 번�
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src="https://cdn.pixabay.com/photo/2015/05/09/23/46/welcome-sign-760358__480.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/jekyll/python/welcome/" rel="permalink">테크블로그에 오신것을 환영합니다.
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  less than 1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">오늘은 파이썬에 대하여 알아보겠습니다. 
-Python 은 배우기 쉽습니다 !!!
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
         <img src="/assets/image/Text%20Squence.png" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/jekyll/minimal%20mistake/python/Text-sequence/" rel="permalink">Python_Text sequence (str Data Type)
+        <a href="/python/Text-sequence/" rel="permalink">Python_Text sequence (str Data Type)
 </a>
       
     </h2>
@@ -558,7 +490,7 @@ Python 은 배우기 쉽습니다 !!!
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/jekyll/minimal%20mistake/python/Text-operation/" rel="permalink">Python_Text operation (str Data Type)
+        <a href="/python/Text-operation/" rel="permalink">Python_Text operation (str Data Type)
 </a>
       
     </h2>
@@ -593,7 +525,7 @@ Python 은 배우기 쉽습니다 !!!
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/jekyll/minimal%20mistake/python/Numeric-Data-Type/" rel="permalink">Python_Numeric Data Type
+        <a href="/python/Numeric-Data-Type/" rel="permalink">Python_Numeric Data Type
 </a>
       
     </h2>
@@ -615,6 +547,39 @@ Python 은 배우기 쉽습니다 !!!
   float(실수)
   complex(복소수)
 
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/INNOTIN.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/In-Not/" rel="permalink">Python_In Not in (str Data Type)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">오늘은 파이썬의 문자열 의 in 과 not in 연산자에 대하여 키워드를 통하여 알아보도록 하겠습니다.
 </p>
   </article>
 </div>
@@ -693,8 +658,8 @@ Python 은 배우기 쉽습니다 !!!
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/jekyll/minimal%20mistake/python/Idexing-Slicing/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/jekyll/minimal%20mistake/python/Idexing-Slicing"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/python/welcome/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/python/welcome"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

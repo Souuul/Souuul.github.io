@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Python_Text sequence (str Data Type) - Sol Han tech blog!</title>
-<meta name="description" content="Text sequence (문자열, str) 오늘은 파이썬의 문자열 데이터 타입에 대하여 알아보겠습니다.  다른 언어는 문자와 문자열을 구분합니다. 문자는 한글자 예를들어 a 같이 단일 문자로 이뤄진 것을 의미합니다. 문자열은 두글자 이상으로 이루어진 문자열을 의미하며 apple, graph같은 단어를 의미합니다.">
+<!-- begin _includes/seo.html --><title>Python_Idexing, Slicing (str Data Type) - Sol Han tech blog!</title>
+<meta name="description" content="오늘은 파이썬의 문자열 의 Idexing 과 Slicing을 알아보겠습니다.">
 
 
   <meta name="author" content="Sol Han">
@@ -19,15 +19,15 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sol Han tech blog!">
-<meta property="og:title" content="Python_Text sequence (str Data Type)">
-<meta property="og:url" content="http://localhost:4000/jekyll/minimal%20mistake/python/Text-sequence/">
+<meta property="og:title" content="Python_Idexing, Slicing (str Data Type)">
+<meta property="og:url" content="http://localhost:4000/python/Idexing-Slicing/">
 
 
-  <meta property="og:description" content="Text sequence (문자열, str) 오늘은 파이썬의 문자열 데이터 타입에 대하여 알아보겠습니다.  다른 언어는 문자와 문자열을 구분합니다. 문자는 한글자 예를들어 a 같이 단일 문자로 이뤄진 것을 의미합니다. 문자열은 두글자 이상으로 이루어진 문자열을 의미하며 apple, graph같은 단어를 의미합니다.">
+  <meta property="og:description" content="오늘은 파이썬의 문자열 의 Idexing 과 Slicing을 알아보겠습니다.">
 
 
 
-  <meta property="og:image" content="http://localhost:4000/assets/image/Text%20Squence.png">
+  <meta property="og:image" content="https://miro.medium.com/max/2646/1*GokwxHxq5I-Myy3_ummrtw.png">
 
 
 
@@ -44,7 +44,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/jekyll/minimal%20mistake/python/Text-sequence/">
+<link rel="canonical" href="http://localhost:4000/python/Idexing-Slicing/">
 
 
 
@@ -299,15 +299,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Python_Text sequence (str Data Type)">
-    <meta itemprop="description" content="Text sequence (문자열, str)오늘은 파이썬의 문자열 데이터 타입에 대하여 알아보겠습니다. 다른 언어는 문자와 문자열을 구분합니다. 문자는 한글자 예를들어 a 같이 단일 문자로 이뤄진 것을 의미합니다.문자열은 두글자 이상으로 이루어진 문자열을 의미하며 apple, graph같은 단어를 의미합니다.">
+    <meta itemprop="headline" content="Python_Idexing, Slicing (str Data Type)">
+    <meta itemprop="description" content="오늘은 파이썬의 문자열 의 Idexing 과 Slicing을 알아보겠습니다.">
     <meta itemprop="datePublished" content="2020-07-28T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Python_Text sequence (str Data Type)
+          <h1 id="page-title" class="page__title" itemprop="headline">Python_Idexing, Slicing (str Data Type)
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -324,25 +324,38 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>Text sequence (문자열, str)
-오늘은 <code class="language-plaintext highlighter-rouge">파이썬</code>의 <code class="language-plaintext highlighter-rouge">문자열</code> 데이터 타입에 대하여 알아보겠습니다. 
-다른 언어는 문자와 문자열을 구분합니다. 문자는 한글자 예를들어 a 같이 단일 문자로 이뤄진 것을 의미합니다.
-문자열은 두글자 이상으로 이루어진 문자열을 의미하며 apple, graph같은 단어를 의미합니다.</p>
+        <p>오늘은 <code class="language-plaintext highlighter-rouge">파이썬</code>의 <code class="language-plaintext highlighter-rouge">문자열</code> 의 Idexing 과 Slicing을 알아보겠습니다.</p>
 
-<p>다른언어에서는 문자를 표현할때 <code class="language-plaintext highlighter-rouge">' '</code>, 문자열을 표현할때는 <code class="language-plaintext highlighter-rouge">" "</code> 으로 표현합니다.
-파이썬에서는 어떨까요? 하기 예제를 보면서 다른언어와 파이썬의 차이를 살펴보도록 하겠습니다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="s">'Hello'</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s">"K"</span>
-<span class="n">c</span> <span class="o">=</span> <span class="s">'python'</span>
+<p>Indexing #문자열에 번호에 해당하는 문자를 추출하려면?? 
+python은 배열이 존재 하지 않아요! 하지만 다른언어에서는 - index 사용가능합니다.
+그렇다면 파이썬의 문자열에서 번호 혹은 순서에 맞는 문자를 추출하기 위해서는 어떻게 해야할까요 ?</p>
 
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># Hello
-</span><span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># K
-</span><span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>  <span class="c1"># python
+<p>하기 그림은 문자열에 해당되는 번호를 명시한 그림입니다.</p>
+
+<figure>
+	<img src="/assets/image/index_table.png" />
+</figure>
+
+<p>그렇다면 그림에 해당하는 번호를 파이썬 코드로 구현해볼까요?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_var</span> <span class="o">=</span> <span class="s">'HELLO'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1">#E
 </span></code></pre></div></div>
 
-<p>상기 예제를 확인해보면 파이썬에서는 문자와 문자열을 표현할때 <code class="language-plaintext highlighter-rouge">' '</code> 와 <code class="language-plaintext highlighter-rouge">" "</code> 을 구분하지않고 사용이 가능합니다.</p>
+<p>Slicing #문자열에 범위를 선정하여 추출하려면??
+Slicing은 말 그대로 잘라내다입니다. Indexing과의 차이점은 번호가 아닌 범위로 문자열을 추출이 가능합니다.
+하기 예제를 확인하면서 익혀보도록 하겠습니다.</p>
 
-<p>오늘은 파이썬의 문자열에 대하여 알아보았습니다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_var</span> <span class="o">=</span> <span class="s">'HELLO'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1">#HEL
+</span><span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">[</span><span class="mi">0</span><span class="p">:])</span> <span class="c1">#HELLO
+</span><span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#HELL
+</span><span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span> <span class="c1">#LO
+</span><span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">[:])</span> <span class="c1"># HELLO
+</span>
+</code></pre></div></div>
+
+<p>오늘은 파이썬의 Indexing과 Slicing에 대하여 알아보았습니다.</p>
 
         
       </section>
@@ -364,6 +377,14 @@
       
       
       <a href="/tags/#data-type" class="page__taxonomy-item" rel="tag">Data Type</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#idexing" class="page__taxonomy-item" rel="tag">Idexing</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#slicing" class="page__taxonomy-item" rel="tag">Slicing</a><span class="sep">, </span>
     
       
       
@@ -400,14 +421,6 @@
     
       
       
-      <a href="/categories/#jekyll" class="page__taxonomy-item" rel="tag">Jekyll</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/categories/#minimal-mistake" class="page__taxonomy-item" rel="tag">Minimal mistake</a><span class="sep">, </span>
-    
-      
-      
       <a href="/categories/#python" class="page__taxonomy-item" rel="tag">Python</a>
     
     </span>
@@ -425,22 +438,21 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Python_Text+sequence+%28str+Data+Type%29%20http%3A%2F%2Flocalhost%3A4000%2Fjekyll%2Fminimal%2520mistake%2Fpython%2FText-sequence%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Python_Idexing%2C+Slicing+%28str+Data+Type%29%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2FIdexing-Slicing%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjekyll%2Fminimal%2520mistake%2Fpython%2FText-sequence%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2FIdexing-Slicing%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjekyll%2Fminimal%2520mistake%2Fpython%2FText-sequence%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2FIdexing-Slicing%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/jekyll/minimal%20mistake/python/Text-operation/" class="pagination--pager" title="Python_Text operation (str Data Type)
-">Previous</a>
+      <a href="#" class="pagination--pager disabled">Previous</a>
     
     
-      <a href="/jekyll/python/welcome/" class="pagination--pager" title="테크블로그에 오신것을 환영합니다.
+      <a href="/python/In-Not/" class="pagination--pager" title="Python_In Not in (str Data Type)
 ">Next</a>
     
   </nav>
@@ -469,7 +481,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/jekyll/python/welcome/" rel="permalink">테크블로그에 오신것을 환영합니다.
+        <a href="/python/welcome/" rel="permalink">테크블로그에 오신것을 환영합니다.
 </a>
       
     </h2>
@@ -498,12 +510,47 @@ Python 은 배우기 쉽습니다 !!!
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
+        <img src="/assets/image/Text%20Squence.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Text-sequence/" rel="permalink">Python_Text sequence (str Data Type)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Text sequence (문자열, str)
+오늘은 파이썬의 문자열 데이터 타입에 대하여 알아보겠습니다. 
+다른 언어는 문자와 문자열을 구분합니다. 문자는 한글자 예를들어 a 같이 단일 문자로 이뤄진 것을 의미합니다.
+문자열은 두글자 이상으로 이루어진 문자열을 의미하며 apple,...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
         <img src="/assets/image/Text%20Operation.png" alt="">
       </div>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/jekyll/minimal%20mistake/python/Text-operation/" rel="permalink">Python_Text operation (str Data Type)
+        <a href="/python/Text-operation/" rel="permalink">Python_Text operation (str Data Type)
 </a>
       
     </h2>
@@ -538,7 +585,7 @@ Python 은 배우기 쉽습니다 !!!
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/jekyll/minimal%20mistake/python/Numeric-Data-Type/" rel="permalink">Python_Numeric Data Type
+        <a href="/python/Numeric-Data-Type/" rel="permalink">Python_Numeric Data Type
 </a>
       
     </h2>
@@ -560,39 +607,6 @@ Python 은 배우기 쉽습니다 !!!
   float(실수)
   complex(복소수)
 
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/INNOTIN.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/jekyll/minimal%20mistake/python/In-Not/" rel="permalink">Python_In Not in (str Data Type)
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  less than 1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">오늘은 파이썬의 문자열 의 in 과 not in 연산자에 대하여 키워드를 통하여 알아보도록 하겠습니다.
 </p>
   </article>
 </div>
@@ -671,8 +685,8 @@ Python 은 배우기 쉽습니다 !!!
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/jekyll/minimal%20mistake/python/Text-sequence/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/jekyll/minimal%20mistake/python/Text-sequence"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/python/Idexing-Slicing/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/python/Idexing-Slicing"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

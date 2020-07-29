@@ -3,8 +3,6 @@ title:  "Python_Idexing, Slicing (str Data Type)"
 header:
   teaser: "https://miro.medium.com/max/2646/1*GokwxHxq5I-Myy3_ummrtw.png"
 categories: 
-  - Jekyll
-  - Minimal mistake
   - Python
 tags:
   - Text sequence

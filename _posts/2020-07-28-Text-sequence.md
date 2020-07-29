@@ -3,8 +3,6 @@ title:  "Python_Text sequence (str Data Type)"
 header:
   teaser: "/assets/image/Text Squence.png"
 categories: 
-  - Jekyll
-  - Minimal mistake
   - Python
 tags:
   - Text sequence

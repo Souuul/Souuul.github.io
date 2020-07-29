@@ -1,4 +1,4 @@
-I"7<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
+I"�6<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
 
 <h2>Pages</h2>
 
@@ -426,7 +426,7 @@ Python 은 배우기 쉽습니다 !!!
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/jekyll/minimal%20mistake/python/Text-sequence/" rel="permalink">Python_Text sequence (str Data Type)
+        <a href="/python/Text-sequence/" rel="permalink">Python_Text sequence (str Data Type)
 </a>
       
     </h2>
@@ -452,7 +452,7 @@ Python 은 배우기 쉽습니다 !!!
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/jekyll/minimal%20mistake/python/Text-operation/" rel="permalink">Python_Text operation (str Data Type)
+        <a href="/python/Text-operation/" rel="permalink">Python_Text operation (str Data Type)
 </a>
       
     </h2>
@@ -478,7 +478,7 @@ Python 은 배우기 쉽습니다 !!!
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/jekyll/minimal%20mistake/python/Numeric-Data-Type/" rel="permalink">Python_Numeric Data Type
+        <a href="/python/Numeric-Data-Type/" rel="permalink">Python_Numeric Data Type
 </a>
       
     </h2>
@@ -509,7 +509,7 @@ Python 은 배우기 쉽습니다 !!!
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/jekyll/minimal%20mistake/python/In-Not/" rel="permalink">Python_In Not in (str Data Type)
+        <a href="/python/In-Not/" rel="permalink">Python_In Not in (str Data Type)
 </a>
       
     </h2>
@@ -533,7 +533,7 @@ Python 은 배우기 쉽습니다 !!!
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/jekyll/minimal%20mistake/python/Idexing-Slicing/" rel="permalink">Python_Idexing, Slicing (str Data Type)
+        <a href="/python/Idexing-Slicing/" rel="permalink">Python_Idexing, Slicing (str Data Type)
 </a>
       
     </h2>

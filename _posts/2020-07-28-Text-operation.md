@@ -3,8 +3,6 @@ title:  "Python_Text operation (str Data Type)"
 header:
   teaser: "/assets/image/Text Operation.png"
 categories: 
-  - Jekyll
-  - Minimal mistake
   - Python
 tags:
   - Text sequence

@@ -3,8 +3,6 @@ title:  "Python_Numeric Data Type"
 header:
   teaser: "/assets/image/Numeric.png"
 categories: 
-  - Jekyll
-  - Minimal mistake
   - Python
 tags:
   - Numeric
