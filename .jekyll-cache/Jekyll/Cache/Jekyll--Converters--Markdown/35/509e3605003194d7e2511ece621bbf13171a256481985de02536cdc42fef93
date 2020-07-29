@@ -1,0 +1,70 @@
+I"4!<h2>List</h2>
+<p>오늘은 <code class="language-plaintext highlighter-rouge">파이썬</code>의 <code class="language-plaintext highlighter-rouge">List</code> 에 대하여 알아보도록 하겠습니다.</p>
+
+<p>List는 임의의 객체(데이터)를 순서대로 저장하는 집합 자료형입니다.</p>
+
+<p>List는 literal로 표현할 떄 <code class="language-plaintext highlighter-rouge">[ ]</code> 대괄호로 표현합니다.</p>
+
+<p>List는 어떻게 표하는지 아래의 코드를 보며 알아보겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>  <span class="c1"># &lt;class ‘list’&gt;
+</span><span class="n">my_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>      <span class="c1"># 함수를 이용하여 리스트를 제작
+</span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>   <span class="c1"># ~ : code convention _ 가독성이 좋게 표현하게 Hint 기능 제공
+</span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="s">"Hello"</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">100</span><span class="p">]</span> <span class="c1"># 중첩리스트, 2차원이 아님
+</span>
+</code></pre></div></div>
+
+<p>List는 문자열과 마찬가지로 Indexing 과 Slicing 모두 가능합니다. 물론 연산도 가능합니다.</p>
+
+<p>Indexing과 Slicing의 개념이 궁금하신분들은 <a href="/python/Idexing-Slicing/">문자열 Indexing &amp; Slicing</a> 편을 참고하시기 바랍니다.</p>
+
+<p>간단한 예제를 통해서 자세하게 알아보겠습니다.</p>
+
+<h3>List의 Indexing 과 Slicing </h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#2
+</span><span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="c1">#[5, 6, 7]
+</span><span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span> <span class="c1">#[5, 6, 7] // list의 Slicing 은 list
+</span><span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#6
+</span><span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1">#[1, 2]
+</span></code></pre></div></div>
+
+<h3>List의 연산</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># [1, 2, 3, 4, 5, 6] list 의 합은 하나의 리스트로 생성
+# 단 행렬에서의 연산은 [5,7,9] numpy에서 사용시 주의 할 것
+</span><span class="k">print</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># [1, 2, 3, 1, 2, 3, 1, 2, 3]
+</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># [5, 2, 3]
+</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># [[7, 8, 9], 2, 3]
+</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># [7, 8, 9, 2, 3]
+</span></code></pre></div></div>
+
+<h3> list 값 추가 및 변경 </h3>
+<p>List의 경우 값의 추가 및 변경이 가능합니다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># append 
+</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">끝에</span> <span class="n">추가하는</span> <span class="n">것</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">#[1, 2, 3, 4]
+</span><span class="n">a</span><span class="p">.</span><span class="n">append</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">#[1, 2, 3, [5, 6, 7]]
+</span>
+<span class="c1"># sort 
+</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">"홍길동"</span><span class="p">,</span> <span class="s">"아이유"</span><span class="p">,</span> <span class="s">"강감찬"</span><span class="p">,</span> <span class="s">"신사임당"</span><span class="p">,</span> <span class="s">"Kim"</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># 리스트를 오름차순으로 정렬_ 1 2 3 4 5
+</span><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># None
+</span>
+</code></pre></div></div>
+
+<p>오늘은 파이썬의 <code class="language-plaintext highlighter-rouge">List</code> 에 대하여 알아보았습니다.</p>
+:ET

@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "Python"
-    url: https://souuul.github.io/python/PythonPage
+    url: /python/PythonPage/
   - title: "HTML & CSS"
     url: /year-archive/
   - title: "JavaScript"
