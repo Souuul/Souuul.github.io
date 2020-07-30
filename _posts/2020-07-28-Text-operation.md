@@ -1,5 +1,5 @@
 ---
-title:  "Python_Text operation (str Data Type)"
+title:  "[Python] Text operation (str Data Type)"
 header:
   teaser: "/assets/image/Text Operation.png"
 categories: 

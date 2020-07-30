@@ -1,5 +1,5 @@
 ---
-title:  "Python_Numeric Data Type"
+title:  "[Python] Numeric Data Type"
 header:
   teaser: "/assets/image/Numeric.png"
 categories: 

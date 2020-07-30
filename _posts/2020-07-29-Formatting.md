@@ -1,5 +1,5 @@
 ---
-title:  "Python_Formatting"
+title:  "[Python] Formatting"
 header:
   teaser: "/assets/image/Formatting.png"
 categories: 

@@ -1,5 +1,5 @@
 ---
-title:  "Python_Text sequence (str Data Type)"
+title:  "[Python] Text sequence (str Data Type)"
 header:
   teaser: "/assets/image/Text Squence.png"
 categories: 

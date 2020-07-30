@@ -2,9 +2,9 @@
 main:
   - title: "Python"
     url: /python/PythonPage/
-  - title: "HTML & CSS"
+  - title: "HTML & CSS & JavaScript"
     url: /year-archive/
-  - title: "JavaScript"
-    url: /collection-archive/
+  - title: "Django"
+    url: /Django/DjangoPage/
   - title: "Sitemap"
     url: /sitemap/

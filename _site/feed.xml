@@ -1,4 +1,209 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T01:23:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">Python_List</title><link href="http://localhost:4000/python/List/" rel="alternate" type="text/html" title="Python_List" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/List</id><content type="html" xml:base="http://localhost:4000/python/List/">&lt;h2&gt;List&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T18:20:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">Django Page</title><link href="http://localhost:4000/django/DjangoPage/" rel="alternate" type="text/html" title="Django Page" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/DjangoPage</id><content type="html" xml:base="http://localhost:4000/django/DjangoPage/">&lt;figure&gt;
+	&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;python&quot; style=&quot;width:500px&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;파이썬 페이지&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/Django/Django-Basic&quot;&gt;Djanggo 기초이론&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/Django/Django-simple-web-application&quot;&gt;Djanggo 설치 및 운용&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html"></summary></entry><entry><title type="html">[Django] 이론</title><link href="http://localhost:4000/django/Django-Basic/" rel="alternate" type="text/html" title="[Django] 이론" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-Basic</id><content type="html" xml:base="http://localhost:4000/django/Django-Basic/">&lt;h2&gt;Django&lt;/h2&gt;
+&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django&lt;/code&gt;에 대하여 알아보아요!
+Python 으로 만들어진 오픈소스
+웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework&lt;/p&gt;
+
+&lt;h3&gt;라이브러리(library)&lt;/h3&gt;
+&lt;p&gt;특수한 처리를 하기 위해서 만들어 놓은 함수집합이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Library&lt;/code&gt;입니다. jQuery도 라이브러리라고 볼 수 있어요!&lt;/p&gt;
+
+&lt;p&gt;장점 : 내가 모든걸 다 작성할 필요가 없어요!&lt;/p&gt;
+
+&lt;p&gt;단점(특징) : 전체 프로그램의 로직을 담당하지는 않아요!&lt;/p&gt;
+
+&lt;p&gt;예) jQuery 를 이용해서 영화정보를 출력하는 문제를 구현할 때 사람마다 구현이 제각각…&lt;/p&gt;
+
+&lt;h3&gt;프레임 워크&lt;/h3&gt;
+&lt;p&gt;프로그램의 전체적인 로직부분이 이미 구현이 되어 있어요!&lt;/p&gt;
+
+&lt;p&gt;그래서 프레임워크를 사용할때는 기본적으로 사용되는 코드가 제공되요! (스케폴딩- scaffolding)&lt;/p&gt;
+
+&lt;p&gt;유지보수성이 좋아집니다. 단, 처음에 프레임워크의 동작원리를 이해하는 작업이 필요!!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Django를 이용하면 Web Application에서 많이 자주 구현해야 하는 내용을 쉽게 구현할 수 있어요!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;라이브러리(library) VS 프레임워크&lt;/h3&gt;
+&lt;p&gt;두 가지 모두 이미 만들어진 것을 사용하는 것은 동일합니다. 차이점은 규칙에 있습니다. 라이브러리는 가져다 쓰는 개념이고 프레임워크는 내 것을 가져다가 프레임 워크 규칙에 맞추는 개념입니다.&lt;/p&gt;
+
+&lt;h3&gt;Django의 특징&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django&lt;/code&gt;는 MVC Model을 기반으로 한 MVT model을 이용해요!&lt;/p&gt;
+
+&lt;p&gt;MVC Model : Model, View, Controller&lt;/p&gt;
+
+&lt;p&gt;MVT model : Model, View, Template&lt;/p&gt;
+
+&lt;p&gt;model : 데이터베이스 처리&lt;/p&gt;
+
+&lt;p&gt;View : 로직을 담당&lt;/p&gt;
+
+&lt;p&gt;Template : 클라이언트에게 보여줄 화면을 담당&lt;/p&gt;
+
+&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django&lt;/code&gt;의 이론에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html">Django 오늘은 Django에 대하여 알아보아요! Python 으로 만들어진 오픈소스 웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework</summary></entry><entry><title type="html">[Django] 설치 및 기초운용</title><link href="http://localhost:4000/django/Django-simple-web-application/" rel="alternate" type="text/html" title="[Django] 설치 및 기초운용" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application/">&lt;h2&gt;Django설치 및 기초운용&lt;/h2&gt;
+&lt;h3&gt;1. Django 설치&lt;/h3&gt;
+&lt;p&gt;mac 환경은 설치하기가 조금어려워서 가상환경으로 진행하겠습니다. 윈도우 사용자분들은 python 경로(path)가 제대로 설정되어있는지 확인해주세요.&lt;/p&gt;
+
+&lt;p&gt;터미널에서 pip를 이용해서 Djanggo를 설치합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip&lt;/code&gt;(python install package), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pypl&lt;/code&gt;(python Package Index)라는 repository 에 있는 Django를 설치합니다.&lt;/p&gt;
+
+&lt;p&gt;가상환경(virtualenv) 설치
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ python3 -m venv posts&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;가상환경 실행(virtualenv)
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ source posts/bin/activate&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;설치된 패키지 확인
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ pip3 freeze&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;장고설치
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'$ pip3 install django&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;python 3.7.8버전을 사용하시는 분은 pip3를 update를 해주셔야 합니다.
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ pip3 install --upgrade pip&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;여기까지 하시면 설치가 완료가 됩니다.&lt;/p&gt;
+
+&lt;h3&gt; 2. Project Setup &lt;/h3&gt;
+&lt;p&gt;시작은 프로젝트의 뼈대를 만드는 일부터 시작
+폴터를 하나 만들어요!!
+폴더를 하나만들어요&lt;/p&gt;
+
+&lt;p&gt;mkdir python-Django
+cd python-Django
+django-damin startproject mysite&lt;/p&gt;
+
+&lt;p&gt;Scaffolding 하자! 
+cd python-Django
+django-admin startproject mysite&lt;/p&gt;
+
+&lt;p&gt;python-Django/myself 이름을 MyFirstWebPoll로 바꿈
+(폴더 안에 있는 프로젝트 설정을 담고 있는 mysite폴더와 헤깔리니까)
+프로젝트 안에 개별 어플리케이션을 집어넣자
+cd MyFirstWebPoll
+python3 manage.py startapp polls&lt;/p&gt;
+
+&lt;p&gt;poll 이라는 어플이 생성되고 필요한 파일들이 scaffolding 됨&lt;/p&gt;
+
+&lt;p&gt;이제는 pycharm 으로 처리하자&lt;/p&gt;
+
+&lt;p&gt;PyCharm 처리과정
+MyFirstWebPoll프로젝트 실행 &amp;gt; setting.py를 이용해 프로젝트 설정처리
+기본테이블(기본DB)을 생성
+장고는 관리자 모드 화면을 제공
+관리자 ID PW가 DB어딘가에는 저장이 되어 있어야함 (DB설정이 전제됨)
+python3 manage.py migrate&lt;/p&gt;
+
+&lt;p&gt;서버기동을 해보아요&lt;/p&gt;
+
+&lt;p&gt;내장된 테스트 서버를 이용해서 우리 프로젝트를 deploy해 보아요
+python3 manage.py runserver # 서버실행
+python3 manage.py createsuperuser #관리자 설정
+python3 manage.py runserver # 서버실행&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Polls application 구현 1. Model 생성부터 해야 해요!!  Database : 데이터의 집합체 
+DBMS (Database Management System) :데이터베이스를 구축하고 원하는 정보를 추출하고 새로운 데이터를 입력하고 기존데이터를 삭제하고 기존데이터를 수정하는 작업을 진행. (프로그램)
+sqlite3라는 DBMS를 Django에서는 default 로 사용&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이런 데이터베이스는 언제부터 사용됐을까??
+아주아주 초창기에는 데이터를 이렇게 관리하면 좋지않을까 라고 생각했습니다.&lt;/p&gt;
+
+&lt;p&gt;계층형 데이터베이스&lt;/p&gt;
+
+&lt;p&gt;순번	이름	학과
+1	홍길동	심리학과
+2	김길동	컴퓨터학과
+3	신사임당	경제학과
+…	…	…&lt;/p&gt;
+
+&lt;p&gt;이렇게 사용하다가… 시간이 지나서… 
+한사람이 등장해서 논문을 발표.. Relation이라는 주제로 발표&lt;/p&gt;
+
+&lt;p&gt;IBM에서 논문내용이 좋으니.. 우리 이걸가지고 DBMS를 만들어보아요!!
+DB2 성공! 성능도 좋고 사용하기도 편하고
+다른모든 회사들도 이논문을 근간으로 DBMS를 만들어서 판매&lt;/p&gt;
+
+&lt;p&gt;Relational Database(관계형 데이터베이스)&lt;/p&gt;
+
+&lt;p&gt;객체지향의 개념이 들어가서.. 결국 객체관계형 데이터베이스가 탄생&lt;/p&gt;
+
+&lt;p&gt;테이블 자료를 끌어가야하는데 프로그램 방식은 두가지가 있어요!&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;ODBC
+    &lt;ul&gt;
+      &lt;li&gt;ORM (Object Relation Mapping) # Django&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Table = relation = class와 매핑되며&lt;/p&gt;
+
+&lt;p&gt;Class Student:
+stu_num	-순번
+stu_num	-이름
+stu_num	-학과&lt;/p&gt;
+
+&lt;p&gt;ㅁ	1
+ㅁ	홍길동
+ㅁ	심리학과&lt;/p&gt;
+
+&lt;p&gt;Python 으로 relation 을 만들어 봅시다!!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Model 작업은 우리가 사용하는 Database에 Table을 생성하는 작업이에요!
+(Table == Relation)&lt;/p&gt;
+
+&lt;p&gt;model.py 를 수정해보아요 ! class 만들기&lt;/p&gt;
+
+&lt;p&gt;model에서제작&lt;/p&gt;
+
+&lt;p&gt;admin 에서 등록&lt;/p&gt;
+
+&lt;p&gt;from polls.models import Question, Choice&lt;/p&gt;
+&lt;h1 id=&quot;register-your-models-here&quot;&gt;Register your models here.&lt;/h1&gt;
+
+&lt;p&gt;#괄호안에는 내가 등록할 클래스가 나와야해요!
+admin.site.register(Question)
+admin.site.register(Choice)&lt;/p&gt;
+
+&lt;p&gt;여기까지는 구조를 아직만든게 아니에요!!&lt;/p&gt;
+
+&lt;p&gt;표를 삽입을 해줘야해요&lt;/p&gt;
+
+&lt;p&gt;python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Install" /><category term="Webapplication" /><summary type="html">Django설치 및 기초운용 1. Django 설치 mac 환경은 설치하기가 조금어려워서 가상환경으로 진행하겠습니다. 윈도우 사용자분들은 python 경로(path)가 제대로 설정되어있는지 확인해주세요.</summary></entry><entry><title type="html">[Python] Formatting</title><link href="http://localhost:4000/python/Formatting/" rel="alternate" type="text/html" title="[Python] Formatting" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/Formatting</id><content type="html" xml:base="http://localhost:4000/python/Formatting/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
+&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Formatting&lt;/code&gt; 에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;Formatting은 변수의 값을 원하는 곳에 입력하거나 출력이 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;예제를 통하여 다시 한번 정확하게 알아보겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;num_of_apple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;myStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;나는 사과를 %d개 가지고 있어요!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_of_apple&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#// %d (숫자)
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myStr1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;나는 사과를 {}, 바나나 {}개 가지고 있어요!&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_of_apple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;myStr2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;나는 사과를 {1}, 바나나 {0}개 가지고 있어요!&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_of_apple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myStr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#나는 사과를 10개 가지고 있어요!
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myStr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#나는 사과를 10, 바나나 20개 가지고 있어요!
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myStr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 나는 사과를 20, 바나나 10개 가지고 있어요!
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;복잡한 문장도 formatting 을 이용하여 원하는 위치에 변수의 값을 입력 및 출력을 할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;formatting&lt;/code&gt; 에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Text sequence" /><category term="Data Type" /><category term="문자열" /><category term="데이터타입" /><category term="str" /><category term="formatting" /><summary type="html">In Not In 연산자 오늘은 파이썬의 문자열 의 Formatting 에 대하여 알아보도록 하겠습니다.</summary></entry><entry><title type="html">[Python] List</title><link href="http://localhost:4000/python/List/" rel="alternate" type="text/html" title="[Python] List" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/List</id><content type="html" xml:base="http://localhost:4000/python/List/">&lt;h2&gt;List&lt;/h2&gt;
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;List&lt;/code&gt; 에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
 
 &lt;p&gt;List는 임의의 객체(데이터)를 순서대로 저장하는 집합 자료형입니다.&lt;/p&gt;
@@ -66,85 +271,7 @@
 &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;List&lt;/code&gt; 에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Sequence Type" /><category term="Data Type" /><category term="List" /><summary type="html">List 오늘은 파이썬의 List 에 대하여 알아보도록 하겠습니다.</summary></entry><entry><title type="html">Python_Formatting</title><link href="http://localhost:4000/python/Formatting/" rel="alternate" type="text/html" title="Python_Formatting" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/Formatting</id><content type="html" xml:base="http://localhost:4000/python/Formatting/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
-&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Formatting&lt;/code&gt; 에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;Formatting은 변수의 값을 원하는 곳에 입력하거나 출력이 가능합니다.&lt;/p&gt;
-
-&lt;p&gt;예제를 통하여 다시 한번 정확하게 알아보겠습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;num_of_apple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;myStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;나는 사과를 %d개 가지고 있어요!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_of_apple&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#// %d (숫자)
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myStr1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;나는 사과를 {}, 바나나 {}개 가지고 있어요!&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_of_apple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;myStr2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;나는 사과를 {1}, 바나나 {0}개 가지고 있어요!&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_of_apple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myStr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#나는 사과를 10개 가지고 있어요!
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myStr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#나는 사과를 10, 바나나 20개 가지고 있어요!
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myStr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 나는 사과를 20, 바나나 10개 가지고 있어요!
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;복잡한 문장도 formatting 을 이용하여 원하는 위치에 변수의 값을 입력 및 출력을 할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;formatting&lt;/code&gt; 에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Text sequence" /><category term="Data Type" /><category term="문자열" /><category term="데이터타입" /><category term="str" /><category term="formatting" /><summary type="html">In Not In 연산자 오늘은 파이썬의 문자열 의 Formatting 에 대하여 알아보도록 하겠습니다.</summary></entry><entry><title type="html">Python Page</title><link href="http://localhost:4000/python/PythonPage/" rel="alternate" type="text/html" title="Python Page" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/PythonPage</id><content type="html" xml:base="http://localhost:4000/python/PythonPage/">&lt;figure&gt;
-	&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:500px&quot; /&gt;
-&lt;/figure&gt;
-
-&lt;h2&gt;파이썬 페이지&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Numeric-Data-Type/&quot;&gt;숫자형 데이터 타입&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Text-sequence/&quot;&gt;문자열&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Text-operation/&quot;&gt;문자열 연산&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/In-Not/&quot;&gt;In Not in&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Idexing-Slicing/&quot;&gt;문자열 Indexing &amp;amp; Slicing&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Formatting/&quot;&gt;Formatting&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/List/&quot;&gt;List&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><summary type="html"></summary></entry><entry><title type="html">Python_Text operation (str Data Type)</title><link href="http://localhost:4000/python/Text-operation/" rel="alternate" type="text/html" title="Python_Text operation (str Data Type)" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/Text-operation</id><content type="html" xml:base="http://localhost:4000/python/Text-operation/">&lt;h2&gt;문자열의 연산 (문자열, str)&lt;/h2&gt;
-&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 연산에 대하여 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;일상생활에서 말을 할때 대부분 단일언어로 대화를 하지않습니다. 문자를 조합하거나 합성해서 문장을 만들어 대화를 합니다.&lt;/p&gt;
-
-&lt;p&gt;파이썬의 문자열도 마찬가지로 합치거나 원하는 문자열을 추가를 할 수가 있습니다. 자세한 내용은 하기 예제를 통하여 알아보겠습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'haha'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hoho'&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#hahahoho
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# error 자동으로 숫자를 문자로 변경 X ( Java 에서는 가능 합니다 !)
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#hahahahahaha
-&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;상기의 예제는 문자열을 더하거나 곱하여서 새로운 문자열을 생성하는 것을 보았습니다.&lt;/p&gt;
-
-&lt;p&gt;앞으로 프로젝트를 진행하면서 받는 데이터들이 완벽한 문자열 혹은 문자로 받아진다면 저러한 연산은 필요없겠지만 저희가 앞으로 받은 데이터는 예상할 수 없는 데이터이기 때문에 항상 가공을 해야합니다.&lt;/p&gt;
-
-&lt;p&gt;문자열의 연산은 앞으로의 프로젝트에서 데이터를 처리하기위한 ‘첫걸음’ 정도로 생각하면 되겠습니다.&lt;/p&gt;
-
-&lt;p&gt;오늘은 파이썬의 문자열 연산에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Text sequence" /><category term="Data Type" /><category term="문자열" /><category term="데이터타입" /><category term="str" /><category term="operation" /><summary type="html">문자열의 연산 (문자열, str) 오늘은 파이썬의 문자열 연산에 대하여 알아보겠습니다.</summary></entry><entry><title type="html">Python_Text sequence (str Data Type)</title><link href="http://localhost:4000/python/Text-sequence/" rel="alternate" type="text/html" title="Python_Text sequence (str Data Type)" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/Text-sequence</id><content type="html" xml:base="http://localhost:4000/python/Text-sequence/">&lt;h2&gt;Text sequence (문자열, str)&lt;/h2&gt;
-&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 데이터 타입에 대하여 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;다른 언어는 문자와 문자열을 구분합니다. 문자는 한글자 예를들어 a 같이 단일 문자로 이뤄진 것을 의미합니다.&lt;/p&gt;
-
-&lt;p&gt;문자열은 두글자 이상으로 이루어진 문자열을 의미하며 apple, graph같은 단어를 의미합니다.&lt;/p&gt;
-
-&lt;p&gt;다른언어에서는 문자를 표현할때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;' '&lt;/code&gt;, 문자열을 표현할때는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot; &quot;&lt;/code&gt; 으로 표현합니다.&lt;/p&gt;
-
-&lt;p&gt;파이썬에서는 어떨까요? 하기 예제를 보면서 다른언어와 파이썬의 차이를 살펴보도록 하겠습니다.&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Hello'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;K&quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'python'&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Hello
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# K
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# python
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;상기 예제를 확인해보면 파이썬에서는 문자와 문자열을 표현할때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;' '&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot; &quot;&lt;/code&gt; 을 구분하지않고 사용이 가능합니다.&lt;/p&gt;
-
-&lt;p&gt;오늘은 파이썬의 문자열에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Text sequence" /><category term="Data Type" /><category term="문자열" /><category term="데이터타입" /><category term="str" /><summary type="html">Text sequence (문자열, str) 오늘은 파이썬의 문자열 데이터 타입에 대하여 알아보겠습니다.</summary></entry><entry><title type="html">테크블로그에 오신것을 환영합니다.</title><link href="http://localhost:4000/welcome/welcome/" rel="alternate" type="text/html" title="테크블로그에 오신것을 환영합니다." /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/welcome/welcome</id><content type="html" xml:base="http://localhost:4000/welcome/welcome/">&lt;figure&gt;
+&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;List&lt;/code&gt; 에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Sequence Type" /><category term="Data Type" /><category term="List" /><summary type="html">List 오늘은 파이썬의 List 에 대하여 알아보도록 하겠습니다.</summary></entry><entry><title type="html">테크블로그에 오신것을 환영합니다.</title><link href="http://localhost:4000/welcome/welcome/" rel="alternate" type="text/html" title="테크블로그에 오신것을 환영합니다." /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/welcome/welcome</id><content type="html" xml:base="http://localhost:4000/welcome/welcome/">&lt;figure&gt;
 	&lt;img src=&quot;/assets/image/그림1.png&quot; alt=&quot;그림1&quot; style=&quot;width:200px&quot; /&gt;
 &lt;/figure&gt;
 
@@ -188,7 +315,7 @@
 
 &lt;p&gt; Python&lt;/p&gt;
 
-&lt;p&gt; HTML, CSS, JavaScript&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Welcome" /><summary type="html"></summary></entry><entry><title type="html">Python_In Not in (str Data Type)</title><link href="http://localhost:4000/python/In-Not/" rel="alternate" type="text/html" title="Python_In Not in (str Data Type)" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/In-Not</id><content type="html" xml:base="http://localhost:4000/python/In-Not/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
+&lt;p&gt; HTML, CSS, JavaScript&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Welcome" /><summary type="html"></summary></entry><entry><title type="html">[Python] In Not in (str Data Type)</title><link href="http://localhost:4000/python/In-Not/" rel="alternate" type="text/html" title="[Python] In Not in (str Data Type)" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/In-Not</id><content type="html" xml:base="http://localhost:4000/python/In-Not/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;in&lt;/code&gt; 과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;not in&lt;/code&gt; 연산자에 대하여 키워드를 통하여 알아보도록 하겠습니다.&lt;/p&gt;
 
 &lt;p&gt;In, Not in 연산자 #문자나 문자열이 포함되어 있는지 확인하려면 ??&lt;/p&gt;
@@ -202,7 +329,7 @@
 
 &lt;p&gt;즉 sample이라는 문자열이 myStr이라는 변수에 포함되어있는지 안되어 있는지 확인이 가능합니다.&lt;/p&gt;
 
-&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;in&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;not in&lt;/code&gt;에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Text sequence" /><category term="Data Type" /><category term="문자열" /><category term="데이터타입" /><category term="str" /><category term="In" /><category term="Not in" /><summary type="html">In Not In 연산자 오늘은 파이썬의 문자열 의 in 과 not in 연산자에 대하여 키워드를 통하여 알아보도록 하겠습니다.</summary></entry><entry><title type="html">Python_Numeric Data Type</title><link href="http://localhost:4000/python/Numeric-Data-Type/" rel="alternate" type="text/html" title="Python_Numeric Data Type" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/Numeric-Data-Type</id><content type="html" xml:base="http://localhost:4000/python/Numeric-Data-Type/">&lt;h2&gt;Numeric Data Type (숫자형)&lt;/h2&gt;
+&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;in&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;not in&lt;/code&gt;에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Text sequence" /><category term="Data Type" /><category term="문자열" /><category term="데이터타입" /><category term="str" /><category term="In" /><category term="Not in" /><summary type="html">In Not In 연산자 오늘은 파이썬의 문자열 의 in 과 not in 연산자에 대하여 키워드를 통하여 알아보도록 하겠습니다.</summary></entry><entry><title type="html">[Python] Numeric Data Type</title><link href="http://localhost:4000/python/Numeric-Data-Type/" rel="alternate" type="text/html" title="[Python] Numeric Data Type" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/Numeric-Data-Type</id><content type="html" xml:base="http://localhost:4000/python/Numeric-Data-Type/">&lt;h2&gt;Numeric Data Type (숫자형)&lt;/h2&gt;
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;숫자형&lt;/code&gt; 데이터 타입에 대하여 알아보겠습니다.&lt;/p&gt;
 
 &lt;p&gt;데이터 숫자는 크게 3가지로 나눌 수가 있습니다!&lt;/p&gt;
@@ -242,40 +369,43 @@
 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;오늘은 파이썬의 숫자형 데이터 타입에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Numeric" /><category term="Data Type" /><category term="숫자형" /><category term="데이터타입" /><summary type="html">Numeric Data Type (숫자형) 오늘은 파이썬의 숫자형 데이터 타입에 대하여 알아보겠습니다.</summary></entry><entry><title type="html">Python_Idexing, Slicing (str Data Type)</title><link href="http://localhost:4000/python/Idexing-Slicing/" rel="alternate" type="text/html" title="Python_Idexing, Slicing (str Data Type)" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/Idexing-Slicing</id><content type="html" xml:base="http://localhost:4000/python/Idexing-Slicing/">&lt;h2&gt;Indexing &amp;amp; Slicing&lt;/h2&gt;
-&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Idexing&lt;/code&gt; 과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Slicing&lt;/code&gt;을 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;Indexing #문자열에 번호에 해당하는 문자를 추출하려면??&lt;/p&gt;
-
-&lt;p&gt;python은 배열이 존재 하지 않아요! 하지만 다른언어에서는 - index 사용가능합니다.&lt;/p&gt;
-
-&lt;p&gt;그렇다면 파이썬의 문자열에서 번호 혹은 순서에 맞는 문자를 추출하기 위해서는 어떻게 해야할까요 ?&lt;/p&gt;
-
-&lt;p&gt;하기 그림은 문자열에 해당되는 번호를 명시한 그림입니다.&lt;/p&gt;
-
-&lt;figure&gt;
-	&lt;img src=&quot;/assets/image/index_table.png&quot; /&gt;
+&lt;p&gt;오늘은 파이썬의 숫자형 데이터 타입에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Numeric" /><category term="Data Type" /><category term="숫자형" /><category term="데이터타입" /><summary type="html">Numeric Data Type (숫자형) 오늘은 파이썬의 숫자형 데이터 타입에 대하여 알아보겠습니다.</summary></entry><entry><title type="html">Python Page</title><link href="http://localhost:4000/python/PythonPage/" rel="alternate" type="text/html" title="Python Page" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/PythonPage</id><content type="html" xml:base="http://localhost:4000/python/PythonPage/">&lt;figure&gt;
+	&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:500px&quot; /&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;그렇다면 그림에 해당하는 번호를 파이썬 코드로 구현해볼까요?&lt;/p&gt;
+&lt;h2&gt;파이썬 페이지&lt;/h2&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_var&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'HELLO'&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;#E
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Numeric-Data-Type/&quot;&gt;숫자형 데이터 타입&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Slicing #문자열에 범위를 선정하여 추출하려면??&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Text-sequence/&quot;&gt;문자열&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Slicing은 말 그대로 잘라내다입니다. Indexing과의 차이점은 번호가 아닌 범위로 문자열을 추출이 가능합니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Text-operation/&quot;&gt;문자열 연산&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;하기 예제를 확인하면서 익혀보도록 하겠습니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/In-Not/&quot;&gt;In Not in&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_var&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'HELLO'&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#HEL
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#HELLO
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#HELL
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#LO
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# HELLO
+&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Idexing-Slicing/&quot;&gt;문자열 Indexing &amp;amp; Slicing&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Formatting/&quot;&gt;Formatting&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/List/&quot;&gt;List&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><summary type="html"></summary></entry><entry><title type="html">[Python] Text operation (str Data Type)</title><link href="http://localhost:4000/python/Text-operation/" rel="alternate" type="text/html" title="[Python] Text operation (str Data Type)" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/Text-operation</id><content type="html" xml:base="http://localhost:4000/python/Text-operation/">&lt;h2&gt;문자열의 연산 (문자열, str)&lt;/h2&gt;
+&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 연산에 대하여 알아보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;일상생활에서 말을 할때 대부분 단일언어로 대화를 하지않습니다. 문자를 조합하거나 합성해서 문장을 만들어 대화를 합니다.&lt;/p&gt;
+
+&lt;p&gt;파이썬의 문자열도 마찬가지로 합치거나 원하는 문자열을 추가를 할 수가 있습니다. 자세한 내용은 하기 예제를 통하여 알아보겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'haha'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hoho'&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#hahahoho
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# error 자동으로 숫자를 문자로 변경 X ( Java 에서는 가능 합니다 !)
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#hahahahahaha
 &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;상기의 예제는 문자열을 더하거나 곱하여서 새로운 문자열을 생성하는 것을 보았습니다.&lt;/p&gt;
 
-&lt;p&gt;오늘은 파이썬의 Indexing과 Slicing에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Text sequence" /><category term="Data Type" /><category term="문자열" /><category term="데이터타입" /><category term="str" /><category term="Idexing" /><category term="Slicing" /><summary type="html">Indexing &amp;amp; Slicing 오늘은 파이썬의 문자열 의 Idexing 과 Slicing을 알아보겠습니다.</summary></entry></feed>
+&lt;p&gt;앞으로 프로젝트를 진행하면서 받는 데이터들이 완벽한 문자열 혹은 문자로 받아진다면 저러한 연산은 필요없겠지만 저희가 앞으로 받은 데이터는 예상할 수 없는 데이터이기 때문에 항상 가공을 해야합니다.&lt;/p&gt;
+
+&lt;p&gt;문자열의 연산은 앞으로의 프로젝트에서 데이터를 처리하기위한 ‘첫걸음’ 정도로 생각하면 되겠습니다.&lt;/p&gt;
+
+&lt;p&gt;오늘은 파이썬의 문자열 연산에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Text sequence" /><category term="Data Type" /><category term="문자열" /><category term="데이터타입" /><category term="str" /><category term="operation" /><summary type="html">문자열의 연산 (문자열, str) 오늘은 파이썬의 문자열 연산에 대하여 알아보겠습니다.</summary></entry></feed>

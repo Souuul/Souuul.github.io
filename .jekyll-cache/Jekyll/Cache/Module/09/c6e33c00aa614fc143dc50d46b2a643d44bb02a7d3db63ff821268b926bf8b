@@ -1,4 +1,4 @@
-I"m
+I"u
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -14,9 +14,9 @@
         <ul class="visible-links"><li class="masthead__menu-item">
               <a href="/python/PythonPage/">Python</a>
             </li><li class="masthead__menu-item">
-              <a href="/year-archive/">HTML & CSS</a>
+              <a href="/year-archive/">HTML & CSS & JavaScript</a>
             </li><li class="masthead__menu-item">
-              <a href="/collection-archive/">JavaScript</a>
+              <a href="/Django/DjangoPage/">Django</a>
             </li><li class="masthead__menu-item">
               <a href="/sitemap/">Sitemap</a>
             </li></ul>

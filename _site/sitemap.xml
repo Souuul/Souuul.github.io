@@ -37,6 +37,18 @@
 <lastmod>2020-07-29T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/django/Django-Basic/</loc>
+<lastmod>2020-07-30T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/django/Django-simple-web-application/</loc>
+<lastmod>2020-07-30T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/django/DjangoPage/</loc>
+<lastmod>2020-07-30T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/archive-layout-with-content/</loc>
 </url>
 <url>
@@ -99,5 +111,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page2/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page3/</loc>
 </url>
 </urlset>

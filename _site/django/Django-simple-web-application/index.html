@@ -1,0 +1,790 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Django] 설치 및 기초운용 - Sol Han tech blog!</title>
+<meta name="description" content="Django설치 및 기초운용 1. Django 설치 mac 환경은 설치하기가 조금어려워서 가상환경으로 진행하겠습니다. 윈도우 사용자분들은 python 경로(path)가 제대로 설정되어있는지 확인해주세요.">
+
+
+  <meta name="author" content="Sol Han">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sol Han tech blog!">
+<meta property="og:title" content="[Django] 설치 및 기초운용">
+<meta property="og:url" content="http://localhost:4000/django/Django-simple-web-application/">
+
+
+  <meta property="og:description" content="Django설치 및 기초운용 1. Django 설치 mac 환경은 설치하기가 조금어려워서 가상환경으로 진행하겠습니다. 윈도우 사용자분들은 python 경로(path)가 제대로 설정되어있는지 확인해주세요.">
+
+
+
+  <meta property="og:image" content="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-07-30T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/django/Django-simple-web-application/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sol Han",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sol Han tech blog! Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/image/logo.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          Sol Han tech blog!
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/python/PythonPage/">Python</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/">HTML & CSS & JavaScript</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Django/DjangoPage/">Django</a>
+            </li><li class="masthead__menu-item">
+              <a href="/sitemap/">Sitemap</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/image/%EA%B7%B8%EB%A6%BC1.png" alt="Sol Han" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Sol Han</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I’m an <strong>AI engineer</strong></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/Souuul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/sol-han-134296131" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">Linkedin</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:hans53400@naver.com">
+            <meta itemprop="email" content="hans53400@naver.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Django] 설치 및 기초운용">
+    <meta itemprop="description" content="Django설치 및 기초운용1. Django 설치mac 환경은 설치하기가 조금어려워서 가상환경으로 진행하겠습니다. 윈도우 사용자분들은 python 경로(path)가 제대로 설정되어있는지 확인해주세요.">
+    <meta itemprop="datePublished" content="2020-07-30T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[Django] 설치 및 기초운용
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2>Django설치 및 기초운용</h2>
+<h3>1. Django 설치</h3>
+<p>mac 환경은 설치하기가 조금어려워서 가상환경으로 진행하겠습니다. 윈도우 사용자분들은 python 경로(path)가 제대로 설정되어있는지 확인해주세요.</p>
+
+<p>터미널에서 pip를 이용해서 Djanggo를 설치합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">pip</code>(python install package), <code class="language-plaintext highlighter-rouge">pypl</code>(python Package Index)라는 repository 에 있는 Django를 설치합니다.</p>
+
+<p>가상환경(virtualenv) 설치
+<code class="language-plaintext highlighter-rouge">$ python3 -m venv posts</code></p>
+
+<p>가상환경 실행(virtualenv)
+<code class="language-plaintext highlighter-rouge">$ source posts/bin/activate</code></p>
+
+<p>설치된 패키지 확인
+<code class="language-plaintext highlighter-rouge">$ pip3 freeze</code></p>
+
+<p>장고설치
+<code class="language-plaintext highlighter-rouge">'$ pip3 install django</code></p>
+
+<p>python 3.7.8버전을 사용하시는 분은 pip3를 update를 해주셔야 합니다.
+<code class="language-plaintext highlighter-rouge">$ pip3 install --upgrade pip</code></p>
+
+<p>여기까지 하시면 설치가 완료가 됩니다.</p>
+
+<h3> 2. Project Setup </h3>
+<p>시작은 프로젝트의 뼈대를 만드는 일부터 시작
+폴터를 하나 만들어요!!
+폴더를 하나만들어요</p>
+
+<p>mkdir python-Django
+cd python-Django
+django-damin startproject mysite</p>
+
+<p>Scaffolding 하자! 
+cd python-Django
+django-admin startproject mysite</p>
+
+<p>python-Django/myself 이름을 MyFirstWebPoll로 바꿈
+(폴더 안에 있는 프로젝트 설정을 담고 있는 mysite폴더와 헤깔리니까)
+프로젝트 안에 개별 어플리케이션을 집어넣자
+cd MyFirstWebPoll
+python3 manage.py startapp polls</p>
+
+<p>poll 이라는 어플이 생성되고 필요한 파일들이 scaffolding 됨</p>
+
+<p>이제는 pycharm 으로 처리하자</p>
+
+<p>PyCharm 처리과정
+MyFirstWebPoll프로젝트 실행 &gt; setting.py를 이용해 프로젝트 설정처리
+기본테이블(기본DB)을 생성
+장고는 관리자 모드 화면을 제공
+관리자 ID PW가 DB어딘가에는 저장이 되어 있어야함 (DB설정이 전제됨)
+python3 manage.py migrate</p>
+
+<p>서버기동을 해보아요</p>
+
+<p>내장된 테스트 서버를 이용해서 우리 프로젝트를 deploy해 보아요
+python3 manage.py runserver # 서버실행
+python3 manage.py createsuperuser #관리자 설정
+python3 manage.py runserver # 서버실행</p>
+
+<ol>
+  <li>Polls application 구현 1. Model 생성부터 해야 해요!!  Database : 데이터의 집합체 
+DBMS (Database Management System) :데이터베이스를 구축하고 원하는 정보를 추출하고 새로운 데이터를 입력하고 기존데이터를 삭제하고 기존데이터를 수정하는 작업을 진행. (프로그램)
+sqlite3라는 DBMS를 Django에서는 default 로 사용</li>
+</ol>
+
+<p>이런 데이터베이스는 언제부터 사용됐을까??
+아주아주 초창기에는 데이터를 이렇게 관리하면 좋지않을까 라고 생각했습니다.</p>
+
+<p>계층형 데이터베이스</p>
+
+<p>순번	이름	학과
+1	홍길동	심리학과
+2	김길동	컴퓨터학과
+3	신사임당	경제학과
+…	…	…</p>
+
+<p>이렇게 사용하다가… 시간이 지나서… 
+한사람이 등장해서 논문을 발표.. Relation이라는 주제로 발표</p>
+
+<p>IBM에서 논문내용이 좋으니.. 우리 이걸가지고 DBMS를 만들어보아요!!
+DB2 성공! 성능도 좋고 사용하기도 편하고
+다른모든 회사들도 이논문을 근간으로 DBMS를 만들어서 판매</p>
+
+<p>Relational Database(관계형 데이터베이스)</p>
+
+<p>객체지향의 개념이 들어가서.. 결국 객체관계형 데이터베이스가 탄생</p>
+
+<p>테이블 자료를 끌어가야하는데 프로그램 방식은 두가지가 있어요!</p>
+<ol>
+  <li>ODBC
+    <ul>
+      <li>ORM (Object Relation Mapping) # Django</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Table = relation = class와 매핑되며</p>
+
+<p>Class Student:
+stu_num	-순번
+stu_num	-이름
+stu_num	-학과</p>
+
+<p>ㅁ	1
+ㅁ	홍길동
+ㅁ	심리학과</p>
+
+<p>Python 으로 relation 을 만들어 봅시다!!</p>
+
+<hr />
+
+<p>Model 작업은 우리가 사용하는 Database에 Table을 생성하는 작업이에요!
+(Table == Relation)</p>
+
+<p>model.py 를 수정해보아요 ! class 만들기</p>
+
+<p>model에서제작</p>
+
+<p>admin 에서 등록</p>
+
+<p>from polls.models import Question, Choice</p>
+<h1 id="register-your-models-here">Register your models here.</h1>
+
+<p>#괄호안에는 내가 등록할 클래스가 나와야해요!
+admin.site.register(Question)
+admin.site.register(Choice)</p>
+
+<p>여기까지는 구조를 아직만든게 아니에요!!</p>
+
+<p>표를 삽입을 해줘야해요</p>
+
+<p>python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#install" class="page__taxonomy-item" rel="tag">Install</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#webapplication" class="page__taxonomy-item" rel="tag">Webapplication</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#django" class="page__taxonomy-item" rel="tag">Django</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-30T00:00:00+09:00">July 30, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BDjango%5D+%EC%84%A4%EC%B9%98+%EB%B0%8F+%EA%B8%B0%EC%B4%88%EC%9A%B4%EC%9A%A9%20http%3A%2F%2Flocalhost%3A4000%2Fdjango%2FDjango-simple-web-application%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdjango%2FDjango-simple-web-application%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fdjango%2FDjango-simple-web-application%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/django/Django-Basic/" class="pagination--pager" title="[Django] 이론
+">Previous</a>
+    
+    
+      <a href="/django/DjangoPage/" class="pagination--pager" title="Django Page
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/DjangoPage/" rel="permalink">Django Page
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+	
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-Basic/" rel="permalink">[Django] 이론
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Django
+오늘은 Django에 대하여 알아보아요!
+Python 으로 만들어진 오픈소스
+웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/List.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/List/" rel="permalink">[Python] List
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">List
+오늘은 파이썬의 List 에 대하여 알아보도록 하겠습니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/Formatting.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Formatting/" rel="permalink">[Python] Formatting
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">In Not In 연산자
+오늘은 파이썬의 문자열 의 Formatting 에 대하여 알아보도록 하겠습니다.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Sol Han. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/django/Django-simple-web-application/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/django/Django-simple-web-application"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-souuul-github-io-souuul.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
