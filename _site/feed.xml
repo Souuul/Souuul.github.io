@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T18:20:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">Django Page</title><link href="http://localhost:4000/django/DjangoPage/" rel="alternate" type="text/html" title="Django Page" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/DjangoPage</id><content type="html" xml:base="http://localhost:4000/django/DjangoPage/">&lt;figure&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-31T01:35:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">Django Page</title><link href="http://localhost:4000/django/DjangoPage/" rel="alternate" type="text/html" title="Django Page" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/DjangoPage</id><content type="html" xml:base="http://localhost:4000/django/DjangoPage/">&lt;figure&gt;
 	&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;python&quot; style=&quot;width:500px&quot; /&gt;
 &lt;/figure&gt;
 
 &lt;h2&gt;파이썬 페이지&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/Django/Django-Basic&quot;&gt;Djanggo 기초이론&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-Basic&quot;&gt;Djanggo 기초이론&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/Django/Django-simple-web-application&quot;&gt;Djanggo 설치 및 운용&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html"></summary></entry><entry><title type="html">[Django] 이론</title><link href="http://localhost:4000/django/Django-Basic/" rel="alternate" type="text/html" title="[Django] 이론" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-Basic</id><content type="html" xml:base="http://localhost:4000/django/Django-Basic/">&lt;h2&gt;Django&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application&quot;&gt;Djanggo 설치 및 운용&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html"></summary></entry><entry><title type="html">[Django] 이론</title><link href="http://localhost:4000/django/Django-Basic/" rel="alternate" type="text/html" title="[Django] 이론" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-Basic</id><content type="html" xml:base="http://localhost:4000/django/Django-Basic/">&lt;h2&gt;Django&lt;/h2&gt;
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django&lt;/code&gt;에 대하여 알아보아요!
 Python 으로 만들어진 오픈소스
 웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework&lt;/p&gt;
@@ -48,144 +48,350 @@ Python 으로 만들어진 오픈소스
 &lt;p&gt;Template : 클라이언트에게 보여줄 화면을 담당&lt;/p&gt;
 
 &lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django&lt;/code&gt;의 이론에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html">Django 오늘은 Django에 대하여 알아보아요! Python 으로 만들어진 오픈소스 웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework</summary></entry><entry><title type="html">[Django] 설치 및 기초운용</title><link href="http://localhost:4000/django/Django-simple-web-application/" rel="alternate" type="text/html" title="[Django] 설치 및 기초운용" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application/">&lt;h2&gt;Django설치 및 기초운용&lt;/h2&gt;
-&lt;h3&gt;1. Django 설치&lt;/h3&gt;
-&lt;p&gt;mac 환경은 설치하기가 조금어려워서 가상환경으로 진행하겠습니다. 윈도우 사용자분들은 python 경로(path)가 제대로 설정되어있는지 확인해주세요.&lt;/p&gt;
+&lt;h3&gt;Django 설치&lt;/h3&gt;
+&lt;p&gt;mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.&lt;/p&gt;
 
-&lt;p&gt;터미널에서 pip를 이용해서 Djanggo를 설치합니다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip&lt;/code&gt;(python install package), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pypi&lt;/code&gt;(python Package Index)라는 repository에 있는 Django를 설치합니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip&lt;/code&gt;(python install package), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pypl&lt;/code&gt;(python Package Index)라는 repository 에 있는 Django를 설치합니다.&lt;/p&gt;
+&lt;h4&gt;가상환경에서 설치&lt;/h4&gt;
+&lt;p&gt;&lt;u&gt;가상환경&lt;/u&gt;에서 하실분은 하기 내용을 추가하여 설치해주시기 바랍니다.&lt;/p&gt;
 
-&lt;p&gt;가상환경(virtualenv) 설치
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ python3 -m venv posts&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;가상환경(virtualenv) 설치 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ python3 -m venv posts&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;가상환경 실행(virtualenv) : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ source posts/bin/activate&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;설치된 패키지 확인 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ pip3 freeze&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;가상환경 실행(virtualenv)
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ source posts/bin/activate&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;장고설치&lt;/h4&gt;
+&lt;p&gt;&lt;u&gt;가상환경이 아닌 로컬&lt;/u&gt;에서 설치하실 분들은 이쪽부터 진행 하시면 됩니다.&lt;/p&gt;
 
-&lt;p&gt;설치된 패키지 확인
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ pip3 freeze&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;Django 설치 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'$ pip3 install django&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;python 3.7.8버전을 사용하시는 분은 pip3를 update를 해주셔야 합니다.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;pip upgrade : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ pip3 install --upgrade pip&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;여기까지 하시면 설치가 완료가 됩니다.&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;장고설치
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'$ pip3 install django&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt; Project Setup &lt;/h3&gt;
+&lt;p&gt;본격적으로 프로젝트의 뼈대를 만드는 일부터 시작하겠습니다.&lt;/p&gt;
 
-&lt;p&gt;python 3.7.8버전을 사용하시는 분은 pip3를 update를 해주셔야 합니다.
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ pip3 install --upgrade pip&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt; 터미널에서 설정 &lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;폴더 생성 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ mkdir python-Django&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;만들어진 경로로 이동 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ cd python-Django&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;mysite 프로젝트 생성 및 Scaffolding : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ django-damin startproject mysite&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;폴더명 변경(선택사항) :python-Django/myself 이름을 MyFirstWebPoll로 변경&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;변경된 경로로 이동 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ cd MyFirstWebPoll&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;프로젝트 안에 개별 어플리케이션을 생성 :&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ python3 manage.py startapp polls&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;poll 이라는 어플이 생성되고 필요한 파일들이 scaffolding 됨&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;여기까지 하시면 설치가 완료가 됩니다.&lt;/p&gt;
+&lt;h4&gt; Python 설정변경 [pycharm 사용] &lt;/h4&gt;
 
-&lt;h3&gt; 2. Project Setup &lt;/h3&gt;
-&lt;p&gt;시작은 프로젝트의 뼈대를 만드는 일부터 시작
-폴터를 하나 만들어요!!
-폴더를 하나만들어요&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;pycharm에서 MyFirstWebPoll 프로젝트 실행&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;setting.py를 이용해 프로젝트 설정처리&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;기본테이블(기본DB)을 생성&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;장고는 관리자 모드 화면을 제공&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;관리자 ID PW가 DB어딘가에는 저장이 되어 있어야함 (DB설정이 전제됨)&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;INSTALLED_APPS 리스트 항목에 ‘polls.apps.PollsConfig’ 를 추가&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;TIME_ZONE ‘Asia/Seoul’ 로 변경&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;mkdir python-Django
-cd python-Django
-django-damin startproject mysite&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Application definition 
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;INSTALLED_APPS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.admin'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.auth'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.contenttypes'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.sessions'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.messages'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.staticfiles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'polls.apps.PollsConfig'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;…&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Internationalization
+# https://docs.djangoproject.com/en/3.0/topics/i18n/
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;LANGUAGE_CODE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'en-us'&lt;/span&gt;
 
-&lt;p&gt;Scaffolding 하자! 
-cd python-Django
-django-admin startproject mysite&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;TIME_ZONE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Asia/Seoul'&lt;/span&gt;
 
-&lt;p&gt;python-Django/myself 이름을 MyFirstWebPoll로 바꿈
-(폴더 안에 있는 프로젝트 설정을 담고 있는 mysite폴더와 헤깔리니까)
-프로젝트 안에 개별 어플리케이션을 집어넣자
-cd MyFirstWebPoll
-python3 manage.py startapp polls&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;USE_I18N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
 
-&lt;p&gt;poll 이라는 어플이 생성되고 필요한 파일들이 scaffolding 됨&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;USE_L10N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
 
-&lt;p&gt;이제는 pycharm 으로 처리하자&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;USE_TZ&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;PyCharm 처리과정
-MyFirstWebPoll프로젝트 실행 &amp;gt; setting.py를 이용해 프로젝트 설정처리
-기본테이블(기본DB)을 생성
-장고는 관리자 모드 화면을 제공
-관리자 ID PW가 DB어딘가에는 저장이 되어 있어야함 (DB설정이 전제됨)
-python3 manage.py migrate&lt;/p&gt;
-
-&lt;p&gt;서버기동을 해보아요&lt;/p&gt;
-
-&lt;p&gt;내장된 테스트 서버를 이용해서 우리 프로젝트를 deploy해 보아요
-python3 manage.py runserver # 서버실행
-python3 manage.py createsuperuser #관리자 설정
-python3 manage.py runserver # 서버실행&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Polls application 구현 1. Model 생성부터 해야 해요!!  Database : 데이터의 집합체 
-DBMS (Database Management System) :데이터베이스를 구축하고 원하는 정보를 추출하고 새로운 데이터를 입력하고 기존데이터를 삭제하고 기존데이터를 수정하는 작업을 진행. (프로그램)
-sqlite3라는 DBMS를 Django에서는 default 로 사용&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;이런 데이터베이스는 언제부터 사용됐을까??
-아주아주 초창기에는 데이터를 이렇게 관리하면 좋지않을까 라고 생각했습니다.&lt;/p&gt;
-
-&lt;p&gt;계층형 데이터베이스&lt;/p&gt;
-
-&lt;p&gt;순번	이름	학과
-1	홍길동	심리학과
-2	김길동	컴퓨터학과
-3	신사임당	경제학과
-…	…	…&lt;/p&gt;
-
-&lt;p&gt;이렇게 사용하다가… 시간이 지나서… 
-한사람이 등장해서 논문을 발표.. Relation이라는 주제로 발표&lt;/p&gt;
-
-&lt;p&gt;IBM에서 논문내용이 좋으니.. 우리 이걸가지고 DBMS를 만들어보아요!!
-DB2 성공! 성능도 좋고 사용하기도 편하고
-다른모든 회사들도 이논문을 근간으로 DBMS를 만들어서 판매&lt;/p&gt;
-
-&lt;p&gt;Relational Database(관계형 데이터베이스)&lt;/p&gt;
-
-&lt;p&gt;객체지향의 개념이 들어가서.. 결국 객체관계형 데이터베이스가 탄생&lt;/p&gt;
-
-&lt;p&gt;테이블 자료를 끌어가야하는데 프로그램 방식은 두가지가 있어요!&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;ODBC
-    &lt;ul&gt;
-      &lt;li&gt;ORM (Object Relation Mapping) # Django&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Table = relation = class와 매핑되며&lt;/p&gt;
-
-&lt;p&gt;Class Student:
-stu_num	-순번
-stu_num	-이름
-stu_num	-학과&lt;/p&gt;
-
-&lt;p&gt;ㅁ	1
-ㅁ	홍길동
-ㅁ	심리학과&lt;/p&gt;
-
-&lt;p&gt;Python 으로 relation 을 만들어 봅시다!!&lt;/p&gt;
+&lt;h4&gt; 프로젝트 Deploy&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;터미널을 이용해서 내장 서버를 이용하여 프로젝트를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy&lt;/code&gt; 해보도록 하겠습니다.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;프로젝트 migrate : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py migrate&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;서버 실행 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py runserver&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;관리자 설정 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py createsuperuser&lt;/code&gt; #user, email, pw 설정&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;서버실행 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py runserver&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;&lt;code&gt;127.0.0.1:8000 로 접속&lt;/code&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Polls application 구현확인&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
 
 &lt;hr /&gt;
 
+&lt;h4&gt; 데이터 베이스 설명 &lt;/h4&gt;
+&lt;p&gt;Database : 데이터의 집합체&lt;/p&gt;
+
+&lt;p&gt;DBMS (Database Management System)&lt;/p&gt;
+
+&lt;p&gt;데이터베이스를 구축하고 원하는 정보를 추출하고 새로운 데이터를 입력하고 기존데이터를 삭제하고 기존데이터를 수정하는 작업을 진행.&lt;/p&gt;
+
+&lt;p&gt;Django에서는 sqlite3라는 DBMS를 default 로 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;이런 데이터베이스는 언제부터 사용됐을까요?
+초창기에는 데이터를 이렇게 관리하면 좋지않을까 라고 생각했습니다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;계층형 데이터베이스&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;순번&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;이름&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;학과&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;홍길동&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;심리학과&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;김길동&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;컴퓨터학과&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;신사임당&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;경제학과&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;…&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;…&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;…&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;IBM에서 Relation 이라는 논문을 발표하였고 DB2를 출시하였습니다.&lt;/p&gt;
+
+&lt;p&gt;현재에는 거의 모든 DBMS가 Relational Database(관계형 데이터베이스)으로 제작됩니다.&lt;/p&gt;
+
+&lt;p&gt;결국 객체관계형 데이터베이스가 탄생하게 되었습니다.&lt;/p&gt;
+
+&lt;p&gt;테이블 자료를 끌어가야하는데 프로그램 방식은 크게 두가지 방식이 있습니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;ODBC&lt;/li&gt;
+  &lt;li&gt;ORM (Object Relation Mapping) # Django&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;즉 쉽게 설명하자면 Table = relation = class와 매핑됩니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4&gt; Model 생성 &lt;/h4&gt;
 &lt;p&gt;Model 작업은 우리가 사용하는 Database에 Table을 생성하는 작업이에요!
 (Table == Relation)&lt;/p&gt;
 
-&lt;p&gt;model.py 를 수정해보아요 ! class 만들기&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;models.py 파일 열기&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;model에서제작&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.db&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;
 
-&lt;p&gt;admin 에서 등록&lt;/p&gt;
+&lt;span class=&quot;c1&quot;&gt;# Create your models here.
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Django 가제공하는 models 클래스
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;question_text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;#문자열을 받고 길이는 200자 까지
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;pub_date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DateTimeField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'date published'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;p&gt;from polls.models import Question, Choice&lt;/p&gt;
-&lt;h1 id=&quot;register-your-models-here&quot;&gt;Register your models here.&lt;/h1&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;# 일반적으로 연산을 위해서 문자열로 변환을 하고 싶을때!
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;question_text&lt;/span&gt;
 
-&lt;p&gt;#괄호안에는 내가 등록할 클래스가 나와야해요!
-admin.site.register(Question)
-admin.site.register(Choice)&lt;/p&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Choice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 기본적으로 _id가 자동으로 붙음
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;question&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ForeignKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on_delete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CASCADE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 만약에 Question 에 대하여 지운다면 같이 지운다 CASCADE 문제없이 만드는 것
+&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;choice_text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;votes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IntegerField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;choice_text&lt;/span&gt;
+
+
+
+
+    &lt;span class=&quot;c1&quot;&gt;# def __repr__(self):     # class 의 객체를 문자열로 표현할 경우에 사용
+&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Table의 id column은 default로 지정되요!!!
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# id가 primary key로 설정이 가능!, Not null (값이 무조건 들어가는 경우), Unique (겹치는 값이 안옴)
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# id는 autoincrement 특성(값이 들어오면 자동적으로 증가하는 특성)을 가지는 정수형으로 지정
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 자동으로 생성해주기 때문에 class정의에서 나오지 않아요!!
+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;/polls/admin.py&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;polls.models&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Choice&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Register your models here.
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#괄호안에는 내가 등록할 클래스가 나와야해요!
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Choice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;여기까지는 구조를 아직만든게 아니에요!!&lt;/p&gt;
 
-&lt;p&gt;표를 삽입을 해줘야해요&lt;/p&gt;
+&lt;p&gt;하기 과정을 통하여 표를 삽입을 해줘야합니다.&lt;/p&gt;
 
-&lt;p&gt;python3 manage.py makemigrations
-python3 manage.py migrate
-python3 manage.py runserver&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code&gt;python3 manage.py makemigrations&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Install" /><category term="Webapplication" /><summary type="html">Django설치 및 기초운용 1. Django 설치 mac 환경은 설치하기가 조금어려워서 가상환경으로 진행하겠습니다. 윈도우 사용자분들은 python 경로(path)가 제대로 설정되어있는지 확인해주세요.</summary></entry><entry><title type="html">[Python] Formatting</title><link href="http://localhost:4000/python/Formatting/" rel="alternate" type="text/html" title="[Python] Formatting" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/Formatting</id><content type="html" xml:base="http://localhost:4000/python/Formatting/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
+  &lt;p&gt;&lt;code&gt;python3 manage.py migrate&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code&gt;python3 manage.py runserver&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code&gt;127.0.0.1:8000 로 접속&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;완료하면 하기 그림처럼 초기 설정 화면은 얻을수 있습니다. 
+&lt;img src=&quot;/assets/image/Django project1.png&quot; alt=&quot;Django project1&quot; style=&quot;width:500px&quot; /&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Install" /><category term="Webapplication" /><summary type="html">Django설치 및 기초운용 Django 설치 mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.</summary></entry><entry><title type="html">[Python] Formatting</title><link href="http://localhost:4000/python/Formatting/" rel="alternate" type="text/html" title="[Python] Formatting" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/Formatting</id><content type="html" xml:base="http://localhost:4000/python/Formatting/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Formatting&lt;/code&gt; 에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
 
 &lt;p&gt;Formatting은 변수의 값을 원하는 곳에 입력하거나 출력이 가능합니다.&lt;/p&gt;
