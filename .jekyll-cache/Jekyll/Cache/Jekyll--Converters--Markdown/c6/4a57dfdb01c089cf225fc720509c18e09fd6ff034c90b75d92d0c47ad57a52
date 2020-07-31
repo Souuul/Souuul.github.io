@@ -1,4 +1,4 @@
-I"f7<h2>Django설치 및 기초운용</h2>
+I"u7<h2>Django설치 및 기초운용</h2>
 <h3>Django 설치</h3>
 <p>mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.</p>
 
@@ -21,7 +21,7 @@
   </ol>
 </blockquote>
 
-<h4>장고설치</h4>
+<h4>Django 설치</h4>
 <p><u>가상환경이 아닌 로컬</u>에서 설치하실 분들은 이쪽부터 진행 하시면 됩니다.</p>
 
 <blockquote>
@@ -148,10 +148,12 @@
       <p><code>127.0.0.1:8000 로 접속</code></p>
     </li>
     <li>
-      <p>Polls application 구현</p>
+      <p>Polls application 구현확인</p>
     </li>
   </ol>
 </blockquote>
+
+<hr />
 
 <h4> 데이터 베이스 설명 </h4>
 <p>Database : 데이터의 집합체</p>

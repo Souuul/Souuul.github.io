@@ -1,4 +1,4 @@
-I"t7<h2>Django설치 및 기초운용</h2>
+I"6-<h2>Django설치 및 기초운용</h2>
 <h3>Django 설치</h3>
 <p>mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.</p>
 
@@ -21,7 +21,7 @@
   </ol>
 </blockquote>
 
-<h4>장고설치</h4>
+<h4>Django 설치</h4>
 <p><u>가상환경이 아닌 로컬</u>에서 설치하실 분들은 이쪽부터 진행 하시면 됩니다.</p>
 
 <blockquote>
@@ -152,124 +152,6 @@
     </li>
   </ol>
 </blockquote>
-
-<hr />
-
-<h4> 데이터 베이스 설명 </h4>
-<p>Database : 데이터의 집합체</p>
-
-<p>DBMS (Database Management System)</p>
-
-<p>데이터베이스를 구축하고 원하는 정보를 추출하고 새로운 데이터를 입력하고 기존데이터를 삭제하고 기존데이터를 수정하는 작업을 진행.</p>
-
-<p>Django에서는 sqlite3라는 DBMS를 default 로 사용합니다.</p>
-
-<p>이런 데이터베이스는 언제부터 사용됐을까요?
-초창기에는 데이터를 이렇게 관리하면 좋지않을까 라고 생각했습니다.</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>계층형 데이터베이스</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th> </th>
-      <th> </th>
-      <th>순번</th>
-      <th> </th>
-      <th> </th>
-      <th> </th>
-      <th>이름</th>
-      <th> </th>
-      <th> </th>
-      <th> </th>
-      <th>학과</th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>1</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>홍길동</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>심리학과</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>2</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>김길동</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>컴퓨터학과</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>3</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>신사임당</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>경제학과</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>…</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>…</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>…</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>IBM에서 Relation 이라는 논문을 발표하였고 DB2를 출시하였습니다.</p>
-
-<p>현재에는 거의 모든 DBMS가 Relational Database(관계형 데이터베이스)으로 제작됩니다.</p>
-
-<p>결국 객체관계형 데이터베이스가 탄생하게 되었습니다.</p>
-
-<p>테이블 자료를 끌어가야하는데 프로그램 방식은 크게 두가지 방식이 있습니다.</p>
-<ol>
-  <li>ODBC</li>
-  <li>ORM (Object Relation Mapping) # Django</li>
-</ol>
-
-<p>즉 쉽게 설명하자면 Table = relation = class와 매핑됩니다.</p>
 
 <hr />
 

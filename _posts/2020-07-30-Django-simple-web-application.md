@@ -26,7 +26,7 @@ mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행�
 >3. 설치된 패키지 확인 : `$ pip3 freeze`
 
 
-<h4>장고설치</h4>
+<h4>Django 설치</h4>
 <u>가상환경이 아닌 로컬</u>에서 설치하실 분들은 이쪽부터 진행 하시면 됩니다.
 
 >1. Django 설치 : `'$ pip3 install django`
@@ -101,7 +101,6 @@ USE_L10N = True
 USE_TZ = True
 ```
 
-
 <h4> 프로젝트 Deploy</h4>
 >1. 터미널을 이용해서 내장 서버를 이용하여 프로젝트를 `deploy` 해보도록 하겠습니다.
 >
@@ -119,49 +118,6 @@ USE_TZ = True
 
 
 ---
-
-<h4> 데이터 베이스 설명 </h4>
-Database : 데이터의 집합체
-
-DBMS (Database Management System)
-
-데이터베이스를 구축하고 원하는 정보를 추출하고 새로운 데이터를 입력하고 기존데이터를 삭제하고 기존데이터를 수정하는 작업을 진행.
-
-
-Django에서는 sqlite3라는 DBMS를 default 로 사용합니다. 
-
-이런 데이터베이스는 언제부터 사용됐을까요?
-초창기에는 데이터를 이렇게 관리하면 좋지않을까 라고 생각했습니다.
-
-|계층형 데이터베이스|
-
-|||| 순번 |||| 이름     |||| 학과       ||
-|||| ---- |||| -------- |||| ---------- ||
-|||| 1    |||| 홍길동   |||| 심리학과   ||
-|||| 2    |||| 김길동   |||| 컴퓨터학과 ||
-|||| 3    |||| 신사임당 |||| 경제학과   ||
-|||| …    |||| …        |||| …        ||
-
-
-IBM에서 Relation 이라는 논문을 발표하였고 DB2를 출시하였습니다.
-
-현재에는 거의 모든 DBMS가 Relational Database(관계형 데이터베이스)으로 제작됩니다.
-
-결국 객체관계형 데이터베이스가 탄생하게 되었습니다.
-
-테이블 자료를 끌어가야하는데 프로그램 방식은 크게 두가지 방식이 있습니다.
-1. ODBC
-2. ORM (Object Relation Mapping) # Django 
-
-즉 쉽게 설명하자면 Table = relation = class와 매핑됩니다.
-
-
-
-
----
-
-
-
 
 <h4> Model 생성 </h4>
 Model 작업은 우리가 사용하는 Database에 Table을 생성하는 작업이에요!
@@ -193,9 +149,6 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 
-
-
-
     # def __repr__(self):     # class 의 객체를 문자열로 표현할 경우에 사용
 
     # Table의 id column은 default로 지정되요!!!
@@ -204,7 +157,6 @@ class Choice(models.Model):
     # 자동으로 생성해주기 때문에 class정의에서 나오지 않아요!!
 
 ```
-
 
 
 >/polls/admin.py

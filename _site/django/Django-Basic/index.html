@@ -313,7 +313,7 @@
 
 
 
-  less than 1 minute read
+  1 minute read
 
 </p>
           
@@ -349,6 +349,125 @@ Python 으로 만들어진 오픈소스
 
 <h3>라이브러리(library) VS 프레임워크</h3>
 <p>두 가지 모두 이미 만들어진 것을 사용하는 것은 동일합니다. 차이점은 규칙에 있습니다. 라이브러리는 가져다 쓰는 개념이고 프레임워크는 내 것을 가져다가 프레임 워크 규칙에 맞추는 개념입니다.</p>
+
+<h3> 데이터 베이스 </h3>
+<p>Database : 데이터의 집합체</p>
+
+<p>DBMS (Database Management System)</p>
+
+<p>데이터베이스를 구축하고 원하는 정보를 추출하고 새로운 데이터를 입력하고 기존데이터를 삭제하고 기존데이터를 수정하는 작업을 진행.</p>
+
+<p>Django에서는 sqlite3라는 DBMS를 default 로 사용합니다.</p>
+
+<p>이런 데이터베이스는 언제부터 사용됐을까요?
+초창기에는 데이터를 이렇게 관리하면 좋지않을까라고 생각했습니다.
+그래서 나온 것이 조직도 형상 트리 구조로 정의된 계층형 데이터 베이스입니다.</p>
+
+<p>하지만 IBM에서 Relation 이라는 논문을 발표하였고 DB2를 출시하였습니다.</p>
+
+<p>관계형 데이터베이스는 행과 열로 구성된 테이블 간의 관계를 나타내는 것입니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>관계형 데이터베이스</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th>순번</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th>이름</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th>학과</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>1</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>홍길동</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>심리학과</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>2</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>김길동</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>컴퓨터학과</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>3</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>신사임당</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>경제학과</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>…</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>…</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>…</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>데이터를 관리하기 편한 장점을 가지고 있어 현재에는 거의 모든 DBMS가 Relational Database(관계형 데이터베이스)으로 제작됩니다.</p>
+
+<p>테이블 자료를 끌어가야하는데 프로그램 방식은 크게 두가지 방식이 있습니다.</p>
+<ol>
+  <li>ODBC</li>
+  <li>ORM (Object Relation Mapping) # Django</li>
+</ol>
+
+<p>즉 쉽게 설명하자면 Table = relation = class와 매핑됩니다.</p>
+
+<hr />
 
 <h3>Django의 특징</h3>
 <p><code class="language-plaintext highlighter-rouge">Django</code>는 MVC Model을 기반으로 한 MVT model을 이용해요!</p>
@@ -482,6 +601,41 @@ Python 으로 만들어진 오픈소스
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/django/Django-simple-web-application2/" rel="permalink">[Django] Poll 프로젝트
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Polls 프로젝트
+Templates 생성
+저번 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/django/Django-simple-web-application/" rel="permalink">[Django] 설치 및 기초운용
 </a>
       
@@ -492,7 +646,7 @@ Python 으로 만들어진 오픈소스
 
 
 
-  3 minute read
+  2 minute read
 
 </p>
     
@@ -533,40 +687,6 @@ mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행�
     
     <p class="archive__item-excerpt" itemprop="description">List
 오늘은 파이썬의 List 에 대하여 알아보도록 하겠습니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/Formatting.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/python/Formatting/" rel="permalink">[Python] Formatting
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  less than 1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">In Not In 연산자
-오늘은 파이썬의 문자열 의 Formatting 에 대하여 알아보도록 하겠습니다.
 </p>
   </article>
 </div>

@@ -1,0 +1,130 @@
+I"T<h2>Polls 프로젝트</h2>
+<h3>Templates 생성</h3>
+<p>저번 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.</p>
+
+<p>이번 시간에는 데이터베이스에 있는 데이터를 활용해보도록 하겠습니다.</p>
+
+<p>투표 프로젝트를 만들면서 자세하게 알아보겠습니다.</p>
+
+<p>일단 터미널에서 polls폴더 안에 template 폴더를 생성합니다.</p>
+
+<blockquote>
+  <p><code>$ cd polls </code></p>
+
+  <p><code>$ mkdir template </code></p>
+</blockquote>
+
+<p>Pycharm을 다시한번 열어보겠습니다.</p>
+
+<p>만들어진 template 폴더안에 index.html 파일을 생성합니다.</p>
+
+<p>생성하는 이유는 차근차근 설명하도록 하겠습니다.</p>
+
+<p>어제 만든 models.py 안에 저희가 Class Question 과 Choice 를 만들었죠?</p>
+
+<p>오늘은 어제 만든 Class를 사용하여 만들어보도록 하겠습니다.</p>
+
+<p>polls폴더안에 views.py파일을 실행시켜 하기 코드를 추가합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span> <span class="c1"># 서버가 보내준 request 반드시 인자로 넘겨줘야함 !!
+</span>    <span class="c1">#로직처리 코드가 나와요!!
+</span>    <span class="n">tmp</span> <span class="o">=</span> <span class="n">Question</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nb">all</span><span class="p">().</span><span class="n">order_by</span><span class="p">(</span><span class="s">'-pub_date'</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+    <span class="c1"># 객체(objects)의 모든것(all())을 불러옴 정렬 order_by() - 오름차순 [:] slicing
+</span>    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">"latest_question_list"</span> <span class="p">:</span> <span class="n">tmp</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'index.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>     <span class="c1">#render는 그리는 작업 / HTML을 그림
+</span>
+</code></pre></div></div>
+
+<p>코드설명</p>
+
+<hr />
+
+<p>서버와 클라이언트 사이에는 request와 response로 데이터를 주고 받습니다.</p>
+
+<p>index(request) : 서버에서 받은 request를 index 함수에 인자로 넘겨줍니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">tmp</code>라는 변수를 설정하여</p>
+
+<p><code class="language-plaintext highlighter-rouge">Question</code> : Question Class</p>
+
+<p><code class="language-plaintext highlighter-rouge">objects</code> : 클래스 안의 객체</p>
+
+<p><code class="language-plaintext highlighter-rouge">all()</code> : 전부</p>
+
+<p><code class="language-plaintext highlighter-rouge">order_by('-pub_date')</code> : pub-date 기준으로 오름차순으로</p>
+
+<p><code class="language-plaintext highlighter-rouge">[:3]</code> : Slicing 3개까지 변수로 할당합니다.</p>
+
+<p>dictionary 형태를 통하여 변수 context를 선언합니다.</p>
+
+<p>latest_question_list는 Key값  Question 의 모든객체는 Value 값이 됩니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">render</code>라는 것은 HTML을 변경하는 거라고 보시면 되겠습니다.</p>
+
+<hr />
+
+<p>다음은 urls.py 파일을 생성해보겠습니다.</p>
+
+<p>처음부터 새로 만들어도 가능하지만 mysite에서 만들어진 urls.py를 polls하위에 복사하여 사용하도록하겠습니다.</p>
+
+<p>모든내용을 지우고</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">app_name</span> <span class="o">=</span> <span class="s">"polls"</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># http://localhost:8000/polls/
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'index'</span><span class="p">),</span>
+
+<span class="p">]</span>
+
+</code></pre></div></div>
+
+<p>코드설명</p>
+
+<hr />
+
+<p>from . import views 경로안에 view.py 함수를 사용합니다.</p>
+
+<p>path(‘’, views.index, name=’index’),
+localhost:8000/polls/ 경로뒤에 ‘’ 아무것도 오지않으면 view.index 함수호출해요
+name 은 경로에 대한 이름 이라고 보시면 되며 이것은 다음에 설명하도록 하겠습니다.</p>
+
+<hr />
+
+<p>다시 처음으로 돌아가서 index.html의 코드를 수정하겠습니다.</p>
+
+<p><img src="/assets/image/Djangoindeximage.png" alt="Djangoindeximage" /></p>
+
+<p>코드설명</p>
+
+<hr />
+
+<p>template code!! python도아니고 HTML 도아닌 template 안에서만 사용가능 
+중괄호 표현은 template code이며 HTML, Python 언어가 아니므로 주의하셔서 사용해야합니다.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">{ % % }</code> : 로직코드이며 조건 및 반복문 등 로직을 사용해야할 경우 사용합니다.</p>
+
+  <p><code class="language-plaintext highlighter-rouge">{ { } }</code> : 값을 입력할 경우 사용합니다.</p>
+
+  <p><code class="language-plaintext highlighter-rouge">{ { if latest_question_list} }</code></p>
+
+  <p>views.index에서 키값으로 받은 latest_question_list 존재여부를 판단합니다.</p>
+
+  <p><code class="language-plaintext highlighter-rouge">{ { for question in latest_question_list} }</code></p>
+
+  <p>question 변수에 lastest_question_list객체를 삽입합니다.</p>
+
+  <p><code class="language-plaintext highlighter-rouge">&lt;li&gt;&lt;a href="/polls/{ { question.id } }"&gt;{ { question.question_text } }&lt;/a&gt;&lt;li&gt;</code></p>
+
+  <p>lastest_question_list 에서 전달받은 객체에서 .question_text 객체를 뽑아냅니다.</p>
+
+  <p>이렇게하면 초기페이지를 완성할 수 있습니다.</p>
+</blockquote>
+
+:ET

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-31T01:35:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">Django Page</title><link href="http://localhost:4000/django/DjangoPage/" rel="alternate" type="text/html" title="Django Page" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/DjangoPage</id><content type="html" xml:base="http://localhost:4000/django/DjangoPage/">&lt;figure&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-31T22:46:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">Django Page</title><link href="http://localhost:4000/django/DjangoPage/" rel="alternate" type="text/html" title="Django Page" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/DjangoPage</id><content type="html" xml:base="http://localhost:4000/django/DjangoPage/">&lt;figure&gt;
 	&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;python&quot; style=&quot;width:500px&quot; /&gt;
 &lt;/figure&gt;
 
@@ -33,6 +33,125 @@ Python 으로 만들어진 오픈소스
 
 &lt;h3&gt;라이브러리(library) VS 프레임워크&lt;/h3&gt;
 &lt;p&gt;두 가지 모두 이미 만들어진 것을 사용하는 것은 동일합니다. 차이점은 규칙에 있습니다. 라이브러리는 가져다 쓰는 개념이고 프레임워크는 내 것을 가져다가 프레임 워크 규칙에 맞추는 개념입니다.&lt;/p&gt;
+
+&lt;h3&gt; 데이터 베이스 &lt;/h3&gt;
+&lt;p&gt;Database : 데이터의 집합체&lt;/p&gt;
+
+&lt;p&gt;DBMS (Database Management System)&lt;/p&gt;
+
+&lt;p&gt;데이터베이스를 구축하고 원하는 정보를 추출하고 새로운 데이터를 입력하고 기존데이터를 삭제하고 기존데이터를 수정하는 작업을 진행.&lt;/p&gt;
+
+&lt;p&gt;Django에서는 sqlite3라는 DBMS를 default 로 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;이런 데이터베이스는 언제부터 사용됐을까요?
+초창기에는 데이터를 이렇게 관리하면 좋지않을까라고 생각했습니다.
+그래서 나온 것이 조직도 형상 트리 구조로 정의된 계층형 데이터 베이스입니다.&lt;/p&gt;
+
+&lt;p&gt;하지만 IBM에서 Relation 이라는 논문을 발표하였고 DB2를 출시하였습니다.&lt;/p&gt;
+
+&lt;p&gt;관계형 데이터베이스는 행과 열로 구성된 테이블 간의 관계를 나타내는 것입니다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;관계형 데이터베이스&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;순번&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;이름&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;학과&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;홍길동&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;심리학과&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;김길동&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;컴퓨터학과&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;신사임당&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;경제학과&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;…&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;…&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;…&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;데이터를 관리하기 편한 장점을 가지고 있어 현재에는 거의 모든 DBMS가 Relational Database(관계형 데이터베이스)으로 제작됩니다.&lt;/p&gt;
+
+&lt;p&gt;테이블 자료를 끌어가야하는데 프로그램 방식은 크게 두가지 방식이 있습니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;ODBC&lt;/li&gt;
+  &lt;li&gt;ORM (Object Relation Mapping) # Django&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;즉 쉽게 설명하자면 Table = relation = class와 매핑됩니다.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h3&gt;Django의 특징&lt;/h3&gt;
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django&lt;/code&gt;는 MVC Model을 기반으로 한 MVT model을 이용해요!&lt;/p&gt;
@@ -70,7 +189,7 @@ Python 으로 만들어진 오픈소스
   &lt;/ol&gt;
 &lt;/blockquote&gt;
 
-&lt;h4&gt;장고설치&lt;/h4&gt;
+&lt;h4&gt;Django 설치&lt;/h4&gt;
 &lt;p&gt;&lt;u&gt;가상환경이 아닌 로컬&lt;/u&gt;에서 설치하실 분들은 이쪽부터 진행 하시면 됩니다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -204,124 +323,6 @@ Python 으로 만들어진 오픈소스
 
 &lt;hr /&gt;
 
-&lt;h4&gt; 데이터 베이스 설명 &lt;/h4&gt;
-&lt;p&gt;Database : 데이터의 집합체&lt;/p&gt;
-
-&lt;p&gt;DBMS (Database Management System)&lt;/p&gt;
-
-&lt;p&gt;데이터베이스를 구축하고 원하는 정보를 추출하고 새로운 데이터를 입력하고 기존데이터를 삭제하고 기존데이터를 수정하는 작업을 진행.&lt;/p&gt;
-
-&lt;p&gt;Django에서는 sqlite3라는 DBMS를 default 로 사용합니다.&lt;/p&gt;
-
-&lt;p&gt;이런 데이터베이스는 언제부터 사용됐을까요?
-초창기에는 데이터를 이렇게 관리하면 좋지않을까 라고 생각했습니다.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;계층형 데이터베이스&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt;순번&lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt;이름&lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt;학과&lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;홍길동&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;심리학과&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;김길동&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;컴퓨터학과&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;신사임당&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;경제학과&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;…&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;…&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;…&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;IBM에서 Relation 이라는 논문을 발표하였고 DB2를 출시하였습니다.&lt;/p&gt;
-
-&lt;p&gt;현재에는 거의 모든 DBMS가 Relational Database(관계형 데이터베이스)으로 제작됩니다.&lt;/p&gt;
-
-&lt;p&gt;결국 객체관계형 데이터베이스가 탄생하게 되었습니다.&lt;/p&gt;
-
-&lt;p&gt;테이블 자료를 끌어가야하는데 프로그램 방식은 크게 두가지 방식이 있습니다.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;ODBC&lt;/li&gt;
-  &lt;li&gt;ORM (Object Relation Mapping) # Django&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;즉 쉽게 설명하자면 Table = relation = class와 매핑됩니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
 &lt;h4&gt; Model 생성 &lt;/h4&gt;
 &lt;p&gt;Model 작업은 우리가 사용하는 Database에 Table을 생성하는 작업이에요!
 (Table == Relation)&lt;/p&gt;
@@ -351,9 +352,6 @@ Python 으로 만들어진 오픈소스
 
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;choice_text&lt;/span&gt;
-
-
-
 
     &lt;span class=&quot;c1&quot;&gt;# def __repr__(self):     # class 의 객체를 문자열로 표현할 경우에 사용
 &lt;/span&gt;
@@ -391,7 +389,136 @@ Python 으로 만들어진 오픈소스
 &lt;/blockquote&gt;
 
 &lt;p&gt;완료하면 하기 그림처럼 초기 설정 화면은 얻을수 있습니다. 
-&lt;img src=&quot;/assets/image/Django project1.png&quot; alt=&quot;Django project1&quot; style=&quot;width:500px&quot; /&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Install" /><category term="Webapplication" /><summary type="html">Django설치 및 기초운용 Django 설치 mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.</summary></entry><entry><title type="html">[Python] Formatting</title><link href="http://localhost:4000/python/Formatting/" rel="alternate" type="text/html" title="[Python] Formatting" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/Formatting</id><content type="html" xml:base="http://localhost:4000/python/Formatting/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
+&lt;img src=&quot;/assets/image/Django project1.png&quot; alt=&quot;Django project1&quot; style=&quot;width:500px&quot; /&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Install" /><category term="Webapplication" /><summary type="html">Django설치 및 기초운용 Django 설치 mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.</summary></entry><entry><title type="html">[Django] Poll 프로젝트</title><link href="http://localhost:4000/django/Django-simple-web-application2/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application2</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application2/">&lt;h2&gt;Polls 프로젝트&lt;/h2&gt;
+&lt;h3&gt;Templates 생성&lt;/h3&gt;
+&lt;p&gt;저번 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.&lt;/p&gt;
+
+&lt;p&gt;이번 시간에는 데이터베이스에 있는 데이터를 활용해보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;투표 프로젝트를 만들면서 자세하게 알아보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;일단 터미널에서 polls폴더 안에 template 폴더를 생성합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code&gt;$ cd polls &lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code&gt;$ mkdir template &lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Pycharm을 다시한번 열어보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;만들어진 template 폴더안에 index.html 파일을 생성합니다.&lt;/p&gt;
+
+&lt;p&gt;생성하는 이유는 차근차근 설명하도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;어제 만든 models.py 안에 저희가 Class Question 과 Choice 를 만들었죠?&lt;/p&gt;
+
+&lt;p&gt;오늘은 어제 만든 Class를 사용하여 만들어보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;polls폴더안에 views.py파일을 실행시켜 하기 코드를 추가합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 서버가 보내준 request 반드시 인자로 넘겨줘야함 !!
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;#로직처리 코드가 나와요!!
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;order_by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-pub_date'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 객체(objects)의 모든것(all())을 불러옴 정렬 order_by() - 오름차순 [:] slicing
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;latest_question_list&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'index.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;#render는 그리는 작업 / HTML을 그림
+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;서버와 클라이언트 사이에는 request와 response로 데이터를 주고 받습니다.&lt;/p&gt;
+
+&lt;p&gt;index(request) : 서버에서 받은 request를 index 함수에 인자로 넘겨줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tmp&lt;/code&gt;라는 변수를 설정하여&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Question&lt;/code&gt; : Question Class&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;objects&lt;/code&gt; : 클래스 안의 객체&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;all()&lt;/code&gt; : 전부&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;order_by('-pub_date')&lt;/code&gt; : pub-date 기준으로 오름차순으로&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[:3]&lt;/code&gt; : Slicing 3개까지 변수로 할당합니다.&lt;/p&gt;
+
+&lt;p&gt;dictionary 형태를 통하여 변수 context를 선언합니다.&lt;/p&gt;
+
+&lt;p&gt;latest_question_list는 Key값  Question 의 모든객체는 Value 값이 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;render&lt;/code&gt;라는 것은 HTML을 변경하는 거라고 보시면 되겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;다음은 urls.py 파일을 생성해보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;처음부터 새로 만들어도 가능하지만 mysite에서 만들어진 urls.py를 polls하위에 복사하여 사용하도록하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;모든내용을 지우고&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.urls&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;app_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;polls&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;urlpatterns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# http://localhost:8000/polls/
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'index'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;from . import views 경로안에 view.py 함수를 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;path(‘’, views.index, name=’index’),
+localhost:8000/polls/ 경로뒤에 ‘’ 아무것도 오지않으면 view.index 함수호출해요
+name 은 경로에 대한 이름 이라고 보시면 되며 이것은 다음에 설명하도록 하겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;다시 처음으로 돌아가서 index.html의 코드를 수정하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/Djangoindeximage.png&quot; alt=&quot;Djangoindeximage&quot; /&gt;&lt;/p&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;template code!! python도아니고 HTML 도아닌 template 안에서만 사용가능 
+중괄호 표현은 template code이며 HTML, Python 언어가 아니므로 주의하셔서 사용해야합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ % % }&lt;/code&gt; : 로직코드이며 조건 및 반복문 등 로직을 사용해야할 경우 사용합니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { } }&lt;/code&gt; : 값을 입력할 경우 사용합니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { if latest_question_list} }&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;views.index에서 키값으로 받은 latest_question_list 존재여부를 판단합니다.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { for question in latest_question_list} }&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;question 변수에 lastest_question_list객체를 삽입합니다.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a href=&quot;/polls/{ { question.id } }&quot;&amp;gt;{ { question.question_text } }&amp;lt;/a&amp;gt;&amp;lt;li&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;lastest_question_list 에서 전달받은 객체에서 .question_text 객체를 뽑아냅니다. 
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+이렇게하면 초기페이지를 완성할 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 Templates 생성 저번 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.</summary></entry><entry><title type="html">[Python] Formatting</title><link href="http://localhost:4000/python/Formatting/" rel="alternate" type="text/html" title="[Python] Formatting" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/Formatting</id><content type="html" xml:base="http://localhost:4000/python/Formatting/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Formatting&lt;/code&gt; 에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
 
 &lt;p&gt;Formatting은 변수의 값을 원하는 곳에 입력하거나 출력이 가능합니다.&lt;/p&gt;
@@ -477,51 +604,7 @@ Python 으로 만들어진 오픈소스
 &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;List&lt;/code&gt; 에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Sequence Type" /><category term="Data Type" /><category term="List" /><summary type="html">List 오늘은 파이썬의 List 에 대하여 알아보도록 하겠습니다.</summary></entry><entry><title type="html">테크블로그에 오신것을 환영합니다.</title><link href="http://localhost:4000/welcome/welcome/" rel="alternate" type="text/html" title="테크블로그에 오신것을 환영합니다." /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/welcome/welcome</id><content type="html" xml:base="http://localhost:4000/welcome/welcome/">&lt;figure&gt;
-	&lt;img src=&quot;/assets/image/그림1.png&quot; alt=&quot;그림1&quot; style=&quot;width:200px&quot; /&gt;
-&lt;/figure&gt;
-
-&lt;h2&gt;한솔&lt;/h2&gt;
-
-&lt;h2&gt;1990.04.09&lt;/h2&gt;
-
-&lt;h2&gt;경력 사항&lt;/h2&gt;
-
-&lt;p&gt; 육군 중위 (2013.03 - 2015.06)&lt;/p&gt;
-
-&lt;p&gt; 아트라스콥코 (2016.11 - 2020.06)&lt;/p&gt;
-
-&lt;p&gt; KSA (OREAN STANDARDS ASSOCIATION) 전문요원&lt;/p&gt;
-
-&lt;p&gt; 기업출강 및 제휴강의 담당 (삼성전자, SK 하이닉스, 현대자동차, LG전자 등)&lt;/p&gt;
-
-&lt;p&gt; 외국계 기업 B2B 마케팅 담당&lt;/p&gt;
-
-&lt;p&gt; 공장 개선 컨설팅 및 스마트팩토리 컨설팅 담당&lt;/p&gt;
-
-&lt;p&gt; 각종 고객 세미나, 전시회 및 테크 쇼 기획 및 실행 담당&lt;/p&gt;
-
-&lt;p&gt; 마케팅 캠페인 기획 및 관리 담당&lt;/p&gt;
-
-&lt;p&gt; 비디오, 리플렛, 카탈로그 등 마케팅 자료 기획 및 제작 담당&lt;/p&gt;
-
-&lt;p&gt; 기업 및 산업용 공구 사업부 SNS채널 및 뉴스레터 플랫폼 기획 및 관리 담당&lt;/p&gt;
-
-&lt;p&gt; KC인증, Cleanroom certification, 안전인증 담당&lt;/p&gt;
-
-&lt;p&gt; 기술 특허 담당&lt;/p&gt;
-
-&lt;h2&gt;보유기술&lt;/h2&gt;
-
-&lt;p&gt; 2D, 3D 설계 / 3D Printing&lt;/p&gt;
-
-&lt;p&gt; Co-bot operation 및 로봇 제어&lt;/p&gt;
-
-&lt;p&gt; PLC&lt;/p&gt;
-
-&lt;p&gt; Python&lt;/p&gt;
-
-&lt;p&gt; HTML, CSS, JavaScript&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Welcome" /><summary type="html"></summary></entry><entry><title type="html">[Python] In Not in (str Data Type)</title><link href="http://localhost:4000/python/In-Not/" rel="alternate" type="text/html" title="[Python] In Not in (str Data Type)" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/In-Not</id><content type="html" xml:base="http://localhost:4000/python/In-Not/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
+&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;List&lt;/code&gt; 에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Sequence Type" /><category term="Data Type" /><category term="List" /><summary type="html">List 오늘은 파이썬의 List 에 대하여 알아보도록 하겠습니다.</summary></entry><entry><title type="html">[Python] In Not in (str Data Type)</title><link href="http://localhost:4000/python/In-Not/" rel="alternate" type="text/html" title="[Python] In Not in (str Data Type)" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/In-Not</id><content type="html" xml:base="http://localhost:4000/python/In-Not/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;in&lt;/code&gt; 과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;not in&lt;/code&gt; 연산자에 대하여 키워드를 통하여 알아보도록 하겠습니다.&lt;/p&gt;
 
 &lt;p&gt;In, Not in 연산자 #문자나 문자열이 포함되어 있는지 확인하려면 ??&lt;/p&gt;
