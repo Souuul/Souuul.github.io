@@ -72,7 +72,7 @@ var store = [{
         "teaser": "https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg"
       },{
         "title": "Django Page",
-        "excerpt":" \t   파이썬 페이지   Djanggo 기초이론   Djanggo 설치 및 운용  ","categories": ["Django"],
+        "excerpt":" \t   파이썬 페이지   Djanggo 기초이론   Djanggo 설치 및 운용   Djanggo Poll project1   ","categories": ["Django"],
         "tags": [],
         "url": "http://localhost:4000/django/DjangoPage/",
         "teaser": "https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg"
