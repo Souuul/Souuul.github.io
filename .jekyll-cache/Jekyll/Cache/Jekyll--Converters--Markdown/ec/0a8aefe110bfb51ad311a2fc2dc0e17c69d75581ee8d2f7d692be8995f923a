@@ -1,0 +1,137 @@
+I"<<h2>Polls 프로젝트 2</h2>
+<h3>투표시스템 질문지 항목 추가</h3>
+<p>저번시간에는 Question 항목까지 만드는 것을 해보았습니다.</p>
+
+<p>이번 시간에는 선택항목까지 제작해보도록 하겠습니다.</p>
+
+<p>Pycharm을 다시한번 열어보겠습니다.</p>
+
+<p>만들어진 template 폴더안에 detail.html 파일을 생성합니다.</p>
+
+<p>생성하는 이유는 차근차근 설명하도록 하겠습니다.</p>
+
+<p>첫 시간에 models.py 안에 저희가 Class Question 과 Choice 를 만들었죠?</p>
+
+<p>오늘도 만든 Class를 사용하여 만들어보도록 하겠습니다.</p>
+
+<p>polls폴더안에 views.py파일을 실행시켜 하기 코드를 추가합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
+    <span class="c1"># 로직처리를 해요!
+</span>    <span class="c1"># 아까는 모든 Question 객체를 다 구해서 리스트로 만들었는데
+</span>    <span class="c1"># 이번에는 특정 Question 객체 1개만 구해야 해요
+</span>    <span class="n">tmp</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">question_id</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">"question"</span> <span class="p">:</span> <span class="n">tmp</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'detail.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h4>코드설명</h4>
+
+<hr />
+
+<p>index method를 제작했을 때와는 다르게 처음보는 코드가 있습니다.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">get_object_or_404(Question, pk=question_id)</code></p>
+
+  <p>받는 객체가 있다면 객체를 받고 없다면 404 page를 띄운다는 간단한 내용입니다.</p>
+</blockquote>
+
+<blockquote>
+  <p>앞서 먼저 제작하였던 def index도 위의 방식으로 작성 가능합니다.</p>
+</blockquote>
+
+<hr />
+
+<p>다음은 urls.py 파일을 생성해보겠습니다.</p>
+
+<p>http://localhost:8000/polls/ 주소로 접속하면 저번시간에 제작한 index.html 로 들어가게 되어있습니다.</p>
+
+<p>저희는 질문지를 눌렀을때 선택항목이 나오는 페이지가 나오게 경로를 잡아줘야합니다.</p>
+
+<p>다양한 방법이 있지만 id를 받아서 url 을 변경해보도록 하겠습니다.</p>
+
+<p>하기코드를 입력하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># http://localhost:8000/polls/&lt;숫자&gt;/
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">'&lt;int:question_id&gt;/'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">detail</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'detail'</span><span class="p">)</span>
+
+<span class="p">]</span>
+
+</code></pre></div></div>
+
+<h4>코드설명</h4>
+
+<hr />
+
+<p>from . import views 경로안에 view.py 함수를 사용합니다.</p>
+
+<p>path(‘’, views.index, name=’index’),
+localhost:8000/polls/ 경로뒤에 ‘정수 형태의 id’ 이면 view.index 함수호출해요
+name 은 경로에 대한 이름 이라고 보시면 되며 이것은 다음에 설명하도록 하겠습니다.</p>
+
+<hr />
+
+<p>다시 처음으로 돌아가서 detail.html의 코드를 수정하겠습니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;&lt;/h1&gt;</span>
+    <span class="c">&lt;!--    name으로 묶으면 같은 그룹으로 묶임 --&gt;</span>
+    <span class="c">&lt;!--  id 와 이용해서 radio button과 rabel을 묶을수 있어요!!  --&gt;</span>
+    <span class="c">&lt;!--  일반적으로 get보다는 post 로 선정 method --&gt;</span>
+
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">""</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+    { % csrf_token % }
+    <span class="c">&lt;!--method 같은경우 Class선언이 대문자여도 소문자로해도 이해할 수 있음--&gt;</span>
+
+    { {question} }
+    { {question.choice_set.all} }
+    { % for choice in question.choice_set.all % }
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"choice"</span>
+               <span class="na">name=</span><span class="s">"choice"</span>
+               <span class="na">value=</span><span class="s">"choice.id"</span>
+        <span class="nt">&gt;</span>
+        <span class="nt">&lt;rabel</span> <span class="na">for=</span><span class="s">"choice"</span><span class="nt">&gt;</span>
+            
+        <span class="nt">&lt;/rabel&gt;</span>
+        <span class="nt">&lt;br&gt;</span>
+    { % endfor % }
+
+<span class="c">&lt;!--        &lt;input type="radio" id="kaka2" name="choice"&gt;--&gt;</span>
+<span class="c">&lt;!--        &lt;rabel for="kaka2"&gt;홍길동&lt;/rabel&gt;--&gt;</span>
+<span class="c">&lt;!--        &lt;br&gt;--&gt;</span>
+
+<span class="c">&lt;!--        &lt;input type="radio" id="kaka3" name="choice"&gt;--&gt;</span>
+<span class="c">&lt;!--        &lt;rabel for="kaka3"&gt;신사임당&lt;/rabel&gt;--&gt;</span>
+<span class="c">&lt;!--        &lt;br&gt;&lt;br&gt;--&gt;</span>
+
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"투표"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+
+
+    <span class="c">&lt;!--    &lt;input type="radio" name="choice"&gt;홍길동&lt;br&gt;--&gt;</span>
+<span class="c">&lt;!--    &lt;input type="radio" name="choice"&gt;신사임당--&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+]
+
+</code></pre></div></div>
+
+<h4>코드설명</h4>
+
+<hr />
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">{ { question.choice_set.all }}</code></p>
+
+  <p>choice에 해당되는 객체를 모두 받습니다.
+<code>
+        <input type="radio" id="choice" name="choice" value="choice.id" />
+        <rabel for="choice{ {forloop.counter} }"></rabel></code></p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;/rabel&gt; &lt;/code&gt; &gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; &gt;이렇게하면 초기페이지를 완성할 수 있습니다.
+</code></pre></div></div>
+:ET

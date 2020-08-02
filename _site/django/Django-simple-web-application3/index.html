@@ -1,0 +1,800 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Django] Poll 프로젝트 2 - Sol Han tech blog!</title>
+<meta name="description" content="Polls 프로젝트 2 투표시스템 질문지 항목 추가 저번시간에는 Question 항목까지 만드는 것을 해보았습니다.">
+
+
+  <meta name="author" content="Sol Han">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sol Han tech blog!">
+<meta property="og:title" content="[Django] Poll 프로젝트 2">
+<meta property="og:url" content="http://localhost:4000/django/Django-simple-web-application3/">
+
+
+  <meta property="og:description" content="Polls 프로젝트 2 투표시스템 질문지 항목 추가 저번시간에는 Question 항목까지 만드는 것을 해보았습니다.">
+
+
+
+  <meta property="og:image" content="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-08-02T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/django/Django-simple-web-application3/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sol Han",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sol Han tech blog! Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/image/logo.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          Sol Han tech blog!
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/python/PythonPage/">Python</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/">HTML & CSS & JavaScript</a>
+            </li><li class="masthead__menu-item">
+              <a href="/django/DjangoPage/">Django</a>
+            </li><li class="masthead__menu-item">
+              <a href="/sitemap/">Sitemap</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/image/%EA%B7%B8%EB%A6%BC1.png" alt="Sol Han" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Sol Han</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I’m an <strong>AI engineer</strong></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/Souuul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/sol-han-134296131" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">Linkedin</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:hans53400@naver.com">
+            <meta itemprop="email" content="hans53400@naver.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Django] Poll 프로젝트 2">
+    <meta itemprop="description" content="Polls 프로젝트 2투표시스템 질문지 항목 추가저번시간에는 Question 항목까지 만드는 것을 해보았습니다.">
+    <meta itemprop="datePublished" content="2020-08-02T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[Django] Poll 프로젝트 2
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2>Polls 프로젝트 2</h2>
+<h3>투표시스템 질문지 항목 추가</h3>
+<p>저번시간에는 Question 항목까지 만드는 것을 해보았습니다.</p>
+
+<p>이번 시간에는 선택항목까지 제작해보도록 하겠습니다.</p>
+
+<p>Pycharm을 다시한번 열어보겠습니다.</p>
+
+<p>만들어진 template 폴더안에 detail.html 파일을 생성합니다.</p>
+
+<p>생성하는 이유는 차근차근 설명하도록 하겠습니다.</p>
+
+<p>첫 시간에 models.py 안에 저희가 Class Question 과 Choice 를 만들었죠?</p>
+
+<p>오늘도 만든 Class를 사용하여 만들어보도록 하겠습니다.</p>
+
+<p>polls폴더안에 views.py파일을 실행시켜 하기 코드를 추가합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
+    <span class="c1"># 로직처리를 해요!
+</span>    <span class="c1"># 아까는 모든 Question 객체를 다 구해서 리스트로 만들었는데
+</span>    <span class="c1"># 이번에는 특정 Question 객체 1개만 구해야 해요
+</span>    <span class="n">tmp</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">question_id</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">"question"</span> <span class="p">:</span> <span class="n">tmp</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'detail.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h4>코드설명</h4>
+
+<hr />
+
+<p>index method를 제작했을 때와는 다르게 처음보는 코드가 있습니다.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">get_object_or_404(Question, pk=question_id)</code></p>
+
+  <p>받는 객체가 있다면 객체를 받고 없다면 404 page를 띄운다는 간단한 내용입니다.</p>
+</blockquote>
+
+<blockquote>
+  <p>앞서 먼저 제작하였던 def index도 위의 방식으로 작성 가능합니다.</p>
+</blockquote>
+
+<hr />
+
+<p>다음은 urls.py 파일을 생성해보겠습니다.</p>
+
+<p>http://localhost:8000/polls/ 주소로 접속하면 저번시간에 제작한 index.html 로 들어가게 되어있습니다.</p>
+
+<p>저희는 질문지를 눌렀을때 선택항목이 나오는 페이지가 나오게 경로를 잡아줘야합니다.</p>
+
+<p>다양한 방법이 있지만 id를 받아서 url 을 변경해보도록 하겠습니다.</p>
+
+<p>하기코드를 입력하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># http://localhost:8000/polls/&lt;숫자&gt;/
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">'&lt;int:question_id&gt;/'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">detail</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'detail'</span><span class="p">)</span>
+
+<span class="p">]</span>
+
+</code></pre></div></div>
+
+<h4>코드설명</h4>
+
+<hr />
+
+<p>from . import views 경로안에 view.py 함수를 사용합니다.</p>
+
+<p>path(‘’, views.index, name=’index’),
+localhost:8000/polls/ 경로뒤에 ‘정수 형태의 id’ 이면 view.index 함수호출해요
+name 은 경로에 대한 이름 이라고 보시면 되며 이것은 다음에 설명하도록 하겠습니다.</p>
+
+<hr />
+
+<p>다시 처음으로 돌아가서 detail.html의 코드를 수정하겠습니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>{ {question.question_text} }<span class="nt">&lt;/h1&gt;</span>
+
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">""</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+    { % csrf_token % }
+
+
+    { {question} }
+    { {question.choice_set.all} }
+    { % for choice in question.choice_set.all % }
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"choice"</span>
+               <span class="na">name=</span><span class="s">"choice"</span>
+               <span class="na">value=</span><span class="s">"choice.id"</span>
+        <span class="nt">&gt;</span>
+        <span class="nt">&lt;rabel</span> <span class="na">for=</span><span class="s">"choice"</span><span class="nt">&gt;</span>
+            { {choice.choice_text} }
+        <span class="nt">&lt;/rabel&gt;</span>
+        <span class="nt">&lt;br&gt;</span>
+    { % endfor % }
+
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"투표"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+
+]
+
+</code></pre></div></div>
+
+<h4>코드설명</h4>
+
+<hr />
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">{ { question.choice_set.all }}</code></p>
+
+  <p>choice에 해당되는 객체를 모두 받습니다.</p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"choice"</span>
+               <span class="na">name=</span><span class="s">"choice"</span>
+               <span class="na">value=</span><span class="s">"choice.id"</span>
+        <span class="nt">&gt;</span>
+</code></pre></div></div>
+<blockquote>
+  <p>라디오 버튼을 제작합니다.</p>
+
+  <p>id 는 choice1, …</p>
+
+  <p>name = choice : 항목을 서로 묶기 위해서 명시합니다.</p>
+</blockquote>
+
+<blockquote>
+  <p>같은 이름은 같은 항목으로 관리할 수 있습니다.</p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nt">&lt;rabel</span> <span class="na">for=</span><span class="s">"choice{ {forloop.counter} }"</span><span class="nt">&gt;</span>
+            { {choice.choice_text} }
+        <span class="nt">&lt;/rabel&gt;</span>
+</code></pre></div></div>
+<blockquote>
+  <p>상기 항목에서 명시한 id와 rabel 의 text와 매칭되어 관리 됩니다.</p>
+
+</blockquote>
+
+<p><br /><br /><br />
+오늘은 poll 프로젝트의 질문지 선택까지 제작해보았습니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#polls" class="page__taxonomy-item" rel="tag">Polls</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#project" class="page__taxonomy-item" rel="tag">Project</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#webapplication" class="page__taxonomy-item" rel="tag">Webapplication</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#django" class="page__taxonomy-item" rel="tag">Django</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-08-02T00:00:00+09:00">August 2, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BDjango%5D+Poll+%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+2%20http%3A%2F%2Flocalhost%3A4000%2Fdjango%2FDjango-simple-web-application3%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdjango%2FDjango-simple-web-application3%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fdjango%2FDjango-simple-web-application3%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/django/DjangoPage/" class="pagination--pager" title="Django Page
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/DjangoPage/" rel="permalink">Django Page
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+	
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-simple-web-application2/" rel="permalink">[Django] Poll 프로젝트 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Polls 프로젝트 1
+Templates 생성
+저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-simple-web-application/" rel="permalink">[Django] 설치 및 기초운용
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Django설치 및 기초운용
+Django 설치
+mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-Basic/" rel="permalink">[Django] 이론
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Django
+오늘은 Django에 대하여 알아보아요!
+Python 으로 만들어진 오픈소스
+웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Sol Han. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/django/Django-simple-web-application3/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/django/Django-simple-web-application3"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-souuul-github-io-souuul.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

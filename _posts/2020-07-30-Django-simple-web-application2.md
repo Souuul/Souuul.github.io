@@ -1,5 +1,5 @@
 ---
-title:  "[Django] Poll 프로젝트"
+title:  "[Django] Poll 프로젝트 1"
 header:
   teaser: "https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg"
 categories: 
@@ -11,9 +11,9 @@ tags:
 
 
 ---
-<h2>Polls 프로젝트</h2>
+<h2>Polls 프로젝트 1</h2>
 <h3>Templates 생성</h3>
-저번 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.
+저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.
 
 이번 시간에는 데이터베이스에 있는 데이터를 활용해보도록 하겠습니다.
 

@@ -1,14 +1,148 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-31T22:57:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">Django Page</title><link href="http://localhost:4000/django/DjangoPage/" rel="alternate" type="text/html" title="Django Page" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/DjangoPage</id><content type="html" xml:base="http://localhost:4000/django/DjangoPage/">&lt;figure&gt;
-	&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;python&quot; style=&quot;width:500px&quot; /&gt;
-&lt;/figure&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-03T01:21:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Django] Poll 프로젝트 2</title><link href="http://localhost:4000/django/Django-simple-web-application3/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 2" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application3</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application3/">&lt;h2&gt;Polls 프로젝트 2&lt;/h2&gt;
+&lt;h3&gt;투표시스템 질문지 항목 추가&lt;/h3&gt;
+&lt;p&gt;저번시간에는 Question 항목까지 만드는 것을 해보았습니다.&lt;/p&gt;
 
-&lt;h2&gt;파이썬 페이지&lt;/h2&gt;
+&lt;p&gt;이번 시간에는 선택항목까지 제작해보도록 하겠습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-Basic&quot;&gt;Djanggo 기초이론&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Pycharm을 다시한번 열어보겠습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application&quot;&gt;Djanggo 설치 및 운용&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;만들어진 template 폴더안에 detail.html 파일을 생성합니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application2&quot;&gt;Djanggo Poll project1&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html"></summary></entry><entry><title type="html">[Django] 이론</title><link href="http://localhost:4000/django/Django-Basic/" rel="alternate" type="text/html" title="[Django] 이론" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-Basic</id><content type="html" xml:base="http://localhost:4000/django/Django-Basic/">&lt;h2&gt;Django&lt;/h2&gt;
+&lt;p&gt;생성하는 이유는 차근차근 설명하도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;첫 시간에 models.py 안에 저희가 Class Question 과 Choice 를 만들었죠?&lt;/p&gt;
+
+&lt;p&gt;오늘도 만든 Class를 사용하여 만들어보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;polls폴더안에 views.py파일을 실행시켜 하기 코드를 추가합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;question_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 로직처리를 해요!
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 아까는 모든 Question 객체를 다 구해서 리스트로 만들었는데
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 이번에는 특정 Question 객체 1개만 구해야 해요
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_object_or_404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;question_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;question&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'detail.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;index method를 제작했을 때와는 다르게 처음보는 코드가 있습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get_object_or_404(Question, pk=question_id)&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;받는 객체가 있다면 객체를 받고 없다면 404 page를 띄운다는 간단한 내용입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;앞서 먼저 제작하였던 def index도 위의 방식으로 작성 가능합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;다음은 urls.py 파일을 생성해보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;http://localhost:8000/polls/ 주소로 접속하면 저번시간에 제작한 index.html 로 들어가게 되어있습니다.&lt;/p&gt;
+
+&lt;p&gt;저희는 질문지를 눌렀을때 선택항목이 나오는 페이지가 나오게 경로를 잡아줘야합니다.&lt;/p&gt;
+
+&lt;p&gt;다양한 방법이 있지만 id를 받아서 url 을 변경해보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;하기코드를 입력하겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c1&quot;&gt;# http://localhost:8000/polls/&amp;lt;숫자&amp;gt;/
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;lt;int:question_id&amp;gt;/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'detail'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;from . import views 경로안에 view.py 함수를 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;path(‘’, views.index, name=’index’),
+localhost:8000/polls/ 경로뒤에 ‘정수 형태의 id’ 이면 view.index 함수호출해요
+name 은 경로에 대한 이름 이라고 보시면 되며 이것은 다음에 설명하도록 하겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;다시 처음으로 돌아가서 detail.html의 코드를 수정하겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;{ {question.question_text} }&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    { % csrf_token % }
+
+
+    { {question} }
+    { {question.choice_set.all} }
+    { % for choice in question.choice_set.all % }
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;radio&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice.id&quot;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;rabel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            { {choice.choice_text} }
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/rabel&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
+    { % endfor % }
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;투표&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+
+]
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { question.choice_set.all }}&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;choice에 해당되는 객체를 모두 받습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;radio&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice.id&quot;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;라디오 버튼을 제작합니다.&lt;/p&gt;
+
+  &lt;p&gt;id 는 choice1, …&lt;/p&gt;
+
+  &lt;p&gt;name = choice : 항목을 서로 묶기 위해서 명시합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;같은 이름은 같은 항목으로 관리할 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;nt&quot;&gt;&amp;lt;rabel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            { {choice.choice_text} }
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/rabel&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;상기 항목에서 명시한 id와 rabel 의 text와 매칭되어 관리 됩니다.&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+오늘은 poll 프로젝트의 질문지 선택까지 제작해보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 2 투표시스템 질문지 항목 추가 저번시간에는 Question 항목까지 만드는 것을 해보았습니다.</summary></entry><entry><title type="html">[Django] 이론</title><link href="http://localhost:4000/django/Django-Basic/" rel="alternate" type="text/html" title="[Django] 이론" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-Basic</id><content type="html" xml:base="http://localhost:4000/django/Django-Basic/">&lt;h2&gt;Django&lt;/h2&gt;
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django&lt;/code&gt;에 대하여 알아보아요!
 Python 으로 만들어진 오픈소스
 웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework&lt;/p&gt;
@@ -391,9 +525,9 @@ Python 으로 만들어진 오픈소스
 &lt;/blockquote&gt;
 
 &lt;p&gt;완료하면 하기 그림처럼 초기 설정 화면은 얻을수 있습니다. 
-&lt;img src=&quot;/assets/image/Django project1.png&quot; alt=&quot;Django project1&quot; style=&quot;width:500px&quot; /&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Install" /><category term="Webapplication" /><summary type="html">Django설치 및 기초운용 Django 설치 mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.</summary></entry><entry><title type="html">[Django] Poll 프로젝트</title><link href="http://localhost:4000/django/Django-simple-web-application2/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application2</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application2/">&lt;h2&gt;Polls 프로젝트&lt;/h2&gt;
+&lt;img src=&quot;/assets/image/Django project1.png&quot; alt=&quot;Django project1&quot; style=&quot;width:500px&quot; /&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Install" /><category term="Webapplication" /><summary type="html">Django설치 및 기초운용 Django 설치 mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.</summary></entry><entry><title type="html">[Django] Poll 프로젝트 1</title><link href="http://localhost:4000/django/Django-simple-web-application2/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 1" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application2</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application2/">&lt;h2&gt;Polls 프로젝트 1&lt;/h2&gt;
 &lt;h3&gt;Templates 생성&lt;/h3&gt;
-&lt;p&gt;저번 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.&lt;/p&gt;
+&lt;p&gt;저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.&lt;/p&gt;
 
 &lt;p&gt;이번 시간에는 데이터베이스에 있는 데이터를 활용해보도록 하겠습니다.&lt;/p&gt;
 
@@ -520,7 +654,19 @@ name 은 경로에 대한 이름 이라고 보시면 되며 이것은 다음에 
   &lt;p&gt;lastest_question_list 에서 전달받은 객체에서 .question_text 객체를 뽑아냅니다. 
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
 이렇게하면 초기페이지를 완성할 수 있습니다.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 Templates 생성 저번 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.</summary></entry><entry><title type="html">[Python] Formatting</title><link href="http://localhost:4000/python/Formatting/" rel="alternate" type="text/html" title="[Python] Formatting" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/Formatting</id><content type="html" xml:base="http://localhost:4000/python/Formatting/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
+&lt;/blockquote&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 1 Templates 생성 저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.</summary></entry><entry><title type="html">Django Page</title><link href="http://localhost:4000/django/DjangoPage/" rel="alternate" type="text/html" title="Django Page" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/django/DjangoPage</id><content type="html" xml:base="http://localhost:4000/django/DjangoPage/">&lt;figure&gt;
+	&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;python&quot; style=&quot;width:500px&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;Django 페이지&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-Basic&quot;&gt;Djanggo 기초이론&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application&quot;&gt;Djanggo 설치 및 운용&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application2&quot;&gt;Djanggo Poll project1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application3&quot;&gt;Djanggo Poll project2&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html"></summary></entry><entry><title type="html">[Python] Formatting</title><link href="http://localhost:4000/python/Formatting/" rel="alternate" type="text/html" title="[Python] Formatting" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/Formatting</id><content type="html" xml:base="http://localhost:4000/python/Formatting/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Formatting&lt;/code&gt; 에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
 
 &lt;p&gt;Formatting은 변수의 값을 원하는 곳에 입력하거나 출력이 가능합니다.&lt;/p&gt;
@@ -678,25 +824,4 @@ name 은 경로에 대한 이름 이라고 보시면 되며 이것은 다음에 
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Formatting/&quot;&gt;Formatting&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/List/&quot;&gt;List&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><summary type="html"></summary></entry><entry><title type="html">[Python] Text operation (str Data Type)</title><link href="http://localhost:4000/python/Text-operation/" rel="alternate" type="text/html" title="[Python] Text operation (str Data Type)" /><published>2020-07-28T00:00:00+09:00</published><updated>2020-07-28T00:00:00+09:00</updated><id>http://localhost:4000/python/Text-operation</id><content type="html" xml:base="http://localhost:4000/python/Text-operation/">&lt;h2&gt;문자열의 연산 (문자열, str)&lt;/h2&gt;
-&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 연산에 대하여 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;일상생활에서 말을 할때 대부분 단일언어로 대화를 하지않습니다. 문자를 조합하거나 합성해서 문장을 만들어 대화를 합니다.&lt;/p&gt;
-
-&lt;p&gt;파이썬의 문자열도 마찬가지로 합치거나 원하는 문자열을 추가를 할 수가 있습니다. 자세한 내용은 하기 예제를 통하여 알아보겠습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'haha'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hoho'&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#hahahoho
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# error 자동으로 숫자를 문자로 변경 X ( Java 에서는 가능 합니다 !)
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#hahahahahaha
-&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;상기의 예제는 문자열을 더하거나 곱하여서 새로운 문자열을 생성하는 것을 보았습니다.&lt;/p&gt;
-
-&lt;p&gt;앞으로 프로젝트를 진행하면서 받는 데이터들이 완벽한 문자열 혹은 문자로 받아진다면 저러한 연산은 필요없겠지만 저희가 앞으로 받은 데이터는 예상할 수 없는 데이터이기 때문에 항상 가공을 해야합니다.&lt;/p&gt;
-
-&lt;p&gt;문자열의 연산은 앞으로의 프로젝트에서 데이터를 처리하기위한 ‘첫걸음’ 정도로 생각하면 되겠습니다.&lt;/p&gt;
-
-&lt;p&gt;오늘은 파이썬의 문자열 연산에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Text sequence" /><category term="Data Type" /><category term="문자열" /><category term="데이터타입" /><category term="str" /><category term="operation" /><summary type="html">문자열의 연산 (문자열, str) 오늘은 파이썬의 문자열 연산에 대하여 알아보겠습니다.</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/List/&quot;&gt;List&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><summary type="html"></summary></entry></feed>

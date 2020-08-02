@@ -11,7 +11,7 @@ tags:
 	<img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="python" style="width:500px" >
 </figure>
 
-<H2>파이썬 페이지</H2>
+<H2>Django 페이지</H2>
 
 <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="https://live.staticflickr.com/3595/3475465970_7044242629_b" style="width:50px">[Djanggo 기초이론](/django/Django-Basic) 
 
@@ -19,3 +19,4 @@ tags:
 
 <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="https://live.staticflickr.com/3595/3475465970_7044242629_b" style="width:50px">[Djanggo Poll project1](/django/Django-simple-web-application2) 
 
+<img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="https://live.staticflickr.com/3595/3475465970_7044242629_b" style="width:50px">[Djanggo Poll project2](/django/Django-simple-web-application3) 
