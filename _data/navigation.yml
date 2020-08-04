@@ -5,7 +5,7 @@ main:
   - title: "Python"
     url: /python/PythonPage/
   - title: "HTML & CSS & JavaScript"
-    url: /year-archive/
+    url: /html/css/javascript/Web-CSS-JAVASCRIPT/
   - title: "Django"
     url: /django/DjangoPage/
   - title: "Sitemap"

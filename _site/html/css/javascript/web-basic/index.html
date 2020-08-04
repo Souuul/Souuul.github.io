@@ -1,0 +1,755 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[HTML, CSS, JS] Web Basic - Sol Han tech blog!</title>
+<meta name="description" content="Web 기초  1. Internet  여러개의 컴퓨터를 network로 묶어서 사용하는 것은 LAN (Local Area Network) 입니다.">
+
+
+  <meta name="author" content="Sol Han">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sol Han tech blog!">
+<meta property="og:title" content="[HTML, CSS, JS] Web Basic">
+<meta property="og:url" content="http://localhost:4000/html/css/javascript/web-basic/">
+
+
+  <meta property="og:description" content="Web 기초  1. Internet  여러개의 컴퓨터를 network로 묶어서 사용하는 것은 LAN (Local Area Network) 입니다.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/image/frontend.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-07-31T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/html/css/javascript/web-basic/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sol Han",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sol Han tech blog! Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/image/logo.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          Sol Han tech blog!
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/welcome/welcome/">Welcome</a>
+            </li><li class="masthead__menu-item">
+              <a href="/python/PythonPage/">Python</a>
+            </li><li class="masthead__menu-item">
+              <a href="/html/css/javascript/Web-CSS-JAVASCRIPT/">HTML & CSS & JavaScript</a>
+            </li><li class="masthead__menu-item">
+              <a href="/django/DjangoPage/">Django</a>
+            </li><li class="masthead__menu-item">
+              <a href="/sitemap/">Sitemap</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/image/%EA%B7%B8%EB%A6%BC1.png" alt="Sol Han" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Sol Han</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I’m an <strong>AI engineer</strong></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/Souuul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/sol-han-134296131" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">Linkedin</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:hans53400@naver.com">
+            <meta itemprop="email" content="hans53400@naver.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[HTML, CSS, JS] Web Basic">
+    <meta itemprop="description" content=" Web 기초 1. Internet 여러개의 컴퓨터를 network로 묶어서 사용하는 것은 LAN (Local Area Network) 입니다.">
+    <meta itemprop="datePublished" content="2020-07-31T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[HTML, CSS, JS] Web Basic
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2> Web 기초 </h2>
+<h3>1. Internet </h3>
+<p>여러개의 컴퓨터를 network로 묶어서 사용하는 것은 LAN (Local Area Network) 입니다.</p>
+
+<p>Internet 이란 쉽게 설명하여 전세계적인 Network를 즉 물리적인 네트워크 망을 지칭합니다.</p>
+
+<h3>2. Service </h3>
+<p>인터넷을 잘 이용하기 위해서는 인터넷 위에 여러가지 프로그램이 동작하여야 합니다.
+이런 프로그램을 Service라고 합니다. 쉬운 예로 하기의 서비스가 있습니다.</p>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">Email (SNTP)</code></p>
+
+  <p><code class="language-plaintext highlighter-rouge">Torrent</code></p>
+
+  <p><code class="language-plaintext highlighter-rouge">Web service</code></p>
+</blockquote>
+
+<p>여기서 웹서비스는 HTML, CSS, JavaScript를 이용해서 웹페이지를 만들고</p>
+
+<p>web서버가 이 web page를 web client에게 전송해서 데이터르 주고 받는 서비스 입니다.</p>
+
+<h3>3. CS 구조 </h3>
+<p>Client - Server 구조를 의미합니다.</p>
+
+<p>Web Client - Web Server 프로세스 단위로 나눔, 프로그램 단위로 나눔</p>
+
+<p>Web Client(Web Browser - Chrome, IE, Edge, Safari, Firefox, Opera)</p>
+
+<p>Web Server : 데이터를 제공하는 역할을 하는 process (프로그램) Apache web server</p>
+
+<p>Web Server에서 제공되는 데이터는 Web page 형태로 제공되는 데이터 Web Application 형태로 제공되는 데이터</p>
+
+<p>HTML, CSS, JavaScript 언어로 이 데이터를 만들어서 제공합니다.</p>
+
+<h3>4. 기본적인 Web Service </h3>
+<blockquote>
+  <ul>
+    <li>
+      <p>정적 웹 서비스 (Static Web Service) : HTML, CSS, JS 클라이언트가 특정 HTML 파일을 요청</p>
+    </li>
+    <li>
+      <p>동적 웹 서비스 (Dynamic Web Service) : HTML, CSS, JS + Python, Java, C++</p>
+    </li>
+  </ul>
+</blockquote>
+
+<h3>5. 개발환경 세팅 </h3>
+<p>Pycharm을 이용해서 작성해 보겠습니다.</p>
+
+<h3>6. 예제 작성 </h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+    <span class="c">&lt;!-- 일반적인 설정이 와요!! --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Title<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+       <span class="c">&lt;!-- BROWSER에 출력하고 싶은 내용이 와요!! --&gt;</span>
+       <span class="nt">&lt;h1&gt;</span> 이것은 소리없는 아우성!! 껄껄 <span class="nt">&lt;/h1&gt;</span>     <span class="c">&lt;!-- heading 글자크기를 크게 // 문장전체 : element, &lt;&gt; : tag--&gt;</span>
+       <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"image/download.jpg"</span><span class="nt">&gt;</span>        <span class="c">&lt;!-- img src 그림을 삽입 // property--&gt;</span>
+       <span class="c">&lt;!-- element, tag, property --&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+
+</code></pre></div></div>
+
+<p>Web 서버가 web 클라이언트에게 제공할 HTML을 만들었습니다.</p>
+
+<p>전제조건 및 html을 실행하는 과정은 아래와 같아요.</p>
+
+<blockquote>
+  <p>웹서버가 일단 존재해야 해요</p>
+
+  <p>웹서버가 내가 작성한 프로젝트를 인식해야해요!! &gt; configure</p>
+
+  <p>웹서버프로그램을 기동(실행)하면 자신이 인식하고 있는 프로젝트를 웹에서 사용할 수 있도록 deploy(전개)해요!!</p>
+
+  <p>클라이언트가 접속할 서버 컴퓨터의 IP와 포트번호를 정하게 되요!</p>
+
+  <p>웹클라이언트를 실행해야해요!! - chrome을 실행해요!!</p>
+
+  <p>크롬을 이용해서 웹서버에 접속해서 우리가 작성한 HTML파일을 받아와요!</p>
+
+  <p>크롬브라우저가 받은 html을 해석해서 화면을 그려요!! (rendering)</p>
+</blockquote>
+
+<h3>7. HTML VS CSS VS JS </h3>
+<blockquote>
+  <p>HTML : tag로 구성이 되요! 문서의 구성, 구조(DOM_Document object model)과 내용을 담당</p>
+
+  <p>CSS : 문서의 style을 담당</p>
+
+  <p>JavaScript : 문서의 동적처리를 담당</p>
+</blockquote>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#web" class="page__taxonomy-item" rel="tag">Web</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#css" class="page__taxonomy-item" rel="tag">CSS</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#html" class="page__taxonomy-item" rel="tag">HTML</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#javascript" class="page__taxonomy-item" rel="tag">JAVASCRIPT</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-31T00:00:00+09:00">July 31, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BHTML%2C+CSS%2C+JS%5D+Web+Basic%20http%3A%2F%2Flocalhost%3A4000%2Fhtml%2Fcss%2Fjavascript%2Fweb-basic%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fhtml%2Fcss%2Fjavascript%2Fweb-basic%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fhtml%2Fcss%2Fjavascript%2Fweb-basic%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/html/css/javascript/Web-CSS-JAVASCRIPT/" class="pagination--pager" title="HTML CSS JAVASCRIPT
+">Previous</a>
+    
+    
+      <a href="/django/DjangoPage/" class="pagination--pager" title="Django Page
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-simple-web-application4/" rel="permalink">[Django] Poll 프로젝트 3 (마지막)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Polls 프로젝트 3
+투표시스템 결과확인
+저번시간에는 저희가 질문지를 라디오 버튼을 통하여 선택하는 것과 submit버튼을 제작해 보았습니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-simple-web-application3/" rel="permalink">[Django] Poll 프로젝트 2
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Polls 프로젝트 2
+투표시스템 질문지 항목 추가
+저번시간에는 Question 항목까지 만드는 것을 해보았습니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-simple-web-application2/" rel="permalink">[Django] Poll 프로젝트 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Polls 프로젝트 1
+Templates 생성
+저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-simple-web-application/" rel="permalink">[Django] 설치 및 기초운용
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Django설치 및 기초운용
+Django 설치
+mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Sol Han. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/html/css/javascript/web-basic/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/html/css/javascript/web-basic"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-souuul-github-io-souuul.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

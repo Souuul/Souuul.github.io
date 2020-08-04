@@ -1,4 +1,10 @@
 var store = [{
+        "title": "테크블로그에 오신것을 환영합니다.",
+        "excerpt":"    한솔   1990.04.09   경력 사항       육군 중위 (2013.03 - 2015.06)      아트라스콥코 (2016.11 - 2020.06)      KSA (OREAN STANDARDS ASSOCIATION) 전문요원      기업출강 및 제휴강의 담당 (삼성전자, SK 하이닉스, 현대자동차, LG전자 등)      외국계 기업 B2B 마케팅 담당      공장 개선 컨설팅 및 스마트팩토리 컨설팅 담당      각종 고객 세미나, 전시회 및 테크 쇼 기획 및 실행 담당      마케팅 캠페인 기획 및 관리 담당      비디오, 리플렛, 카탈로그 등 마케팅 자료 기획 및 제작 담당      기업 및 산업용 공구 사업부 SNS채널 및 뉴스레터 플랫폼 기획 및 관리 담당      KC인증, Cleanroom certification, 안전인증 담당      기술 특허 담당    보유기술       2D, 3D 설계 / 3D Printing      Co-bot operation 및 로봇 제어      PLC      Python      HTML, CSS, JavaScript   ","categories": ["Welcome"],
+        "tags": [],
+        "url": "http://localhost:4000/welcome/welcome/",
+        "teaser": "https://cdn.pixabay.com/photo/2015/05/09/23/46/welcome-sign-760358__480.jpg"
+      },{
         "title": "[Python] Idexing, Slicing (str Data Type)",
         "excerpt":"Indexing &amp; Slicing  오늘은 파이썬의 문자열 의 Idexing 과 Slicing을 알아보겠습니다.   Indexing #문자열에 번호에 해당하는 문자를 추출하려면??   python은 배열이 존재 하지 않아요! 하지만 다른언어에서는 - index 사용가능합니다.   그렇다면 파이썬의 문자열에서 번호 혹은 순서에 맞는 문자를 추출하기 위해서는 어떻게 해야할까요 ?   하기 그림은 문자열에 해당되는 번호를 명시한 그림입니다.    \t   그렇다면 그림에 해당하는 번호를 파이썬 코드로 구현해볼까요?   my_var = 'HELLO' print(my_var[1])  #E   Slicing #문자열에 범위를 선정하여 추출하려면??   Slicing은 말 그대로 잘라내다입니다. Indexing과의 차이점은 번호가 아닌 범위로 문자열을 추출이 가능합니다.   하기 예제를 확인하면서 익혀보도록 하겠습니다.   my_var = 'HELLO' print(my_var[0:3]) #HEL print(my_var[0:]) #HELLO print(my_var[0:-1]) #HELL print(my_var[-2:]) #LO print(my_var[:]) # HELLO    오늘은 파이썬의 Indexing과 Slicing에 대하여 알아보았습니다.  ","categories": ["Python"],
         "tags": ["Text sequence","Data Type","문자열","데이터타입","str","Idexing","Slicing"],
@@ -35,12 +41,6 @@ var store = [{
         "url": "http://localhost:4000/python/Text-sequence/",
         "teaser": "http://localhost:4000/assets/image/Text%20Squence.png"
       },{
-        "title": "테크블로그에 오신것을 환영합니다.",
-        "excerpt":"    한솔   1990.04.09   경력 사항       육군 중위 (2013.03 - 2015.06)      아트라스콥코 (2016.11 - 2020.06)      KSA (OREAN STANDARDS ASSOCIATION) 전문요원      기업출강 및 제휴강의 담당 (삼성전자, SK 하이닉스, 현대자동차, LG전자 등)      외국계 기업 B2B 마케팅 담당      공장 개선 컨설팅 및 스마트팩토리 컨설팅 담당      각종 고객 세미나, 전시회 및 테크 쇼 기획 및 실행 담당      마케팅 캠페인 기획 및 관리 담당      비디오, 리플렛, 카탈로그 등 마케팅 자료 기획 및 제작 담당      기업 및 산업용 공구 사업부 SNS채널 및 뉴스레터 플랫폼 기획 및 관리 담당      KC인증, Cleanroom certification, 안전인증 담당      기술 특허 담당    보유기술       2D, 3D 설계 / 3D Printing      Co-bot operation 및 로봇 제어      PLC      Python      HTML, CSS, JavaScript   ","categories": ["Welcome"],
-        "tags": [],
-        "url": "http://localhost:4000/welcome/welcome/",
-        "teaser": "https://cdn.pixabay.com/photo/2015/05/09/23/46/welcome-sign-760358__480.jpg"
-      },{
         "title": "[Python] Formatting",
         "excerpt":"In Not In 연산자  오늘은 파이썬의 문자열 의 Formatting 에 대하여 알아보도록 하겠습니다.   Formatting은 변수의 값을 원하는 곳에 입력하거나 출력이 가능합니다.   예제를 통하여 다시 한번 정확하게 알아보겠습니다.   num_of_apple = 10 myStr = \"나는 사과를 %d개 가지고 있어요!\" % num_of_apple #// %d (숫자) myStr1 = \"나는 사과를 {}, 바나나 {}개 가지고 있어요!\" .format(num_of_apple, 20) myStr2 = \"나는 사과를 {1}, 바나나 {0}개 가지고 있어요!\" .format(num_of_apple, 20) print(myStr) #나는 사과를 10개 가지고 있어요! print(myStr1) #나는 사과를 10, 바나나 20개 가지고 있어요! print(myStr2) # 나는 사과를 20, 바나나 10개 가지고 있어요!   복잡한 문장도 formatting 을 이용하여 원하는 위치에 변수의 값을 입력 및 출력을 할 수 있습니다.   오늘은 파이썬의 formatting 에 대하여 알아보았습니다.  ","categories": ["Python"],
         "tags": ["Text sequence","Data Type","문자열","데이터타입","str","formatting"],
@@ -52,6 +52,18 @@ var store = [{
         "tags": ["Sequence Type","Data Type","List"],
         "url": "http://localhost:4000/python/List/",
         "teaser": "http://localhost:4000/assets/image/List.png"
+      },{
+        "title": "HTML CSS JAVASCRIPT",
+        "excerpt":"    HTML CSS JAVASCRIPT 페이지   Web Service 이론   ","categories": ["HTML","CSS","JAVASCRIPT"],
+        "tags": [],
+        "url": "http://localhost:4000/html/css/javascript/Web-CSS-JAVASCRIPT/",
+        "teaser": "http://localhost:4000/assets/image/frontend.png"
+      },{
+        "title": "[HTML, CSS, JS] Web Basic",
+        "excerpt":" Web 기초   1. Internet   여러개의 컴퓨터를 network로 묶어서 사용하는 것은 LAN (Local Area Network) 입니다.   Internet 이란 쉽게 설명하여 전세계적인 Network를 즉 물리적인 네트워크 망을 지칭합니다.   2. Service   인터넷을 잘 이용하기 위해서는 인터넷 위에 여러가지 프로그램이 동작하여야 합니다. 이런 프로그램을 Service라고 합니다. 쉬운 예로 하기의 서비스가 있습니다.     Email (SNTP)     Torrent     Web service    여기서 웹서비스는 HTML, CSS, JavaScript를 이용해서 웹페이지를 만들고   web서버가 이 web page를 web client에게 전송해서 데이터르 주고 받는 서비스 입니다.   3. CS 구조   Client - Server 구조를 의미합니다.   Web Client - Web Server 프로세스 단위로 나눔, 프로그램 단위로 나눔   Web Client(Web Browser - Chrome, IE, Edge, Safari, Firefox, Opera)   Web Server : 데이터를 제공하는 역할을 하는 process (프로그램) Apache web server   Web Server에서 제공되는 데이터는 Web page 형태로 제공되는 데이터 Web Application 형태로 제공되는 데이터   HTML, CSS, JavaScript 언어로 이 데이터를 만들어서 제공합니다.   4. 기본적인 Web Service                  정적 웹 서비스 (Static Web Service) : HTML, CSS, JS 클라이언트가 특정 HTML 파일을 요청                  동적 웹 서비스 (Dynamic Web Service) : HTML, CSS, JS + Python, Java, C++            5. 개발환경 세팅   Pycharm을 이용해서 작성해 보겠습니다.   6. 예제 작성    &lt;!DOCTYPE html&gt;  &lt;html lang=\"en\"&gt;     &lt;head&gt;     &lt;!-- 일반적인 설정이 와요!! --&gt;         &lt;meta charset=\"UTF-8\"&gt;         &lt;title&gt;Title&lt;/title&gt;     &lt;/head&gt;     &lt;body&gt;        &lt;!-- BROWSER에 출력하고 싶은 내용이 와요!! --&gt;        &lt;h1&gt; 이것은 소리없는 아우성!! 껄껄 &lt;/h1&gt;     &lt;!-- heading 글자크기를 크게 // 문장전체 : element, &lt;&gt; : tag--&gt;        &lt;img src=\"image/download.jpg\"&gt;        &lt;!-- img src 그림을 삽입 // property--&gt;        &lt;!-- element, tag, property --&gt;     &lt;/body&gt; &lt;/html&gt;    Web 서버가 web 클라이언트에게 제공할 HTML을 만들었습니다.   전제조건 및 html을 실행하는 과정은 아래와 같아요.      웹서버가 일단 존재해야 해요     웹서버가 내가 작성한 프로젝트를 인식해야해요!! &gt; configure     웹서버프로그램을 기동(실행)하면 자신이 인식하고 있는 프로젝트를 웹에서 사용할 수 있도록 deploy(전개)해요!!     클라이언트가 접속할 서버 컴퓨터의 IP와 포트번호를 정하게 되요!     웹클라이언트를 실행해야해요!! - chrome을 실행해요!!     크롬을 이용해서 웹서버에 접속해서 우리가 작성한 HTML파일을 받아와요!     크롬브라우저가 받은 html을 해석해서 화면을 그려요!! (rendering)    7. HTML VS CSS VS JS      HTML : tag로 구성이 되요! 문서의 구성, 구조(DOM_Document object model)과 내용을 담당     CSS : 문서의 style을 담당     JavaScript : 문서의 동적처리를 담당    ","categories": ["HTML","CSS","JAVASCRIPT"],
+        "tags": ["Web"],
+        "url": "http://localhost:4000/html/css/javascript/web-basic/",
+        "teaser": "http://localhost:4000/assets/image/frontend.png"
       },{
         "title": "Django Page",
         "excerpt":" \t   Django 페이지   Djanggo 기초이론   Djanggo 설치 및 운용   Djanggo Poll project1   Djanggo Poll project2   Djanggo Poll project3 마무리  ","categories": ["Django"],

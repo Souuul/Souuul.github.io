@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/welcome/welcome/</loc>
+<lastmod>2020-07-28T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/python/Idexing-Slicing/</loc>
 <lastmod>2020-07-28T00:00:00+09:00</lastmod>
 </url>
@@ -25,16 +29,20 @@
 <lastmod>2020-07-28T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/welcome/welcome/</loc>
-<lastmod>2020-07-28T00:00:00+09:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/python/Formatting/</loc>
 <lastmod>2020-07-29T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/python/List/</loc>
 <lastmod>2020-07-29T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/html/css/javascript/Web-CSS-JAVASCRIPT/</loc>
+<lastmod>2020-07-31T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/html/css/javascript/web-basic/</loc>
+<lastmod>2020-07-31T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/django/DjangoPage/</loc>
@@ -126,5 +134,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page3/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page4/</loc>
 </url>
 </urlset>
