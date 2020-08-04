@@ -1,0 +1,115 @@
+I"<h2>Polls 프로젝트 3</h2>
+<h3>투표시스템 결과확인</h3>
+<p>저번시간에는 저희가 질문지를 라디오 버튼을 통하여 선택하는 것과 submit버튼을 제작해 보았습니다.</p>
+
+<p>오늘은 제작한 submit버튼을 눌렀을 때 선택한 결과가 반영되어 결과페이지에서 확인하는 기능을 넣어보겠습니다.</p>
+
+<p>방식은 저번 방식과 동일합니다.</p>
+
+<blockquote>
+  <ol>
+    <li>
+      <p>views에 함수추가</p>
+    </li>
+    <li>
+      <p>urls에 path 추가</p>
+    </li>
+    <li>
+      <p>templates/ .html 생성</p>
+    </li>
+    <li>
+      <p>detail.html 과 연결</p>
+    </li>
+    <li>
+      <p>templates/ .html 수정후 완료</p>
+    </li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<p>그렇다면 이제부터 기능을 만들어보겠습니다.</p>
+
+<p>template 폴더에 result.html파일을 생성해줍니다.</p>
+
+<p>polls/views 로 들어가서 하기내용 추가합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">vote</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">choice_id</span><span class="p">):</span>
+<span class="n">vote_result</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">choice_id</span><span class="p">)</span>
+
+<span class="n">selected_vote</span> <span class="o">=</span> <span class="n">vote_result</span><span class="p">.</span><span class="n">choice_set</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span> <span class="o">=</span> 
+                  <span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">[</span><span class="s">'파이썬 라디오버튼에서의 name'</span><span class="p">])</span>
+
+<span class="n">selected_vote</span><span class="p">.</span><span class="n">votes</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">selected_vote</span><span class="p">.</span><span class="n">save</span><span class="p">()</span>
+<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">'vote_result'</span><span class="p">:</span><span class="n">vote_result</span><span class="p">}</span>
+<span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'vote.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4>코드설명</h4>
+
+<hr />
+<p>이전 시간과 중복되는 내용은 제외하고 설명하도록 하겠습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">selected_vote = vote_result.choice_set.get(pk = 
+                  request.POST['파이썬 라디오버튼에서의 name'])</code></p>
+
+<p>라디오 버튼선택한 정보가 name 인자와 value 값의 쌍으로 전달받습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">selected_vote.votes += 1</code> : 선택한 것에 대한 votes 항목을 추가합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">selected_vote.save()</code> : 변경된 값을 저장합니다.</p>
+
+<hr />
+
+<p>polls/ urls.py 파일을 열고 하기 경로를 추가해줍니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">path ('&lt;int:choice_id&gt;/vote/' , views.vote , name ='vote')</code></p>
+
+<hr />
+
+<p>template 폴더에 detail.html파일로 돌아가서 하기처럼 form tag를 수정해줍니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+
+    <span class="nt">&lt;h1&gt;</span>{ {choice_list.question_text} }<span class="nt">&lt;/h1&gt;</span>
+
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"{ % url 'polls:vote' choice_list.id % }"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+    { % csrf_token % }
+        <span class="nt">&lt;ul&gt;</span>
+            { % for tmp in choice_list.choice_set.all % }
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"choice_button"</span> <span class="na">id=</span><span class="s">"{ { forloop.counter } }"</span> <span class="na">value=</span><span class="s">"{ {tmp.id} }"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">'{ { forloop.counter } }'</span><span class="nt">&gt;</span>{ {tmp} }<span class="nt">&lt;/label&gt;</span>
+            { % endfor % }
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"제출"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<h4>코드설명</h4>
+
+<hr />
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"{ % url 'polls:vote' choice_list.id % }"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>post 방식으로 url 의 polls라는 이름에서 name = vote라는 기능을 사용합니다.</p>
+
+<p>인자는 choice_list.id의 객체를 전달합니다.</p>
+
+<hr />
+
+<p>마지막으로 result.html을 작성하여 마무리 하겠습니다.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;h1&gt;</span>결과도출<span class="nt">&lt;/h1&gt;</span>
+
+{ %for tmp in my_result.choice_set.all % }
+<span class="nt">&lt;li&gt;</span>{ {tmp} } : { {tmp.votes} } <span class="nt">&lt;/li&gt;</span>
+{ %endfor% }
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<image src="/assets/image/django_polls_vote.png/">
+</image>
+:ET

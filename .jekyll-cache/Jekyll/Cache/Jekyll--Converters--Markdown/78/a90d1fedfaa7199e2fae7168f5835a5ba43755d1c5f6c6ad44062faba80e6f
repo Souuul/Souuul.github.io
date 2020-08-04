@@ -1,0 +1,252 @@
+I"1<h2>Django설치 및 기초운용</h2>
+<h3>Django 설치</h3>
+<p>mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.</p>
+
+<p><code class="language-plaintext highlighter-rouge">pip</code>(python install package), <code class="language-plaintext highlighter-rouge">pypi</code>(python Package Index)라는 repository에 있는 Django를 설치합니다.</p>
+
+<h4>가상환경에서 설치</h4>
+<p><u>가상환경</u>에서 하실분은 하기 내용을 추가하여 설치해주시기 바랍니다.</p>
+
+<blockquote>
+  <ol>
+    <li>
+      <p>가상환경(virtualenv) 설치 : <code class="language-plaintext highlighter-rouge">$ python3 -m venv posts</code></p>
+    </li>
+    <li>
+      <p>가상환경 실행(virtualenv) : <code class="language-plaintext highlighter-rouge">$ source posts/bin/activate</code></p>
+    </li>
+    <li>
+      <p>설치된 패키지 확인 : <code class="language-plaintext highlighter-rouge">$ pip3 freeze</code></p>
+    </li>
+  </ol>
+</blockquote>
+
+<h4>Django 설치</h4>
+<p><u>가상환경이 아닌 로컬</u>에서 설치하실 분들은 이쪽부터 진행 하시면 됩니다.</p>
+
+<blockquote>
+  <ol>
+    <li>
+      <p>Django 설치 : <code class="language-plaintext highlighter-rouge">'$ pip3 install django</code></p>
+    </li>
+    <li>
+      <p>python 3.7.8버전을 사용하시는 분은 pip3를 update를 해주셔야 합니다.</p>
+    </li>
+    <li>
+      <p>pip upgrade : <code class="language-plaintext highlighter-rouge">$ pip3 install --upgrade pip</code></p>
+    </li>
+    <li>
+      <p>여기까지 하시면 설치가 완료가 됩니다.</p>
+    </li>
+  </ol>
+</blockquote>
+
+<h3> Project Setup </h3>
+<p>본격적으로 프로젝트의 뼈대를 만드는 일부터 시작하겠습니다.</p>
+
+<h4> 터미널에서 설정 </h4>
+<blockquote>
+  <ol>
+    <li>
+      <p>폴더 생성 : <code class="language-plaintext highlighter-rouge">$ mkdir python-Django</code></p>
+    </li>
+    <li>
+      <p>만들어진 경로로 이동 : <code class="language-plaintext highlighter-rouge">$ cd python-Django</code></p>
+    </li>
+    <li>
+      <p>mysite 프로젝트 생성 및 Scaffolding : <code class="language-plaintext highlighter-rouge">$ django-damin startproject mysite</code></p>
+    </li>
+    <li>
+      <p>폴더명 변경(선택사항) :python-Django/myself 이름을 MyFirstWebPoll로 변경</p>
+    </li>
+    <li>
+      <p>변경된 경로로 이동 : <code class="language-plaintext highlighter-rouge">$ cd MyFirstWebPoll</code></p>
+    </li>
+    <li>
+      <p>프로젝트 안에 개별 어플리케이션을 생성 :<code class="language-plaintext highlighter-rouge">$ python3 manage.py startapp polls</code></p>
+    </li>
+    <li>
+      <p>poll 이라는 어플이 생성되고 필요한 파일들이 scaffolding 됨</p>
+    </li>
+  </ol>
+</blockquote>
+
+<h4> Python 설정변경 [pycharm 사용] </h4>
+
+<blockquote>
+  <ol>
+    <li>
+      <p>pycharm에서 MyFirstWebPoll 프로젝트 실행</p>
+    </li>
+    <li>
+      <p>setting.py를 이용해 프로젝트 설정처리</p>
+    </li>
+    <li>
+      <p>기본테이블(기본DB)을 생성</p>
+    </li>
+    <li>
+      <p>장고는 관리자 모드 화면을 제공</p>
+    </li>
+    <li>
+      <p>관리자 ID PW가 DB어딘가에는 저장이 되어 있어야함 (DB설정이 전제됨)</p>
+    </li>
+    <li>
+      <p>INSTALLED_APPS 리스트 항목에 ‘polls.apps.PollsConfig’ 를 추가</p>
+    </li>
+    <li>
+      <p>TIME_ZONE ‘Asia/Seoul’ 로 변경</p>
+    </li>
+  </ol>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Application definition 
+</span>
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">'django.contrib.admin'</span><span class="p">,</span>
+    <span class="s">'django.contrib.auth'</span><span class="p">,</span>
+    <span class="s">'django.contrib.contenttypes'</span><span class="p">,</span>
+    <span class="s">'django.contrib.sessions'</span><span class="p">,</span>
+    <span class="s">'django.contrib.messages'</span><span class="p">,</span>
+    <span class="s">'django.contrib.staticfiles'</span><span class="p">,</span>
+    <span class="s">'polls.apps.PollsConfig'</span>
+<span class="p">]</span>
+</code></pre></div></div>
+<p>…</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Internationalization
+# https://docs.djangoproject.com/en/3.0/topics/i18n/
+</span>
+<span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s">'en-us'</span>
+
+<span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s">'Asia/Seoul'</span>
+
+<span class="n">USE_I18N</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="n">USE_L10N</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="n">USE_TZ</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></div></div>
+
+<h4> 프로젝트 Deploy</h4>
+<blockquote>
+  <ol>
+    <li>
+      <p>터미널을 이용해서 내장 서버를 이용하여 프로젝트를 <code class="language-plaintext highlighter-rouge">deploy</code> 해보도록 하겠습니다.</p>
+    </li>
+    <li>
+      <p>프로젝트 migrate : <code class="language-plaintext highlighter-rouge">python3 manage.py migrate</code></p>
+    </li>
+    <li>
+      <p>서버 실행 : <code class="language-plaintext highlighter-rouge">python3 manage.py runserver</code></p>
+    </li>
+    <li>
+      <p>관리자 설정 : <code class="language-plaintext highlighter-rouge">python3 manage.py createsuperuser</code> #user, email, pw 설정</p>
+    </li>
+    <li>
+      <p>서버실행 : <code class="language-plaintext highlighter-rouge">python3 manage.py runserver</code></p>
+    </li>
+    <li>
+      <p><code>127.0.0.1:8000 로 접속</code></p>
+    </li>
+    <li>
+      <p>Polls application 구현확인</p>
+    </li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<h4> Model 생성 </h4>
+<p>Model 작업은 우리가 사용하는 Database에 Table을 생성하는 작업이에요!</p>
+
+<p>(Table == Relation) 즉 class의 이름은 결국 table의 이름과 mapping이 되요</p>
+
+<p>application 에서 사용할 데이터베이스 구조를 생각하고 입력해보겠습니다.</p>
+
+<p>models.py 안에 모든 모델들을 정의해요 !!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="c1"># Create your models here.
+</span><span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">):</span> <span class="c1"># Django 가제공하는 models 클래스
+</span>    <span class="n">question_text</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>    <span class="c1">#문자열을 받고 길이는 200자 까지
+</span>    <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s">'date published'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      <span class="c1"># 일반적으로 연산을 위해서 문자열로 변환을 하고 싶을때!
+</span>        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">question_text</span>
+
+<span class="k">class</span> <span class="nc">Choice</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
+</span>    <span class="c1"># 기본적으로 _id가 자동으로 붙음
+</span>    <span class="n">question</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="p">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="c1"># 만약에 Question 에 대하여 지운다면 같이 지운다 CASCADE 문제없이 만드는 것
+</span>
+    <span class="n">choice_text</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">votes</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">choice_text</span>
+
+    <span class="c1"># def __repr__(self):     # class 의 객체를 문자열로 표현할 경우에 사용
+</span>
+    <span class="c1"># Table의 id column은 default로 지정되요!!!
+</span>    <span class="c1"># id가 primary key로 설정이 가능!, Not null (값이 무조건 들어가는 경우), Unique (겹치는 값이 안옴)
+</span>    <span class="c1"># id는 autoincrement 특성(값이 들어오면 자동적으로 증가하는 특성)을 가지는 정수형으로 지정
+</span>    <span class="c1"># 자동으로 생성해주기 때문에 class정의에서 나오지 않아요!!
+</span>
+</code></pre></div></div>
+
+<h4> model 및 파일등록 </h4>
+<blockquote>
+  <p>admin.py 파일에 등록해요</p>
+</blockquote>
+
+<blockquote>
+  <p>admin page에서 사용할 수 있도록 등록을 해줘야해요!!</p>
+</blockquote>
+
+<blockquote>
+  <p>/polls/admin.py 에서 하기 코드를 추가합니다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">polls.models</span> <span class="kn">import</span> <span class="n">Question</span><span class="p">,</span> <span class="n">Choice</span>
+<span class="c1"># Register your models here.
+</span>
+<span class="c1">#괄호안에는 내가 등록할 클래스가 나와야해요!
+</span><span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="n">Question</span><span class="p">)</span>
+<span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="n">Choice</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>여기까지는 작업했다고해서 실제 데이터베이스 테이블이 생선되는건 아니에요!!</p>
+
+<p>하기 과정을 통하여 표를 삽입을 해줘야합니다.</p>
+
+<blockquote>
+  <p><code>python3 manage.py makemigrations</code></p>
+
+  <blockquote>
+    <p>class와 매핑되는 테이블을 만들기 위해서 필요한 SQL 구문을 생성해야 되요!!</p>
+  </blockquote>
+
+  <p><code>python3 manage.py migrate</code></p>
+
+  <blockquote>
+    <p>그리고 나서 이 구문을 실행해서 실제 테이블을 생성해야 해요!</p>
+  </blockquote>
+
+  <p><code>python3 manage.py runserver</code></p>
+
+  <blockquote>
+    <p>프로젝트가 web에 deploy 될 수 있는지를 확인합니다.</p>
+
+    <p>관리자 페이지가 정상적으로 동작하는지 확인하기 위해서 서버를 기동 !</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+
+  <p><code>127.0.0.1:8000 로 접속</code></p>
+</blockquote>
+
+<p>완료하면 하기 그림처럼 초기 설정 화면은 얻을수 있습니다. 
+<img src="/assets/image/Django project1.png" alt="Django project1" style="width:500px" /></p>
+:ET

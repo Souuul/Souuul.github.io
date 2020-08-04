@@ -33,7 +33,7 @@
 
 
 
-  <meta property="article:published_time" content="2020-07-30T00:00:00+09:00">
+  <meta property="article:published_time" content="2020-08-02T00:00:00+09:00">
 
 
 
@@ -299,7 +299,7 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="[Django] 설치 및 기초운용">
     <meta itemprop="description" content="Django설치 및 기초운용Django 설치mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.">
-    <meta itemprop="datePublished" content="2020-07-30T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2020-08-02T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
@@ -480,12 +480,13 @@
 <hr />
 
 <h4> Model 생성 </h4>
-<p>Model 작업은 우리가 사용하는 Database에 Table을 생성하는 작업이에요!
-(Table == Relation)</p>
+<p>Model 작업은 우리가 사용하는 Database에 Table을 생성하는 작업이에요!</p>
 
-<blockquote>
-  <p>models.py 파일 열기</p>
-</blockquote>
+<p>(Table == Relation) 즉 class의 이름은 결국 table의 이름과 mapping이 되요</p>
+
+<p>application 에서 사용할 데이터베이스 구조를 생각하고 입력해보겠습니다.</p>
+
+<p>models.py 안에 모든 모델들을 정의해요 !!</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 
@@ -518,8 +519,17 @@
 </span>
 </code></pre></div></div>
 
+<h4> model 및 파일등록 </h4>
 <blockquote>
-  <p>/polls/admin.py</p>
+  <p>admin.py 파일에 등록해요</p>
+</blockquote>
+
+<blockquote>
+  <p>admin page에서 사용할 수 있도록 등록을 해줘야해요!!</p>
+</blockquote>
+
+<blockquote>
+  <p>/polls/admin.py 에서 하기 코드를 추가합니다.</p>
 </blockquote>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">polls.models</span> <span class="kn">import</span> <span class="n">Question</span><span class="p">,</span> <span class="n">Choice</span>
@@ -530,23 +540,39 @@
 <span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="n">Choice</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>여기까지는 구조를 아직만든게 아니에요!!</p>
+<p>여기까지는 작업했다고해서 실제 데이터베이스 테이블이 생선되는건 아니에요!!</p>
 
 <p>하기 과정을 통하여 표를 삽입을 해줘야합니다.</p>
 
 <blockquote>
   <p><code>python3 manage.py makemigrations</code></p>
 
+  <blockquote>
+    <p>class와 매핑되는 테이블을 만들기 위해서 필요한 SQL 구문을 생성해야 되요!!</p>
+  </blockquote>
+
   <p><code>python3 manage.py migrate</code></p>
 
+  <blockquote>
+    <p>그리고 나서 이 구문을 실행해서 실제 테이블을 생성해야 해요!</p>
+  </blockquote>
+
   <p><code>python3 manage.py runserver</code></p>
+
+  <blockquote>
+    <p>프로젝트가 web에 deploy 될 수 있는지를 확인합니다.</p>
+
+    <p>관리자 페이지가 정상적으로 동작하는지 확인하기 위해서 서버를 기동 !</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
 
   <p><code>127.0.0.1:8000 로 접속</code></p>
 </blockquote>
 
 <p>완료하면 하기 그림처럼 초기 설정 화면은 얻을수 있습니다. 
 <img src="/assets/image/Django project1.png" alt="Django project1" style="width:500px" /></p>
-
 
         
       </section>
@@ -599,7 +625,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-30T00:00:00+09:00">July 30, 2020</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-08-02T00:00:00+09:00">August 2, 2020</time></p>
 
 
       </footer>
@@ -653,6 +679,41 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/django/Django-simple-web-application4/" rel="permalink">[Django] Poll 프로젝트 3 (마지막)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Polls 프로젝트 3
+투표시스템 결과확인
+저번시간에는 저희가 질문지를 라디오 버튼을 통하여 선택하는 것과 submit버튼을 제작해 보았습니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/django/Django-simple-web-application3/" rel="permalink">[Django] Poll 프로젝트 2
 </a>
       
@@ -688,41 +749,6 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/django/DjangoPage/" rel="permalink">Django Page
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  less than 1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">
-	
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/django/Django-simple-web-application2/" rel="permalink">[Django] Poll 프로젝트 1
 </a>
       
@@ -733,7 +759,7 @@
 
 
 
-  1 minute read
+  2 minute read
 
 </p>
     
