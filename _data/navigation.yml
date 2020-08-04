@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Welcome"
+    url: /welcome/welcome/
   - title: "Python"
     url: /python/PythonPage/
   - title: "HTML & CSS & JavaScript"
