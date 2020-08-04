@@ -101,6 +101,20 @@ USE_L10N = True
 USE_TZ = True
 ```
 
+
+<h4> urls.py 수정 </h4>
+
+``` python 
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('polls/', include('polls.urls'))
+]
+```
+
+
 <h4> 프로젝트 Deploy</h4>
 >1. 터미널을 이용해서 내장 서버를 이용하여 프로젝트를 `deploy` 해보도록 하겠습니다.
 >

@@ -134,6 +134,8 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/welcome/welcome/">Welcome</a>
+            </li><li class="masthead__menu-item">
               <a href="/python/PythonPage/">Python</a>
             </li><li class="masthead__menu-item">
               <a href="/year-archive/">HTML & CSS & JavaScript</a>
@@ -448,6 +450,17 @@
 <span class="n">USE_L10N</span> <span class="o">=</span> <span class="bp">True</span>
 
 <span class="n">USE_TZ</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></div></div>
+
+<h4> urls.py 수정 </h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'admin/'</span><span class="p">,</span> <span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">urls</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'polls/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'polls.urls'</span><span class="p">))</span>
+<span class="p">]</span>
 </code></pre></div></div>
 
 <h4> 프로젝트 Deploy</h4>

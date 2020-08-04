@@ -1,4 +1,4 @@
-I"�<h2>Polls 프로젝트 3</h2>
+I"�<h2>Polls 프로젝트 3</h2>
 <h3>투표시스템 결과확인</h3>
 <p>저번시간에는 저희가 질문지를 라디오 버튼을 통하여 선택하는 것과 submit버튼을 제작해 보았습니다.</p>
 
@@ -114,9 +114,7 @@
 
 <p>상기항목을 추가하면 드디어 Poll 프로젝트가 하기 그림처럼 완성됩니다.</p>
 
-<image src="/assets/image/django_polls_vote.png/">
+<p><img src="/assets/image/django_polls_vote.png" /></p>
 
-
-<br /><br />이번 시간에는 Poll 프로젝트에 대하여 마무리를 해봤습니다.
-</image>
+<p><br /><br />이번 시간에는 Poll 프로젝트에 대하여 마무리를 해봤습니다.</p>
 :ET

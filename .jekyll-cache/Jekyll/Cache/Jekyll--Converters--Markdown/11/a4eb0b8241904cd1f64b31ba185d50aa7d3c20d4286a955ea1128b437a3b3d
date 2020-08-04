@@ -1,4 +1,4 @@
-I"�J<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
+I"�J<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
 
 <h2>Pages</h2>
 
@@ -424,7 +424,7 @@
 
 
 
-  less than 1 minute read
+  1 minute read
 
 </p>
     
@@ -457,32 +457,6 @@
     <p class="archive__item-excerpt" itemprop="description">Polls 프로젝트 2
 투표시스템 질문지 항목 추가
 저번시간에는 Question 항목까지 만드는 것을 해보았습니다.
-</p>
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/django/DjangoPage/" rel="permalink">Django Page
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  less than 1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">
-	
-
 </p>
   </article>
 </div>
@@ -571,6 +545,32 @@ Python 으로 만들어진 오픈소스
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/django/DjangoPage/" rel="permalink">Django Page
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+	
+
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/python/List/" rel="permalink">[Python] List
 </a>
       
@@ -636,7 +636,7 @@ Python 으로 만들어진 오픈소스
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">
-	
+
 
 </p>
   </article>

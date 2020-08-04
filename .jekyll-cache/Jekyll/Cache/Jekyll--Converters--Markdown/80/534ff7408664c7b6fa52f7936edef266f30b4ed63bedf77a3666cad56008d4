@@ -1,4 +1,4 @@
-I"�<h2>Polls 프로젝트 2</h2>
+I"�<h2>Polls 프로젝트 2</h2>
 <h3>투표시스템 질문지 항목 추가</h3>
 <p>저번시간에는 Question 항목까지 만드는 것을 해보았습니다.</p>
 
@@ -148,10 +148,8 @@
   <p><code class="language-plaintext highlighter-rouge">$ python3 manage.py runserver</code> 를 통해 수정된 페이지를 확인해봅시다.</p>
 </blockquote>
 
-<image src="/assets/image/django_polls_detail.png/">
+<p><img src="/assets/image/django_polls_detail.png" /></p>
 
-
-<br /><br /><br />
-오늘은 poll 프로젝트의 질문지 선택까지 제작해보았습니다.
-</image>
+<p><br /><br /><br />
+오늘은 poll 프로젝트의 질문지 선택까지 제작해보았습니다.</p>
 :ET
