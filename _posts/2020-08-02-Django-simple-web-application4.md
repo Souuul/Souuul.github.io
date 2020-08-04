@@ -122,7 +122,7 @@ post 방식으로 url 의 polls라는 이름에서 name = vote라는 기능을 �
 
 상기항목을 추가하면 드디어 Poll 프로젝트가 하기 그림처럼 완성됩니다. 
 
-<image src = '/assets/image/django_polls_vote.png/'>
+<img src = '/assets/image/django_polls_vote.png'>
 
 
 <br><br>이번 시간에는 Poll 프로젝트에 대하여 마무리를 해봤습니다.

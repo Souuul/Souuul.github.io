@@ -156,8 +156,7 @@ index method를 제작했을 때와는 다르게 처음보는 코드가 있습�
 >
 > `$ python3 manage.py runserver` 를 통해 수정된 페이지를 확인해봅시다.
 
-<image src = '/assets/image/django_polls_detail.png/'>
-
+<img src = '/assets/image/django_polls_detail.png'>
 
 <br><br><br>
 오늘은 poll 프로젝트의 질문지 선택까지 제작해보았습니다.
