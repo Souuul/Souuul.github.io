@@ -54,7 +54,7 @@ var store = [{
         "teaser": "http://localhost:4000/assets/image/List.png"
       },{
         "title": "Django Page",
-        "excerpt":" \t   Django 페이지   Djanggo 기초이론   Djanggo 설치 및 운용   Djanggo Poll project1   Djanggo Poll project2  ","categories": ["Django"],
+        "excerpt":" \t   Django 페이지   Djanggo 기초이론   Djanggo 설치 및 운용   Djanggo Poll project1   Djanggo Poll project2   Djanggo Poll project3 마무리  ","categories": ["Django"],
         "tags": [],
         "url": "http://localhost:4000/django/DjangoPage/",
         "teaser": "https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg"

@@ -20,3 +20,5 @@ tags:
 <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="https://live.staticflickr.com/3595/3475465970_7044242629_b" style="width:50px">[Djanggo Poll project1](/django/Django-simple-web-application2) 
 
 <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="https://live.staticflickr.com/3595/3475465970_7044242629_b" style="width:50px">[Djanggo Poll project2](/django/Django-simple-web-application3) 
+
+<img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="https://live.staticflickr.com/3595/3475465970_7044242629_b" style="width:50px">[Djanggo Poll project3 마무리](/django/Django-simple-web-application4) 
