@@ -54,7 +54,7 @@ var store = [{
         "teaser": "http://localhost:4000/assets/image/List.png"
       },{
         "title": "HTML CSS JAVASCRIPT",
-        "excerpt":"    HTML CSS JAVASCRIPT 페이지   Web Service 이론   Web Service 이론   ","categories": ["HTML","CSS","JAVASCRIPT"],
+        "excerpt":"    HTML CSS JAVASCRIPT 페이지   [Web Service] 기본이론(/html/css/javascript/web-basic/)   [JavaScript] jQuery 활용 (/html/css/javascript/jQuery/)   ","categories": ["HTML","CSS","JAVASCRIPT"],
         "tags": [],
         "url": "http://localhost:4000/html/css/javascript/Web-CSS-JAVASCRIPT/",
         "teaser": "http://localhost:4000/assets/image/frontend.png"
