@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Django] 이론 - Sol Han tech blog!</title>
-<meta name="description" content="Django 오늘은 Django에 대하여 알아보아요! Python 으로 만들어진 오픈소스 웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework">
+<!-- begin _includes/seo.html --><title>[Django] BBS Project  - Sol Han tech blog!</title>
+<meta name="description" content="BBS (Bullentin Board System)  Poll 프로젝트에 이어 오늘은 게시판을 만들어 보겠습니다.">
 
 
   <meta name="author" content="Sol Han">
@@ -19,11 +19,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sol Han tech blog!">
-<meta property="og:title" content="[Django] 이론">
-<meta property="og:url" content="http://localhost:4000/django/Django-Basic/">
+<meta property="og:title" content="[Django] BBS Project">
+<meta property="og:url" content="http://localhost:4000/django/Django-BBS/">
 
 
-  <meta property="og:description" content="Django 오늘은 Django에 대하여 알아보아요! Python 으로 만들어진 오픈소스 웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework">
+  <meta property="og:description" content="BBS (Bullentin Board System)  Poll 프로젝트에 이어 오늘은 게시판을 만들어 보겠습니다.">
 
 
 
@@ -44,7 +44,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/django/Django-Basic/">
+<link rel="canonical" href="http://localhost:4000/django/Django-BBS/">
 
 
 
@@ -299,15 +299,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Django] 이론">
-    <meta itemprop="description" content="Django오늘은 Django에 대하여 알아보아요!Python 으로 만들어진 오픈소스웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework">
+    <meta itemprop="headline" content="[Django] BBS Project">
+    <meta itemprop="description" content=" BBS (Bullentin Board System) Poll 프로젝트에 이어 오늘은 게시판을 만들어 보겠습니다.">
     <meta itemprop="datePublished" content="2020-08-02T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[Django] 이론
+          <h1 id="page-title" class="page__title" itemprop="headline">[Django] BBS Project
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -315,7 +315,7 @@
 
 
 
-  1 minute read
+  3 minute read
 
 </p>
           
@@ -324,167 +324,262 @@
 
       <section class="page__content" itemprop="text">
         
-        <h2>Django</h2>
-<p>오늘은 <code class="language-plaintext highlighter-rouge">Django</code>에 대하여 알아보아요!
-Python 으로 만들어진 오픈소스
-웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework</p>
+        <h2> BBS (Bullentin Board System) </h2>
+<p>Poll 프로젝트에 이어 오늘은 게시판을 만들어 보겠습니다.</p>
 
-<h3>라이브러리(library)</h3>
-<p>특수한 처리를 하기 위해서 만들어 놓은 함수집합이 <code class="language-plaintext highlighter-rouge">Library</code>입니다. jQuery도 라이브러리라고 볼 수 있어요!</p>
+<p>Poll 프로젝트는 처음 부터 끝까지 저희가 코드를 작성했었죠 ?</p>
 
-<p>장점 : 내가 모든걸 다 작성할 필요가 없어요!</p>
+<p>외울 것도 많고 작성해야하는 것도 많았습니다.</p>
 
-<p>단점(특징) : 전체 프로그램의 로직을 담당하지는 않아요!</p>
+<p>오늘은 polls project 에서 배웠던 내용을 기반으로 쉽게 제작해보겠습니다.</p>
 
-<p>예) jQuery 를 이용해서 영화정보를 출력하는 문제를 구현할 때 사람마다 구현이 제각각…</p>
+<p>ModelForm을 이용해서 CRUD구현을 알아 보겠습니다.</p>
 
-<h3>프레임 워크</h3>
-<p>프로그램의 전체적인 로직부분이 이미 구현이 되어 있어요!</p>
+<h3>CRUD (CREATE READ UPDATE DELETE)</h3>
 
-<p>그래서 프레임워크를 사용할때는 기본적으로 사용되는 코드가 제공되요! (스케폴딩- scaffolding)</p>
+<p>ModelForm을 이용하면 사용자 입력양식 처리하는게 쉬워집니다.</p>
 
-<p>유지보수성이 좋아집니다. 단, 처음에 프레임워크의 동작원리를 이해하는 작업이 필요!!</p>
+<p>여기에 html 프로젝트에서 사용하였던 Bootstrap도 포함해서 자동으로</p>
 
-<ul>
-  <li>Django를 이용하면 Web Application에서 많이 자주 구현해야 하는 내용을 쉽게 구현할 수 있어요!</li>
-</ul>
+<p>만들어진 component를 통해 Web application을 만들어 보겠습니다.</p>
 
-<h3>라이브러리(library) VS 프레임워크</h3>
-<p>두 가지 모두 이미 만들어진 것을 사용하는 것은 동일합니다. 차이점은 규칙에 있습니다. 라이브러리는 가져다 쓰는 개념이고 프레임워크는 내 것을 가져다가 프레임 워크 규칙에 맞추는 개념입니다.</p>
-
-<h3> 데이터 베이스 </h3>
-<p>Database : 데이터의 집합체</p>
-
-<p>DBMS (Database Management System)</p>
-
-<p>데이터베이스를 구축하고 원하는 정보를 추출하고 새로운 데이터를 입력하고 기존데이터를 삭제하고 기존데이터를 수정하는 작업을 진행.</p>
-
-<p>Django에서는 sqlite3라는 DBMS를 default 로 사용합니다.</p>
-
-<p>이런 데이터베이스는 언제부터 사용됐을까요?
-초창기에는 데이터를 이렇게 관리하면 좋지않을까라고 생각했습니다.
-그래서 나온 것이 조직도 형상 트리 구조로 정의된 계층형 데이터 베이스입니다.</p>
-
-<p>하지만 IBM에서 Relation 이라는 논문을 발표하였고 DB2를 출시하였습니다.</p>
-
-<p>관계형 데이터베이스는 행과 열로 구성된 테이블 간의 관계를 나타내는 것입니다.</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>관계형 데이터베이스</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th> </th>
-      <th> </th>
-      <th>순번</th>
-      <th> </th>
-      <th> </th>
-      <th> </th>
-      <th>이름</th>
-      <th> </th>
-      <th> </th>
-      <th> </th>
-      <th>학과</th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>1</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>홍길동</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>심리학과</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>2</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>김길동</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>컴퓨터학과</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>3</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>신사임당</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>경제학과</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>…</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>…</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>…</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>데이터를 관리하기 편한 장점을 가지고 있어 현재에는 거의 모든 DBMS가 Relational Database(관계형 데이터베이스)으로 제작됩니다.</p>
-
-<p>테이블 자료를 끌어가야하는데 프로그램 방식은 크게 두가지 방식이 있습니다.</p>
 <ol>
-  <li>ODBC</li>
-  <li>ORM (Object Relation Mapping) # Django</li>
+  <li>필요한 package들을 설치해야해요!</li>
 </ol>
 
-<p>즉 쉽게 설명하자면 Table = relation = class와 매핑됩니다.</p>
+<p>기본적으로 Django를 설치해야합니다.</p>
+<blockquote>
+  <p><code>$ pip3 install Django</code></p>
+</blockquote>
+
+<p>추가적으로 bootstrap에 대한 package를 설치합니다.</p>
+
+<p>일반적인 HTML 파일을 만들고 Bootstrap을 CDN과 tag 속성을 이용하면 Bootstrap을 이용할 수 있어요!</p>
+
+<p>그런데 이번에는 ModelForm을 이용할 것이고 사용자 입력양식 HTML을 자동으로 만들어줘요</p>
+
+<p>자동으로 생성되기 떄문에 Bootstrap을 적용할수 없어요</p>
+
+<p>이런경우에 사용자 입력양식에 Bootstrap을 적용하기 위해서 특정 Package를 설치해야 해요!</p>
+
+<blockquote>
+  <p><code>$ pip3 install Django-bootstrap4</code></p>
+</blockquote>
+
+<ol>
+  <li>project를 생성 + application 생성</li>
+</ol>
+
+<p>Django는 framework 이고 당연히 scaffolding 기능을 제공합니다.</p>
+
+<p>특정 명령어를 이용해서 필요한 폴더와 파일을 자동으로 생성해야 합니다.</p>
+
+<p>터미널을 이용해서 working directory를 python-django 폴더로 변경해요!!</p>
+
+<p><code>$ django-admin startproject blog</code></p>
+
+<p>해당 명령을 실행하면 기본적인 프로젝트 구조가 만들어져요</p>
+
+<p>우리 프로젝트와 앞으로 생성할 application 을 포함하고 있는 폴더의 이름을 변경합니다</p>
+
+<p>파일명이 혼동여부가 있어 상위폴더이름을 MyBlogSystem으로 파일명을 변경합니다.</p>
+
+<p>하나의 application을 우리프로젝트에 추가해요!!</p>
+
+<p><code>python3 manage.py startapp posts</code></p>
+
+<ol>
+  <li>project 설정 (settings)
+app등록 
+bootstrap도 마찬가지로 application 등록을 해야함.</li>
+</ol>
+
+<p>bootstrap4 등록!!</p>
+
+<p>settings.py 에 APP을 추가합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">'django.contrib.admin'</span><span class="p">,</span>
+    <span class="s">'django.contrib.auth'</span><span class="p">,</span>
+    <span class="s">'django.contrib.contenttypes'</span><span class="p">,</span>
+    <span class="s">'django.contrib.sessions'</span><span class="p">,</span>
+    <span class="s">'django.contrib.messages'</span><span class="p">,</span>
+    <span class="s">'django.contrib.staticfiles'</span><span class="p">,</span>
+    <span class="s">'posts.apps.PostsConfig'</span><span class="p">,</span>
+    <span class="s">'bootstrap4'</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>Templates 에서 DIRS를 추가 경로지정가능 !</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="s">'DIRS'</span><span class="p">:</span> <span class="p">[</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s">'blog'</span><span class="p">,</span> <span class="s">'templates'</span><span class="p">)],</span>
+</code></pre></div></div>
+
+<p>맨아래 내려가서 하기코드도 추가합니다. static이라는 폴더에 바로접근할 수 있습니다.
+정적리소스를 사용가능합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s">'static'</span><span class="p">)</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<ol>
+  <li>우리의 project를 web에 deploy해봐야 해요 !!
+기본적인 데이터 베이스를 들고가야해서 무조건 사용자 등록을 해야합니다.</li>
+</ol>
+
+<p>admin page가 존재 web에 deploy하기 이전에.. 기본 table부터 생성해야해요!</p>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">python3 manage.py migrate</code></p>
+</blockquote>
+
+<p>관리자 계정이 있어야 Admin page(관리자 화면)를 사용할 수 있어요!</p>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">python3 manage.py createsuperuser</code></p>
+</blockquote>
+
+<p>설정을 다했으니 이제 Web에 deploy해보도록 하겠습니다.</p>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">python3 manage.py runserver</code></p>
+</blockquote>
 
 <hr />
 
-<h3>Django의 특징</h3>
-<p><code class="language-plaintext highlighter-rouge">Django</code>는 MVC Model을 기반으로 한 MVT model을 이용해요!</p>
+<p>프로젝트의 기본설정이 완성 되었습니다.</p>
 
-<p>MVC Model : Model, View, Controller</p>
+<ol>
+  <li>모델구현
+기능을 구현하러 가야해요!! application을 구현해야해요!
+기능을 구현할 때 제일먼저해야 하는 일은 
+사용할 데이터에 대한 정확한 명세를 작성하는 거에요!!</li>
+</ol>
 
-<p>MVT model : Model, View, Template</p>
+<p>Django는 ORM을 이용하기 떄문에 class를 이용해서 Database를 사용해요!</p>
 
-<p>model : 데이터베이스 처리</p>
+<p>Model을 만들어야해요!!
+posts / applicaiton / models.py 파일에 Model을 정의</p>
 
-<p>View : 로직을 담당</p>
+<p>CharField vs TextField 
+한줄 vs 여러줄</p>
 
-<p>Template : 클라이언트에게 보여줄 화면을 담당</p>
+<p>이렇게 내가 만든 model을 Admin page에 반영하기 위해서</p>
 
-<p>오늘은 파이썬의 <code class="language-plaintext highlighter-rouge">Django</code>의 이론에 대하여 알아보았습니다.</p>
+<p>admin.py에 class를 등록해야해요!!</p>
+
+<p>Model을 생성했기 떄문에 데이터베이스에 변경이 필요!</p>
+
+<p>데이터베이스를 이렇게 저렇게 변경하세요 라는 명세(초안) 가 필요!!</p>
+<blockquote>
+  <p>python3 manage.py makemigrations</p>
+</blockquote>
+
+<p>초안이 완성되면 실제로 데이터베이스에 적용해서 Table을 생성</p>
+<blockquote>
+  <p>python3 manage.py migrate</p>
+</blockquote>
+
+<p>초기화 하기위해서는 migrations 폴더에 initial.py 와 db.sqlite3를 전부다 지우면됨!</p>
+
+<ol>
+  <li>URL 경로 설정</li>
+</ol>
+
+<p>from django.contrib import admin
+from django.urls import path, include
+from django.conf.urls import url
+from django.views.generic.base import TemplateView</p>
+
+<p>htttp:// localhost:8000 요청이 들어왔을때 우리 전체 project의 홈페이지로 이동할거에요!!
+Django는 elegant URL을 지원해요!!
+정규표현식 (regualr expression)
+시작 &gt; ^, 끝 &gt; $
+[0-9] : 1글자를 지칭
+{} : 반복횟수 {3} 3번반복 {3,5} 3 아님 5번 반복
+[0-9]{4} : 4자리 숫자가 나옴
+r(raw) 은 escape 문자를 한번 더 사용하지 않도록 처리.
+r”^[0-9]{1,3}$” 숫자가 1개나 3개나 모두가능
+\d 숫자를 지칭
+r”^010[1-9]\d{6,7}$”</p>
+
+<p>urlpatterns = [
+    # view 를 거치지 않고 바로 html을 호출
+    url(r”^$”, TemplateView.as_view(template_name=’index.html’), name=”home”),
+    path(‘admin/’, admin.site.urls),
+    # path(‘posts/’, include(‘posts/urls’))
+]</p>
+
+<p>cdn 방식으로 bootstrap을 써봐요 !!
+cover의 소스를 끌고와요 F12 개발자모드에서 소스끌어오기!
+static /css 에 붙여넣기</p>
+
+<p>url 설정 복붙하고 app_name = posts’</p>
+
+<p>urlpatterns = [
+    path(‘list/’, views.p_list, name = ‘list’),
+]</p>
+
+<p>blog project 안에 urls.py 부터 설정</p>
+
+<p>post application 안에 url.py 설정</p>
+
+<p>base template html 파일ㅇ르 blog project 안에 templates 폴더안에 생성</p>
+
+<ol>
+  <li>ModelForm 생성
+사용자 입력양식을 우리가 직접 HTML template안에 입력하는게 아니라 Model을 기반으로 사용자 입력양식을 자동으로 생성해 줄 수 있는데 ModelForm을 이용하면 이 작업을 할 수 있어요 !!</li>
+</ol>
+
+<p>class를 작성해야 해요 ! &gt; 어느파일에서 만들어야 하나요??</p>
+
+<p>forms.py 에서 정의해야해요!</p>
+
+<p>from django import forms
+from posts.models import Post</p>
+
+<p>class PostForm (forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = [‘author’, ‘contents’]</p>
+
+<ol>
+  <li>list page 생성
+    <ul>
+      <li>views.py 을 수정해서 list/ 가 요청되었을 때 해야하는 일을 기술</li>
+    </ul>
+  </li>
+</ol>
+
+<p>from django.shortcuts import render
+from posts.models import Post</p>
+<h1 id="create-your-views-here">Create your views here.</h1>
+
+<p>def p_list(request):    #데이터
+    my_list = Post.objects.all().order_by(‘-id’)
+    context = {‘posts’ : my_list}
+    return render(request, ‘list.html’, context)</p>
+
+<p>posts/ list.html</p>
+
+<p>전부 다 작성할필요가없어요 base.html의 것을 확장해서 사용</p>
+
+<p>{ % extends ‘base.html’ % }</p>
+
+<p>{ % block container % }
+    &lt;div class ='container'&gt;
+        &lt;h1&gt;Bullentin Board System(BBS)&lt;/h1&gt;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;/div&gt; { % endblock % }
+</code></pre></div></div>
+
+<p>안에 좀더 내용을 채워봐요 !!</p>
+
+<ol>
+  <li>
+    <p>create page 생성</p>
+  </li>
+  <li>
+    <p>delete 기능 구현</p>
+  </li>
+</ol>
 
         
       </section>
@@ -492,6 +587,37 @@ Python 으로 만들어진 오픈소스
       <footer class="page__meta">
         
         
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#bbs" class="page__taxonomy-item" rel="tag">BBS</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#polls" class="page__taxonomy-item" rel="tag">Polls</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#project" class="page__taxonomy-item" rel="tag">Project</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#webapplication" class="page__taxonomy-item" rel="tag">Webapplication</a>
+    
+    </span>
+  </p>
+
+
 
 
   
@@ -524,22 +650,22 @@ Python 으로 만들어진 오픈소스
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BDjango%5D+%EC%9D%B4%EB%A1%A0%20http%3A%2F%2Flocalhost%3A4000%2Fdjango%2FDjango-Basic%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BDjango%5D+BBS+Project+%20http%3A%2F%2Flocalhost%3A4000%2Fdjango%2FDjango-BBS%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdjango%2FDjango-Basic%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdjango%2FDjango-BBS%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fdjango%2FDjango-Basic%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fdjango%2FDjango-BBS%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/django/Django-BBS/" class="pagination--pager" title="[Django] BBS Project
+      <a href="/django/DjangoPage/" class="pagination--pager" title="Django Page
 ">Previous</a>
     
     
-      <a href="/django/Django-simple-web-application/" class="pagination--pager" title="[Django] 설치 및 기초운용
+      <a href="/django/Django-Basic/" class="pagination--pager" title="[Django] 이론
 ">Next</a>
     
   </nav>
@@ -768,8 +894,8 @@ mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행�
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/django/Django-Basic/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/django/Django-Basic"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/django/Django-BBS/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/django/Django-BBS"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

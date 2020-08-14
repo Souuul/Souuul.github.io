@@ -1,0 +1,94 @@
+I"w,<h2> jQuery</h2>
+<p>오늘은 jQuery 를 배워보겠습니다.</p>
+
+<p>jQuery는 JavaScript로 만든 사용하기 편한 무료 라이브러리 입니다.</p>
+
+<p>JavaScript는 특정 browser 제대로 작동하지 않는 경우가 있습니다.</p>
+
+<p>그렇지만 jQuery의 경우 모든 browser 에서 동일하게 작동합니다.</p>
+
+<h3> jQuery 사용방법 </h3>
+<p>설치도 가능하지만 CDN방식을 이용하려고 합니다.</p>
+
+<p>CDN(Content Delivery Network) 방식은 네트워크를 통해서 라이브러리를 동적으로 다운로드해서 사용하는 개념입니다.</p>
+
+<p>하기코드는 jQuery사이트에서 직점 복사할 수 있습니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;script
+            </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-2.2.4.min.js"</span>
+            <span class="na">integrity=</span><span class="s">"sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="</span>
+            <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3> jQuery 첫걸음 </h3>
+<p>그렇다면 jQuery 사용하여 보도록 하겠습니다.</p>
+
+<p>jQuery는 공부할때 가장먼저 배워야하는 것은 바로 Selector 입니다.</p>
+
+<p>하기 예제를 통하여 Selector에 대하여 자세하게 알아보겠습니다.</p>
+
+<p>HTML</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/05_jQuery.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>jQuery 연습입니다.!!<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="c">&lt;!--class는 중복해서 사용가--&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"region"</span><span class="nt">&gt;</span>서울<span class="nt">&lt;/li&gt;</span>
+            <span class="c">&lt;!--ID 는 중복해서 사용 불가능--&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"haha"</span><span class="nt">&gt;</span>인천<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"region"</span><span class="nt">&gt;</span>강원<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;ol&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"hong"</span><span class="nt">&gt;</span>홍길동<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>신사임당<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>강감찬<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ol&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">value=</span><span class="s">"클릭클릭!"</span> <span class="na">onclick=</span><span class="s">"my_func()"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>상기 코드에서  클릭클릭 이라는 버튼을 누르면 my_func()라는 함수가 호출됩니다.</p>
+
+<p>my_func()는 HTML에서 명시한 것 처럼 js/05_jQuery.js 에 위치하고 있습니다.</p>
+
+<p>my_func()를 살펴보도록 하겠습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">my_func</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">함수가 호출되요</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// print 기능으로 활용가능합니다!</span>
+    <span class="mi">1</span><span class="p">.</span> <span class="nx">전체</span> <span class="nx">선택자</span><span class="p">(</span><span class="nx">universal</span> <span class="nx">selector</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// *전체선택자</span>
+    
+    <span class="mi">2</span><span class="p">.</span> <span class="nx">태그</span> <span class="nx">선택자</span><span class="p">(</span><span class="nx">tag</span> <span class="nx">selector</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">li</span><span class="dl">"</span><span class="p">).</span><span class="nx">remove</span><span class="p">()</span>
+    
+    <span class="mi">3</span><span class="p">.</span> <span class="nx">아이디</span> <span class="nx">선택자</span><span class="p">(</span><span class="nx">id</span> <span class="nx">selector</span><span class="p">)</span>  <span class="nx">중복하여</span> <span class="nx">사용불가능</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#haha</span><span class="dl">"</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span>  <span class="c1">// # ID지칭</span>
+                        <span class="c1">// 인자가 없으면 값을 알아오라는 의미, 인자가 있으면 값을 변경</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#haha</span><span class="dl">"</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">울산</span><span class="dl">"</span><span class="p">)</span>
+    
+    <span class="mi">4</span><span class="p">.</span> <span class="nx">클래스</span> <span class="nx">선택자</span> <span class="p">(</span><span class="kd">class</span> <span class="nx">selector</span><span class="p">)</span> <span class="nx">중복하여</span> <span class="nx">사용가능</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.region</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">background-color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">yellow</span><span class="dl">"</span><span class="p">)</span>
+    
+    <span class="mi">5</span><span class="p">.</span> <span class="nx">구조</span> <span class="nx">선택자</span> <span class="p">(</span><span class="nx">자식</span> <span class="nx">선택자</span> <span class="nx">후손</span> <span class="nx">선택자</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">ol &gt; *</span><span class="dl">"</span><span class="p">).</span><span class="nx">remove</span><span class="p">()</span> <span class="c1">// ol &gt; * ol에 자식으로 있는 것들중 모든것</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">ol &gt; li</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// ol &gt; * ol에 자식으로 있는 것들중 li</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">div li</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">pink</span><span class="dl">"</span><span class="p">)</span>    <span class="c1">// div 후손으로 있는 것들을  li를 모두 선택</span>
+    
+    <span class="mi">6</span><span class="p">.</span> <span class="nx">구조</span> <span class="nx">선택자</span> <span class="p">(</span><span class="nx">형제</span> <span class="nx">선택자</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#haha + li</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">pink</span><span class="dl">"</span><span class="p">)</span>  <span class="c1">// id의 형제를 찾고 +를 이용하여 바로 다음 형제를 찾는 것이 가능</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#hong ~ li</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">pink</span><span class="dl">"</span><span class="p">)</span>  <span class="c1">//id이후의 모든 형제를 찾음</span>
+    
+    <span class="mi">7</span><span class="p">.</span> <span class="nx">속성</span> <span class="nx">선택자</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">[id]</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">yellow</span><span class="dl">"</span><span class="p">)</span>  <span class="c1">// id 모든 속성을 전부 찾음</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">[class]</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">)</span>     <span class="c1">// class 모든 속성을 전부 찾음</span>
+    
+    <span class="c1">// 이 7가지를 조합하면 왠만한 element는 지정하는게 가능 !!!!</span>
+</code></pre></div></div>
+
+<p>상기 코드에 주석을 처리하여 어떤 element 를 지정하는지 알아보았습니다.</p>
+:ET

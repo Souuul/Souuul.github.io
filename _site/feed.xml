@@ -1,4 +1,308 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-04T18:12:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Django] 설치 및 기초운용</title><link href="http://localhost:4000/django/Django-simple-web-application/" rel="alternate" type="text/html" title="[Django] 설치 및 기초운용" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application/">&lt;h2&gt;Django설치 및 기초운용&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-14T17:09:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Django] Poll 프로젝트 2</title><link href="http://localhost:4000/django/Django-simple-web-application3/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 2" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application3</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application3/">&lt;h2&gt;Polls 프로젝트 2&lt;/h2&gt;
+&lt;h3&gt;투표시스템 질문지 항목 추가&lt;/h3&gt;
+&lt;p&gt;저번시간에는 Question 항목까지 만드는 것을 해보았습니다.&lt;/p&gt;
+
+&lt;p&gt;이번 시간에는 선택항목까지 제작해보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;Pycharm을 다시한번 열어보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;만들어진 template 폴더안에 detail.html 파일을 생성합니다.&lt;/p&gt;
+
+&lt;p&gt;생성하는 이유는 차근차근 설명하도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;첫 시간에 models.py 안에 저희가 Class Question 과 Choice 를 만들었죠?&lt;/p&gt;
+
+&lt;p&gt;오늘도 만든 Class를 사용하여 만들어보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;polls폴더안에 views.py파일을 실행시켜 하기 코드를 추가합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;question_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 로직처리를 해요!
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 아까는 모든 Question 객체를 다 구해서 리스트로 만들었는데
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 이번에는 특정 Question 객체 1개만 구해야 해요
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_object_or_404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;question_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;question&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# questiond 이라는 문자열로 context를 호출합니다.
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'detail.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;index method를 제작했을 때와는 다르게 처음보는 코드가 있습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;def detail(request, question_id):&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;def index&lt;/code&gt; 에서 와는다르게 question_id 라는 인자를 하나 더받습니다.&lt;/p&gt;
+
+  &lt;p&gt;index에서 하이퍼링크를 타고 detail 페이지로 넘어올때 그 인자까지도 받는다는 내용입니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get_object_or_404(Question, pk=question_id)&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;받는 객체가 있다면 객체를 받고 없다면 404 page를 띄운다는 간단한 내용입니다.&lt;/p&gt;
+
+  &lt;p&gt;대신 전달받은 primary key에 한해 Question에서의 객체를 받는 다는 내용입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;다음은 urls.py 파일을 생성해보겠습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;http://localhost:8000/polls/ 주소로 접속하면 index.html 로 들어가게 되어있습니다.&lt;/p&gt;
+
+  &lt;p&gt;저희는 질문지를 눌렀을때 선택항목이 나오는 페이지가 나오게 경로를 잡아줘야합니다.&lt;/p&gt;
+
+  &lt;p&gt;다양한 방법이 있지만 index에서 전달받은 pk를 가지고 접속해보도록 하겠습니다.&lt;/p&gt;
+
+  &lt;p&gt;하기코드를 입력하겠습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c1&quot;&gt;# http://localhost:8000/polls/&amp;lt;숫자&amp;gt;/
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;lt;int:question_id&amp;gt;/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'detail'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;‘path(‘&lt;int:question_id&gt;/', views.detail, name='detail')'&lt;/int:question_id&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;‘http://localhost:8000/polls/question_id ‘&lt;/p&gt;
+
+  &lt;p&gt;polls/question_id 의 경로일 경우 view.index 함수를 실행합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;다시 처음으로 돌아가서 detail.html의 코드를 수정하겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;{ {question.question_text} }&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    { % csrf_token % }
+    { % for choice in question.choice_set.all % }
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;radio&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice.id&quot;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;rabel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            { {choice.choice_text} }
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/rabel&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
+    { % endfor % }
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;투표&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+
+]
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;form action=&quot;&quot; method=&quot;post&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;post 방식으로 데이터를 받으면 action으로 처리한다는 내용입니다.&lt;/p&gt;
+
+  &lt;p&gt;submit 버튼을 눌렀을 경우 하기 input에서 name과 value 인자를 다음페이지로 보낼 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { question.choice_set.all }}&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;choice에 해당되는 객체를 모두 받습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;radio&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice.id&quot;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;라디오 버튼을 제작합니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; 는 choice1, …&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name = choice&lt;/code&gt; : 항목을 서로 묶기 위해서 명시합니다. 중복선택을 방지가능합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;nt&quot;&gt;&amp;lt;rabel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            { {choice.choice_text} }
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/rabel&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;상기 항목에서 명시한 id와 rabel 의 text와 매칭되어 관리 됩니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ python3 manage.py runserver&lt;/code&gt; 를 통해 수정된 페이지를 확인해봅시다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/django_polls_detail.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+오늘은 poll 프로젝트의 질문지 선택까지 제작해보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 2 투표시스템 질문지 항목 추가 저번시간에는 Question 항목까지 만드는 것을 해보았습니다.</summary></entry><entry><title type="html">[Django] Poll 프로젝트 1</title><link href="http://localhost:4000/django/Django-simple-web-application2/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 1" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application2</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application2/">&lt;h2&gt;Polls 프로젝트 1&lt;/h2&gt;
+&lt;h3&gt;Templates 생성&lt;/h3&gt;
+&lt;p&gt;저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.&lt;/p&gt;
+
+&lt;p&gt;이번 시간에는 데이터베이스에 있는 데이터를 활용해보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;투표 프로젝트를 만들면서 자세하게 알아보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;일단 터미널에서 polls폴더 안에 template 폴더를 생성합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code&gt;$ cd polls &lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code&gt;$ mkdir templates &lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Pycharm을 다시한번 열어보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;만들어진 template 폴더안에 index.html 파일을 생성합니다.&lt;/p&gt;
+
+&lt;p&gt;생성하는 이유는 차근차근 설명하도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;어제 만든 models.py 안에 저희가 Class Question 과 Choice 를 만들었죠?&lt;/p&gt;
+
+&lt;p&gt;오늘은 어제 만든 Class를 사용하여 만들어보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;polls폴더안에 views.py파일을 실행시켜 하기 코드를 추가합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 서버가 보내준 request 반드시 인자로 넘겨줘야함 !!
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;#로직처리 코드가 나와요!!
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;order_by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-pub_date'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 객체(objects)의 모든것(all())을 불러옴 정렬 order_by() - 오름차순 [:] slicing
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;latest_question_list&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'index.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;#render는 그리는 작업 / HTML을 그림
+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;서버와 클라이언트 사이에는 request와 response로 데이터를 주고 받습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index(request)&lt;/code&gt; : 서버에서 받은 request를 index 함수에 인자로 넘겨줍니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tmp&lt;/code&gt;라는 변수를 설정하여&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Question&lt;/code&gt; : Question Class&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;objects&lt;/code&gt; : 클래스 안의 객체&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;all()&lt;/code&gt; : 전부&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;order_by('-pub_date')&lt;/code&gt; : pub-date 기준으로 오름차순으로&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[:3]&lt;/code&gt; : Slicing 3개까지 변수로 할당합니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;context&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;dictionary 형태를 통하여 변수 context를 선언합니다.&lt;/p&gt;
+
+  &lt;p&gt;latest_question_list는 Key값  Question 의 모든객체는 Value 값이 됩니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;render&lt;/code&gt; : request 를 받아 함수처리를 하고 html파일에 적용하는 것을 의미합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;다음은 urls.py 파일을 생성해보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;처음부터 새로 만들어도 가능하지만 mysite에서 만들어진 urls.py를 polls하위에 복사하여 사용하도록하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;모든내용을 지우고&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.urls&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;app_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;polls&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;urlpatterns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# http://localhost:8000/polls/
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'index'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;from . import views 경로안에 views.py 함수를 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;path(‘’, views.index, name=’index’),
+localhost:8000/polls/ 경로뒤에 ‘’ 아무것도 오지않으면 view.index 함수호출해요
+name 은 경로에 대한 이름 입니다. 향후 이름을 통해서 경로를 호출하거나 함수를 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;다시 처음으로 돌아가서 index.html의 코드를 수정하겠습니다.&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;투표목록이 나와야 해요!!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+
+    { % if latest_question_list % }
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+        { % for question in latest_question_list % }
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/polls/{ { question.id } }&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    { { question.question_text } }&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        { % endfor % }
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+    { % else % }
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;출력할 투표목록이 존재하지 않습니다.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    { % endif % }
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;template code!! python도아니고 HTML 도아닌 template 안에서만 사용가능 
+중괄호 표현은 template code이며 HTML, Python 언어가 아니므로 주의하셔서 사용해야합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ % % }&lt;/code&gt; : 로직코드이며 조건 및 반복문 등 로직을 사용해야할 경우 사용합니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { } }&lt;/code&gt; : 값을 입력할 경우 사용합니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { if latest_question_list} }&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;views.index에서 키값으로 받은 latest_question_list 존재여부를 판단합니다.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { for question in latest_question_list} }&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;question 변수에 lastest_question_list객체를 삽입합니다.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a href=&quot;/polls/{ { question.id } }&quot;&amp;gt;{ { question.question_text } }&amp;lt;/a&amp;gt;&amp;lt;li&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;lastest_question_list 에서 전달받은 객체에서 .question_text 객체를 뽑아냅니다. 
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+이렇게하면 하기의 초기페이지를 완성할 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/django_polls_index.png&quot; alt=&quot;assets/image/django_polls_index&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+오늘은 첫페이지인 index까지 작성해 보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 1 Templates 생성 저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.</summary></entry><entry><title type="html">[Django] 설치 및 기초운용</title><link href="http://localhost:4000/django/Django-simple-web-application/" rel="alternate" type="text/html" title="[Django] 설치 및 기초운용" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application/">&lt;h2&gt;Django설치 및 기초운용&lt;/h2&gt;
 &lt;h3&gt;Django 설치&lt;/h3&gt;
 &lt;p&gt;mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.&lt;/p&gt;
 
@@ -419,7 +723,262 @@ Python 으로 만들어진 오픈소스
 
 &lt;p&gt;Template : 클라이언트에게 보여줄 화면을 담당&lt;/p&gt;
 
-&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django&lt;/code&gt;의 이론에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html">Django 오늘은 Django에 대하여 알아보아요! Python 으로 만들어진 오픈소스 웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework</summary></entry><entry><title type="html">[Django] Poll 프로젝트 3 (마지막)</title><link href="http://localhost:4000/django/Django-simple-web-application4/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 3 (마지막)" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application4</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application4/">&lt;h2&gt;Polls 프로젝트 3&lt;/h2&gt;
+&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django&lt;/code&gt;의 이론에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html">Django 오늘은 Django에 대하여 알아보아요! Python 으로 만들어진 오픈소스 웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework</summary></entry><entry><title type="html">[Django] BBS Project</title><link href="http://localhost:4000/django/Django-BBS/" rel="alternate" type="text/html" title="[Django] BBS Project" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-BBS</id><content type="html" xml:base="http://localhost:4000/django/Django-BBS/">&lt;h2&gt; BBS (Bullentin Board System) &lt;/h2&gt;
+&lt;p&gt;Poll 프로젝트에 이어 오늘은 게시판을 만들어 보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;Poll 프로젝트는 처음 부터 끝까지 저희가 코드를 작성했었죠 ?&lt;/p&gt;
+
+&lt;p&gt;외울 것도 많고 작성해야하는 것도 많았습니다.&lt;/p&gt;
+
+&lt;p&gt;오늘은 polls project 에서 배웠던 내용을 기반으로 쉽게 제작해보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;ModelForm을 이용해서 CRUD구현을 알아 보겠습니다.&lt;/p&gt;
+
+&lt;h3&gt;CRUD (CREATE READ UPDATE DELETE)&lt;/h3&gt;
+
+&lt;p&gt;ModelForm을 이용하면 사용자 입력양식 처리하는게 쉬워집니다.&lt;/p&gt;
+
+&lt;p&gt;여기에 html 프로젝트에서 사용하였던 Bootstrap도 포함해서 자동으로&lt;/p&gt;
+
+&lt;p&gt;만들어진 component를 통해 Web application을 만들어 보겠습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;필요한 package들을 설치해야해요!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;기본적으로 Django를 설치해야합니다.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code&gt;$ pip3 install Django&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;추가적으로 bootstrap에 대한 package를 설치합니다.&lt;/p&gt;
+
+&lt;p&gt;일반적인 HTML 파일을 만들고 Bootstrap을 CDN과 tag 속성을 이용하면 Bootstrap을 이용할 수 있어요!&lt;/p&gt;
+
+&lt;p&gt;그런데 이번에는 ModelForm을 이용할 것이고 사용자 입력양식 HTML을 자동으로 만들어줘요&lt;/p&gt;
+
+&lt;p&gt;자동으로 생성되기 떄문에 Bootstrap을 적용할수 없어요&lt;/p&gt;
+
+&lt;p&gt;이런경우에 사용자 입력양식에 Bootstrap을 적용하기 위해서 특정 Package를 설치해야 해요!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code&gt;$ pip3 install Django-bootstrap4&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;project를 생성 + application 생성&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Django는 framework 이고 당연히 scaffolding 기능을 제공합니다.&lt;/p&gt;
+
+&lt;p&gt;특정 명령어를 이용해서 필요한 폴더와 파일을 자동으로 생성해야 합니다.&lt;/p&gt;
+
+&lt;p&gt;터미널을 이용해서 working directory를 python-django 폴더로 변경해요!!&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ django-admin startproject blog&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;해당 명령을 실행하면 기본적인 프로젝트 구조가 만들어져요&lt;/p&gt;
+
+&lt;p&gt;우리 프로젝트와 앞으로 생성할 application 을 포함하고 있는 폴더의 이름을 변경합니다&lt;/p&gt;
+
+&lt;p&gt;파일명이 혼동여부가 있어 상위폴더이름을 MyBlogSystem으로 파일명을 변경합니다.&lt;/p&gt;
+
+&lt;p&gt;하나의 application을 우리프로젝트에 추가해요!!&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;python3 manage.py startapp posts&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;project 설정 (settings)
+app등록 
+bootstrap도 마찬가지로 application 등록을 해야함.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;bootstrap4 등록!!&lt;/p&gt;
+
+&lt;p&gt;settings.py 에 APP을 추가합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;INSTALLED_APPS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.admin'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.auth'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.contenttypes'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.sessions'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.messages'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'django.contrib.staticfiles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'posts.apps.PostsConfig'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'bootstrap4'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Templates 에서 DIRS를 추가 경로지정가능 !&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;s&quot;&gt;'DIRS'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BASE_DIR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'blog'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'templates'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)],&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;맨아래 내려가서 하기코드도 추가합니다. static이라는 폴더에 바로접근할 수 있습니다.
+정적리소스를 사용가능합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;STATICFILES_DIRS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BASE_DIR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'static'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;우리의 project를 web에 deploy해봐야 해요 !!
+기본적인 데이터 베이스를 들고가야해서 무조건 사용자 등록을 해야합니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;admin page가 존재 web에 deploy하기 이전에.. 기본 table부터 생성해야해요!&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py migrate&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;관리자 계정이 있어야 Admin page(관리자 화면)를 사용할 수 있어요!&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py createsuperuser&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;설정을 다했으니 이제 Web에 deploy해보도록 하겠습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py runserver&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;프로젝트의 기본설정이 완성 되었습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;모델구현
+기능을 구현하러 가야해요!! application을 구현해야해요!
+기능을 구현할 때 제일먼저해야 하는 일은 
+사용할 데이터에 대한 정확한 명세를 작성하는 거에요!!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Django는 ORM을 이용하기 떄문에 class를 이용해서 Database를 사용해요!&lt;/p&gt;
+
+&lt;p&gt;Model을 만들어야해요!!
+posts / applicaiton / models.py 파일에 Model을 정의&lt;/p&gt;
+
+&lt;p&gt;CharField vs TextField 
+한줄 vs 여러줄&lt;/p&gt;
+
+&lt;p&gt;이렇게 내가 만든 model을 Admin page에 반영하기 위해서&lt;/p&gt;
+
+&lt;p&gt;admin.py에 class를 등록해야해요!!&lt;/p&gt;
+
+&lt;p&gt;Model을 생성했기 떄문에 데이터베이스에 변경이 필요!&lt;/p&gt;
+
+&lt;p&gt;데이터베이스를 이렇게 저렇게 변경하세요 라는 명세(초안) 가 필요!!&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;python3 manage.py makemigrations&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;초안이 완성되면 실제로 데이터베이스에 적용해서 Table을 생성&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;python3 manage.py migrate&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;초기화 하기위해서는 migrations 폴더에 initial.py 와 db.sqlite3를 전부다 지우면됨!&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;URL 경로 설정&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;from django.contrib import admin
+from django.urls import path, include
+from django.conf.urls import url
+from django.views.generic.base import TemplateView&lt;/p&gt;
+
+&lt;p&gt;htttp:// localhost:8000 요청이 들어왔을때 우리 전체 project의 홈페이지로 이동할거에요!!
+Django는 elegant URL을 지원해요!!
+정규표현식 (regualr expression)
+시작 &amp;gt; ^, 끝 &amp;gt; $
+[0-9] : 1글자를 지칭
+{} : 반복횟수 {3} 3번반복 {3,5} 3 아님 5번 반복
+[0-9]{4} : 4자리 숫자가 나옴
+r(raw) 은 escape 문자를 한번 더 사용하지 않도록 처리.
+r”^[0-9]{1,3}$” 숫자가 1개나 3개나 모두가능
+\d 숫자를 지칭
+r”^010[1-9]\d{6,7}$”&lt;/p&gt;
+
+&lt;p&gt;urlpatterns = [
+    # view 를 거치지 않고 바로 html을 호출
+    url(r”^$”, TemplateView.as_view(template_name=’index.html’), name=”home”),
+    path(‘admin/’, admin.site.urls),
+    # path(‘posts/’, include(‘posts/urls’))
+]&lt;/p&gt;
+
+&lt;p&gt;cdn 방식으로 bootstrap을 써봐요 !!
+cover의 소스를 끌고와요 F12 개발자모드에서 소스끌어오기!
+static /css 에 붙여넣기&lt;/p&gt;
+
+&lt;p&gt;url 설정 복붙하고 app_name = posts’&lt;/p&gt;
+
+&lt;p&gt;urlpatterns = [
+    path(‘list/’, views.p_list, name = ‘list’),
+]&lt;/p&gt;
+
+&lt;p&gt;blog project 안에 urls.py 부터 설정&lt;/p&gt;
+
+&lt;p&gt;post application 안에 url.py 설정&lt;/p&gt;
+
+&lt;p&gt;base template html 파일ㅇ르 blog project 안에 templates 폴더안에 생성&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ModelForm 생성
+사용자 입력양식을 우리가 직접 HTML template안에 입력하는게 아니라 Model을 기반으로 사용자 입력양식을 자동으로 생성해 줄 수 있는데 ModelForm을 이용하면 이 작업을 할 수 있어요 !!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;class를 작성해야 해요 ! &amp;gt; 어느파일에서 만들어야 하나요??&lt;/p&gt;
+
+&lt;p&gt;forms.py 에서 정의해야해요!&lt;/p&gt;
+
+&lt;p&gt;from django import forms
+from posts.models import Post&lt;/p&gt;
+
+&lt;p&gt;class PostForm (forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = [‘author’, ‘contents’]&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;list page 생성
+    &lt;ul&gt;
+      &lt;li&gt;views.py 을 수정해서 list/ 가 요청되었을 때 해야하는 일을 기술&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;from django.shortcuts import render
+from posts.models import Post&lt;/p&gt;
+&lt;h1 id=&quot;create-your-views-here&quot;&gt;Create your views here.&lt;/h1&gt;
+
+&lt;p&gt;def p_list(request):    #데이터
+    my_list = Post.objects.all().order_by(‘-id’)
+    context = {‘posts’ : my_list}
+    return render(request, ‘list.html’, context)&lt;/p&gt;
+
+&lt;p&gt;posts/ list.html&lt;/p&gt;
+
+&lt;p&gt;전부 다 작성할필요가없어요 base.html의 것을 확장해서 사용&lt;/p&gt;
+
+&lt;p&gt;{ % extends ‘base.html’ % }&lt;/p&gt;
+
+&lt;p&gt;{ % block container % }
+    &amp;lt;div class ='container'&amp;gt;
+        &amp;lt;h1&amp;gt;Bullentin Board System(BBS)&amp;lt;/h1&amp;gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;/div&amp;gt; { % endblock % }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;안에 좀더 내용을 채워봐요 !!&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;create page 생성&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;delete 기능 구현&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><category term="BBS" /><summary type="html">BBS (Bullentin Board System) Poll 프로젝트에 이어 오늘은 게시판을 만들어 보겠습니다.</summary></entry><entry><title type="html">[Django] Poll 프로젝트 3 (마지막)</title><link href="http://localhost:4000/django/Django-simple-web-application4/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 3 (마지막)" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application4</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application4/">&lt;h2&gt;Polls 프로젝트 3&lt;/h2&gt;
 &lt;h3&gt;투표시스템 결과확인&lt;/h3&gt;
 &lt;p&gt;저번시간에는 저희가 질문지를 라디오 버튼을 통하여 선택하는 것과 submit버튼을 제작해 보았습니다.&lt;/p&gt;
 
@@ -537,311 +1096,7 @@ Python 으로 만들어진 오픈소스
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/django_polls_vote.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;이번 시간에는 Poll 프로젝트에 대하여 마무리를 해봤습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 3 투표시스템 결과확인 저번시간에는 저희가 질문지를 라디오 버튼을 통하여 선택하는 것과 submit버튼을 제작해 보았습니다.</summary></entry><entry><title type="html">[Django] Poll 프로젝트 2</title><link href="http://localhost:4000/django/Django-simple-web-application3/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 2" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application3</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application3/">&lt;h2&gt;Polls 프로젝트 2&lt;/h2&gt;
-&lt;h3&gt;투표시스템 질문지 항목 추가&lt;/h3&gt;
-&lt;p&gt;저번시간에는 Question 항목까지 만드는 것을 해보았습니다.&lt;/p&gt;
-
-&lt;p&gt;이번 시간에는 선택항목까지 제작해보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;Pycharm을 다시한번 열어보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;만들어진 template 폴더안에 detail.html 파일을 생성합니다.&lt;/p&gt;
-
-&lt;p&gt;생성하는 이유는 차근차근 설명하도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;첫 시간에 models.py 안에 저희가 Class Question 과 Choice 를 만들었죠?&lt;/p&gt;
-
-&lt;p&gt;오늘도 만든 Class를 사용하여 만들어보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;polls폴더안에 views.py파일을 실행시켜 하기 코드를 추가합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;question_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 로직처리를 해요!
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 아까는 모든 Question 객체를 다 구해서 리스트로 만들었는데
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 이번에는 특정 Question 객체 1개만 구해야 해요
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_object_or_404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;question_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;question&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# questiond 이라는 문자열로 context를 호출합니다.
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'detail.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt;코드설명&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;index method를 제작했을 때와는 다르게 처음보는 코드가 있습니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;def detail(request, question_id):&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;def index&lt;/code&gt; 에서 와는다르게 question_id 라는 인자를 하나 더받습니다.&lt;/p&gt;
-
-  &lt;p&gt;index에서 하이퍼링크를 타고 detail 페이지로 넘어올때 그 인자까지도 받는다는 내용입니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get_object_or_404(Question, pk=question_id)&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;받는 객체가 있다면 객체를 받고 없다면 404 page를 띄운다는 간단한 내용입니다.&lt;/p&gt;
-
-  &lt;p&gt;대신 전달받은 primary key에 한해 Question에서의 객체를 받는 다는 내용입니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;다음은 urls.py 파일을 생성해보겠습니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;http://localhost:8000/polls/ 주소로 접속하면 index.html 로 들어가게 되어있습니다.&lt;/p&gt;
-
-  &lt;p&gt;저희는 질문지를 눌렀을때 선택항목이 나오는 페이지가 나오게 경로를 잡아줘야합니다.&lt;/p&gt;
-
-  &lt;p&gt;다양한 방법이 있지만 index에서 전달받은 pk를 가지고 접속해보도록 하겠습니다.&lt;/p&gt;
-
-  &lt;p&gt;하기코드를 입력하겠습니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c1&quot;&gt;# http://localhost:8000/polls/&amp;lt;숫자&amp;gt;/
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;lt;int:question_id&amp;gt;/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'detail'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt;코드설명&lt;/h4&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;‘path(‘&lt;int:question_id&gt;/', views.detail, name='detail')'&lt;/int:question_id&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;‘http://localhost:8000/polls/question_id ‘&lt;/p&gt;
-
-  &lt;p&gt;polls/question_id 의 경로일 경우 view.index 함수를 실행합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;다시 처음으로 돌아가서 detail.html의 코드를 수정하겠습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;{ {question.question_text} }&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    { % csrf_token % }
-    { % for choice in question.choice_set.all % }
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;radio&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice.id&quot;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;rabel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            { {choice.choice_text} }
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/rabel&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
-    { % endfor % }
-
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;투표&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-
-]
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt;코드설명&lt;/h4&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;form action=&quot;&quot; method=&quot;post&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;post 방식으로 데이터를 받으면 action으로 처리한다는 내용입니다.&lt;/p&gt;
-
-  &lt;p&gt;submit 버튼을 눌렀을 경우 하기 input에서 name과 value 인자를 다음페이지로 보낼 수 있습니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { question.choice_set.all }}&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;choice에 해당되는 객체를 모두 받습니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;radio&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice.id&quot;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;라디오 버튼을 제작합니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; 는 choice1, …&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name = choice&lt;/code&gt; : 항목을 서로 묶기 위해서 명시합니다. 중복선택을 방지가능합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;nt&quot;&gt;&amp;lt;rabel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            { {choice.choice_text} }
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/rabel&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;상기 항목에서 명시한 id와 rabel 의 text와 매칭되어 관리 됩니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ python3 manage.py runserver&lt;/code&gt; 를 통해 수정된 페이지를 확인해봅시다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/django_polls_detail.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-오늘은 poll 프로젝트의 질문지 선택까지 제작해보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 2 투표시스템 질문지 항목 추가 저번시간에는 Question 항목까지 만드는 것을 해보았습니다.</summary></entry><entry><title type="html">[Django] Poll 프로젝트 1</title><link href="http://localhost:4000/django/Django-simple-web-application2/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 1" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application2</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application2/">&lt;h2&gt;Polls 프로젝트 1&lt;/h2&gt;
-&lt;h3&gt;Templates 생성&lt;/h3&gt;
-&lt;p&gt;저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.&lt;/p&gt;
-
-&lt;p&gt;이번 시간에는 데이터베이스에 있는 데이터를 활용해보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;투표 프로젝트를 만들면서 자세하게 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;일단 터미널에서 polls폴더 안에 template 폴더를 생성합니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code&gt;$ cd polls &lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code&gt;$ mkdir templates &lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Pycharm을 다시한번 열어보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;만들어진 template 폴더안에 index.html 파일을 생성합니다.&lt;/p&gt;
-
-&lt;p&gt;생성하는 이유는 차근차근 설명하도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;어제 만든 models.py 안에 저희가 Class Question 과 Choice 를 만들었죠?&lt;/p&gt;
-
-&lt;p&gt;오늘은 어제 만든 Class를 사용하여 만들어보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;polls폴더안에 views.py파일을 실행시켜 하기 코드를 추가합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 서버가 보내준 request 반드시 인자로 넘겨줘야함 !!
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;#로직처리 코드가 나와요!!
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;order_by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-pub_date'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 객체(objects)의 모든것(all())을 불러옴 정렬 order_by() - 오름차순 [:] slicing
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;latest_question_list&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'index.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;#render는 그리는 작업 / HTML을 그림
-&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt;코드설명&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;서버와 클라이언트 사이에는 request와 response로 데이터를 주고 받습니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index(request)&lt;/code&gt; : 서버에서 받은 request를 index 함수에 인자로 넘겨줍니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tmp&lt;/code&gt;라는 변수를 설정하여&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Question&lt;/code&gt; : Question Class&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;objects&lt;/code&gt; : 클래스 안의 객체&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;all()&lt;/code&gt; : 전부&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;order_by('-pub_date')&lt;/code&gt; : pub-date 기준으로 오름차순으로&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[:3]&lt;/code&gt; : Slicing 3개까지 변수로 할당합니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;context&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;dictionary 형태를 통하여 변수 context를 선언합니다.&lt;/p&gt;
-
-  &lt;p&gt;latest_question_list는 Key값  Question 의 모든객체는 Value 값이 됩니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;render&lt;/code&gt; : request 를 받아 함수처리를 하고 html파일에 적용하는 것을 의미합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;다음은 urls.py 파일을 생성해보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;처음부터 새로 만들어도 가능하지만 mysite에서 만들어진 urls.py를 polls하위에 복사하여 사용하도록하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;모든내용을 지우고&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.urls&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;app_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;polls&quot;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;urlpatterns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# http://localhost:8000/polls/
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'index'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt;코드설명&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;from . import views 경로안에 views.py 함수를 사용합니다.&lt;/p&gt;
-
-&lt;p&gt;path(‘’, views.index, name=’index’),
-localhost:8000/polls/ 경로뒤에 ‘’ 아무것도 오지않으면 view.index 함수호출해요
-name 은 경로에 대한 이름 입니다. 향후 이름을 통해서 경로를 호출하거나 함수를 사용할 수 있습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;다시 처음으로 돌아가서 index.html의 코드를 수정하겠습니다.&lt;/p&gt;
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;투표목록이 나와야 해요!!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-
-    { % if latest_question_list % }
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
-        { % for question in latest_question_list % }
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/polls/{ { question.id } }&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                    { { question.question_text } }&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-        { % endfor % }
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-    { % else % }
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;출력할 투표목록이 존재하지 않습니다.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-    { % endif % }
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt;코드설명&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;template code!! python도아니고 HTML 도아닌 template 안에서만 사용가능 
-중괄호 표현은 template code이며 HTML, Python 언어가 아니므로 주의하셔서 사용해야합니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ % % }&lt;/code&gt; : 로직코드이며 조건 및 반복문 등 로직을 사용해야할 경우 사용합니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { } }&lt;/code&gt; : 값을 입력할 경우 사용합니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { if latest_question_list} }&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;views.index에서 키값으로 받은 latest_question_list 존재여부를 판단합니다.
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { for question in latest_question_list} }&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;question 변수에 lastest_question_list객체를 삽입합니다.
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a href=&quot;/polls/{ { question.id } }&quot;&amp;gt;{ { question.question_text } }&amp;lt;/a&amp;gt;&amp;lt;li&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;lastest_question_list 에서 전달받은 객체에서 .question_text 객체를 뽑아냅니다. 
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-이렇게하면 하기의 초기페이지를 완성할 수 있습니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/django_polls_index.png&quot; alt=&quot;assets/image/django_polls_index&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-오늘은 첫페이지인 index까지 작성해 보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 1 Templates 생성 저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.</summary></entry><entry><title type="html">Django Page</title><link href="http://localhost:4000/django/DjangoPage/" rel="alternate" type="text/html" title="Django Page" /><published>2020-08-01T00:00:00+09:00</published><updated>2020-08-01T00:00:00+09:00</updated><id>http://localhost:4000/django/DjangoPage</id><content type="html" xml:base="http://localhost:4000/django/DjangoPage/">&lt;figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;이번 시간에는 Poll 프로젝트에 대하여 마무리를 해봤습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 3 투표시스템 결과확인 저번시간에는 저희가 질문지를 라디오 버튼을 통하여 선택하는 것과 submit버튼을 제작해 보았습니다.</summary></entry><entry><title type="html">Django Page</title><link href="http://localhost:4000/django/DjangoPage/" rel="alternate" type="text/html" title="Django Page" /><published>2020-08-01T00:00:00+09:00</published><updated>2020-08-01T00:00:00+09:00</updated><id>http://localhost:4000/django/DjangoPage</id><content type="html" xml:base="http://localhost:4000/django/DjangoPage/">&lt;figure&gt;
 	&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;python&quot; style=&quot;width:500px&quot; /&gt;
 &lt;/figure&gt;
 
@@ -855,13 +1110,99 @@ name 은 경로에 대한 이름 입니다. 향후 이름을 통해서 경로를
 
 &lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application3&quot;&gt;Djanggo Poll project2&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application4&quot;&gt;Djanggo Poll project3 마무리&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html"></summary></entry><entry><title type="html">HTML CSS JAVASCRIPT</title><link href="http://localhost:4000/html/css/javascript/Web-CSS-JAVASCRIPT/" rel="alternate" type="text/html" title="HTML CSS JAVASCRIPT" /><published>2020-07-31T00:00:00+09:00</published><updated>2020-07-31T00:00:00+09:00</updated><id>http://localhost:4000/html/css/javascript/Web-CSS-JAVASCRIPT</id><content type="html" xml:base="http://localhost:4000/html/css/javascript/Web-CSS-JAVASCRIPT/">&lt;figure&gt;
-&lt;img src=&quot;/assets/image/frontend.png&quot; alt=&quot;Html Css Icon Png@nicepng.com&quot; style=&quot;width:500px&quot; /&gt;
-&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application4&quot;&gt;Djanggo Poll project3 마무리&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html"></summary></entry><entry><title type="html">[HTML, CSS, JS] jQuery</title><link href="http://localhost:4000/html/css/javascript/jQuery/" rel="alternate" type="text/html" title="[HTML, CSS, JS] jQuery" /><published>2020-07-31T00:00:00+09:00</published><updated>2020-07-31T00:00:00+09:00</updated><id>http://localhost:4000/html/css/javascript/jQuery</id><content type="html" xml:base="http://localhost:4000/html/css/javascript/jQuery/">&lt;h2&gt; jQuery&lt;/h2&gt;
+&lt;p&gt;오늘은 jQuery 를 배워보겠습니다.&lt;/p&gt;
 
-&lt;h2&gt;HTML CSS JAVASCRIPT 페이지&lt;/h2&gt;
+&lt;p&gt;jQuery는 JavaScript로 만든 사용하기 편한 무료 라이브러리 입니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/frontend.png&quot; alt=&quot;Html Css Icon Png@nicepng.com&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/html/css/javascript/web-basic/&quot;&gt;Web Service 이론&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="HTML" /><category term="CSS" /><category term="JAVASCRIPT" /><summary type="html"></summary></entry><entry><title type="html">[HTML, CSS, JS] Web Basic</title><link href="http://localhost:4000/html/css/javascript/web-basic/" rel="alternate" type="text/html" title="[HTML, CSS, JS] Web Basic" /><published>2020-07-31T00:00:00+09:00</published><updated>2020-07-31T00:00:00+09:00</updated><id>http://localhost:4000/html/css/javascript/web-basic</id><content type="html" xml:base="http://localhost:4000/html/css/javascript/web-basic/">&lt;h2&gt; Web 기초 &lt;/h2&gt;
+&lt;p&gt;JavaScript는 특정 browser 제대로 작동하지 않는 경우가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;그렇지만 jQuery의 경우 모든 browser 에서 동일하게 작동합니다.&lt;/p&gt;
+
+&lt;h3&gt; jQuery 사용방법 &lt;/h3&gt;
+&lt;p&gt;설치도 가능하지만 CDN방식을 이용하려고 합니다.&lt;/p&gt;
+
+&lt;p&gt;CDN(Content Delivery Network) 방식은 네트워크를 통해서 라이브러리를 동적으로 다운로드해서 사용하는 개념입니다.&lt;/p&gt;
+
+&lt;p&gt;하기코드는 jQuery사이트에서 직점 복사할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script
+            &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://code.jquery.com/jquery-2.2.4.min.js&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;integrity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;crossorigin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;anonymous&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3&gt; jQuery 첫걸음 &lt;/h3&gt;
+&lt;p&gt;그렇다면 jQuery 사용하여 보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;jQuery는 공부할때 가장먼저 배워야하는 것은 바로 Selector 입니다.&lt;/p&gt;
+
+&lt;p&gt;하기 예제를 통하여 Selector에 대하여 자세하게 알아보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;HTML&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;js/05_jQuery.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;jQuery 연습입니다.!!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;&amp;lt;!--class는 중복해서 사용가--&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;region&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;서울&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;&amp;lt;!--ID 는 중복해서 사용 불가능--&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;haha&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;인천&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;region&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;강원&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ol&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hong&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;홍길동&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;신사임당&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;강감찬&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ol&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;클릭클릭!&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;my_func()&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;상기 코드에서 ‘클릭클릭’이라는 버튼을 누르면 my_func()라는 함수가 호출됩니다.&lt;/p&gt;
+
+&lt;p&gt;my_func()는 HTML에서 명시한 것 처럼 js/05_jQuery.js 에 위치하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;my_func()를 살펴보도록 하겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;my_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;함수가 호출되요&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// print 기능으로 활용가능합니다!&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;전체&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;universal&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// * 전체선택자&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 태그안에 모든 글자를 가져옵니다&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;태그&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tag&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// li 테그를 모두 삭제합니다. 인자와 항목까지 전부삭제&lt;/span&gt;
+    
+    &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;아이디&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;중복하여&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;사용불가능&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#haha&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// # ID지칭&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// 인자가 없으면 값을 알아오라는 의미, 인자가 있으면 값을 변경&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#haha&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;울산&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;클래스&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;중복하여&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;사용가능&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.region&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;yellow&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;구조&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;자식&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;후손&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ol &amp;gt; *&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ol &amp;gt; * ol에 자식으로 있는 것들 중 모든것&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ol &amp;gt; li&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ol &amp;gt; * ol에 자식으로 있는 것들중 li &lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;div li&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pink&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// div 후손으로 있는 것들 중  li를 모두 선택&lt;/span&gt;
+    
+    &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;구조&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;형제&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#haha + li&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pink&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// id의 형제를 찾고 +를 이용하여 바로 다음 형제를 찾는 것이 가능&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#hong ~ li&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pink&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//id 이후의 모든 형제를 찾음 (자신제외)&lt;/span&gt;
+    
+    &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;속성&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[id]&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;yellow&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// id 모든 속성을 전부 찾음&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[class]&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// class 모든 속성을 전부 찾음&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;// 이 7가지를 조합하면 왠만한 element는 지정하는게 가능 !!!!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;상기 코드에 주석을 처리하여 어떤 element 를 지정하는지 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="HTML" /><category term="CSS" /><category term="JAVASCRIPT" /><category term="JQuery" /><summary type="html">jQuery 오늘은 jQuery 를 배워보겠습니다.</summary></entry><entry><title type="html">[HTML, CSS, JS] Web Basic</title><link href="http://localhost:4000/html/css/javascript/web-basic/" rel="alternate" type="text/html" title="[HTML, CSS, JS] Web Basic" /><published>2020-07-31T00:00:00+09:00</published><updated>2020-07-31T00:00:00+09:00</updated><id>http://localhost:4000/html/css/javascript/web-basic</id><content type="html" xml:base="http://localhost:4000/html/css/javascript/web-basic/">&lt;h2&gt; Web 기초 &lt;/h2&gt;
 &lt;h3&gt;1. Internet &lt;/h3&gt;
 &lt;p&gt;여러개의 컴퓨터를 network로 묶어서 사용하는 것은 LAN (Local Area Network) 입니다.&lt;/p&gt;
 
@@ -957,90 +1298,12 @@ name 은 경로에 대한 이름 입니다. 향후 이름을 통해서 경로를
   &lt;p&gt;CSS : 문서의 style을 담당&lt;/p&gt;
 
   &lt;p&gt;JavaScript : 문서의 동적처리를 담당&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="HTML" /><category term="CSS" /><category term="JAVASCRIPT" /><category term="Web" /><summary type="html">Web 기초 1. Internet 여러개의 컴퓨터를 network로 묶어서 사용하는 것은 LAN (Local Area Network) 입니다.</summary></entry><entry><title type="html">[Python] Formatting</title><link href="http://localhost:4000/python/Formatting/" rel="alternate" type="text/html" title="[Python] Formatting" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/Formatting</id><content type="html" xml:base="http://localhost:4000/python/Formatting/">&lt;h2&gt;In Not In 연산자&lt;/h2&gt;
-&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자열&lt;/code&gt; 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Formatting&lt;/code&gt; 에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="HTML" /><category term="CSS" /><category term="JAVASCRIPT" /><category term="Web" /><summary type="html">Web 기초 1. Internet 여러개의 컴퓨터를 network로 묶어서 사용하는 것은 LAN (Local Area Network) 입니다.</summary></entry><entry><title type="html">HTML CSS JAVASCRIPT</title><link href="http://localhost:4000/html/css/javascript/Web-CSS-JAVASCRIPT/" rel="alternate" type="text/html" title="HTML CSS JAVASCRIPT" /><published>2020-07-31T00:00:00+09:00</published><updated>2020-07-31T00:00:00+09:00</updated><id>http://localhost:4000/html/css/javascript/Web-CSS-JAVASCRIPT</id><content type="html" xml:base="http://localhost:4000/html/css/javascript/Web-CSS-JAVASCRIPT/">&lt;figure&gt;
+&lt;img src=&quot;/assets/image/frontend.png&quot; alt=&quot;Html Css Icon Png@nicepng.com&quot; style=&quot;width:500px&quot; /&gt;
+&lt;/figure&gt;
 
-&lt;p&gt;Formatting은 변수의 값을 원하는 곳에 입력하거나 출력이 가능합니다.&lt;/p&gt;
+&lt;h2&gt;HTML CSS JAVASCRIPT 페이지&lt;/h2&gt;
 
-&lt;p&gt;예제를 통하여 다시 한번 정확하게 알아보겠습니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/frontend.png&quot; alt=&quot;Html Css Icon Png@nicepng.com&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/html/css/javascript/web-basic/&quot;&gt;Web Service 이론&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;num_of_apple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;myStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;나는 사과를 %d개 가지고 있어요!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_of_apple&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#// %d (숫자)
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myStr1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;나는 사과를 {}, 바나나 {}개 가지고 있어요!&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_of_apple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;myStr2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;나는 사과를 {1}, 바나나 {0}개 가지고 있어요!&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_of_apple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myStr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#나는 사과를 10개 가지고 있어요!
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myStr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#나는 사과를 10, 바나나 20개 가지고 있어요!
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myStr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 나는 사과를 20, 바나나 10개 가지고 있어요!
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;복잡한 문장도 formatting 을 이용하여 원하는 위치에 변수의 값을 입력 및 출력을 할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;formatting&lt;/code&gt; 에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Text sequence" /><category term="Data Type" /><category term="문자열" /><category term="데이터타입" /><category term="str" /><category term="formatting" /><summary type="html">In Not In 연산자 오늘은 파이썬의 문자열 의 Formatting 에 대하여 알아보도록 하겠습니다.</summary></entry><entry><title type="html">[Python] List</title><link href="http://localhost:4000/python/List/" rel="alternate" type="text/html" title="[Python] List" /><published>2020-07-29T00:00:00+09:00</published><updated>2020-07-29T00:00:00+09:00</updated><id>http://localhost:4000/python/List</id><content type="html" xml:base="http://localhost:4000/python/List/">&lt;h2&gt;List&lt;/h2&gt;
-&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이썬&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;List&lt;/code&gt; 에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;List는 임의의 객체(데이터)를 순서대로 저장하는 집합 자료형입니다.&lt;/p&gt;
-
-&lt;p&gt;List는 literal로 표현할 떄 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[ ]&lt;/code&gt; 대괄호로 표현합니다.&lt;/p&gt;
-
-&lt;p&gt;List는 어떻게 표하는지 아래의 코드를 보며 알아보겠습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# &amp;lt;class ‘list’&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;# 함수를 이용하여 리스트를 제작
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# ~ : code convention _ 가독성이 좋게 표현하게 Hint 기능 제공
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 중첩리스트, 2차원이 아님
-&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;List는 문자열과 마찬가지로 Indexing 과 Slicing 모두 가능합니다. 물론 연산도 가능합니다.&lt;/p&gt;
-
-&lt;p&gt;Indexing과 Slicing의 개념이 궁금하신분들은 &lt;a href=&quot;/python/Idexing-Slicing/&quot;&gt;문자열 Indexing &amp;amp; Slicing&lt;/a&gt; 편을 참고하시기 바랍니다.&lt;/p&gt;
-
-&lt;p&gt;간단한 예제를 통해서 자세하게 알아보겠습니다.&lt;/p&gt;
-
-&lt;h3&gt;List의 Indexing 과 Slicing &lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#2
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#[5, 6, 7]
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#[5, 6, 7] // list의 Slicing 은 list
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#6
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#[1, 2]
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3&gt;List의 연산&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# [1, 2, 3, 4, 5, 6] list 의 합은 하나의 리스트로 생성
-# 단 행렬에서의 연산은 [5,7,9] numpy에서 사용시 주의 할 것
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# [1, 2, 3, 1, 2, 3, 1, 2, 3]
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# [5, 2, 3]
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# [[7, 8, 9], 2, 3]
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# [7, 8, 9, 2, 3]
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3&gt; list 값 추가 및 변경 &lt;/h3&gt;
-&lt;p&gt;List의 경우 값의 추가 및 변경이 가능합니다&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# append 
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;끝에&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;추가하는&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;것&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#[1, 2, 3, 4]
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#[1, 2, 3, [5, 6, 7]]
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# sort 
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;홍길동&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;아이유&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;강감찬&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;신사임당&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Kim&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 리스트를 오름차순으로 정렬_ 1 2 3 4 5
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# None
-&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;List&lt;/code&gt; 에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Sequence Type" /><category term="Data Type" /><category term="List" /><summary type="html">List 오늘은 파이썬의 List 에 대하여 알아보도록 하겠습니다.</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;/assets/image/frontend.png&quot; alt=&quot;Html Css Icon Png@nicepng.com&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/html/css/javascript/jQuery/&quot;&gt;Web Service 이론&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="HTML" /><category term="CSS" /><category term="JAVASCRIPT" /><summary type="html"></summary></entry></feed>
