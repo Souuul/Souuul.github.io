@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-14T17:13:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Django] Poll 프로젝트 2</title><link href="http://localhost:4000/django/Django-simple-web-application3/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 2" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application3</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application3/">&lt;h2&gt;Polls 프로젝트 2&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-18T00:34:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Django] Poll 프로젝트 2</title><link href="http://localhost:4000/django/Django-simple-web-application3/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 2" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application3</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application3/">&lt;h2&gt;Polls 프로젝트 2&lt;/h2&gt;
 &lt;h3&gt;투표시스템 질문지 항목 추가&lt;/h3&gt;
 &lt;p&gt;저번시간에는 Question 항목까지 만드는 것을 해보았습니다.&lt;/p&gt;
 
@@ -736,7 +736,9 @@ Python 으로 만들어진 오픈소스
 
 &lt;h3&gt;CRUD (CREATE READ UPDATE DELETE)&lt;/h3&gt;
 
-&lt;p&gt;ModelForm을 이용하면 사용자 입력양식 처리하는게 쉬워집니다.&lt;/p&gt;
+&lt;p&gt;기존방식으로 models에서 정의한 테이블에 값을 넣기가 정말 어려웠습니다.&lt;/p&gt;
+
+&lt;p&gt;하지만 ModelForm을 이용하면 사용자 입력양식 처리하는게 쉬워집니다.&lt;/p&gt;
 
 &lt;p&gt;여기에 html 프로젝트에서 사용하였던 Bootstrap도 포함해서 자동으로&lt;/p&gt;
 
@@ -757,13 +759,15 @@ Python 으로 만들어진 오픈소스
 
 &lt;p&gt;그런데 이번에는 ModelForm을 이용할 것이고 사용자 입력양식 HTML을 자동으로 만들어줘요&lt;/p&gt;
 
-&lt;p&gt;자동으로 생성되기 떄문에 Bootstrap을 적용할수 없어요&lt;/p&gt;
+&lt;p&gt;자동으로 생성되기 떄문에 Bootstrap을 적용할수 없어요.&lt;/p&gt;
 
 &lt;p&gt;이런경우에 사용자 입력양식에 Bootstrap을 적용하기 위해서 특정 Package를 설치해야 해요!&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;code&gt;$ pip3 install Django-bootstrap4&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;이렇게 하면 model form으로도 Bootstrap 테마를 적용 할 수 있습니다.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;project를 생성 + application 생성&lt;/li&gt;
@@ -813,8 +817,9 @@ bootstrap도 마찬가지로 application 등록을 해야함.&lt;/li&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;s&quot;&gt;'DIRS'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BASE_DIR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'blog'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'templates'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)],&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;맨아래 내려가서 하기코드도 추가합니다. static이라는 폴더에 바로접근할 수 있습니다.
-정적리소스를 사용가능합니다.&lt;/p&gt;
+&lt;p&gt;맨아래 내려가서 하기코드도 추가합니다. static이라는 폴더에 바로접근할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;정적리소스를 사용가능합니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;STATICFILES_DIRS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BASE_DIR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'static'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -847,10 +852,10 @@ bootstrap도 마찬가지로 application 등록을 해야함.&lt;/li&gt;
 
 &lt;ol&gt;
   &lt;li&gt;모델구현
-기능을 구현하러 가야해요!! application을 구현해야해요!
-기능을 구현할 때 제일먼저해야 하는 일은 
-사용할 데이터에 대한 정확한 명세를 작성하는 거에요!!&lt;/li&gt;
+기능을 구현하러 가야해요!! application을 구현해야해요!&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;기능을 구현할 때 제일먼저해야 하는 일은 사용할 데이터에 대한 정확한 명세를 작성하는 거에요!!&lt;/p&gt;
 
 &lt;p&gt;Django는 ORM을 이용하기 떄문에 class를 이용해서 Database를 사용해요!&lt;/p&gt;
 
@@ -887,17 +892,27 @@ from django.urls import path, include
 from django.conf.urls import url
 from django.views.generic.base import TemplateView&lt;/p&gt;
 
-&lt;p&gt;htttp:// localhost:8000 요청이 들어왔을때 우리 전체 project의 홈페이지로 이동할거에요!!
-Django는 elegant URL을 지원해요!!
-정규표현식 (regualr expression)
-시작 &amp;gt; ^, 끝 &amp;gt; $
-[0-9] : 1글자를 지칭
-{} : 반복횟수 {3} 3번반복 {3,5} 3 아님 5번 반복
-[0-9]{4} : 4자리 숫자가 나옴
-r(raw) 은 escape 문자를 한번 더 사용하지 않도록 처리.
-r”^[0-9]{1,3}$” 숫자가 1개나 3개나 모두가능
-\d 숫자를 지칭
-r”^010[1-9]\d{6,7}$”&lt;/p&gt;
+&lt;p&gt;htttp:// localhost:8000 요청이 들어왔을때 우리 전체 project의 홈페이지로 이동할거에요!!&lt;/p&gt;
+
+&lt;p&gt;Django는 elegant URL을 지원해요. 정규표현식을 지원합니다.&lt;/p&gt;
+
+&lt;p&gt;정규표현식 (regualr expression)&lt;/p&gt;
+
+&lt;p&gt;시작 &amp;gt; ^, 끝 &amp;gt; $&lt;/p&gt;
+
+&lt;p&gt;[0-9] : 1글자를 지칭&lt;/p&gt;
+
+&lt;p&gt;{} : 반복횟수 {3} 3번반복 {3,5} 3 아님 5번 반복&lt;/p&gt;
+
+&lt;p&gt;[0-9]{4} : 4자리 숫자가 나옴&lt;/p&gt;
+
+&lt;p&gt;r(raw) 은 escape 문자를 한번 더 사용하지 않도록 처리.&lt;/p&gt;
+
+&lt;p&gt;r”^[0-9]{1,3}$” 숫자가 1개나 3개나 모두가능&lt;/p&gt;
+
+&lt;p&gt;\d 숫자를 지칭&lt;/p&gt;
+
+&lt;p&gt;r”^010[1-9]\d{7,8}$”&lt;/p&gt;
 
 &lt;p&gt;urlpatterns = [
     # view 를 거치지 않고 바로 html을 호출
@@ -1102,15 +1117,18 @@ from posts.models import Post&lt;/p&gt;
 
 &lt;h2&gt;Django 페이지&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-Basic&quot;&gt;Djanggo 기초이론&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-Basic&quot;&gt;[Djanggo] 기초이론&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application&quot;&gt;Djanggo 설치 및 운용&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application&quot;&gt;[Djanggo] 설치 및 운용&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application2&quot;&gt;Djanggo Poll project1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application2&quot;&gt;[Djanggo] Poll project1&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application3&quot;&gt;Djanggo Poll project2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application3&quot;&gt;[Djanggo] Poll project2&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application4&quot;&gt;Djanggo Poll project3 마무리&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html"></summary></entry><entry><title type="html">[HTML, CSS, JS] jQuery</title><link href="http://localhost:4000/html/css/javascript/jQuery/" rel="alternate" type="text/html" title="[HTML, CSS, JS] jQuery" /><published>2020-07-31T00:00:00+09:00</published><updated>2020-07-31T00:00:00+09:00</updated><id>http://localhost:4000/html/css/javascript/jQuery</id><content type="html" xml:base="http://localhost:4000/html/css/javascript/jQuery/">&lt;h2&gt; jQuery&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/django/Django-simple-web-application4&quot;&gt;[Djanggo] Poll project3 마무리&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;
+&lt;a href=&quot;/django/Django-BBS&quot;&gt;[Django] 게시판 만들기(BBS 프로젝트) &lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html"></summary></entry><entry><title type="html">[HTML, CSS, JS] jQuery 1</title><link href="http://localhost:4000/html/css/javascript/jQuery/" rel="alternate" type="text/html" title="[HTML, CSS, JS] jQuery 1" /><published>2020-07-31T00:00:00+09:00</published><updated>2020-07-31T00:00:00+09:00</updated><id>http://localhost:4000/html/css/javascript/jQuery</id><content type="html" xml:base="http://localhost:4000/html/css/javascript/jQuery/">&lt;h2&gt; jQuery&lt;/h2&gt;
 &lt;p&gt;오늘은 jQuery 를 배워보겠습니다.&lt;/p&gt;
 
 &lt;p&gt;jQuery는 JavaScript로 만든 사용하기 편한 무료 라이브러리 입니다.&lt;/p&gt;
@@ -1175,6 +1193,99 @@ from posts.models import Post&lt;/p&gt;
     &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;전체&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;universal&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// * 전체선택자&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 태그안에 모든 글자를 가져옵니다&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;태그&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tag&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// li 테그를 모두 삭제합니다. 인자와 항목까지 전부삭제&lt;/span&gt;
+    
+    &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;아이디&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;중복하여&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;사용불가능&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#haha&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// # ID지칭&lt;/span&gt;
+                        &lt;span class=&quot;c1&quot;&gt;// 인자가 없으면 값을 알아오라는 의미, 인자가 있으면 값을 변경&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#haha&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;울산&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;클래스&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;중복하여&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;사용가능&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.region&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;yellow&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;구조&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;자식&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;후손&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ol &amp;gt; *&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ol &amp;gt; * ol에 자식으로 있는 것들 중 모든것&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ol &amp;gt; li&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ol &amp;gt; * ol에 자식으로 있는 것들중 li &lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;div li&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pink&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// div 후손으로 있는 것들 중  li를 모두 선택&lt;/span&gt;
+    
+    &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;구조&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;형제&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#haha + li&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pink&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// id의 형제를 찾고 +를 이용하여 바로 다음 형제를 찾는 것이 가능&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#hong ~ li&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;pink&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//id 이후의 모든 형제를 찾음 (자신제외)&lt;/span&gt;
+    
+    &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;속성&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[id]&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;yellow&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// id 모든 속성을 전부 찾음&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[class]&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// class 모든 속성을 전부 찾음&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;// 이 7가지를 조합하면 왠만한 element는 지정하는게 가능 !!!!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;상기 코드에 주석을 처리하여 어떤 element 를 지정하는지 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="HTML" /><category term="CSS" /><category term="JAVASCRIPT" /><category term="JQuery" /><summary type="html">jQuery 오늘은 jQuery 를 배워보겠습니다.</summary></entry><entry><title type="html">[HTML, CSS, JS] jQuery 2</title><link href="http://localhost:4000/html/css/javascript/jQuery2/" rel="alternate" type="text/html" title="[HTML, CSS, JS] jQuery 2" /><published>2020-07-31T00:00:00+09:00</published><updated>2020-07-31T00:00:00+09:00</updated><id>http://localhost:4000/html/css/javascript/jQuery2</id><content type="html" xml:base="http://localhost:4000/html/css/javascript/jQuery2/">&lt;h2&gt; jQuery&lt;/h2&gt;
+&lt;p&gt;오늘은 jQuery 를 배워보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;jQuery는 JavaScript로 만든 사용하기 편한 무료 라이브러리 입니다.&lt;/p&gt;
+
+&lt;p&gt;JavaScript는 특정 browser 제대로 작동하지 않는 경우가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;그렇지만 jQuery의 경우 모든 browser 에서 동일하게 작동합니다.&lt;/p&gt;
+
+&lt;h3&gt; jQuery 사용방법 &lt;/h3&gt;
+&lt;p&gt;설치도 가능하지만 CDN방식을 이용하려고 합니다.&lt;/p&gt;
+
+&lt;p&gt;CDN(Content Delivery Network) 방식은 네트워크를 통해서 라이브러리를 동적으로 다운로드해서 사용하는 개념입니다.&lt;/p&gt;
+
+&lt;p&gt;하기코드는 jQuery사이트에서 직점 복사할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script
+            &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://code.jquery.com/jquery-2.2.4.min.js&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;integrity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;crossorigin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;anonymous&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3&gt; jQuery 첫걸음 &lt;/h3&gt;
+&lt;p&gt;그렇다면 jQuery 사용하여 보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;jQuery는 공부할때 가장먼저 배워야하는 것은 바로 Selector 입니다.&lt;/p&gt;
+
+&lt;p&gt;하기 예제를 통하여 Selector에 대하여 자세하게 알아보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;HTML&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;js/05_jQuery.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;jQuery 연습입니다.!!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;&amp;lt;!--class는 중복해서 사용가--&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;region&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;서울&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;&amp;lt;!--ID 는 중복해서 사용 불가능--&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;haha&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;인천&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;region&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;강원&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ol&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hong&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;홍길동&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;신사임당&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;강감찬&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ol&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;클릭클릭!&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;my_func()&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;상기 코드에서 ‘클릭클릭’이라는 버튼을 누르면 my_func()라는 함수가 호출됩니다.&lt;/p&gt;
+
+&lt;p&gt;my_func()는 HTML에서 명시한 것 처럼 js/05_jQuery.js 에 위치하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;my_func()를 살펴보도록 하겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;my_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;함수가 호출되요&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// print 기능으로 활용가능합니다!&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;전체&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;universal&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// * 전체선택자&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 태그안에 모든 글자를 가져옵니다&lt;/span&gt;
+    
     &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;태그&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;선택자&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tag&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// li 테그를 모두 삭제합니다. 인자와 항목까지 전부삭제&lt;/span&gt;
     
@@ -1298,12 +1409,4 @@ from posts.models import Post&lt;/p&gt;
   &lt;p&gt;CSS : 문서의 style을 담당&lt;/p&gt;
 
   &lt;p&gt;JavaScript : 문서의 동적처리를 담당&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="HTML" /><category term="CSS" /><category term="JAVASCRIPT" /><category term="Web" /><summary type="html">Web 기초 1. Internet 여러개의 컴퓨터를 network로 묶어서 사용하는 것은 LAN (Local Area Network) 입니다.</summary></entry><entry><title type="html">HTML CSS JAVASCRIPT</title><link href="http://localhost:4000/html/css/javascript/Web-CSS-JAVASCRIPT/" rel="alternate" type="text/html" title="HTML CSS JAVASCRIPT" /><published>2020-07-31T00:00:00+09:00</published><updated>2020-07-31T00:00:00+09:00</updated><id>http://localhost:4000/html/css/javascript/Web-CSS-JAVASCRIPT</id><content type="html" xml:base="http://localhost:4000/html/css/javascript/Web-CSS-JAVASCRIPT/">&lt;figure&gt;
-&lt;img src=&quot;/assets/image/frontend.png&quot; alt=&quot;Html Css Icon Png@nicepng.com&quot; style=&quot;width:500px&quot; /&gt;
-&lt;/figure&gt;
-
-&lt;h2&gt;HTML CSS JAVASCRIPT 페이지&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/frontend.png&quot; alt=&quot;Html Css Icon Png@nicepng.com&quot; style=&quot;width:50px&quot; /&gt;[Web Service] 기본이론(/html/css/javascript/web-basic/)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/frontend.png&quot; alt=&quot;Html Css Icon Png@nicepng.com&quot; style=&quot;width:50px&quot; /&gt;[JavaScript] jQuery 활용 (/html/css/javascript/jQuery/)&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="HTML" /><category term="CSS" /><category term="JAVASCRIPT" /><summary type="html"></summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="HTML" /><category term="CSS" /><category term="JAVASCRIPT" /><category term="Web" /><summary type="html">Web 기초 1. Internet 여러개의 컴퓨터를 network로 묶어서 사용하는 것은 LAN (Local Area Network) 입니다.</summary></entry></feed>

@@ -26,7 +26,9 @@ ModelForm을 이용해서 CRUD구현을 알아 보겠습니다.
 
 <h3>CRUD (CREATE READ UPDATE DELETE)</h3>
 
-ModelForm을 이용하면 사용자 입력양식 처리하는게 쉬워집니다. 
+기존방식으로 models에서 정의한 테이블에 값을 넣기가 정말 어려웠습니다.
+
+하지만 ModelForm을 이용하면 사용자 입력양식 처리하는게 쉬워집니다. 
 
 여기에 html 프로젝트에서 사용하였던 Bootstrap도 포함해서 자동으로 
 
@@ -44,11 +46,13 @@ ModelForm을 이용하면 사용자 입력양식 처리하는게 쉬워집니다
 
 그런데 이번에는 ModelForm을 이용할 것이고 사용자 입력양식 HTML을 자동으로 만들어줘요 
 
-자동으로 생성되기 떄문에 Bootstrap을 적용할수 없어요
+자동으로 생성되기 떄문에 Bootstrap을 적용할수 없어요. 
 
 이런경우에 사용자 입력양식에 Bootstrap을 적용하기 위해서 특정 Package를 설치해야 해요!
 
 > <code>$ pip3 install Django-bootstrap4</code>
+
+이렇게 하면 model form으로도 Bootstrap 테마를 적용 할 수 있습니다. 
 
 
 2. project를 생성 + application 생성
@@ -100,6 +104,7 @@ Templates 에서 DIRS를 추가 경로지정가능 !
 
 
 맨아래 내려가서 하기코드도 추가합니다. static이라는 폴더에 바로접근할 수 있습니다.
+
 정적리소스를 사용가능합니다.
 
 ```python
@@ -126,8 +131,8 @@ admin page가 존재 web에 deploy하기 이전에.. 기본 table부터 생성�
 
 5. 모델구현
 기능을 구현하러 가야해요!! application을 구현해야해요!
-기능을 구현할 때 제일먼저해야 하는 일은 
-사용할 데이터에 대한 정확한 명세를 작성하는 거에요!!
+
+기능을 구현할 때 제일먼저해야 하는 일은 사용할 데이터에 대한 정확한 명세를 작성하는 거에요!!
 
 Django는 ORM을 이용하기 떄문에 class를 이용해서 Database를 사용해요!
 
@@ -160,16 +165,27 @@ from django.conf.urls import url
 from django.views.generic.base import TemplateView
 
 htttp:// localhost:8000 요청이 들어왔을때 우리 전체 project의 홈페이지로 이동할거에요!!
-Django는 elegant URL을 지원해요!!
+
+
+Django는 elegant URL을 지원해요. 정규표현식을 지원합니다.
+
 정규표현식 (regualr expression)
+
 시작 > ^, 끝 > $
+
 [0-9] : 1글자를 지칭
+
 {} : 반복횟수 {3} 3번반복 {3,5} 3 아님 5번 반복
+
 [0-9]{4} : 4자리 숫자가 나옴
+
 r(raw) 은 escape 문자를 한번 더 사용하지 않도록 처리.
+
 r"^[0-9]{1,3}$" 숫자가 1개나 3개나 모두가능
+
 \d 숫자를 지칭
-r"^010[1-9]\d{6,7}$"
+
+r"^010[1-9]\d{7,8}$"
 
 
 urlpatterns = [

@@ -1,4 +1,4 @@
-I"w,<h2> jQuery</h2>
+I".<h2> jQuery</h2>
 <p>오늘은 jQuery 를 배워보겠습니다.</p>
 
 <p>jQuery는 JavaScript로 만든 사용하기 편한 무료 라이브러리 입니다.</p>
@@ -52,7 +52,7 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<p>상기 코드에서  클릭클릭 이라는 버튼을 누르면 my_func()라는 함수가 호출됩니다.</p>
+<p>상기 코드에서 ‘클릭클릭’이라는 버튼을 누르면 my_func()라는 함수가 호출됩니다.</p>
 
 <p>my_func()는 HTML에서 명시한 것 처럼 js/05_jQuery.js 에 위치하고 있습니다.</p>
 
@@ -61,10 +61,11 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">my_func</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">함수가 호출되요</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// print 기능으로 활용가능합니다!</span>
     <span class="mi">1</span><span class="p">.</span> <span class="nx">전체</span> <span class="nx">선택자</span><span class="p">(</span><span class="nx">universal</span> <span class="nx">selector</span><span class="p">)</span>
-    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// *전체선택자</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// * 전체선택자</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span> <span class="c1">// 태그안에 모든 글자를 가져옵니다</span>
     
     <span class="mi">2</span><span class="p">.</span> <span class="nx">태그</span> <span class="nx">선택자</span><span class="p">(</span><span class="nx">tag</span> <span class="nx">selector</span><span class="p">)</span>
-    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">li</span><span class="dl">"</span><span class="p">).</span><span class="nx">remove</span><span class="p">()</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">li</span><span class="dl">"</span><span class="p">).</span><span class="nx">remove</span><span class="p">()</span> <span class="c1">// li 테그를 모두 삭제합니다. 인자와 항목까지 전부삭제</span>
     
     <span class="mi">3</span><span class="p">.</span> <span class="nx">아이디</span> <span class="nx">선택자</span><span class="p">(</span><span class="nx">id</span> <span class="nx">selector</span><span class="p">)</span>  <span class="nx">중복하여</span> <span class="nx">사용불가능</span>
     <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#haha</span><span class="dl">"</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span>  <span class="c1">// # ID지칭</span>
@@ -75,13 +76,13 @@
     <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.region</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">background-color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">yellow</span><span class="dl">"</span><span class="p">)</span>
     
     <span class="mi">5</span><span class="p">.</span> <span class="nx">구조</span> <span class="nx">선택자</span> <span class="p">(</span><span class="nx">자식</span> <span class="nx">선택자</span> <span class="nx">후손</span> <span class="nx">선택자</span><span class="p">)</span>
-    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">ol &gt; *</span><span class="dl">"</span><span class="p">).</span><span class="nx">remove</span><span class="p">()</span> <span class="c1">// ol &gt; * ol에 자식으로 있는 것들중 모든것</span>
-    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">ol &gt; li</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// ol &gt; * ol에 자식으로 있는 것들중 li</span>
-    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">div li</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">pink</span><span class="dl">"</span><span class="p">)</span>    <span class="c1">// div 후손으로 있는 것들을  li를 모두 선택</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">ol &gt; *</span><span class="dl">"</span><span class="p">).</span><span class="nx">remove</span><span class="p">()</span> <span class="c1">// ol &gt; * ol에 자식으로 있는 것들 중 모든것</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">ol &gt; li</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// ol &gt; * ol에 자식으로 있는 것들중 li </span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">div li</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">pink</span><span class="dl">"</span><span class="p">)</span>    <span class="c1">// div 후손으로 있는 것들 중  li를 모두 선택</span>
     
     <span class="mi">6</span><span class="p">.</span> <span class="nx">구조</span> <span class="nx">선택자</span> <span class="p">(</span><span class="nx">형제</span> <span class="nx">선택자</span><span class="p">)</span>
     <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#haha + li</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">pink</span><span class="dl">"</span><span class="p">)</span>  <span class="c1">// id의 형제를 찾고 +를 이용하여 바로 다음 형제를 찾는 것이 가능</span>
-    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#hong ~ li</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">pink</span><span class="dl">"</span><span class="p">)</span>  <span class="c1">//id이후의 모든 형제를 찾음</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#hong ~ li</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">pink</span><span class="dl">"</span><span class="p">)</span>  <span class="c1">//id 이후의 모든 형제를 찾음 (자신제외)</span>
     
     <span class="mi">7</span><span class="p">.</span> <span class="nx">속성</span> <span class="nx">선택자</span>
     <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">[id]</span><span class="dl">"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">yellow</span><span class="dl">"</span><span class="p">)</span>  <span class="c1">// id 모든 속성을 전부 찾음</span>

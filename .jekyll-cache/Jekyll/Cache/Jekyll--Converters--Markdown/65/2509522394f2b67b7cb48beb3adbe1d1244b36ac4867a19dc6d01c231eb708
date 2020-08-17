@@ -1,4 +1,4 @@
-I"�T<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
+I"�V<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
 
 <h2>Pages</h2>
 
@@ -635,7 +635,32 @@ Poll 프로젝트에 이어 오늘은 게시판을 만들어 보겠습니다.
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/html/css/javascript/jQuery/" rel="permalink">[HTML, CSS, JS] jQuery
+        <a href="/html/css/javascript/jQuery2/" rel="permalink">[HTML, CSS, JS] jQuery 2
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description"> jQuery
+오늘은 jQuery 를 배워보겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/html/css/javascript/jQuery/" rel="permalink">[HTML, CSS, JS] jQuery 1
 </a>
       
     </h2>
