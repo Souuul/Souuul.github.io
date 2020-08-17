@@ -1,4 +1,4 @@
-I"C<figure>
+I"È<figure>
 	<img src="/assets/image/python.jpg" alt="python" style="width:500px" />
 </figure>
 
@@ -17,4 +17,7 @@
 <p><img src="/assets/image/python.jpg" alt="python" style="width:50px" /><a href="/python/Formatting/">[Python] Formatting</a></p>
 
 <p><img src="/assets/image/python.jpg" alt="python" style="width:50px" /><a href="/python/List/">[Python] List</a></p>
+
+<p><img src="/assets/image/python.jpg" alt="python" style="width:50px" /><a href="/python/Dictionary/">[Python] Dictionary</a></p>
+
 :ET

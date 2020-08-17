@@ -1,4 +1,4 @@
-I"�V<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
+I"cZ<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
 
 <h2>Pages</h2>
 
@@ -361,6 +361,19 @@
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/page4/" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/page5/" rel="permalink"></a>
       
     </h2>
     
@@ -752,6 +765,31 @@ Poll 프로젝트에 이어 오늘은 게시판을 만들어 보겠습니다.
     
     <p class="archive__item-excerpt" itemprop="description">In Not In 연산자
 오늘은 파이썬의 문자열 의 Formatting 에 대하여 알아보도록 하겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Dictionary/" rel="permalink">[Python] Dictionary
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Dictionary
+오늘은 파이썬의 Dictionary 에 대하여 알아보도록 하겠습니다.
 </p>
   </article>
 </div>

@@ -29,6 +29,10 @@
 <lastmod>2020-07-28T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/python/Dictionary/</loc>
+<lastmod>2020-07-29T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/python/Formatting/</loc>
 <lastmod>2020-07-29T00:00:00+09:00</lastmod>
 </url>
@@ -149,5 +153,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page4/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page5/</loc>
 </url>
 </urlset>

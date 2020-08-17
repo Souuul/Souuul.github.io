@@ -24,7 +24,7 @@ var store = [{
         "teaser": "http://localhost:4000/assets/image/Numeric.png"
       },{
         "title": "Python Page",
-        "excerpt":" \t   파이썬 페이지   [Python] 숫자형 데이터 타입   [Python] 문자열   [Python] 문자열 연산   [Python] In Not in   [Python] 문자열 Indexing &amp; Slicing   [Python] Formatting   [Python] List  ","categories": ["Python"],
+        "excerpt":" \t   파이썬 페이지   [Python] 숫자형 데이터 타입   [Python] 문자열   [Python] 문자열 연산   [Python] In Not in   [Python] 문자열 Indexing &amp; Slicing   [Python] Formatting   [Python] List   [Python] Dictionary   ","categories": ["Python"],
         "tags": [],
         "url": "http://localhost:4000/python/PythonPage/",
         "teaser": "http://localhost:4000/assets/image/python.jpg"
@@ -40,6 +40,12 @@ var store = [{
         "tags": ["Text sequence","Data Type","문자열","데이터타입","str"],
         "url": "http://localhost:4000/python/Text-sequence/",
         "teaser": "http://localhost:4000/assets/image/Text%20Squence.png"
+      },{
+        "title": "[Python] Dictionary",
+        "excerpt":"Dictionary  오늘은 파이썬의 Dictionary 에 대하여 알아보도록 하겠습니다.   Dictionary Key 와 Value의 쌍으로 이루어진 자료형 데이터 타입입니다.   Dictionary literal로 표현할 떄 { } 중괄호로 표현합니다.   Dictionary는 어떻게 표하는지 아래의 코드를 보며 알아보겠습니다.   my_dict = {} print(type(my_dict))  # &lt;class 'dict'&gt; my_dict = dict()      # 함수를 이용하여 딕셔너리를 제작 my_dict = {'a': '홍길동', 'b' : '강감찬'} my_dict['c'] = '신사임당' # 키와 값의 추가  print(my_dict) = {'a': '홍길동', 'b' : '강감찬', 'c' : '신사임당'}   몇가지 명령어를 통하여 Dictionary 구조에 대하여 한번 더 알아보겠습니다.   a = { \"name\" : \"홍길동\", \"age\" : 40, \"address\": \"서울\"} print(a.keys()) # dict_keys(['name', 'age', 'address']) // 리스트는 아님 print(type(a.keys())) #&lt;class 'dict_keys'&gt; print(list(a.keys())) # ['name', 'age', 'address'] print(a.values()) #dict_values(['홍길동', 40, '서울'])  print(a.items()) #dict_items([('name', '홍길동'), ('age', 40), ('address', '서울')]) // tuple로 표현 // for문을 돌리기 위해서 튜플로 변환 ( dict의 경우에는 for 문을 돌릴 수 없음)    오늘은 파이썬의 Dictionary 에 대하여 알아보았습니다.  ","categories": ["Python"],
+        "tags": ["Sequence Type","Data Type","Dictionary"],
+        "url": "http://localhost:4000/python/Dictionary/",
+        "teaser": "http://localhost:4000/assets/image/List.png"
       },{
         "title": "[Python] Formatting",
         "excerpt":"In Not In 연산자  오늘은 파이썬의 문자열 의 Formatting 에 대하여 알아보도록 하겠습니다.   Formatting은 변수의 값을 원하는 곳에 입력하거나 출력이 가능합니다.   예제를 통하여 다시 한번 정확하게 알아보겠습니다.   num_of_apple = 10 myStr = \"나는 사과를 %d개 가지고 있어요!\" % num_of_apple #// %d (숫자) myStr1 = \"나는 사과를 {}, 바나나 {}개 가지고 있어요!\" .format(num_of_apple, 20) myStr2 = \"나는 사과를 {1}, 바나나 {0}개 가지고 있어요!\" .format(num_of_apple, 20) print(myStr) #나는 사과를 10개 가지고 있어요! print(myStr1) #나는 사과를 10, 바나나 20개 가지고 있어요! print(myStr2) # 나는 사과를 20, 바나나 10개 가지고 있어요!   복잡한 문장도 formatting 을 이용하여 원하는 위치에 변수의 값을 입력 및 출력을 할 수 있습니다.   오늘은 파이썬의 formatting 에 대하여 알아보았습니다.  ","categories": ["Python"],

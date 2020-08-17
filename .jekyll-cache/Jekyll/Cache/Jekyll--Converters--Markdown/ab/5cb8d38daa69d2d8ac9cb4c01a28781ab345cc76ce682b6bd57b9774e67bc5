@@ -1,0 +1,31 @@
+I"�<h2>Dictionary</h2>
+<p>오늘은 <code class="language-plaintext highlighter-rouge">파이썬</code>의 <code class="language-plaintext highlighter-rouge">Dictionary</code> 에 대하여 알아보도록 하겠습니다.</p>
+
+<p>Dictionary Key 와 Value의 쌍으로 이루어진 자료형 데이터 타입입니다.</p>
+
+<p>Dictionary literal로 표현할 떄 <code class="language-plaintext highlighter-rouge">{ }</code> 중괄호로 표현합니다.</p>
+
+<p>Dictionary는 어떻게 표하는지 아래의 코드를 보며 알아보겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_dict</span><span class="p">))</span>  <span class="c1"># &lt;class 'dict'&gt;
+</span><span class="n">my_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>      <span class="c1"># 함수를 이용하여 딕셔너리를 제작
+</span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">'a'</span><span class="p">:</span> <span class="s">'홍길동'</span><span class="p">,</span> <span class="s">'b'</span> <span class="p">:</span> <span class="s">'강감찬'</span><span class="p">}</span>
+<span class="n">my_dict</span><span class="p">[</span><span class="s">'c'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'신사임당'</span> <span class="c1"># 키와 값의 추가 
+</span><span class="k">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span><span class="s">'a'</span><span class="p">:</span> <span class="s">'홍길동'</span><span class="p">,</span> <span class="s">'b'</span> <span class="p">:</span> <span class="s">'강감찬'</span><span class="p">,</span> <span class="s">'c'</span> <span class="p">:</span> <span class="s">'신사임당'</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>몇가지 명령어를 통하여 Dictionary 구조에 대하여 한번 더 알아보겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">{</span> <span class="s">"name"</span> <span class="p">:</span> <span class="s">"홍길동"</span><span class="p">,</span> <span class="s">"age"</span> <span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s">"address"</span><span class="p">:</span> <span class="s">"서울"</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span> <span class="c1"># dict_keys(['name', 'age', 'address']) // 리스트는 아님
+</span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">keys</span><span class="p">()))</span> <span class="c1">#&lt;class 'dict_keys'&gt;
+</span><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">keys</span><span class="p">()))</span> <span class="c1"># ['name', 'age', 'address']
+</span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">values</span><span class="p">())</span> <span class="c1">#dict_values(['홍길동', 40, '서울'])
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">items</span><span class="p">())</span> <span class="c1">#dict_items([('name', '홍길동'), ('age', 40), ('address', '서울')]) // tuple로 표현 // for문을 돌리기 위해서 튜플로 변환 ( dict의 경우에는 for 문을 돌릴 수 없음)
+</span>
+</code></pre></div></div>
+
+<p>오늘은 파이썬의 <code class="language-plaintext highlighter-rouge">Dictionary</code> 에 대하여 알아보았습니다.</p>
+:ET

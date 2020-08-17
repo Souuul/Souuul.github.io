@@ -26,3 +26,8 @@ tags:
 <img src="/assets/image/python.jpg" alt="python" style="width:50px">[[Python] Formatting](/python/Formatting/) 
 
 <img src="/assets/image/python.jpg" alt="python" style="width:50px">[[Python] List](/python/List/)
+
+
+<img src="/assets/image/python.jpg" alt="python" style="width:50px">[[Python] Dictionary](/python/Dictionary/)
+
+
