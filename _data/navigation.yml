@@ -8,5 +8,7 @@ main:
     url: /html/css/javascript/Web-CSS-JAVASCRIPT/
   - title: "Django"
     url: /django/DjangoPage/
+  - title: "API"
+    url: /api/APIPage/ 
   - title: "Sitemap"
     url: /sitemap/

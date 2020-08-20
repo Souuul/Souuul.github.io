@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Kakao API] 토큰 발급받기 - Sol Han tech blog!</title>
+<!-- begin _includes/seo.html --><title>[Kakao API] 사용자토큰 발급받기 - Sol Han tech blog!</title>
 <meta name="description" content="Kakao API">
 
 
@@ -19,7 +19,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sol Han tech blog!">
-<meta property="og:title" content="[Kakao API] 토큰 발급받기">
+<meta property="og:title" content="[Kakao API] 사용자토큰 발급받기">
 <meta property="og:url" content="http://localhost:4000/api/kakao_api_selfmessage/">
 
 
@@ -141,6 +141,8 @@
               <a href="/html/css/javascript/Web-CSS-JAVASCRIPT/">HTML & CSS & JavaScript</a>
             </li><li class="masthead__menu-item">
               <a href="/django/DjangoPage/">Django</a>
+            </li><li class="masthead__menu-item">
+              <a href="/api/APIPage/">API</a>
             </li><li class="masthead__menu-item">
               <a href="/sitemap/">Sitemap</a>
             </li></ul>
@@ -299,7 +301,7 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Kakao API] 토큰 발급받기">
+    <meta itemprop="headline" content="[Kakao API] 사용자토큰 발급받기">
     <meta itemprop="description" content="Kakao API">
     <meta itemprop="datePublished" content="2020-08-20T00:00:00+09:00">
     
@@ -307,7 +309,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[Kakao API] 토큰 발급받기
+          <h1 id="page-title" class="page__title" itemprop="headline">[Kakao API] 사용자토큰 발급받기
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -315,7 +317,7 @@
 
 
 
-  less than 1 minute read
+  1 minute read
 
 </p>
           
@@ -332,11 +334,19 @@
 
 <p>카카오 API 를 사용하기 위해서는 사용자 토큰을 발급받아야합니다.</p>
 
-<p>하지만 토큰에는 사용횟수 제한이 있기 때문에 refresh 토큰을 통해 사용자 토큰을 초기화 해주어야 합니다.</p>
+<p>하지만 토큰에는 사용시간  제한이 있기 때문에 refresh 토큰을 통해 사용자 토큰을 초기화 해주어야 합니다.</p>
+
+<p>오늘은 사용자 토큰부터 받아보도록 하겠습니다.</p>
+
+<p>토큰별 유효시간</p>
+
+<p>Android, iOS : 12시간 JavaScript: 2 시간 REST API : 6시간</p>
+
+<p>Refresh Token : 2달</p>
 
 <p>이 글은 2020년 8월 20일에 작성되었으며 변동되면 업데이트하도록 하겠습니다.</p>
 
-<h3>사용자토큰 발급받기</h3>
+<h3>회원가입 및 로그인</h3>
 
 <p>여러분들이 직접 카카오에 있는 사용법을 보고 사용할 수 있도록 설명하겠습니다.</p>
 
@@ -350,9 +360,132 @@
 
 <p>회원가입한 후 로그인을 진행하고 오른쪽 상단에  <code class="language-plaintext highlighter-rouge">애플리케이션 추가하기</code> 을 클릭합니다.</p>
 
+<h3>App key 발급받기</h3>
+
 <p><img src="../../assets/image/kakao3.png" alt="kakaofirstpage" /></p>
 
 <p>저희는 <code class="language-plaintext highlighter-rouge">REST API</code> 를 이용하여 사용할 예정이므로 REST API 키를 받아 사용하도록 하겠습니다.</p>
+
+<h3>활성화 설정</h3>
+
+<p><img src="../../assets/image/kakao_activate.png" alt="kakao_activate" /></p>
+
+<p>카카오톡 로그인을 하여 서비스를 이용할 예정이므로 제품설정 &gt; 카카오톡 로그인 을 클릭합니다.</p>
+
+<p>활성화 설정을 ON으로 변경하고 Redirect URl 에 원하시는 주소로 입력합니다.</p>
+
+<h3>인증 코드 받기</h3>
+
+<p>카카오톡 API 사용을 위하여 인증코드를 받아야합니다. <a href="https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#logout-of-service-and-kakaoaccount">인증 코드 받기</a>  링크로 이동합니다.</p>
+
+<p><img src="../../assets/image/kakao_code_url.png" alt="kakao_code_url" /></p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">GET /oauth/authorize?client_id={REST_API_KEY}&amp;redirect_uri={REDIRECT_URI}&amp;response_type=code HTTP/1.1 
+Host: kauth.kakao.com
+</span></code></pre></div></div>
+
+<p>상기 코드를 보고 발급받은 REST_API_KEY 와 REDIRECT_URI 을 추가하여 브라우저 주소창에 입력합니다.</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">kauth.kakao.com/oauth/authorize?client_id={REST_API_KEY}&amp;redirect_uri={REDIRECT_URI}&amp;response_type=code
+</span></code></pre></div></div>
+
+<p>입력 후 응답을 기다리면 하기와 같이 URl 이 변경됩니다.</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">https://localhost.com/?code=JrFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</span></code></pre></div></div>
+
+<p><u>JrFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</u> 가 저희가 사용할 코드입니다.</p>
+
+<h3>사용자 토큰 받기</h3>
+
+<p><img src="../../assets/image/kakao_token.png" alt="kakao_token" /></p>
+
+<h4>응답값</h4>
+
+<h5 id="key">Key</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">token_type</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td style="text-align: left">토큰 타입, “bearer”로 고정</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">access_token</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td style="text-align: left">사용자 액세스 토큰 값</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">expires_in</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">Integer</code></td>
+      <td style="text-align: left">액세스 토큰 만료 시간(초)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">refresh_token</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td style="text-align: left">사용자 리프레시 토큰 값</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">refresh_token_expires_in</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">Integer</code></td>
+      <td style="text-align: left">리프레시 토큰 만료 시간(초)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">scope</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td style="text-align: left">인증된 사용자의 정보 조회 권한 범위 범위가 여러 개일 경우, 공백으로 구분</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>사용자 토큰을 받기위해 코드를 상기 URL 에서 필수요소들을 request하고 응답값을 .json 형식의 파일로 저장해보겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="c1">#
+# 초기 키 땡기기
+</span><span class="n">app_key</span> <span class="o">=</span> <span class="p">{</span><span class="n">REST_API_KEY</span><span class="p">}</span> <span class="c1"># 초기 앱키 rest_key
+</span><span class="n">code</span> <span class="o">=</span> <span class="s">"JrFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://kauth.kakao.com/oauth/token"</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="s">"grant_type"</span>    <span class="p">:</span> <span class="s">"authorization_code"</span><span class="p">,</span>
+     <span class="s">"client_id"</span>     <span class="p">:</span> <span class="n">app_key</span><span class="p">,</span>
+     <span class="s">"redirect_url"</span>  <span class="p">:</span> <span class="s">"https://localhost.com"</span><span class="p">,</span>
+     <span class="s">"code"</span>          <span class="p">:</span> <span class="n">code</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"kakao_token.json"</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">json</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span> <span class="c1"># 저장하는 것
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">response = requests.post(url, data=data)</code> 코드를 통하여 post방식으로 요청하면 응답 값을 받을 수 있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"kakao_token.json"</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">json</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>상기 코드를 통하여 응답값을 <code class="language-plaintext highlighter-rouge">kakao_token.json</code> 이름의 .json 형태의 파일로 저장합니다.</p>
+
+<p>이렇게 하여 저희는 사용자토큰을 kakao_token.json 파일에 넣어보았습니다.</p>
+
+<p>사용자 토큰을 바로 사용하는 것도 가능하지만 .json 형태의 파일로 저장하여 구분하였습니다.</p>
+
+<p>오늘은 카카오 API 사용자 토큰을 받아보았습니다.</p>
 
 
         
@@ -420,7 +553,7 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BKakao+API%5D+%ED%86%A0%ED%81%B0+%EB%B0%9C%EA%B8%89%EB%B0%9B%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fapi%2Fkakao_api_selfmessage%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BKakao+API%5D+%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%ED%81%B0+%EB%B0%9C%EA%B8%89%EB%B0%9B%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fapi%2Fkakao_api_selfmessage%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fapi%2Fkakao_api_selfmessage%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -431,7 +564,7 @@
       
   <nav class="pagination">
     
-      <a href="/django/Django-simple-web-application4/" class="pagination--pager" title="[Django] Poll 프로젝트 3 (마지막)
+      <a href="/api/APIPage/" class="pagination--pager" title="API Page
 ">Previous</a>
     
     
@@ -449,6 +582,39 @@
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/api_logo.jpeg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/api/APIPage/" rel="permalink">API Page
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
         
           
 
@@ -550,41 +716,6 @@
     <p class="archive__item-excerpt" itemprop="description">Polls 프로젝트 1
 Templates 생성
 저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/django/Django-simple-web-application/" rel="permalink">[Django] 설치 및 기초운용
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  2 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Django설치 및 기초운용
-Django 설치
-mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.
 </p>
   </article>
 </div>

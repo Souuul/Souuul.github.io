@@ -1,0 +1,99 @@
+I"�<h2>Kakao API</h2>
+
+<p>오늘은 <code class="language-plaintext highlighter-rouge">Kakao API</code>에 대하여 알아보겠습니다.</p>
+
+<p>저희는 Python 언어를 이용하여 API 를 이용해보도록 하겠습니다.</p>
+
+<p>카카오 API 를 사용하기 위해서는 사용자 토큰을 발급받아야합니다.</p>
+
+<p>하지만 토큰에는 사용시간  제한이 있기 때문에 refresh 토큰을 통해 사용자 토큰을 초기화 해주어야 합니다.</p>
+
+<p>토큰별 유효시간</p>
+
+<p>Android, iOS : 12시간 JavaScript: 2 시간 REST API : 6시간</p>
+
+<p>Refresh Token : 2달</p>
+
+<p>이 글은 2020년 8월 20일에 작성되었으며 변동되면 업데이트하도록 하겠습니다.</p>
+
+<h3>회원가입 및 로그인</h3>
+
+<p>여러분들이 직접 카카오에 있는 사용법을 보고 사용할 수 있도록 설명하겠습니다.</p>
+
+<p>먼저 토큰을 발급받기 위해 <a href="https://developers.kakao.com/">카카오 개발자 사이트</a>에 접속하여 회원가입합니다.</p>
+
+<p><img src="../../assets/image/kakao1.png" alt="kakaofirstpage" /></p>
+
+<p>회원가입한후 로그인을 진행하고 오른쪽 상단에  <code class="language-plaintext highlighter-rouge">내 어플리케이션</code> 을 클릭합니다.</p>
+
+<p><img src="../../assets/image/kakao2.png" alt="kakaofirstpage" /></p>
+
+<p>회원가입한 후 로그인을 진행하고 오른쪽 상단에  <code class="language-plaintext highlighter-rouge">애플리케이션 추가하기</code> 을 클릭합니다.</p>
+
+<h3>App key 발급받기</h3>
+
+<p><img src="../../assets/image/kakao3.png" alt="kakaofirstpage" /></p>
+
+<p>저희는 <code class="language-plaintext highlighter-rouge">REST API</code> 를 이용하여 사용할 예정이므로 REST API 키를 받아 사용하도록 하겠습니다.</p>
+
+<h3>활성화 설정</h3>
+
+<p><img src="../../assets/image/kakao_activate.png" alt="kakao_activate" /></p>
+
+<p>카카오톡 로그인을 하여 서비스를 이용할 예정이므로 제품설정 &gt; 카카오톡 로그인 을 클릭합니다.</p>
+
+<p>활성화 설정을 ON으로 변경하고 Redirect URl 에 원하시는 주소로 입력합니다.</p>
+
+<h3>인증 코드 받기</h3>
+
+<p>카카오톡 API 사용을 위하여 인증코드를 받아야합니다. <a href="https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#logout-of-service-and-kakaoaccount">인증 코드 받기</a>  링크로 이동합니다.</p>
+
+<p><img src="../../assets/image/kakao_code_url.png" alt="kakao_code_url" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GET</span> <span class="o">/</span><span class="n">oauth</span><span class="o">/</span><span class="n">authorize</span><span class="err">?</span><span class="n">client_id</span><span class="o">=</span><span class="p">{</span><span class="n">REST_API_KEY</span><span class="p">}</span><span class="o">&amp;</span><span class="n">redirect_uri</span><span class="o">=</span><span class="p">{</span><span class="n">REDIRECT_URI</span><span class="p">}</span><span class="o">&amp;</span><span class="n">response_type</span><span class="o">=</span><span class="n">code</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> 
+
+<span class="n">Host</span><span class="p">:</span> <span class="n">kauth</span><span class="p">.</span><span class="n">kakao</span><span class="p">.</span><span class="n">com</span>
+</code></pre></div></div>
+
+<p>상기 코드를 보고 발급받은 REST_API_KEY 와 REDIRECT_URI 을 추가하여 브라우저 주소창에 입력합니다.</p>
+
+<p>kauth.kakao.com/oauth/authorize?client_id={REST_API_KEY}&amp;redirect_uri={REDIRECT_URI}&amp;response_type=code</p>
+
+<p>입력 후 응답을 기다리면 하기와 같이 URl 이 변경됩니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://localhost.com/?code=JrFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</code></pre></div></div>
+
+<p><u>JrFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</u> 가 저희가 사용할 코드입니다.</p>
+
+<h3>사용자 토큰 받기</h3>
+
+<p><img src="../../assets/image/kakao_token.png" alt="kakao_token" /></p>
+
+<p>사용자 토큰을 받기위해 코드를 상기 URL 에서 필수요소들을 request하고 .json</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="c1">#
+# 초기 키 땡기기
+</span><span class="n">app_key</span> <span class="o">=</span> <span class="p">{</span><span class="n">REST_API_KEY</span><span class="p">}</span> <span class="c1"># 초기 앱키 rest_key
+</span><span class="n">code</span> <span class="o">=</span> <span class="s">"JrFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://kauth.kakao.com/oauth/token"</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="s">"grant_type"</span>    <span class="p">:</span> <span class="s">"authorization_code"</span><span class="p">,</span>
+     <span class="s">"client_id"</span>     <span class="p">:</span> <span class="n">app_key</span><span class="p">,</span>
+     <span class="s">"redirect_url"</span>  <span class="p">:</span> <span class="s">"https://localhost.com"</span><span class="p">,</span>
+     <span class="s">"code"</span>          <span class="p">:</span> <span class="n">code</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"kakao_token.json"</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">json</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span> <span class="c1"># 저장하는 것
+</span></code></pre></div></div>
+:ET

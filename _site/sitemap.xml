@@ -85,6 +85,10 @@
 <lastmod>2020-08-02T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/api/APIPage/</loc>
+<lastmod>2020-08-20T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/api/kakao_api_selfmessage/</loc>
 <lastmod>2020-08-20T00:00:00+09:00</lastmod>
 </url>
