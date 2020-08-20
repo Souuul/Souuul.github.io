@@ -1,4 +1,4 @@
-I"�<h2>Dictionary</h2>
+I"�<h2>Dictionary</h2>
 <p>오늘은 <code class="language-plaintext highlighter-rouge">파이썬</code>의 <code class="language-plaintext highlighter-rouge">Dictionary</code> 에 대하여 알아보도록 하겠습니다.</p>
 
 <p>Dictionary Key 와 Value의 쌍으로 이루어진 자료형 데이터 타입입니다.</p>
@@ -23,7 +23,10 @@
 </span><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">keys</span><span class="p">()))</span> <span class="c1"># ['name', 'age', 'address']
 </span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">values</span><span class="p">())</span> <span class="c1">#dict_values(['홍길동', 40, '서울'])
 </span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">items</span><span class="p">())</span> <span class="c1">#dict_items([('name', '홍길동'), ('age', 40), ('address', '서울')]) // tuple로 표현 // for문을 돌리기 위해서 튜플로 변환 ( dict의 경우에는 for 문을 돌릴 수 없음)
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">items</span><span class="p">())</span> <span class="c1">#dict_items([('name', '홍길동'), ('age', 40), ('address', '서울')]) 
+# tuple로 표현 
+</span>
+<span class="c1"># for문을 돌리기 위해서 튜플로 변환 ( dict의 경우에는 for 문을 돌릴 수 없음)
 </span>
 </code></pre></div></div>
 

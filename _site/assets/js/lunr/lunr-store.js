@@ -42,7 +42,7 @@ var store = [{
         "teaser": "http://localhost:4000/assets/image/Text%20Squence.png"
       },{
         "title": "[Python] Dictionary",
-        "excerpt":"Dictionary  오늘은 파이썬의 Dictionary 에 대하여 알아보도록 하겠습니다.   Dictionary Key 와 Value의 쌍으로 이루어진 자료형 데이터 타입입니다.   Dictionary literal로 표현할 떄 { } 중괄호로 표현합니다.   Dictionary는 어떻게 표하는지 아래의 코드를 보며 알아보겠습니다.   my_dict = {} print(type(my_dict))  # &lt;class 'dict'&gt; my_dict = dict()      # 함수를 이용하여 딕셔너리를 제작 my_dict = {'a': '홍길동', 'b' : '강감찬'} my_dict['c'] = '신사임당' # 키와 값의 추가  print(my_dict) = {'a': '홍길동', 'b' : '강감찬', 'c' : '신사임당'}   몇가지 명령어를 통하여 Dictionary 구조에 대하여 한번 더 알아보겠습니다.   a = { \"name\" : \"홍길동\", \"age\" : 40, \"address\": \"서울\"} print(a.keys()) # dict_keys(['name', 'age', 'address']) // 리스트는 아님 print(type(a.keys())) #&lt;class 'dict_keys'&gt; print(list(a.keys())) # ['name', 'age', 'address'] print(a.values()) #dict_values(['홍길동', 40, '서울'])  print(a.items()) #dict_items([('name', '홍길동'), ('age', 40), ('address', '서울')]) // tuple로 표현 // for문을 돌리기 위해서 튜플로 변환 ( dict의 경우에는 for 문을 돌릴 수 없음)    오늘은 파이썬의 Dictionary 에 대하여 알아보았습니다.  ","categories": ["Python"],
+        "excerpt":"Dictionary  오늘은 파이썬의 Dictionary 에 대하여 알아보도록 하겠습니다.   Dictionary Key 와 Value의 쌍으로 이루어진 자료형 데이터 타입입니다.   Dictionary literal로 표현할 떄 { } 중괄호로 표현합니다.   Dictionary는 어떻게 표하는지 아래의 코드를 보며 알아보겠습니다.   my_dict = {} print(type(my_dict))  # &lt;class 'dict'&gt; my_dict = dict()      # 함수를 이용하여 딕셔너리를 제작 my_dict = {'a': '홍길동', 'b' : '강감찬'} my_dict['c'] = '신사임당' # 키와 값의 추가  print(my_dict) = {'a': '홍길동', 'b' : '강감찬', 'c' : '신사임당'}   몇가지 명령어를 통하여 Dictionary 구조에 대하여 한번 더 알아보겠습니다.   a = { \"name\" : \"홍길동\", \"age\" : 40, \"address\": \"서울\"} print(a.keys()) # dict_keys(['name', 'age', 'address']) // 리스트는 아님 print(type(a.keys())) #&lt;class 'dict_keys'&gt; print(list(a.keys())) # ['name', 'age', 'address'] print(a.values()) #dict_values(['홍길동', 40, '서울'])  print(a.items()) #dict_items([('name', '홍길동'), ('age', 40), ('address', '서울')])  # tuple로 표현   # for문을 돌리기 위해서 튜플로 변환 ( dict의 경우에는 for 문을 돌릴 수 없음)    오늘은 파이썬의 Dictionary 에 대하여 알아보았습니다.  ","categories": ["Python"],
         "tags": ["Sequence Type","Data Type","Dictionary"],
         "url": "http://localhost:4000/python/Dictionary/",
         "teaser": "http://localhost:4000/assets/image/List.png"
@@ -124,4 +124,10 @@ var store = [{
         "tags": ["Polls","Project","Webapplication"],
         "url": "http://localhost:4000/django/Django-simple-web-application4/",
         "teaser": "https://live.staticflickr.com/3595/3475465970_7044242629_b.jpg"
+      },{
+        "title": "[Kakao API] 토큰 발급받기",
+        "excerpt":"Kakao API   오늘은 Kakao API에 대하여 알아보겠습니다.   저희는 Python 언어를 이용하여 API 를 이용해보도록 하겠습니다.   카카오 API 를 사용하기 위해서는 사용자 토큰을 발급받아야합니다.   하지만 토큰에는 사용횟수 제한이 있기 때문에 refresh 토큰을 통해 사용자 토큰을 초기화 해주어야 합니다.   이 글은 2020년 8월 20일에 작성되었으며 변동되면 업데이트하도록 하겠습니다.   사용자토큰 발급받기   여러분들이 직접 카카오에 있는 사용법을 보고 사용할 수 있도록 설명하겠습니다.   먼저 토큰을 발급받기 위해 카카오 개발자 사이트에 접속하여 회원가입합니다.      회원가입한후 로그인을 진행하고 오른쪽 상단에  내 어플리케이션 을 클릭합니다.      회원가입한 후 로그인을 진행하고 오른쪽 상단에  애플리케이션 추가하기 을 클릭합니다.      저희는 REST API 를 이용하여 사용할 예정이므로 REST API 키를 받아 사용하도록 하겠습니다.   ","categories": ["API"],
+        "tags": ["Kakao","API","Token"],
+        "url": "http://localhost:4000/api/kakao_api_selfmessage/",
+        "teaser": "http://localhost:4000/assets/image/kakao.png"
       }]
