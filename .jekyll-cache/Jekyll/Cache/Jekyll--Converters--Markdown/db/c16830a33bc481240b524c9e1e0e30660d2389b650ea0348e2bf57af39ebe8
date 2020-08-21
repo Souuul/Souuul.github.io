@@ -1,0 +1,151 @@
+I"E&<h2>Kakao API [Refresh token]</h2>
+
+<p>오늘은 <code class="language-plaintext highlighter-rouge">Refresh token</code>에 대하여 알아보겠습니다.</p>
+
+<p>아직 사용자 토큰을 받지 못하신 분은 <a href="/api/kakao_api_usertoken/">[Kakao API] 사용자토큰</a> 을 참고하여 사용자토큰을 먼저 받고 오시면 되겠습니다. Refresh token 토큰은 사용자 토큰을 받는방법과 비슷합니다.</p>
+
+<h3>Refresh token 받기</h3>
+
+<p>여러분들이 직접 카카오에 있는 사용법을 보고 사용할 수 있도록 설명하겠습니다.</p>
+
+<p>먼저 refresh 토큰을 발급받기 위해 <a href="https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api">사용자 토큰 갱신하기</a> 항목을 참고합니다.</p>
+
+<p><img src="../../assets/image/image-20200821203109199.png" alt="image-20200821203109199" /></p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">POST</span> <span class="nn">/oauth/token</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">kauth.kakao.com</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded;charset=utf-8</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Access token</code> 을 받는 것과 마찬가지로 하기 Request에서 어떤 값을 필수로 입력하여야 하는지 확인합니다.</p>
+
+<h3 id="request">Request</h3>
+
+<h5 id="parameter">Parameter</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">grant_type</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td style="text-align: left">“refresh_token”으로 고정</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">client_id</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td style="text-align: left">앱 생성 시 발급 받은 REST API</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">refresh_token</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td style="text-align: left">토큰 발급 시 응답으로 받은 refresh_token Access Token을 갱신하기 위해 사용</td>
+      <td style="text-align: left">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">client_secret</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td style="text-align: left">토큰 발급 시, 보안을 강화하기 위해 추가 확인하는 코드 [내 애플리케이션] &gt; [보안]에서 설정 가능 ON 상태인 경우 필수 설정해야 함</td>
+      <td style="text-align: left">X</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>상기의 Request 를 정확히 하면 응답으로 하기 값을 받을수 있습니다. 즉 refresh token을 입력하면 <code class="language-plaintext highlighter-rouge">access_token</code>이 변경되는 구조입니다.</p>
+
+<h3 id="response">Response</h3>
+
+<h5 id="key">Key</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">token_type</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td style="text-align: left">토큰 타입, “bearer”로 고정</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">access_token</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td style="text-align: left">갱신된 사용자 액세스 토큰 값</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">expires_in</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">Integer</code></td>
+      <td style="text-align: left">액세스 토큰 만료 시간(초)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">refresh_token</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td style="text-align: left">갱신된 사용자 리프레시 토큰 값, 기존 리프레시 토큰의 유효기간이 1개월 미만인 경우에만 갱신</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">refresh_token_expires_in</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">Integer</code></td>
+      <td style="text-align: left">리프레시 토큰 만료 시간(초)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>더 밑으로 내려보면 <code class="language-plaintext highlighter-rouge">Sample Code</code>를 확인할 수 있습니다.</p>
+
+<h3 id="sample">Sample</h3>
+
+<h5 id="request-1">Request</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-v</span> <span class="nt">-X</span> POST https://kauth.kakao.com/oauth/token <span class="se">\</span>
+ <span class="nt">-d</span> <span class="s1">'grant_type=refresh_token'</span> <span class="se">\</span>
+ <span class="nt">-d</span> <span class="s1">'client_id={REST_API_KEY}'</span> <span class="se">\</span>
+ <span class="nt">-d</span> <span class="s1">'refresh_token={USER_REFRESH_TOKEN}'</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Sample</code> 코드를 바탕으로 Python에서 작업을 해보도록 하겠습니다.</p>
+
+<p>Access token (usertoken) 은 <a href="/api/kakao_api_usertoken/">[Kakao API] 사용자토큰</a> 에서 저장한 json 파일을 사용하도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"kakao_token.json"</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span> <span class="c1"># json 불러오기
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://kauth.kakao.com/oauth/token"</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"grant_type"</span>     <span class="p">:</span> <span class="s">"refresh_token"</span><span class="p">,</span>
+    <span class="s">"client_id"</span>      <span class="p">:</span> <span class="n">app_key</span><span class="p">,</span>
+    <span class="s">"refresh_token"</span>  <span class="p">:</span> <span class="n">tokens</span><span class="p">[</span><span class="s">'refresh_token'</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="c1">#
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="n">response</span><span class="p">.</span><span class="n">status_code</span>
+<span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">tokens</span><span class="p">[</span><span class="s">'access_token'</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()[</span><span class="s">'access_token'</span><span class="p">]</span>
+<span class="n">tokens</span><span class="p">[</span><span class="s">'app_key'</span><span class="p">]</span> <span class="o">=</span> <span class="n">app_key</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"kakao_token.json"</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">json</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span> <span class="c1"># 저장하는 것
+</span></code></pre></div></div>
+
+<h4 id="코드설명">코드설명</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tokens</span><span class="p">[</span><span class="s">'access_token'</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()[</span><span class="s">'access_token'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>refresh token을 통해 다시 발급 받은 access_token을 json파일에 저장하여 갱신합니다.</p>
+
+:ET

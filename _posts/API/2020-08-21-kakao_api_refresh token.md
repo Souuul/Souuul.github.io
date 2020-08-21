@@ -21,54 +21,86 @@ tags:
 
 여러분들이 직접 카카오에 있는 사용법을 보고 사용할 수 있도록 설명하겠습니다.
 
-먼저 토큰을 발급받기 위해 [카카오 개발자 사이트](https://developers.kakao.com/)에 접속하여 회원가입합니다.
-
-<h3>사용자 토큰 받기</h3>
-
-![kakao_token](../../assets/image/kakao_token.png)
+먼저 refresh 토큰을 발급받기 위해 [사용자 토큰 갱신하기](https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api) 항목을 참고합니다.
 
 
 
-<h4>응답값</h4>
+![image-20200821203109199](../../assets/image/image-20200821203109199.png)
+
+
+
+```http
+POST /oauth/token HTTP/1.1
+Host: kauth.kakao.com
+Content-type: application/x-www-form-urlencoded;charset=utf-8
+```
+
+`Access token` 을 받는 것과 마찬가지로 하기 Request에서 어떤 값을 필수로 입력하여야 하는지 확인합니다.
+
+### Request
+
+##### Parameter
+
+| Name          | Type     | Description                                                  | Required |
+| :------------ | :------- | :----------------------------------------------------------- | :------- |
+| grant_type    | `String` | "refresh_token"으로 고정                                     | O        |
+| client_id     | `String` | 앱 생성 시 발급 받은 REST API                                | O        |
+| refresh_token | `String` | 토큰 발급 시 응답으로 받은 refresh_token Access Token을 갱신하기 위해 사용 | O        |
+| client_secret | `String` | 토큰 발급 시, 보안을 강화하기 위해 추가 확인하는 코드 [내 애플리케이션] > [보안]에서 설정 가능 ON 상태인 경우 필수 설정해야 함 | X        |
+
+
+
+상기의 Request 를 정확히 하면 응답으로 하기 값을 받을수 있습니다. 즉 refresh token을 입력하면 `access_token`이 변경되는 구조입니다.
+
+### Response
 
 ##### Key
 
 | Name                     | Type      | Description                                                  |
 | :----------------------- | :-------- | :----------------------------------------------------------- |
 | token_type               | `String`  | 토큰 타입, "bearer"로 고정                                   |
-| access_token             | `String`  | 사용자 액세스 토큰 값                                        |
+| access_token             | `String`  | 갱신된 사용자 액세스 토큰 값                                 |
 | expires_in               | `Integer` | 액세스 토큰 만료 시간(초)                                    |
-| refresh_token            | `String`  | 사용자 리프레시 토큰 값                                      |
+| refresh_token            | `String`  | 갱신된 사용자 리프레시 토큰 값, 기존 리프레시 토큰의 유효기간이 1개월 미만인 경우에만 갱신 |
 | refresh_token_expires_in | `Integer` | 리프레시 토큰 만료 시간(초)                                  |
-| scope                    | `String`  | 인증된 사용자의 정보 조회 권한 범위 범위가 여러 개일 경우, 공백으로 구분 |
 
 
 
-사용자 토큰을 받기위해 코드를 상기 URL 에서 필수요소들을 request하고 응답값을 .json 형식의 파일로 저장해보겠습니다. 
+더 밑으로 내려보면 `Sample Code`를 확인할 수 있습니다. 
 
+### Sample
 
+##### Request
+
+```bash
+curl -v -X POST https://kauth.kakao.com/oauth/token \
+ -d 'grant_type=refresh_token' \
+ -d 'client_id={REST_API_KEY}' \
+ -d 'refresh_token={USER_REFRESH_TOKEN}'
+```
+
+`Sample` 코드를 바탕으로 Python에서 작업을 해보도록 하겠습니다.
+
+Access token (usertoken) 은 [[Kakao API] 사용자토큰](/api/kakao_api_usertoken/) 에서 저장한 json 파일을 사용하도록 하겠습니다.
 
 ```python
-import requests
-import json
-#
-# 초기 키 땡기기
-app_key = {REST_API_KEY} # 초기 앱키 rest_key
-code = "JrFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+with open("kakao_token.json", 'r') as fp:
+    tokens = json.load(fp) # json 불러오기
+
+print(tokens)
 
 url = "https://kauth.kakao.com/oauth/token"
 data = {
-     "grant_type"    : "authorization_code",
-     "client_id"     : app_key,
-     "redirect_url"  : "https://localhost.com",
-     "code"          : code
+    "grant_type"     : "refresh_token",
+    "client_id"      : app_key,
+    "refresh_token"  : tokens['refresh_token']
 }
-
+#
 response = requests.post(url, data=data)
-
-tokens = response.json()
-
-print(tokens)
+response.status_code
+response.json()
+tokens['access_token'] = response.json()['access_token']
+tokens['app_key'] = app_key
 
 with open("kakao_token.json", 'w') as fp:
     json.dump(tokens, fp) # 저장하는 것
@@ -76,20 +108,14 @@ with open("kakao_token.json", 'w') as fp:
 
 
 
-`response = requests.post(url, data=data)` 코드를 통하여 post방식으로 요청하면 응답 값을 받을 수 있습니다.
-
-
+#### 코드설명
 
 ``` python
-with open("kakao_token.json", 'w') as fp:
-    json.dump(tokens, fp)
+tokens['access_token'] = response.json()['access_token']
 ```
 
-상기 코드를 통하여 응답값을 `kakao_token.json` 이름의 .json 형태의 파일로 저장합니다.
-
-이렇게 하여 저희는 사용자토큰을 kakao_token.json 파일에 넣어보았습니다. 사용자 토큰을 바로 사용하는 것도 가능하지만 .json 형태의 파일로 저장하여 구분하였습니다.
+refresh token을 통해 다시 발급 받은 access_token을 json파일에 저장하여 갱신합니다.
 
 
 
-오늘은 카카오 API 사용자 토큰을 받아보았습니다.
-
+오늘은 카카오 API를 사용하기 위하여 `Refresh token` 을 발급받아 보았습니다.
