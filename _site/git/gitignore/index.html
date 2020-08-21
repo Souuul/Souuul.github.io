@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Python] Text operation (str Data Type) - Sol Han tech blog!</title>
-<meta name="description" content="문자열의 연산 (문자열, str) 오늘은 파이썬의 문자열 연산에 대하여 알아보겠습니다.">
+<!-- begin _includes/seo.html --><title>[Git Hub] 가상환경 - Sol Han tech blog!</title>
+<meta name="description" content="gitignore">
 
 
   <meta name="author" content="Sol Han">
@@ -19,32 +19,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sol Han tech blog!">
-<meta property="og:title" content="[Python] Text operation (str Data Type)">
-<meta property="og:url" content="http://localhost:4000/python/Text-operation/">
+<meta property="og:title" content="[Git Hub] 가상환경">
+<meta property="og:url" content="http://localhost:4000/git/gitignore/">
 
 
-  <meta property="og:description" content="문자열의 연산 (문자열, str) 오늘은 파이썬의 문자열 연산에 대하여 알아보겠습니다.">
-
-
-
-  <meta property="og:image" content="http://localhost:4000/assets/image/Text%20Operation.png">
+  <meta property="og:description" content="gitignore">
 
 
 
-
-
-  <meta property="article:published_time" content="2020-07-28T00:00:00+09:00">
+  <meta property="og:image" content="http://localhost:4000/assets/image/Git.png">
 
 
 
 
 
-  
+  <meta property="article:published_time" content="2020-08-21T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/python/Text-operation/">
+
+<link rel="canonical" href="http://localhost:4000/git/gitignore/">
 
 
 
@@ -303,15 +303,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Python] Text operation (str Data Type)">
-    <meta itemprop="description" content="문자열의 연산 (문자열, str)오늘은 파이썬의 문자열 연산에 대하여 알아보겠습니다.">
-    <meta itemprop="datePublished" content="2020-07-28T00:00:00+09:00">
+    <meta itemprop="headline" content="[Git Hub] 가상환경">
+    <meta itemprop="description" content="gitignore">
+    <meta itemprop="datePublished" content="2020-08-21T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[Python] Text operation (str Data Type)
+          <h1 id="page-title" class="page__title" itemprop="headline">[Git Hub] 가상환경
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -328,28 +328,34 @@
 
       <section class="page__content" itemprop="text">
         
-        <h2>문자열의 연산 (문자열, str)</h2>
-<p>오늘은 <code class="language-plaintext highlighter-rouge">파이썬</code>의 <code class="language-plaintext highlighter-rouge">문자열</code> 연산에 대하여 알아보겠습니다.</p>
+        <h1 id="gitignore">gitignore</h1>
 
-<p>일상생활에서 말을 할때 대부분 단일언어로 대화를 하지않습니다. 문자를 조합하거나 합성해서 문장을 만들어 대화를 합니다.</p>
+<blockquote>
+  <p>특정한 파일 및 폴더를 git으로 추적하지 않도록 설정</p>
+</blockquote>
 
-<p>파이썬의 문자열도 마찬가지로 합치거나 원하는 문자열을 추가를 할 수가 있습니다. 자세한 내용은 하기 예제를 통하여 알아보겠습니다.</p>
+<h2 id="사용법">사용법</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">first</span> <span class="o">=</span> <span class="s">'haha'</span>
-<span class="n">second</span> <span class="o">=</span> <span class="s">'hoho'</span>
+<blockquote>
+  <p>git 저장소 내부에 <code>.gitignore</code> 파일을 생성한다.</p>
+</blockquote>
 
-<span class="k">print</span><span class="p">(</span><span class="n">first</span> <span class="o">+</span> <span class="n">second</span><span class="p">)</span> <span class="c1">#hahahoho
-</span><span class="k">print</span><span class="p">(</span><span class="n">first</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># error 자동으로 숫자를 문자로 변경 X ( Java 에서는 가능 합니다 !)
-</span><span class="k">print</span><span class="p">(</span><span class="n">first</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span> <span class="c1">#hahahahahaha
-</span>
+<blockquote>
+  <p>git에서 제외시키고 싶은 형식을 지정한다.</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a.html   			 		 <span class="c"># a.html 특정파일</span>
+secret/   					<span class="c"># secret 특정 폴더</span>
+<span class="o">!</span>secret/test.xlsx   <span class="c">#secret  폴더내의 test.xlsx는 gitignore에서 뺀다 &gt; git으로 관리하겠다.</span>
+<span class="k">*</span>.xlsx 							<span class="c"># 확장자가 .xlsx인 모든 파일</span>
 </code></pre></div></div>
-<p>상기의 예제는 문자열을 더하거나 곱하여서 새로운 문자열을 생성하는 것을 보았습니다.</p>
 
-<p>앞으로 프로젝트를 진행하면서 받는 데이터들이 완벽한 문자열 혹은 문자로 받아진다면 저러한 연산은 필요없겠지만 저희가 앞으로 받은 데이터는 예상할 수 없는 데이터이기 때문에 항상 가공을 해야합니다.</p>
+<h2 id="예시">예시</h2>
 
-<p>문자열의 연산은 앞으로의 프로젝트에서 데이터를 처리하기위한 ‘첫걸음’ 정도로 생각하면 되겠습니다.</p>
+<ul>
+  <li>일반적으로 특정언어, 환경변수, 특정 개발 환경(IDE, 텍스트에디터), 운영체제 관련된 파일들</li>
+</ul>
 
-<p>오늘은 파이썬의 문자열 연산에 대하여 알아보았습니다.</p>
 
         
       </section>
@@ -370,27 +376,11 @@
     
       
       
-      <a href="/tags/#data-type" class="page__taxonomy-item" rel="tag">Data Type</a><span class="sep">, </span>
+      <a href="/tags/#github" class="page__taxonomy-item" rel="tag">Github</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#operation" class="page__taxonomy-item" rel="tag">operation</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#str" class="page__taxonomy-item" rel="tag">str</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#text-sequence" class="page__taxonomy-item" rel="tag">Text sequence</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85" class="page__taxonomy-item" rel="tag">데이터타입</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#%EB%AC%B8%EC%9E%90%EC%97%B4" class="page__taxonomy-item" rel="tag">문자열</a>
+      <a href="/tags/#git" class="page__taxonomy-item" rel="tag">Git</a>
     
     </span>
   </p>
@@ -411,14 +401,14 @@
     
       
       
-      <a href="/categories/#python" class="page__taxonomy-item" rel="tag">Python</a>
+      <a href="/categories/#git" class="page__taxonomy-item" rel="tag">Git</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-28T00:00:00+09:00">July 28, 2020</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-08-21T00:00:00+09:00">August 21, 2020</time></p>
 
 
       </footer>
@@ -428,22 +418,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BPython%5D+Text+operation+%28str+Data+Type%29%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2FText-operation%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BGit+Hub%5D+%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%20http%3A%2F%2Flocalhost%3A4000%2Fgit%2Fgitignore%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2FText-operation%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fgit%2Fgitignore%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2FText-operation%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fgit%2Fgitignore%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/python/PythonPage/" class="pagination--pager" title="Python Page
+      <a href="/git/Github/" class="pagination--pager" title="[Git Hub] 원격저장소 활용
 ">Previous</a>
     
     
-      <a href="/python/Text-sequence/" class="pagination--pager" title="[Python] Text sequence (str Data Type)
+      <a href="/git/virtualenvironmnet/" class="pagination--pager" title="[Git Hub] 가상환경
 ">Next</a>
     
   </nav>
@@ -505,39 +495,6 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/git/gitignore/" rel="permalink">[Git Hub] 가상환경
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  less than 1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">gitignore
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/Git.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/git/Github/" rel="permalink">[Git Hub] 원격저장소 활용
 </a>
       
@@ -548,7 +505,7 @@
 
 
 
-  1 minute read
+  less than 1 minute read
 
 </p>
     
@@ -581,11 +538,44 @@
 
 
 
-  5 minute read
+  4 minute read
 
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Git 명령어
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/Git.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/github/GITPage/" rel="permalink">Git Page
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -664,8 +654,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/python/Text-operation/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/python/Text-operation"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/git/gitignore/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/git/gitignore"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

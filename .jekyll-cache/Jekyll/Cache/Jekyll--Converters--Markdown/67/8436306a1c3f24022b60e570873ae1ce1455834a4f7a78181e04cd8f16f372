@@ -1,0 +1,29 @@
+I"!<h1 id="gitignore">gitignore</h1>
+
+<blockquote>
+  <p>특정한 파일 및 폴더를 git으로 추적하지 않도록 설정</p>
+</blockquote>
+
+<h2 id="사용법">사용법</h2>
+
+<blockquote>
+  <p>git 저장소 내부에 <code>.gitignore</code> 파일을 생성한다.</p>
+</blockquote>
+
+<blockquote>
+  <p>git에서 제외시키고 싶은 형식을 지정한다.</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a.html   			 		 <span class="c"># a.html 특정파일</span>
+secret/   					<span class="c"># secret 특정 폴더</span>
+<span class="o">!</span>secret/test.xlsx   <span class="c">#secret  폴더내의 test.xlsx는 gitignore에서 뺀다 &gt; git으로 관리하겠다.</span>
+<span class="k">*</span>.xlsx 							<span class="c"># 확장자가 .xlsx인 모든 파일</span>
+</code></pre></div></div>
+
+<h2 id="예시">예시</h2>
+
+<ul>
+  <li>일반적으로 특정언어, 환경변수, 특정 개발 환경(IDE, 텍스트에디터), 운영체제 관련된 파일들</li>
+</ul>
+
+:ET
