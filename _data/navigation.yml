@@ -10,5 +10,7 @@ main:
     url: /django/DjangoPage/
   - title: "API"
     url: /api/APIPage/ 
+  - title: "GIT"
+    url: /api/GITPage/
   - title: "Sitemap"
     url: /sitemap/

@@ -1,0 +1,342 @@
+I"b;<h2>Git 명령어</h2>
+
+<p>오늘은 <code class="language-plaintext highlighter-rouge">Git 명령어</code>에 대하여 알아보겠습니다.</p>
+
+<p>기본적인 명령어와 시나리오를 통해 충동상황을 인위적으로 만들어보고 해결해보는 방법으로 알아보겠습니다.</p>
+
+<h3 id="git-branch-확인">git branch 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch
+</code></pre></div></div>
+
+<p>* master</p>
+
+<h3 id="git-branch-생성">git branch 생성</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch hellobranch
+<span class="nv">$ </span>git branch
+ hellobranch
+<span class="se">\*</span> master
+</code></pre></div></div>
+
+<h3 id="git-특정-branch-로-이동">git 특정 branch 로 이동</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout hellobranch
+<span class="s1">'hellobranch'</span> 브랜치로 전환합니다
+</code></pre></div></div>
+
+<h3 id="git-branch에서-commit">git branch에서 commit</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git <span class="nb">touch </span>hellobranch.md
+<span class="nv">$ </span>git add <span class="nb">.</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s1">'hellobranch'</span>
+<span class="o">[</span>hellobranch 38888aa] hellobranch
+ 1 file changed, 0 insertions<span class="o">(</span>+<span class="o">)</span>, 0 deletions<span class="o">(</span>-<span class="o">)</span>
+ create mode 100644 hellobranch.md
+</code></pre></div></div>
+
+<h3 id="git-master-에서-확인">git master 에서 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout master
+<span class="s1">'master'</span> 브랜치로 전환합니다
+</code></pre></div></div>
+
+<p>폴더를 확인하면 <code class="language-plaintext highlighter-rouge">branch</code> 에서 생성한 <code class="language-plaintext highlighter-rouge">hellobranch.md</code>  파일을 확인할 수 없습니다.</p>
+
+<h3 id="git-merge">git merge</h3>
+
+<p>Branch 에서 작업한 내용을 master에 적용하고 병합하기 위하여</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git merge hellobranch 
+</code></pre></div></div>
+
+<h3 id="git-branch-삭제">git branch 삭제</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-d</span> <span class="o">{</span>브랜치 이름<span class="o">}</span>
+<span class="nv">$ </span>git branch <span class="nt">-d</span> hellobranch
+hellobranch 브랜치 삭제 <span class="o">(</span>과거 38888aa<span class="o">)</span><span class="nb">.</span>
+<span class="nv">$ </span> git branch
+<span class="k">*</span> master
+</code></pre></div></div>
+
+<h3 id="git-branch-생성-및-이동">git branch 생성 및 이동</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout <span class="nt">-b</span> <span class="o">{</span>브랜치 이름<span class="o">}</span>
+<span class="nv">$ </span><span class="nb">touch </span>blog.html
+<span class="nv">$ </span>git add <span class="nb">.</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s1">'Complete blog app'</span>
+<span class="nv">$ </span>git log <span class="nt">--oneline</span>
+<span class="nv">$ </span>git log <span class="nt">--oneline</span> <span class="nt">--graph</span>
+</code></pre></div></div>
+
+<h2 id="git-시나리오">Git 시나리오</h2>
+
+<h3 id="상황-1-fast-foward">상황 1. fast-foward</h3>
+
+<blockquote>
+  <p>fast-foward는 feature 브랜치 생성된 이후 master 브랜치에 변경 사항이 없는 상황</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>feature/test branch 생성 및 이동</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout <span class="nt">-b</span>  feature/test
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>작업 완료 후 commit</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">touch </span>test.html
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>master 이동</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout master
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>master에 병합</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git merge feature/test
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>결과 -&gt; fast-foward (단순히 HEAD를 이동)</p>
+  </li>
+  <li>
+    <p>branch 삭제</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-d</span> feature/test
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="상황-2-merge-commit">상황 2. merge commit</h3>
+
+<blockquote>
+  <p>서로 다른 이력(commit)을 병합(merge)하는 과정에서 다른 파일이 수정되어 있는 상황</p>
+
+  <p>git이 auto merging을 진행하고, commit이 발생된다.</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>feature/poll branch 생성 및 이동</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> feature/poll
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>작업 완료 후 commit</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">touch </span>poll.html
+<span class="nv">$ </span>git add <span class="nb">.</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s1">'complete blog app'</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>master 이동</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout master
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><em>master에 추가 commit 이 발생시키기!!</em></p>
+
+    <ul>
+      <li><strong>다른 파일을 수정 혹은 생성하세요!</strong></li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">touch </span>poll.css
+<span class="nv">$ </span>git add <span class="nb">.</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s1">'update poll.css'</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>master에 병합</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>master<span class="o">)</span> <span class="nv">$git</span> merge feature/poll
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>결과 -&gt; 자동으로 <em>merge commit 발생</em></p>
+
+    <ul>
+      <li>
+        <p>vim 편집기 화면이 나타납니다.</p>
+      </li>
+      <li>자동으로 작성된 커밋 메시지를 확인하고, <code class="language-plaintext highlighter-rouge">esc</code>를 누른 후 <code class="language-plaintext highlighter-rouge">:wq</code>를 입력하여 저장 및 종료를 합니다.
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">w</code> : write</li>
+          <li><code class="language-plaintext highlighter-rouge">q</code> : quit</li>
+        </ul>
+      </li>
+      <li>커밋이  확인 해봅시다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>그래프 확인하기</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$git</span> log <span class="nt">--oneline</span> <span class="nt">--graph</span>
+<span class="se">\*</span>  43a7747 <span class="o">(</span><span class="k">**</span>HEAD -&gt;<span class="k">**</span> <span class="k">**</span>master<span class="k">**</span><span class="o">)</span> Merge branch <span class="s1">'feature/poll'</span>
+|<span class="se">\ </span> 
+| <span class="k">*</span> b2dcf72 <span class="o">(</span><span class="k">**</span>feature/poll<span class="k">**</span><span class="o">)</span> <span class="nb">complete </span>blog app
+<span class="se">\*</span> | bacdf1a update poll.css
+|/  
+<span class="se">\*</span> d9ccd8f Complete blog app
+<span class="se">\*</span> 38888aa hellobranch
+<span class="se">\*</span> 5e8b5fb init
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>branch 삭제</p>
+  </li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>git branch <span class="nt">-d</span> feature/poll
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="상황-3-merge-commit-충돌">상황 3. merge commit 충돌</h3>
+
+<blockquote>
+  <p>서로 다른 이력(commit)을 병합(merge)하는 과정에서 동일 파일이 수정되어 있는 상황</p>
+
+  <p>git이 auto merging을 하지 못하고, 해당 파일의 위치에 라벨링을 해준다.</p>
+
+  <p>원하는 형태의 코드로 직접 수정을 하고 merge commit을 발생 시켜야 한다.</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>feature/board branch 생성 및 이동</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout <span class="nt">-b</span> feature/board
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>작업 완료 후 commit</p>
+
+    <ul>
+      <li>
+        <p>Readme 파일 수정 후 아래 명령어</p>
+
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">touch </span>board
+<span class="nv">$ </span>git add <span class="nb">.</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s1">'edit readme and board'</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>master 이동</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>git checkout master
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><em>master에 추가 commit 이 발생시키기!!</em></p>
+
+    <ul>
+      <li>
+        <p><strong>동일 파일을 수정 혹은 생성하세요!</strong></p>
+      </li>
+      <li>
+        <p>readme .md 수정!</p>
+
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add <span class="nb">.</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s1">'edit readme and board'</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>master에 병합</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git merge feature/board
+자동 병합: readme.md
+   
+충돌 <span class="o">(</span>내용<span class="o">)</span>: readme.md에 병합 충돌
+   
+자동 병합이 실패했습니다. 충돌을 바로잡고 결과물을 커밋하십시오.
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>결과 -&gt; <em>merge conflict발생</em></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>admin@adminui-MacBookPro Django % git status
+현재 브랜치 master
+병합하지 않은 경로가 있습니다.
+  <span class="o">(</span>충돌을 바로잡고 <span class="s2">"git commit"</span>을 실행하십시오<span class="o">)</span>
+  <span class="o">(</span>병합을 중단하려면 <span class="s2">"git merge --abort"</span>를 사용하십시오<span class="o">)</span>
+   
+커밋할 변경 사항:
+	새 파일:       board.html
+   
+병합하지 않은 경로:
+  <span class="o">(</span>해결했다고 표시하려면 <span class="s2">"git add &lt;파일&gt;..."</span>을 사용하십시오<span class="o">)</span>
+	양쪽에서 수정:  readme.md
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>충돌 확인 및 해결</p>
+
+    <p>중복되었을때 둘다 표시도 가능하고 하나만 선택하는 것이 가능 (vs, pycharm에서 선택가능)</p>
+  </li>
+  <li>
+    <p>merge commit 진행</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit
+</code></pre></div>    </div>
+
+    <ul>
+      <li>
+        <p>vim 편집기 화면이 나타납니다.</p>
+      </li>
+      <li>자동으로 작성된 커밋 메시지를 확인하고, <code class="language-plaintext highlighter-rouge">esc</code>를 누른 후 <code class="language-plaintext highlighter-rouge">:wq</code>를 입력하여 저장 및 종료를 합니다.
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">w</code> : write</li>
+          <li><code class="language-plaintext highlighter-rouge">q</code> : quit</li>
+        </ul>
+      </li>
+      <li>커밋이  확인 해봅시다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>그래프 확인하기</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add <span class="nb">.</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s1">'resolveconflict'</span>
+<span class="o">[</span>master 4a75bda] resolveconflict
+   
+<span class="nv">$ </span>git log <span class="nt">--oneline</span> <span class="nt">--graph</span>       
+   
+<span class="k">*</span>   4a75bda <span class="o">(</span>HEAD -&gt; master<span class="o">)</span> resolveconflict
+|<span class="se">\ </span> 
+| <span class="k">*</span> d7040c2 <span class="o">(</span>feature/board<span class="o">)</span> edit readme and board
+<span class="k">*</span> | eb7b350 edit_readme_master
+|/  
+<span class="k">*</span>   43a7747 Merge branch <span class="s1">'feature/poll'</span>
+|<span class="se">\ </span> 
+| <span class="k">*</span> b2dcf72 <span class="nb">complete </span>blog app
+<span class="k">*</span> | bacdf1a update poll.css
+|/  
+<span class="k">*</span> d9ccd8f Complete blog app
+<span class="k">*</span> 38888aa hellobranch
+<span class="k">*</span> 5e8b5fb init
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>branch 삭제</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-d</span> feature/board
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+:ET

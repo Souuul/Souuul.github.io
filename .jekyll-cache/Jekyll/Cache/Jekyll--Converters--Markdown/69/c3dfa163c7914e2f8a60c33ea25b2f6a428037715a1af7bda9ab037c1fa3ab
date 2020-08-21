@@ -1,0 +1,1107 @@
+I"�e<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
+
+<h2>Pages</h2>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/404.html" rel="permalink">Page Not Found</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Page not found. Your pixels are in another canvas.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/archive-layout-with-content/" rel="permalink">Archive Layout with Content</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/categories/" rel="permalink">Posts by Category</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/collection-archive/" rel="permalink">Posts by Collection</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/categories/edge-case/" rel="permalink">Edge Case</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lorem-ipsum/" rel="permalink">Lorem Ipsum</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/assets/js/lunr/lunr-en.js" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/assets/js/lunr/lunr-gr.js" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/assets/js/lunr/lunr-store.js" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/assets/css/main.css" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/tags/markup/" rel="permalink">Markup</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/page-a/" rel="permalink">Page A</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/page-archive/" rel="permalink">Page Archive</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/page-b/" rel="permalink">Page B</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/portfolio/" rel="permalink">Portfolio</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/post-archive-feature-rows/" rel="permalink">Post Archive with Feature Rows</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/recipes-archive/" rel="permalink">Recipes</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sample-page/" rel="permalink">Sample Page</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/search/" rel="permalink">Search</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sitemap/" rel="permalink">Sitemap</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/splash-page/" rel="permalink">Splash Page</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">Bacon ipsum dolor sit amet salami ham hock ham, hamburger corned beef short ribs kielbasa biltong t-bone drumstick tri-tip tail sirloin pork chop.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/tags/" rel="permalink">Posts by Tag</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/terms/" rel="permalink">Terms and Privacy Policy</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/year-archive/" rel="permalink">Posts by Year</a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/page2/" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/page3/" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/page4/" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/page5/" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/page6/" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sitemap.xml" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/robots.txt" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/feed.xml" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/assets/css/main.css.map" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<h2>Posts</h2>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/Github/" rel="permalink">[Git] 기본명령어 및 활용
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Git 명령어
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/Git/" rel="permalink">[Git] 기본명령어 및 활용
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Git 명령어
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/api/kakao_api_refresh-token/" rel="permalink">[Kakao API] Refresh token 발급받기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Kakao API [Refresh token]
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/api/kakao_api_usertoken/" rel="permalink">[Kakao API] 사용자토큰 발급받기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Kakao API [User token]
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/api/APIPage/" rel="permalink">API Page
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-simple-web-application4/" rel="permalink">[Django] Poll 프로젝트 3 (마지막)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Polls 프로젝트 3
+투표시스템 결과확인
+저번시간에는 저희가 질문지를 라디오 버튼을 통하여 선택하는 것과 submit버튼을 제작해 보았습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-simple-web-application3/" rel="permalink">[Django] Poll 프로젝트 2
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Polls 프로젝트 2
+투표시스템 질문지 항목 추가
+저번시간에는 Question 항목까지 만드는 것을 해보았습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-simple-web-application2/" rel="permalink">[Django] Poll 프로젝트 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Polls 프로젝트 1
+Templates 생성
+저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-simple-web-application/" rel="permalink">[Django] 설치 및 기초운용
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Django설치 및 기초운용
+Django 설치
+mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-Basic/" rel="permalink">[Django] 이론
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Django
+오늘은 Django에 대하여 알아보아요!
+Python 으로 만들어진 오픈소스
+웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/Django-BBS/" rel="permalink">[Django] BBS Project
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description"> BBS (Bullentin Board System) 
+Poll 프로젝트에 이어 오늘은 게시판을 만들어 보겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/django/DjangoPage/" rel="permalink">Django Page
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+	
+
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/html/css/javascript/web-basic/" rel="permalink">[HTML, CSS, JS] Web Basic
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description"> Web 기초 
+1. Internet 
+여러개의 컴퓨터를 network로 묶어서 사용하는 것은 LAN (Local Area Network) 입니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/html/css/javascript/jQuery2/" rel="permalink">[HTML, CSS, JS] jQuery 2
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description"> jQuery
+오늘은 jQuery 를 배워보겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/html/css/javascript/jQuery/" rel="permalink">[HTML, CSS, JS] jQuery 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description"> jQuery
+오늘은 jQuery 를 배워보겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/html/css/javascript/Web-CSS-JAVASCRIPT/" rel="permalink">HTML CSS JAVASCRIPT
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/List/" rel="permalink">[Python] List
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">List
+오늘은 파이썬의 List 에 대하여 알아보도록 하겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Formatting/" rel="permalink">[Python] Formatting
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">In Not In 연산자
+오늘은 파이썬의 문자열 의 Formatting 에 대하여 알아보도록 하겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Dictionary/" rel="permalink">[Python] Dictionary
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Dictionary
+오늘은 파이썬의 Dictionary 에 대하여 알아보도록 하겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Text-sequence/" rel="permalink">[Python] Text sequence (str Data Type)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Text sequence (문자열, str)
+오늘은 파이썬의 문자열 데이터 타입에 대하여 알아보겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Text-operation/" rel="permalink">[Python] Text operation (str Data Type)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">문자열의 연산 (문자열, str)
+오늘은 파이썬의 문자열 연산에 대하여 알아보겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/PythonPage/" rel="permalink">Python Page
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+	
+
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Numeric-Data-Type/" rel="permalink">[Python] Numeric Data Type
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Numeric Data Type (숫자형)
+오늘은 파이썬의 숫자형 데이터 타입에 대하여 알아보겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/In-Not/" rel="permalink">[Python] In Not in (str Data Type)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">In Not In 연산자
+오늘은 파이썬의 문자열 의 in 과 not in 연산자에 대하여 키워드를 통하여 알아보도록 하겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Idexing-Slicing/" rel="permalink">[Python] Idexing, Slicing (str Data Type)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Indexing &amp; Slicing
+오늘은 파이썬의 문자열 의 Idexing 과 Slicing을 알아보겠습니다.
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/welcome/welcome/" rel="permalink">테크블로그에 오신것을 환영합니다.
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+</p>
+  </article>
+</div>
+
+:ET

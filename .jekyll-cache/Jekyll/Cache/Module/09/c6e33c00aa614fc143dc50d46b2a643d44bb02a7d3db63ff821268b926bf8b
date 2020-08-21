@@ -1,4 +1,4 @@
-I"W
+I"·
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -21,6 +21,8 @@
               <a href="/django/DjangoPage/">Django</a>
             </li><li class="masthead__menu-item">
               <a href="/api/APIPage/">API</a>
+            </li><li class="masthead__menu-item">
+              <a href="/api/GITPage/">GIT</a>
             </li><li class="masthead__menu-item">
               <a href="/sitemap/">Sitemap</a>
             </li></ul>
