@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-21T20:05:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Kakao API] Refresh token 발급받기</title><link href="http://localhost:4000/api/kakao_api_refresh-token/" rel="alternate" type="text/html" title="[Kakao API] Refresh token 발급받기" /><published>2020-08-21T00:00:00+09:00</published><updated>2020-08-21T00:00:00+09:00</updated><id>http://localhost:4000/api/kakao_api_refresh%20token</id><content type="html" xml:base="http://localhost:4000/api/kakao_api_refresh-token/">&lt;h2&gt;Kakao API [Refresh token]&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-21T20:13:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Han tech blog!</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">Git Page</title><link href="http://localhost:4000/git/github/GITPage/" rel="alternate" type="text/html" title="Git Page" /><published>2020-08-21T00:00:00+09:00</published><updated>2020-08-21T00:00:00+09:00</updated><id>http://localhost:4000/git/github/GITPage</id><content type="html" xml:base="http://localhost:4000/git/github/GITPage/">&lt;p&gt;&lt;img src=&quot;/assets/image/Git.png&quot; alt=&quot;Git&quot; /&gt;&lt;/p&gt;
+
+&lt;h2&gt;Django 페이지&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/Git.png&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/git/Git/&quot;&gt;[Git] 기본명령어&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/Git.png&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/git/Github/&quot;&gt;[Github] 원격저장소 활용&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/Git.png&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/git/virtualenvironmnet/&quot;&gt;[Github] python 가상환경&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="GIT" /><category term="GITHUB" /><summary type="html"></summary></entry><entry><title type="html">[Kakao API] Refresh token 발급받기</title><link href="http://localhost:4000/api/kakao_api_refresh-token/" rel="alternate" type="text/html" title="[Kakao API] Refresh token 발급받기" /><published>2020-08-21T00:00:00+09:00</published><updated>2020-08-21T00:00:00+09:00</updated><id>http://localhost:4000/api/kakao_api_refresh%20token</id><content type="html" xml:base="http://localhost:4000/api/kakao_api_refresh-token/">&lt;h2&gt;Kakao API [Refresh token]&lt;/h2&gt;
 
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Refresh token&lt;/code&gt;에 대하여 알아보겠습니다.&lt;/p&gt;
 
@@ -97,7 +105,67 @@
 
 &lt;p&gt;이렇게 하여 저희는 사용자토큰을 kakao_token.json 파일에 넣어보았습니다. 사용자 토큰을 바로 사용하는 것도 가능하지만 .json 형태의 파일로 저장하여 구분하였습니다.&lt;/p&gt;
 
-&lt;p&gt;오늘은 카카오 API 사용자 토큰을 받아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="API" /><category term="Kakao" /><category term="API" /><category term="Token" /><summary type="html">Kakao API [Refresh token]</summary></entry><entry><title type="html">[Git] 기본명령어 및 활용</title><link href="http://localhost:4000/git/Git/" rel="alternate" type="text/html" title="[Git] 기본명령어 및 활용" /><published>2020-08-21T00:00:00+09:00</published><updated>2020-08-21T00:00:00+09:00</updated><id>http://localhost:4000/git/Git</id><content type="html" xml:base="http://localhost:4000/git/Git/">&lt;h2&gt;Git 명령어&lt;/h2&gt;
+&lt;p&gt;오늘은 카카오 API 사용자 토큰을 받아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="API" /><category term="Kakao" /><category term="API" /><category term="Token" /><summary type="html">Kakao API [Refresh token]</summary></entry><entry><title type="html">[Git Hub] 원격저장소 활용</title><link href="http://localhost:4000/git/Github/" rel="alternate" type="text/html" title="[Git Hub] 원격저장소 활용" /><published>2020-08-21T00:00:00+09:00</published><updated>2020-08-21T00:00:00+09:00</updated><id>http://localhost:4000/git/Github</id><content type="html" xml:base="http://localhost:4000/git/Github/">&lt;h2 id=&quot;git-원격-저장소-활용&quot;&gt;Git 원격 저장소 활용&lt;/h2&gt;
+
+&lt;p&gt;Git 원격 저장소 기능을 제공 해주는 서비스는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitlab&lt;/code&gt; , &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bitbucket&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github&lt;/code&gt; 등이 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;0-원격-저장소-설정&quot;&gt;0. 원격 저장소 설정&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git remote add origin {url}
+$ git remote add origin https://github.com/edutak/TIL.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;git, 원격저장소를 추가(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;add&lt;/code&gt;)하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;origin&lt;/code&gt; 이라는 이름으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;url&lt;/code&gt; 으로 설정&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;설정된 저장소를 확인하기 위해서는 아래의 명령어를 사용한다.&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git remote -v
+origin  https://github.com/edutak/TIL.git (fetch)
+origin  https://github.com/edutak/TIL.git (push)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-원격-저장소-복제&quot;&gt;1. 원격 저장소 복제&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone {url}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;해당 명령어를 입력한 위치에 원격저장소 이름으로 폴더가 생기며, 저장소가 복제 된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-push&quot;&gt;2. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;push&lt;/code&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git push origin master
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (13/13), 40.38 KiB | 13.46 MiB/s, done.
+Total 13 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/edutak/TIL.git
+ * [new branch]      master -&amp;gt; master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;원격저장소(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;origin&lt;/code&gt;) 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mater&lt;/code&gt; 브랜치로 기록된 커밋(버전)이 업데이트된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-pull&quot;&gt;3. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pull&lt;/code&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git pull origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;원격저장소(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;origin&lt;/code&gt;)의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt; 브랜치의 기록된 커밋(버전)이 현재 로컬 저장소로 받아온다.&lt;/li&gt;
+  &lt;li&gt;Branch를 생성할 경우 commit 과 push를 모두 branch에서 실행해야합니다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Git" /><category term="Git" /><category term="Github" /><summary type="html">Git 원격 저장소 활용</summary></entry><entry><title type="html">[Git] 기본명령어 및 활용</title><link href="http://localhost:4000/git/Git/" rel="alternate" type="text/html" title="[Git] 기본명령어 및 활용" /><published>2020-08-21T00:00:00+09:00</published><updated>2020-08-21T00:00:00+09:00</updated><id>http://localhost:4000/git/Git</id><content type="html" xml:base="http://localhost:4000/git/Git/">&lt;h2&gt;Git 명령어&lt;/h2&gt;
 
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Git 명령어&lt;/code&gt;에 대하여 알아보겠습니다.&lt;/p&gt;
 
@@ -584,73 +652,52 @@ f7dc503 First commit
     &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; feature/board
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Git" /><category term="Git" /><category term="Github" /><summary type="html">Git 명령어</summary></entry><entry><title type="html">Git Page</title><link href="http://localhost:4000/api/GITPage/" rel="alternate" type="text/html" title="Git Page" /><published>2020-08-21T00:00:00+09:00</published><updated>2020-08-21T00:00:00+09:00</updated><id>http://localhost:4000/api/GITPage</id><content type="html" xml:base="http://localhost:4000/api/GITPage/">&lt;p&gt;&lt;img src=&quot;../../assets/image/Git.png&quot; alt=&quot;api_logo&quot; /&gt;&lt;/p&gt;
+&lt;/ol&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Git" /><category term="Git" /><category term="Github" /><summary type="html">Git 명령어</summary></entry><entry><title type="html">[Git Hub] 가상환경</title><link href="http://localhost:4000/git/virtualenvironmnet/" rel="alternate" type="text/html" title="[Git Hub] 가상환경" /><published>2020-08-21T00:00:00+09:00</published><updated>2020-08-21T00:00:00+09:00</updated><id>http://localhost:4000/git/virtualenvironmnet</id><content type="html" xml:base="http://localhost:4000/git/virtualenvironmnet/">&lt;h1 id=&quot;파이썬-가상-환경&quot;&gt;파이썬 가상 환경&lt;/h1&gt;
 
-&lt;h2&gt;Django 페이지&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/Git.png&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/git/Git/&quot;&gt;[Git] 기본명령어&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/Git.png&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/git/Github/&quot;&gt;[Github] 원격저장소 활용&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="API" /><summary type="html"></summary></entry><entry><title type="html">[Git Hub] 원격저장소 활용</title><link href="http://localhost:4000/git/Github/" rel="alternate" type="text/html" title="[Git Hub] 원격저장소 활용" /><published>2020-08-21T00:00:00+09:00</published><updated>2020-08-21T00:00:00+09:00</updated><id>http://localhost:4000/git/Github</id><content type="html" xml:base="http://localhost:4000/git/Github/">&lt;h2 id=&quot;git-원격-저장소-활용&quot;&gt;Git 원격 저장소 활용&lt;/h2&gt;
-
-&lt;p&gt;Git 원격 저장소 기능을 제공 해주는 서비스는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitlab&lt;/code&gt; , &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bitbucket&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github&lt;/code&gt; 등이 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;0-원격-저장소-설정&quot;&gt;0. 원격 저장소 설정&lt;/h2&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git remote add origin {url}
-$ git remote add origin https://github.com/edutak/TIL.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;사용법&quot;&gt;사용법&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;git, 원격저장소를 추가(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;add&lt;/code&gt;)하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;origin&lt;/code&gt; 이라는 이름으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;url&lt;/code&gt; 으로 설정&lt;/p&gt;
+    &lt;p&gt;가상환경 생성&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code&gt;venv&lt;/code&gt; 라는 이름의 가상환경을 생성&lt;/p&gt;
+
+        &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;python3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;venv&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;가상환경이름&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;python3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;venv&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;venv&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;가상환경을 생성하면 해당 디렉토리에 &lt;code&gt;venv&lt;/code&gt; 폴터가 생성된다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;설정된 저장소를 확인하기 위해서는 아래의 명령어를 사용한다.&lt;/p&gt;
+    &lt;p&gt;가상환경 실행&lt;/p&gt;
 
-    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git remote -v
-origin  https://github.com/edutak/TIL.git (fetch)
-origin  https://github.com/edutak/TIL.git (push)
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;venv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Scripts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;activate&lt;/span&gt;			&lt;span class=&quot;c1&quot;&gt;# git bash용
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;venv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Scripts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bat&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;# cmd용
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;venv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Scripts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;activate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;psl&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;# 파워쉘 용
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;venv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;가상환경을 실행시킨 상태에서 파이썬 패키지(pip)를 설치하게 되면 venv 폴더의 Lib폴더에 설치를 하게 된다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;해당프로젝트를 위한 패키지들을 따로 관리할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;1-원격-저장소-복제&quot;&gt;1. 원격 저장소 복제&lt;/h2&gt;
+&lt;h2 id=&quot;pip&quot;&gt;pip&lt;/h2&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone {url}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;해당 명령어를 입력한 위치에 원격저장소 이름으로 폴더가 생기며, 저장소가 복제 된다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-push&quot;&gt;2. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;push&lt;/code&gt;&lt;/h2&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git push origin master
-Enumerating objects: 13, done.
-Counting objects: 100% (13/13), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (10/10), done.
-Writing objects: 100% (13/13), 40.38 KiB | 13.46 MiB/s, done.
-Total 13 (delta 1), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (1/1), done.
-To https://github.com/edutak/TIL.git
- * [new branch]      master -&amp;gt; master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;원격저장소(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;origin&lt;/code&gt;) 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mater&lt;/code&gt; 브랜치로 기록된 커밋(버전)이 업데이트된다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;3-pull&quot;&gt;3. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pull&lt;/code&gt;&lt;/h2&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git pull origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;원격저장소(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;origin&lt;/code&gt;)의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt; 브랜치의 기록된 커밋(버전)이 현재 로컬 저장소로 받아온다.&lt;/li&gt;
-  &lt;li&gt;Branch를 생성할 경우 commit 과 push를 모두 branch에서 실행해야합니다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Git" /><category term="Git" /><category term="Github" /><summary type="html">Git 원격 저장소 활용</summary></entry><entry><title type="html">[Kakao API] 사용자토큰 발급받기</title><link href="http://localhost:4000/api/kakao_api_usertoken/" rel="alternate" type="text/html" title="[Kakao API] 사용자토큰 발급받기" /><published>2020-08-20T00:00:00+09:00</published><updated>2020-08-20T00:00:00+09:00</updated><id>http://localhost:4000/api/kakao_api_usertoken</id><content type="html" xml:base="http://localhost:4000/api/kakao_api_usertoken/">&lt;h2&gt;Kakao API [User token]&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# requirements.txt에 설치된 패키지 기록
+$ pip freeze &amp;gt; requirements.txt
+# requirements.txt에 설치된 패키지들을 설치
+$ pip install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Git" /><category term="Git" /><category term="Github" /><category term="Python" /><summary type="html">파이썬 가상 환경</summary></entry><entry><title type="html">[Kakao API] 사용자토큰 발급받기</title><link href="http://localhost:4000/api/kakao_api_usertoken/" rel="alternate" type="text/html" title="[Kakao API] 사용자토큰 발급받기" /><published>2020-08-20T00:00:00+09:00</published><updated>2020-08-20T00:00:00+09:00</updated><id>http://localhost:4000/api/kakao_api_usertoken</id><content type="html" xml:base="http://localhost:4000/api/kakao_api_usertoken/">&lt;h2&gt;Kakao API [User token]&lt;/h2&gt;
 
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Kakao API&lt;/code&gt;에 대하여 알아보겠습니다.&lt;/p&gt;
 
@@ -811,572 +858,277 @@ Host: kauth.kakao.com
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/api_logo.jpeg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/api/kakao_api_usertoken/&quot;&gt;[Kakao API] 사용자토큰&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/api_logo.jpeg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/api/kakao_api_refresh-token/&quot;&gt;[Kakao API] Refresh token&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="API" /><summary type="html"></summary></entry><entry><title type="html">[Django] Poll 프로젝트 2</title><link href="http://localhost:4000/django/Django-simple-web-application3/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 2" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application3</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application3/">&lt;h2&gt;Polls 프로젝트 2&lt;/h2&gt;
-&lt;h3&gt;투표시스템 질문지 항목 추가&lt;/h3&gt;
-&lt;p&gt;저번시간에는 Question 항목까지 만드는 것을 해보았습니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/api_logo.jpeg&quot; alt=&quot;https://live.staticflickr.com/3595/3475465970_7044242629_b&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/api/kakao_api_refresh-token/&quot;&gt;[Kakao API] Refresh token&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="API" /><summary type="html"></summary></entry><entry><title type="html">[Django] BBS Project</title><link href="http://localhost:4000/django/Django-BBS/" rel="alternate" type="text/html" title="[Django] BBS Project" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-BBS</id><content type="html" xml:base="http://localhost:4000/django/Django-BBS/">&lt;h2&gt; BBS (Bullentin Board System) &lt;/h2&gt;
+&lt;p&gt;Poll 프로젝트에 이어 오늘은 게시판을 만들어 보겠습니다.&lt;/p&gt;
 
-&lt;p&gt;이번 시간에는 선택항목까지 제작해보도록 하겠습니다.&lt;/p&gt;
+&lt;p&gt;Poll 프로젝트는 처음 부터 끝까지 저희가 코드를 작성했었죠 ?&lt;/p&gt;
 
-&lt;p&gt;Pycharm을 다시한번 열어보겠습니다.&lt;/p&gt;
+&lt;p&gt;외울 것도 많고 작성해야하는 것도 많았습니다.&lt;/p&gt;
 
-&lt;p&gt;만들어진 template 폴더안에 detail.html 파일을 생성합니다.&lt;/p&gt;
+&lt;p&gt;오늘은 polls project 에서 배웠던 내용을 기반으로 쉽게 제작해보겠습니다.&lt;/p&gt;
 
-&lt;p&gt;생성하는 이유는 차근차근 설명하도록 하겠습니다.&lt;/p&gt;
+&lt;p&gt;ModelForm을 이용해서 CRUD구현을 알아 보겠습니다.&lt;/p&gt;
 
-&lt;p&gt;첫 시간에 models.py 안에 저희가 Class Question 과 Choice 를 만들었죠?&lt;/p&gt;
+&lt;h3&gt;CRUD (CREATE READ UPDATE DELETE)&lt;/h3&gt;
 
-&lt;p&gt;오늘도 만든 Class를 사용하여 만들어보도록 하겠습니다.&lt;/p&gt;
+&lt;p&gt;기존방식으로 models에서 정의한 테이블에 값을 넣기가 정말 어려웠습니다.&lt;/p&gt;
 
-&lt;p&gt;polls폴더안에 views.py파일을 실행시켜 하기 코드를 추가합니다.&lt;/p&gt;
+&lt;p&gt;하지만 ModelForm을 이용하면 사용자 입력양식 처리하는게 쉬워집니다.&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;question_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 로직처리를 해요!
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 아까는 모든 Question 객체를 다 구해서 리스트로 만들었는데
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 이번에는 특정 Question 객체 1개만 구해야 해요
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_object_or_404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;question_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;question&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# questiond 이라는 문자열로 context를 호출합니다.
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'detail.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;여기에 html 프로젝트에서 사용하였던 Bootstrap도 포함해서 자동으로&lt;/p&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;만들어진 component를 통해 Web application을 만들어 보겠습니다.&lt;/p&gt;
 
-&lt;h4&gt;코드설명&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;필요한 package들을 설치해야해요!&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;hr /&gt;
-
-&lt;p&gt;index method를 제작했을 때와는 다르게 처음보는 코드가 있습니다.&lt;/p&gt;
-
+&lt;p&gt;기본적으로 Django를 설치해야합니다.&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;def detail(request, question_id):&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;def index&lt;/code&gt; 에서 와는다르게 question_id 라는 인자를 하나 더받습니다.&lt;/p&gt;
-
-  &lt;p&gt;index에서 하이퍼링크를 타고 detail 페이지로 넘어올때 그 인자까지도 받는다는 내용입니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get_object_or_404(Question, pk=question_id)&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;받는 객체가 있다면 객체를 받고 없다면 404 page를 띄운다는 간단한 내용입니다.&lt;/p&gt;
-
-  &lt;p&gt;대신 전달받은 primary key에 한해 Question에서의 객체를 받는 다는 내용입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;code&gt;$ pip3 install Django&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;hr /&gt;
+&lt;p&gt;추가적으로 bootstrap에 대한 package를 설치합니다.&lt;/p&gt;
 
-&lt;p&gt;다음은 urls.py 파일을 생성해보겠습니다.&lt;/p&gt;
+&lt;p&gt;일반적인 HTML 파일을 만들고 Bootstrap을 CDN과 tag 속성을 이용하면 Bootstrap을 이용할 수 있어요!&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;http://localhost:8000/polls/ 주소로 접속하면 index.html 로 들어가게 되어있습니다.&lt;/p&gt;
+&lt;p&gt;그런데 이번에는 ModelForm을 이용할 것이고 사용자 입력양식 HTML을 자동으로 만들어줘요&lt;/p&gt;
 
-  &lt;p&gt;저희는 질문지를 눌렀을때 선택항목이 나오는 페이지가 나오게 경로를 잡아줘야합니다.&lt;/p&gt;
+&lt;p&gt;자동으로 생성되기 떄문에 Bootstrap을 적용할수 없어요.&lt;/p&gt;
 
-  &lt;p&gt;다양한 방법이 있지만 index에서 전달받은 pk를 가지고 접속해보도록 하겠습니다.&lt;/p&gt;
-
-  &lt;p&gt;하기코드를 입력하겠습니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c1&quot;&gt;# http://localhost:8000/polls/&amp;lt;숫자&amp;gt;/
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;lt;int:question_id&amp;gt;/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'detail'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt;코드설명&lt;/h4&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;‘path(‘&lt;int:question_id&gt;/', views.detail, name='detail')'&lt;/int:question_id&gt;&lt;/p&gt;
+&lt;p&gt;이런경우에 사용자 입력양식에 Bootstrap을 적용하기 위해서 특정 Package를 설치해야 해요!&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;‘http://localhost:8000/polls/question_id ‘&lt;/p&gt;
-
-  &lt;p&gt;polls/question_id 의 경로일 경우 view.index 함수를 실행합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;code&gt;$ pip3 install Django-bootstrap4&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;hr /&gt;
+&lt;p&gt;이렇게 하면 model form으로도 Bootstrap 테마를 적용 할 수 있습니다.&lt;/p&gt;
 
-&lt;p&gt;다시 처음으로 돌아가서 detail.html의 코드를 수정하겠습니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;project를 생성 + application 생성&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;{ {question.question_text} }&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;p&gt;Django는 framework 이고 당연히 scaffolding 기능을 제공합니다.&lt;/p&gt;
 
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    { % csrf_token % }
-    { % for choice in question.choice_set.all % }
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;radio&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice.id&quot;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;rabel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            { {choice.choice_text} }
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/rabel&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
-    { % endfor % }
+&lt;p&gt;특정 명령어를 이용해서 필요한 폴더와 파일을 자동으로 생성해야 합니다.&lt;/p&gt;
 
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;투표&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+&lt;p&gt;터미널을 이용해서 working directory를 python-django 폴더로 변경해요!!&lt;/p&gt;
 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;p&gt;&lt;code&gt;$ django-admin startproject blog&lt;/code&gt;&lt;/p&gt;
 
-]
+&lt;p&gt;해당 명령을 실행하면 기본적인 프로젝트 구조가 만들어져요&lt;/p&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;우리 프로젝트와 앞으로 생성할 application 을 포함하고 있는 폴더의 이름을 변경합니다&lt;/p&gt;
 
-&lt;h4&gt;코드설명&lt;/h4&gt;
+&lt;p&gt;파일명이 혼동여부가 있어 상위폴더이름을 MyBlogSystem으로 파일명을 변경합니다.&lt;/p&gt;
 
-&lt;hr /&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;form action=&quot;&quot; method=&quot;post&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;post 방식으로 데이터를 받으면 action으로 처리한다는 내용입니다.&lt;/p&gt;
+&lt;p&gt;하나의 application을 우리프로젝트에 추가해요!!&lt;/p&gt;
 
-  &lt;p&gt;submit 버튼을 눌렀을 경우 하기 input에서 name과 value 인자를 다음페이지로 보낼 수 있습니다.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;python3 manage.py startapp posts&lt;/code&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { question.choice_set.all }}&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;project 설정 (settings)
+app등록 
+bootstrap도 마찬가지로 application 등록을 해야함.&lt;/li&gt;
+&lt;/ol&gt;
 
-  &lt;p&gt;choice에 해당되는 객체를 모두 받습니다.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;bootstrap4 등록!!&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;radio&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
-               &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice.id&quot;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;라디오 버튼을 제작합니다.&lt;/p&gt;
+&lt;p&gt;settings.py 에 APP을 추가합니다.&lt;/p&gt;
 
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; 는 choice1, …&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name = choice&lt;/code&gt; : 항목을 서로 묶기 위해서 명시합니다. 중복선택을 방지가능합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;nt&quot;&gt;&amp;lt;rabel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            { {choice.choice_text} }
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/rabel&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;상기 항목에서 명시한 id와 rabel 의 text와 매칭되어 관리 됩니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ python3 manage.py runserver&lt;/code&gt; 를 통해 수정된 페이지를 확인해봅시다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/django_polls_detail.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-오늘은 poll 프로젝트의 질문지 선택까지 제작해보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 2 투표시스템 질문지 항목 추가 저번시간에는 Question 항목까지 만드는 것을 해보았습니다.</summary></entry><entry><title type="html">[Django] Poll 프로젝트 1</title><link href="http://localhost:4000/django/Django-simple-web-application2/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 1" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application2</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application2/">&lt;h2&gt;Polls 프로젝트 1&lt;/h2&gt;
-&lt;h3&gt;Templates 생성&lt;/h3&gt;
-&lt;p&gt;저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.&lt;/p&gt;
-
-&lt;p&gt;이번 시간에는 데이터베이스에 있는 데이터를 활용해보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;투표 프로젝트를 만들면서 자세하게 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;일단 터미널에서 polls폴더 안에 template 폴더를 생성합니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code&gt;$ cd polls &lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code&gt;$ mkdir templates &lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Pycharm을 다시한번 열어보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;만들어진 template 폴더안에 index.html 파일을 생성합니다.&lt;/p&gt;
-
-&lt;p&gt;생성하는 이유는 차근차근 설명하도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;어제 만든 models.py 안에 저희가 Class Question 과 Choice 를 만들었죠?&lt;/p&gt;
-
-&lt;p&gt;오늘은 어제 만든 Class를 사용하여 만들어보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;polls폴더안에 views.py파일을 실행시켜 하기 코드를 추가합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 서버가 보내준 request 반드시 인자로 넘겨줘야함 !!
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;#로직처리 코드가 나와요!!
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;order_by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-pub_date'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 객체(objects)의 모든것(all())을 불러옴 정렬 order_by() - 오름차순 [:] slicing
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;latest_question_list&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'index.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;#render는 그리는 작업 / HTML을 그림
-&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt;코드설명&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;서버와 클라이언트 사이에는 request와 response로 데이터를 주고 받습니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index(request)&lt;/code&gt; : 서버에서 받은 request를 index 함수에 인자로 넘겨줍니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tmp&lt;/code&gt;라는 변수를 설정하여&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Question&lt;/code&gt; : Question Class&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;objects&lt;/code&gt; : 클래스 안의 객체&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;all()&lt;/code&gt; : 전부&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;order_by('-pub_date')&lt;/code&gt; : pub-date 기준으로 오름차순으로&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[:3]&lt;/code&gt; : Slicing 3개까지 변수로 할당합니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;context&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;dictionary 형태를 통하여 변수 context를 선언합니다.&lt;/p&gt;
-
-  &lt;p&gt;latest_question_list는 Key값  Question 의 모든객체는 Value 값이 됩니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;render&lt;/code&gt; : request 를 받아 함수처리를 하고 html파일에 적용하는 것을 의미합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;다음은 urls.py 파일을 생성해보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;처음부터 새로 만들어도 가능하지만 mysite에서 만들어진 urls.py를 polls하위에 복사하여 사용하도록하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;모든내용을 지우고&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.urls&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;app_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;polls&quot;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;urlpatterns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# http://localhost:8000/polls/
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'index'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt;코드설명&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;from . import views 경로안에 views.py 함수를 사용합니다.&lt;/p&gt;
-
-&lt;p&gt;path(‘’, views.index, name=’index’),
-localhost:8000/polls/ 경로뒤에 ‘’ 아무것도 오지않으면 view.index 함수호출해요
-name 은 경로에 대한 이름 입니다. 향후 이름을 통해서 경로를 호출하거나 함수를 사용할 수 있습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;다시 처음으로 돌아가서 index.html의 코드를 수정하겠습니다.&lt;/p&gt;
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;투표목록이 나와야 해요!!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-
-    { % if latest_question_list % }
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
-        { % for question in latest_question_list % }
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/polls/{ { question.id } }&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                    { { question.question_text } }&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-        { % endfor % }
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-    { % else % }
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;출력할 투표목록이 존재하지 않습니다.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-    { % endif % }
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt;코드설명&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;template code!! python도아니고 HTML 도아닌 template 안에서만 사용가능 
-중괄호 표현은 template code이며 HTML, Python 언어가 아니므로 주의하셔서 사용해야합니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ % % }&lt;/code&gt; : 로직코드이며 조건 및 반복문 등 로직을 사용해야할 경우 사용합니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { } }&lt;/code&gt; : 값을 입력할 경우 사용합니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { if latest_question_list} }&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;views.index에서 키값으로 받은 latest_question_list 존재여부를 판단합니다.
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { for question in latest_question_list} }&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;question 변수에 lastest_question_list객체를 삽입합니다.
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a href=&quot;/polls/{ { question.id } }&quot;&amp;gt;{ { question.question_text } }&amp;lt;/a&amp;gt;&amp;lt;li&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;lastest_question_list 에서 전달받은 객체에서 .question_text 객체를 뽑아냅니다. 
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-이렇게하면 하기의 초기페이지를 완성할 수 있습니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/image/django_polls_index.png&quot; alt=&quot;assets/image/django_polls_index&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-오늘은 첫페이지인 index까지 작성해 보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 1 Templates 생성 저번시간에는 기본뼈대까지 생성하였으며 투표를 하기위한 질문과 선택지를 데이터베이스에 저장해보았습니다.</summary></entry><entry><title type="html">[Django] 설치 및 기초운용</title><link href="http://localhost:4000/django/Django-simple-web-application/" rel="alternate" type="text/html" title="[Django] 설치 및 기초운용" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application/">&lt;h2&gt;Django설치 및 기초운용&lt;/h2&gt;
-&lt;h3&gt;Django 설치&lt;/h3&gt;
-&lt;p&gt;mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip&lt;/code&gt;(python install package), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pypi&lt;/code&gt;(python Package Index)라는 repository에 있는 Django를 설치합니다.&lt;/p&gt;
-
-&lt;h4&gt;가상환경에서 설치&lt;/h4&gt;
-&lt;p&gt;&lt;u&gt;가상환경&lt;/u&gt;에서 하실분은 하기 내용을 추가하여 설치해주시기 바랍니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;
-      &lt;p&gt;가상환경(virtualenv) 설치 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ python3 -m venv posts&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;가상환경 실행(virtualenv) : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ source posts/bin/activate&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;설치된 패키지 확인 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ pip3 freeze&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;h4&gt;Django 설치&lt;/h4&gt;
-&lt;p&gt;&lt;u&gt;가상환경이 아닌 로컬&lt;/u&gt;에서 설치하실 분들은 이쪽부터 진행 하시면 됩니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;
-      &lt;p&gt;Django 설치 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'$ pip3 install django&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;python 3.7.8버전을 사용하시는 분은 pip3를 update를 해주셔야 합니다.&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;pip upgrade : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ pip3 install --upgrade pip&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;여기까지 하시면 설치가 완료가 됩니다.&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;h3&gt; Project Setup &lt;/h3&gt;
-&lt;p&gt;본격적으로 프로젝트의 뼈대를 만드는 일부터 시작하겠습니다.&lt;/p&gt;
-
-&lt;h4&gt; 터미널에서 설정 &lt;/h4&gt;
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;
-      &lt;p&gt;폴더 생성 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ mkdir python-Django&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;만들어진 경로로 이동 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ cd python-Django&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;mysite 프로젝트 생성 및 Scaffolding : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ django-damin startproject mysite&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;폴더명 변경(선택사항) :python-Django/myself 이름을 MyFirstWebPoll로 변경&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;변경된 경로로 이동 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ cd MyFirstWebPoll&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;프로젝트 안에 개별 어플리케이션을 생성 :&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ python3 manage.py startapp polls&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;poll 이라는 어플이 생성되고 필요한 파일들이 scaffolding 됨&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;h4&gt; Python 설정변경 [pycharm 사용] &lt;/h4&gt;
-
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;
-      &lt;p&gt;pycharm에서 MyFirstWebPoll 프로젝트 실행&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;setting.py를 이용해 프로젝트 설정처리&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;기본테이블(기본DB)을 생성&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;장고는 관리자 모드 화면을 제공&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;관리자 ID PW가 DB어딘가에는 저장이 되어 있어야함 (DB설정이 전제됨)&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;INSTALLED_APPS 리스트 항목에 ‘polls.apps.PollsConfig’ 를 추가&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;TIME_ZONE ‘Asia/Seoul’ 로 변경&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Application definition 
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;INSTALLED_APPS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;INSTALLED_APPS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
     &lt;span class=&quot;s&quot;&gt;'django.contrib.admin'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;s&quot;&gt;'django.contrib.auth'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;s&quot;&gt;'django.contrib.contenttypes'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;s&quot;&gt;'django.contrib.sessions'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;s&quot;&gt;'django.contrib.messages'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;s&quot;&gt;'django.contrib.staticfiles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;'polls.apps.PollsConfig'&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;…&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Internationalization
-# https://docs.djangoproject.com/en/3.0/topics/i18n/
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;LANGUAGE_CODE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'en-us'&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;TIME_ZONE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Asia/Seoul'&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;USE_I18N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;USE_L10N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;USE_TZ&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4&gt; urls.py 수정 &lt;/h4&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.contrib&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;admin&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.urls&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;include&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;urlpatterns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'admin/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'polls/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'polls.urls'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'posts.apps.PostsConfig'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'bootstrap4'&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4&gt; 프로젝트 Deploy&lt;/h4&gt;
+&lt;p&gt;Templates 에서 DIRS를 추가 경로지정가능 !&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;s&quot;&gt;'DIRS'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BASE_DIR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'blog'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'templates'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)],&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;맨아래 내려가서 하기코드도 추가합니다. static이라는 폴더에 바로접근할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;정적리소스를 사용가능합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;STATICFILES_DIRS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BASE_DIR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'static'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;우리의 project를 web에 deploy해봐야 해요 !!
+기본적인 데이터 베이스를 들고가야해서 무조건 사용자 등록을 해야합니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;admin page가 존재 web에 deploy하기 이전에.. 기본 table부터 생성해야해요!&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;
-      &lt;p&gt;터미널을 이용해서 내장 서버를 이용하여 프로젝트를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy&lt;/code&gt; 해보도록 하겠습니다.&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;프로젝트 migrate : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py migrate&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;서버 실행 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py runserver&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;관리자 설정 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py createsuperuser&lt;/code&gt; #user, email, pw 설정&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;서버실행 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py runserver&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;&lt;code&gt;127.0.0.1:8000 로 접속&lt;/code&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;Polls application 구현확인&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py migrate&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;관리자 계정이 있어야 Admin page(관리자 화면)를 사용할 수 있어요!&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py createsuperuser&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;설정을 다했으니 이제 Web에 deploy해보도록 하겠습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 manage.py runserver&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;hr /&gt;
 
-&lt;h4&gt; Model 생성 &lt;/h4&gt;
-&lt;p&gt;Model 작업은 우리가 사용하는 Database에 Table을 생성하는 작업이에요!&lt;/p&gt;
+&lt;p&gt;프로젝트의 기본설정이 완성 되었습니다.&lt;/p&gt;
 
-&lt;p&gt;(Table == Relation) 즉 class의 이름은 결국 table의 이름과 mapping이 되요&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;모델구현
+기능을 구현하러 가야해요!! application을 구현해야해요!&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;application 에서 사용할 데이터베이스 구조를 생각하고 입력해보겠습니다.&lt;/p&gt;
+&lt;p&gt;기능을 구현할 때 제일먼저해야 하는 일은 사용할 데이터에 대한 정확한 명세를 작성하는 거에요!!&lt;/p&gt;
 
-&lt;p&gt;models.py 안에 모든 모델들을 정의해요 !!&lt;/p&gt;
+&lt;p&gt;Django는 ORM을 이용하기 떄문에 class를 이용해서 Database를 사용해요!&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.db&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;
+&lt;p&gt;Model을 만들어야해요!!
+posts / applicaiton / models.py 파일에 Model을 정의&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;# Create your models here.
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Django 가제공하는 models 클래스
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;question_text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;#문자열을 받고 길이는 200자 까지
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;pub_date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DateTimeField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'date published'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;CharField vs TextField 
+한줄 vs 여러줄&lt;/p&gt;
 
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;# 일반적으로 연산을 위해서 문자열로 변환을 하고 싶을때!
-&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;question_text&lt;/span&gt;
+&lt;p&gt;이렇게 내가 만든 model을 Admin page에 반영하기 위해서&lt;/p&gt;
 
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Choice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 기본적으로 _id가 자동으로 붙음
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;question&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ForeignKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on_delete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CASCADE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 만약에 Question 에 대하여 지운다면 같이 지운다 CASCADE 문제없이 만드는 것
-&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;choice_text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;votes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IntegerField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;admin.py에 class를 등록해야해요!!&lt;/p&gt;
 
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;choice_text&lt;/span&gt;
+&lt;p&gt;Model을 생성했기 떄문에 데이터베이스에 변경이 필요!&lt;/p&gt;
 
-    &lt;span class=&quot;c1&quot;&gt;# def __repr__(self):     # class 의 객체를 문자열로 표현할 경우에 사용
-&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# Table의 id column은 default로 지정되요!!!
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# id가 primary key로 설정이 가능!, Not null (값이 무조건 들어가는 경우), Unique (겹치는 값이 안옴)
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# id는 autoincrement 특성(값이 들어오면 자동적으로 증가하는 특성)을 가지는 정수형으로 지정
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 자동으로 생성해주기 때문에 class정의에서 나오지 않아요!!
-&lt;/span&gt;
+&lt;p&gt;데이터베이스를 이렇게 저렇게 변경하세요 라는 명세(초안) 가 필요!!&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;python3 manage.py makemigrations&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;초안이 완성되면 실제로 데이터베이스에 적용해서 Table을 생성&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;python3 manage.py migrate&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;초기화 하기위해서는 migrations 폴더에 initial.py 와 db.sqlite3를 전부다 지우면됨!&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;URL 경로 설정&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;from django.contrib import admin
+from django.urls import path, include
+from django.conf.urls import url
+from django.views.generic.base import TemplateView&lt;/p&gt;
+
+&lt;p&gt;htttp:// localhost:8000 요청이 들어왔을때 우리 전체 project의 홈페이지로 이동할거에요!!&lt;/p&gt;
+
+&lt;p&gt;Django는 elegant URL을 지원해요. 정규표현식을 지원합니다.&lt;/p&gt;
+
+&lt;p&gt;정규표현식 (regualr expression)&lt;/p&gt;
+
+&lt;p&gt;시작 &amp;gt; ^, 끝 &amp;gt; $&lt;/p&gt;
+
+&lt;p&gt;[0-9] : 1글자를 지칭&lt;/p&gt;
+
+&lt;p&gt;{} : 반복횟수 {3} 3번반복 {3,5} 3 아님 5번 반복&lt;/p&gt;
+
+&lt;p&gt;[0-9]{4} : 4자리 숫자가 나옴&lt;/p&gt;
+
+&lt;p&gt;r(raw) 은 escape 문자를 한번 더 사용하지 않도록 처리.&lt;/p&gt;
+
+&lt;p&gt;r”^[0-9]{1,3}$” 숫자가 1개나 3개나 모두가능&lt;/p&gt;
+
+&lt;p&gt;\d 숫자를 지칭&lt;/p&gt;
+
+&lt;p&gt;r”^010[1-9]\d{7,8}$”&lt;/p&gt;
+
+&lt;p&gt;urlpatterns = [
+    # view 를 거치지 않고 바로 html을 호출
+    url(r”^$”, TemplateView.as_view(template_name=’index.html’), name=”home”),
+    path(‘admin/’, admin.site.urls),
+    # path(‘posts/’, include(‘posts/urls’))
+]&lt;/p&gt;
+
+&lt;p&gt;cdn 방식으로 bootstrap을 써봐요 !!
+cover의 소스를 끌고와요 F12 개발자모드에서 소스끌어오기!
+static /css 에 붙여넣기&lt;/p&gt;
+
+&lt;p&gt;url 설정 복붙하고 app_name = posts’&lt;/p&gt;
+
+&lt;p&gt;urlpatterns = [
+    path(‘list/’, views.p_list, name = ‘list’),
+]&lt;/p&gt;
+
+&lt;p&gt;blog project 안에 urls.py 부터 설정&lt;/p&gt;
+
+&lt;p&gt;post application 안에 url.py 설정&lt;/p&gt;
+
+&lt;p&gt;base template html 파일ㅇ르 blog project 안에 templates 폴더안에 생성&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ModelForm 생성
+사용자 입력양식을 우리가 직접 HTML template안에 입력하는게 아니라 Model을 기반으로 사용자 입력양식을 자동으로 생성해 줄 수 있는데 ModelForm을 이용하면 이 작업을 할 수 있어요 !!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;class를 작성해야 해요 ! &amp;gt; 어느파일에서 만들어야 하나요??&lt;/p&gt;
+
+&lt;p&gt;forms.py 에서 정의해야해요!&lt;/p&gt;
+
+&lt;p&gt;from django import forms
+from posts.models import Post&lt;/p&gt;
+
+&lt;p&gt;class PostForm (forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = [‘author’, ‘contents’]&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;list page 생성
+    &lt;ul&gt;
+      &lt;li&gt;views.py 을 수정해서 list/ 가 요청되었을 때 해야하는 일을 기술&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;from django.shortcuts import render
+from posts.models import Post&lt;/p&gt;
+&lt;h1 id=&quot;create-your-views-here&quot;&gt;Create your views here.&lt;/h1&gt;
+
+&lt;p&gt;def p_list(request):    #데이터
+    my_list = Post.objects.all().order_by(‘-id’)
+    context = {‘posts’ : my_list}
+    return render(request, ‘list.html’, context)&lt;/p&gt;
+
+&lt;p&gt;posts/ list.html&lt;/p&gt;
+
+&lt;p&gt;전부 다 작성할필요가없어요 base.html의 것을 확장해서 사용&lt;/p&gt;
+
+&lt;p&gt;{ % extends ‘base.html’ % }&lt;/p&gt;
+
+&lt;p&gt;{ % block container % }
+    &amp;lt;div class ='container'&amp;gt;
+        &amp;lt;h1&amp;gt;Bullentin Board System(BBS)&amp;lt;/h1&amp;gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;/div&amp;gt; { % endblock % }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4&gt; model 및 파일등록 &lt;/h4&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;admin.py 파일에 등록해요&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;안에 좀더 내용을 채워봐요 !!&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;admin page에서 사용할 수 있도록 등록을 해줘야해요!!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;/polls/admin.py 에서 하기 코드를 추가합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;polls.models&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Choice&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Register your models here.
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#괄호안에는 내가 등록할 클래스가 나와야해요!
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Choice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;여기까지는 작업했다고해서 실제 데이터베이스 테이블이 생선되는건 아니에요!!&lt;/p&gt;
-
-&lt;p&gt;하기 과정을 통하여 표를 삽입을 해줘야합니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code&gt;python3 manage.py makemigrations&lt;/code&gt;&lt;/p&gt;
-
-  &lt;blockquote&gt;
-    &lt;p&gt;class와 매핑되는 테이블을 만들기 위해서 필요한 SQL 구문을 생성해야 되요!!&lt;/p&gt;
-  &lt;/blockquote&gt;
-
-  &lt;p&gt;&lt;code&gt;python3 manage.py migrate&lt;/code&gt;&lt;/p&gt;
-
-  &lt;blockquote&gt;
-    &lt;p&gt;그리고 나서 이 구문을 실행해서 실제 테이블을 생성해야 해요!&lt;/p&gt;
-  &lt;/blockquote&gt;
-
-  &lt;p&gt;&lt;code&gt;python3 manage.py runserver&lt;/code&gt;&lt;/p&gt;
-
-  &lt;blockquote&gt;
-    &lt;p&gt;프로젝트가 web에 deploy 될 수 있는지를 확인합니다.&lt;/p&gt;
-
-    &lt;p&gt;관리자 페이지가 정상적으로 동작하는지 확인하기 위해서 서버를 기동 !&lt;/p&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-
-  &lt;p&gt;&lt;code&gt;127.0.0.1:8000 로 접속&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;완료하면 하기 그림처럼 초기 설정 화면은 얻을수 있습니다. 
-&lt;img src=&quot;/assets/image/Django project1.png&quot; alt=&quot;Django project1&quot; style=&quot;width:500px&quot; /&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Install" /><category term="Webapplication" /><summary type="html">Django설치 및 기초운용 Django 설치 mac 기반으로 작성하였으니 참고하시기 바랍니다. python 실행경로를 꼭! 확인해 주세요.</summary></entry><entry><title type="html">[Django] 이론</title><link href="http://localhost:4000/django/Django-Basic/" rel="alternate" type="text/html" title="[Django] 이론" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-Basic</id><content type="html" xml:base="http://localhost:4000/django/Django-Basic/">&lt;h2&gt;Django&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;create page 생성&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;delete 기능 구현&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><category term="BBS" /><summary type="html">BBS (Bullentin Board System) Poll 프로젝트에 이어 오늘은 게시판을 만들어 보겠습니다.</summary></entry><entry><title type="html">[Django] 이론</title><link href="http://localhost:4000/django/Django-Basic/" rel="alternate" type="text/html" title="[Django] 이론" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-Basic</id><content type="html" xml:base="http://localhost:4000/django/Django-Basic/">&lt;h2&gt;Django&lt;/h2&gt;
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django&lt;/code&gt;에 대하여 알아보아요!
 Python 으로 만들어진 오픈소스
 웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework&lt;/p&gt;
@@ -1536,4 +1288,157 @@ Python 으로 만들어진 오픈소스
 
 &lt;p&gt;Template : 클라이언트에게 보여줄 화면을 담당&lt;/p&gt;
 
-&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django&lt;/code&gt;의 이론에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html">Django 오늘은 Django에 대하여 알아보아요! Python 으로 만들어진 오픈소스 웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework</summary></entry></feed>
+&lt;p&gt;오늘은 파이썬의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Django&lt;/code&gt;의 이론에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><summary type="html">Django 오늘은 Django에 대하여 알아보아요! Python 으로 만들어진 오픈소스 웹 어플리케이션을 쉽게 작성할 수 있도록 도와주는 Framework</summary></entry><entry><title type="html">[Django] Poll 프로젝트 2</title><link href="http://localhost:4000/django/Django-simple-web-application3/" rel="alternate" type="text/html" title="[Django] Poll 프로젝트 2" /><published>2020-08-02T00:00:00+09:00</published><updated>2020-08-02T00:00:00+09:00</updated><id>http://localhost:4000/django/Django-simple-web-application3</id><content type="html" xml:base="http://localhost:4000/django/Django-simple-web-application3/">&lt;h2&gt;Polls 프로젝트 2&lt;/h2&gt;
+&lt;h3&gt;투표시스템 질문지 항목 추가&lt;/h3&gt;
+&lt;p&gt;저번시간에는 Question 항목까지 만드는 것을 해보았습니다.&lt;/p&gt;
+
+&lt;p&gt;이번 시간에는 선택항목까지 제작해보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;Pycharm을 다시한번 열어보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;만들어진 template 폴더안에 detail.html 파일을 생성합니다.&lt;/p&gt;
+
+&lt;p&gt;생성하는 이유는 차근차근 설명하도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;첫 시간에 models.py 안에 저희가 Class Question 과 Choice 를 만들었죠?&lt;/p&gt;
+
+&lt;p&gt;오늘도 만든 Class를 사용하여 만들어보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;polls폴더안에 views.py파일을 실행시켜 하기 코드를 추가합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;question_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 로직처리를 해요!
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 아까는 모든 Question 객체를 다 구해서 리스트로 만들었는데
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 이번에는 특정 Question 객체 1개만 구해야 해요
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_object_or_404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Question&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;question_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;question&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# questiond 이라는 문자열로 context를 호출합니다.
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'detail.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;index method를 제작했을 때와는 다르게 처음보는 코드가 있습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;def detail(request, question_id):&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;def index&lt;/code&gt; 에서 와는다르게 question_id 라는 인자를 하나 더받습니다.&lt;/p&gt;
+
+  &lt;p&gt;index에서 하이퍼링크를 타고 detail 페이지로 넘어올때 그 인자까지도 받는다는 내용입니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get_object_or_404(Question, pk=question_id)&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;받는 객체가 있다면 객체를 받고 없다면 404 page를 띄운다는 간단한 내용입니다.&lt;/p&gt;
+
+  &lt;p&gt;대신 전달받은 primary key에 한해 Question에서의 객체를 받는 다는 내용입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;다음은 urls.py 파일을 생성해보겠습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;http://localhost:8000/polls/ 주소로 접속하면 index.html 로 들어가게 되어있습니다.&lt;/p&gt;
+
+  &lt;p&gt;저희는 질문지를 눌렀을때 선택항목이 나오는 페이지가 나오게 경로를 잡아줘야합니다.&lt;/p&gt;
+
+  &lt;p&gt;다양한 방법이 있지만 index에서 전달받은 pk를 가지고 접속해보도록 하겠습니다.&lt;/p&gt;
+
+  &lt;p&gt;하기코드를 입력하겠습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c1&quot;&gt;# http://localhost:8000/polls/&amp;lt;숫자&amp;gt;/
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;lt;int:question_id&amp;gt;/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'detail'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;‘path(‘&lt;int:question_id&gt;/', views.detail, name='detail')'&lt;/int:question_id&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;‘http://localhost:8000/polls/question_id ‘&lt;/p&gt;
+
+  &lt;p&gt;polls/question_id 의 경로일 경우 view.index 함수를 실행합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;다시 처음으로 돌아가서 detail.html의 코드를 수정하겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;{ {question.question_text} }&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    { % csrf_token % }
+    { % for choice in question.choice_set.all % }
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;radio&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice.id&quot;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;rabel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            { {choice.choice_text} }
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/rabel&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
+    { % endfor % }
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;투표&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+
+]
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4&gt;코드설명&lt;/h4&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;form action=&quot;&quot; method=&quot;post&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;post 방식으로 데이터를 받으면 action으로 처리한다는 내용입니다.&lt;/p&gt;
+
+  &lt;p&gt;submit 버튼을 눌렀을 경우 하기 input에서 name과 value 인자를 다음페이지로 보낼 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ { question.choice_set.all }}&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;choice에 해당되는 객체를 모두 받습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;radio&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice.id&quot;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;라디오 버튼을 제작합니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; 는 choice1, …&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name = choice&lt;/code&gt; : 항목을 서로 묶기 위해서 명시합니다. 중복선택을 방지가능합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;nt&quot;&gt;&amp;lt;rabel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;choice{ {forloop.counter} }&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            { {choice.choice_text} }
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/rabel&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;상기 항목에서 명시한 id와 rabel 의 text와 매칭되어 관리 됩니다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ python3 manage.py runserver&lt;/code&gt; 를 통해 수정된 페이지를 확인해봅시다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/django_polls_detail.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+오늘은 poll 프로젝트의 질문지 선택까지 제작해보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Django" /><category term="Polls" /><category term="Project" /><category term="Webapplication" /><summary type="html">Polls 프로젝트 2 투표시스템 질문지 항목 추가 저번시간에는 Question 항목까지 만드는 것을 해보았습니다.</summary></entry></feed>

@@ -11,6 +11,6 @@ main:
   - title: "API"
     url: /api/APIPage/ 
   - title: "GIT"
-    url: /api/GITPage/
+    url: /git/github/GITPage/
   - title: "Sitemap"
     url: /sitemap/

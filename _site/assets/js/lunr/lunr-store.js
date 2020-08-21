@@ -144,9 +144,9 @@ var store = [{
         "teaser": "http://localhost:4000/assets/image/kakao.png"
       },{
         "title": "Git Page",
-        "excerpt":"   Django 페이지   [Git] 기본명령어   [Github] 원격저장소 활용   ","categories": ["API"],
+        "excerpt":"   Django 페이지   [Git] 기본명령어   [Github] 원격저장소 활용   [Github] python 가상환경   ","categories": ["GIT","GITHUB"],
         "tags": [],
-        "url": "http://localhost:4000/api/GITPage/",
+        "url": "http://localhost:4000/git/github/GITPage/",
         "teaser": "http://localhost:4000/assets/image/Git.png"
       },{
         "title": "[Git] 기본명령어 및 활용",
@@ -159,5 +159,11 @@ var store = [{
         "excerpt":"Git 원격 저장소 활용   Git 원격 저장소 기능을 제공 해주는 서비스는 gitlab , bitbucket, github 등이 있다.   0. 원격 저장소 설정   $ git remote add origin {url} $ git remote add origin https://github.com/edutak/TIL.git           git, 원격저장소를 추가(add)하고 origin 이라는 이름으로 url 으로 설정            설정된 저장소를 확인하기 위해서는 아래의 명령어를 사용한다.       $ git remote -v origin  https://github.com/edutak/TIL.git (fetch) origin  https://github.com/edutak/TIL.git (push)           1. 원격 저장소 복제   $ git clone {url}      해당 명령어를 입력한 위치에 원격저장소 이름으로 폴더가 생기며, 저장소가 복제 된다.   2. push   $ git push origin master Enumerating objects: 13, done. Counting objects: 100% (13/13), done. Delta compression using up to 8 threads Compressing objects: 100% (10/10), done. Writing objects: 100% (13/13), 40.38 KiB | 13.46 MiB/s, done. Total 13 (delta 1), reused 0 (delta 0), pack-reused 0 remote: Resolving deltas: 100% (1/1), done. To https://github.com/edutak/TIL.git  * [new branch]      master -&gt; master Branch 'master' set up to track remote branch 'master' from 'origin'.      원격저장소(origin) 의 mater 브랜치로 기록된 커밋(버전)이 업데이트된다.   3. pull   $ git pull origin master      원격저장소(origin)의 master 브랜치의 기록된 커밋(버전)이 현재 로컬 저장소로 받아온다.   Branch를 생성할 경우 commit 과 push를 모두 branch에서 실행해야합니다.  ","categories": ["Git"],
         "tags": ["Git","Github"],
         "url": "http://localhost:4000/git/Github/",
+        "teaser": "http://localhost:4000/assets/image/Git.png"
+      },{
+        "title": "[Git Hub] 가상환경",
+        "excerpt":"파이썬 가상 환경   사용법           가상환경 생성                       venv 라는 이름의 가상환경을 생성           python3 -m venv {가상환경이름} python3 -m venv venv                                 가상환경을 생성하면 해당 디렉토리에 venv 폴터가 생성된다.                        가상환경 실행       $ source venv/Scripts/activate\t\t\t# git bash용 $ source venv/Scripts/activate.bat\t# cmd용 $ source venv/Scripts/activate.psl\t# 파워쉘 용 (venv) $                가상환경을 실행시킨 상태에서 파이썬 패키지(pip)를 설치하게 되면 venv 폴더의 Lib폴더에 설치를 하게 된다.              해당프로젝트를 위한 패키지들을 따로 관리할 수 있다.           pip   # requirements.txt에 설치된 패키지 기록 $ pip freeze &gt; requirements.txt # requirements.txt에 설치된 패키지들을 설치 $ pip install -r requirements.txt   ","categories": ["Git"],
+        "tags": ["Git","Github","Python"],
+        "url": "http://localhost:4000/git/virtualenvironmnet/",
         "teaser": "http://localhost:4000/assets/image/Git.png"
       }]
