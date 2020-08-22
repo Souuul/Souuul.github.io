@@ -9,7 +9,7 @@ tags:
 - API
 - Token
 ---
-<h2>Kakao API [Refresh token]</h2>
+## Kakao API [Refresh token]
 
 오늘은 `Refresh token`에 대하여 알아보겠습니다. 
 
@@ -17,7 +17,7 @@ tags:
 
 
 
-<h3>Refresh token 받기</h3>
+### Refresh token 받기
 
 여러분들이 직접 카카오에 있는 사용법을 보고 사용할 수 있도록 설명하겠습니다.
 
@@ -37,7 +37,7 @@ Content-type: application/x-www-form-urlencoded;charset=utf-8
 
 `Access token` 을 받는 것과 마찬가지로 하기 Request에서 어떤 값을 필수로 입력하여야 하는지 확인합니다.
 
-### Request
+####  Request
 
 ##### Parameter
 
@@ -52,7 +52,7 @@ Content-type: application/x-www-form-urlencoded;charset=utf-8
 
 상기의 Request 를 정확히 하면 응답으로 하기 값을 받을수 있습니다. 즉 refresh token을 입력하면 `access_token`이 변경되는 구조입니다.
 
-### Response
+#### Response
 
 ##### Key
 
@@ -68,7 +68,7 @@ Content-type: application/x-www-form-urlencoded;charset=utf-8
 
 더 밑으로 내려보면 `Sample Code`를 확인할 수 있습니다. 
 
-### Sample
+#### Sample
 
 ##### Request
 
@@ -108,7 +108,7 @@ with open("kakao_token.json", 'w') as fp:
 
 
 
-#### 코드설명
+##### 코드설명
 
 ``` python
 tokens['access_token'] = response.json()['access_token']

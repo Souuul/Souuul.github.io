@@ -328,13 +328,13 @@
 
       <section class="page__content" itemprop="text">
         
-        <h2>Kakao API [Refresh token]</h2>
+        <h2 id="kakao-api-refresh-token">Kakao API [Refresh token]</h2>
 
 <p>오늘은 <code class="language-plaintext highlighter-rouge">Refresh token</code>에 대하여 알아보겠습니다.</p>
 
 <p>아직 사용자 토큰을 받지 못하신 분은 <a href="/api/kakao_api_usertoken/">[Kakao API] 사용자토큰</a> 을 참고하여 사용자토큰을 먼저 받고 오시면 되겠습니다. Refresh token 토큰은 사용자 토큰을 받는방법과 비슷합니다.</p>
 
-<h3>Refresh token 받기</h3>
+<h3 id="refresh-token-받기">Refresh token 받기</h3>
 
 <p>여러분들이 직접 카카오에 있는 사용법을 보고 사용할 수 있도록 설명하겠습니다.</p>
 
@@ -349,7 +349,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">Access token</code> 을 받는 것과 마찬가지로 하기 Request에서 어떤 값을 필수로 입력하여야 하는지 확인합니다.</p>
 
-<h3 id="request">Request</h3>
+<h4 id="request">Request</h4>
 
 <h5 id="parameter">Parameter</h5>
 
@@ -392,7 +392,7 @@
 
 <p>상기의 Request 를 정확히 하면 응답으로 하기 값을 받을수 있습니다. 즉 refresh token을 입력하면 <code class="language-plaintext highlighter-rouge">access_token</code>이 변경되는 구조입니다.</p>
 
-<h3 id="response">Response</h3>
+<h4 id="response">Response</h4>
 
 <h5 id="key">Key</h5>
 
@@ -435,7 +435,7 @@
 
 <p>더 밑으로 내려보면 <code class="language-plaintext highlighter-rouge">Sample Code</code>를 확인할 수 있습니다.</p>
 
-<h3 id="sample">Sample</h3>
+<h4 id="sample">Sample</h4>
 
 <h5 id="request-1">Request</h5>
 
@@ -471,7 +471,7 @@
     <span class="n">json</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span> <span class="c1"># 저장하는 것
 </span></code></pre></div></div>
 
-<h4 id="코드설명">코드설명</h4>
+<h5 id="코드설명">코드설명</h5>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tokens</span><span class="p">[</span><span class="s">'access_token'</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()[</span><span class="s">'access_token'</span><span class="p">]</span>
 </code></pre></div></div>
@@ -584,6 +584,39 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
+        <img src="/assets/image/kakao.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/api/kakao_api_selfmessage/" rel="permalink">[Kakao API] 나에게 메세지보내기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Kakao API [Refresh token]
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
         <img src="/assets/image/Git.png" alt="">
       </div>
     
@@ -670,39 +703,6 @@
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Git 원격 저장소 활용
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/Git.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/git/Git/" rel="permalink">[Git] 기본명령어 및 활용
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  5 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Git 명령어
 </p>
   </article>
 </div>

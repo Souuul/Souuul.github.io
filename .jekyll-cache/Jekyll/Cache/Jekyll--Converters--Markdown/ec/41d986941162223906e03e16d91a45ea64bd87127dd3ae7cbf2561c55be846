@@ -1,0 +1,115 @@
+I"�<h2>Kakao API [Refresh token]</h2>
+
+<p>오늘은 <code class="language-plaintext highlighter-rouge">카카오톡 나에게 메세지보내기</code>에 대하여 알아보겠습니다.</p>
+
+<p>토큰을 받지 못하신 분은 <a href="/api/kakao_api_usertoken/">[Kakao API] 사용자토큰</a> , <a href="/api/kakao_api_refresh-token/">[Kakao API] Refresh token</a> 을 참고하셔서 토큰을 선행해서 받아주세요.</p>
+
+<h3>카카오톡 나에게 메세지 보내기</h3>
+
+<p>이번에도 여러분들이 직접 카카오에 있는 사용법을 보고 사용할 수 있도록 설명하겠습니다. 메세지를 보내기 위해 <a href="https://developers.kakao.com/docs/latest/ko/message/rest-api#send-me">나에게 보내기</a> 항목을 참고합니다.</p>
+
+<p><img src="../../assets/image/2020-08-22_21-07-16.png" alt="2020-08-22_21-07-16" /></p>
+
+<h4 id="request">Request</h4>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">POST</span> <span class="nn">/v2/api/talk/memo/default/send</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">kapi.kakao.com</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer {USER_ACCESS_TOKEN}</span>
+</code></pre></div></div>
+
+<h5 id="parameter">Parameter</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">template_object</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">JSON Object</code></td>
+      <td style="text-align: left">메시지 구성 요소를 담은 객체(Object) <a href="https://developers.kakao.com/docs/latest/ko/message/message-template#feed">피드</a>, <a href="https://developers.kakao.com/docs/latest/ko/message/message-template#list">리스트</a>, <a href="https://developers.kakao.com/docs/latest/ko/message/message-template#location">위치</a>, <a href="https://developers.kakao.com/docs/latest/ko/message/message-template#commerce">커머스</a>, <a href="https://developers.kakao.com/docs/latest/ko/message/message-template#text">텍스트</a> 중 하나</td>
+      <td style="text-align: left">O</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="response">Response</h4>
+
+<h5 id="key">Key</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">result_code</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">Integer</code></td>
+      <td style="text-align: left">전송 성공 시 0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="sample">Sample</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">curl</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="s">"https://kapi.kakao.com/v2/api/talk/memo/default/send"</span> \
+    <span class="o">-</span><span class="n">H</span> <span class="s">"Authorization: Bearer {USER_ACCESS_TOKEN}"</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="s">'template_object={
+        "object_type": "text",
+        "text": "텍스트 영역입니다. 최대 200자 표시 가능합니다.",
+        "link": {
+            "web_url": "https://developers.kakao.com",
+            "mobile_web_url": "https://developers.kakao.com"
+        },
+        "button_title": "바로 확인"
+    }'</span>
+</code></pre></div></div>
+
+<p>오늘은 텍스트를 보내보도록 하겠습니다. parameter에 텍스트를 클릭하여 하여도 가능하지만 아주쉽게 샘플코드를 복사하여 코드를 작성해보겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"static/my_squat/kakao_token.json"</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://kapi.kakao.com/v2/api/talk/memo/default/send"</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer "</span> <span class="o">+</span> <span class="n">tokens</span><span class="p">[</span><span class="s">'access_token'</span><span class="p">]}</span>
+
+<span class="n">template_object</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="s">'object_type'</span><span class="p">:</span> <span class="s">'text'</span><span class="p">,</span>
+		<span class="s">'text'</span><span class="p">:</span> <span class="s">'텍스트 영역입니다. 최대 200자 표시 가능합니다.'</span><span class="p">,</span>
+		<span class="s">'link'</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s">'web_url'</span><span class="p">:</span> <span class="s">'https://daum.net'</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s">'button_title'</span><span class="p">:</span> <span class="s">'바로 확인'</span>
+<span class="p">}</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">'template_object'</span><span class="p">:</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">template_object</span><span class="p">)}</span>
+<span class="c1"># return request('post', url, data=data, json=json, **kwargs)
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>샘플을 보고 작성을 하고 동일하게 작성을 해보았습니다.</p>
+
+<h5 id="코드설명">코드설명</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">'template_object'</span><span class="p">:</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">template_object</span><span class="p">)}</span>
+</code></pre></div></div>
+
+<p>Data 는<code class="language-plaintext highlighter-rouge"> template_object</code>이름으로 json 파일 형식으로 url을 통해 요청을 보냅니다.</p>
+
+<p>요청이 성공적으로 전송이 되면  <code>print(response.status_code)</code> 코드에서 200이라는 메세지와 함께 카카오톡 메세지를 확인할 수 있습니다.</p>
+
+<p><img src="../../assets/image/2020-08-22_21-37-01.png" alt="2020-08-22_21-37-01" /></p>
+
+<p>오늘은 <code class="language-plaintext highlighter-rouge">카카오톡 나에게 보내기</code>를 해보았습니다. 궁금하시거나 안되는 기능이 있으면 언제든 댓글을 남겨주세요!</p>
+:ET

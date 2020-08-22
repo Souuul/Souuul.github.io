@@ -9,7 +9,7 @@ tags:
 - API
 - Token
 ---
-<h2>Kakao API [User token]</h2>
+## Kakao API [User token]
 
 오늘은 `Kakao API`에 대하여 알아보겠습니다. 
 
@@ -33,7 +33,7 @@ Refresh Token : 2달
 
 
 
-<h3>회원가입 및 로그인</h3>
+### 회원가입 및 로그인
 
 여러분들이 직접 카카오에 있는 사용법을 보고 사용할 수 있도록 설명하겠습니다.
 
@@ -51,7 +51,7 @@ Refresh Token : 2달
 
 
 
-<h3>App key 발급받기</h3>
+### App key 발급받기
 
 ![kakaofirstpage](../../assets/image/kakao3.png)
 
@@ -59,7 +59,7 @@ Refresh Token : 2달
 
 
 
-<h3>활성화 설정</h3>
+### 활성화 설정
 
 ![kakao_activate](../../assets/image/kakao_activate.png)
 
@@ -67,7 +67,7 @@ Refresh Token : 2달
 
 
 
-<h3>인증 코드 받기</h3>
+### 인증 코드 받기
 
 카카오톡 API 사용을 위하여 인증코드를 받아야합니다. [인증 코드 받기](https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#logout-of-service-and-kakaoaccount)  링크로 이동합니다.
 
@@ -96,13 +96,13 @@ https://localhost.com/?code=JrFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 
-<h3>사용자 토큰 받기</h3>
+### 사용자 토큰 받기
 
 ![kakao_token](../../assets/image/kakao_token.png)
 
 
 
-<h4>응답값</h4>
+#### Response
 
 ##### Key
 
