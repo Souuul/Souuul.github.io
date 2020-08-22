@@ -9,7 +9,7 @@ tags:
 - API
 - Self message
 ---
-<h2>Kakao API [Refresh token]</h2>
+## Kakao API [Self message]
 
 오늘은 `카카오톡 나에게 메세지보내기`에 대하여 알아보겠습니다. 
 
