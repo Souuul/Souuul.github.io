@@ -1,7 +1,7 @@
 ---
 title:  "[Algorithm] Greedy Algorithm"
 header:
-  teaser: "assets/image/kakao.png"
+  teaser: "assets/image/Algorithm.png"
 categories: 
   - Algorithm
 tags:
@@ -17,7 +17,7 @@ Greedy Algorithm은 말 그대로 탐욕 알고리즘입니다. 탐욕 알고리
 
 모든문제를 순차적으로 풀면 정확한 정답을 얻을 수 있겠으나 시간적으로나 용량적으로 효율적이지 못한경우에는 알고리즘의 다양한 방법을 통하여 좀더 효율적이게 문제를 해결할 수 있습니다.
 
-그럼 바로 `Greedy Algorithm`에 대하여  문제를 통하여 알아보도록 하겠습니다. 
+그럼 바로 `Greedy Algorithm`에 대하여  몇가지 문제를 통하여 알아보도록 하겠습니다. 
 
 #### 거스름돈 문제 
 
@@ -39,9 +39,7 @@ print(count)	#4
 
 
 
-다음문제도 풀어보도록 하겠습니다.
-
-#### 거스름돈 문제 
+#### 연산 문제 
 
 어떠한 수 N이 1이 될 때까지 다음 두가지 연산 중 한가지만 수행하려고합니다. 
 
@@ -66,4 +64,58 @@ while N > 1:
 
  print (count) #3
 ```
+
+좀더 효율적으로 풀어보도록 하겠습니다.
+
+``` python
+N = 17
+K = 4
+count = 0
+while True:
+  # N을 K로 나눈 몫을 K로 다시곱해서 -1을 해야하는 부분을 한번에 추출함
+  target = (N//K)*K
+  count += n - target
+  
+  if N < K:
+    break
+  N //= K
+  count += 1
+
+# 마지막으로 남은 수에 대하여 카운트를 해줌
+count += (N-1)
+print(count)
+```
+
+
+
+#### 곱하기 혹은 더하기
+
+각 자리가 숫자 (0~9)로만 이루어진 문자열 S가 주어졌을때 왼쪽부터 오른쪽까지 하나씩 모든숫자를 확인하면 +혹은 X연산자를 넣어 결과적으로 만들어질 수 있는 가장 큰 수를 구하는 프로그램을 작성하세요.
+
+예) 02984 = (0+2)X9X8X4 = 576
+``` python
+S = input()
+
+sum_num = int(S[0])
+
+for i in range(1, len(S)):
+  if int(S[i]) <=1:
+    sum_num += int(S[i])
+  else:
+    sum_num *= int(S[i])
+    
+print(sum_num)
+```
+
+좀더 효율적으로 풀어보도록 하겠습니다.
+
+``` python
+S = input()
+sum_num = 0
+for i in range(0, len(S)):
+    sum_num = max(sum_num + int(S[i]), sum_num * int(S[i]))
+print(sum_num)
+```
+
+오늘은  `Greedy Algorithm`에 대하여 알아보았습니다.
 
