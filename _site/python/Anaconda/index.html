@@ -1,0 +1,745 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Python] Anaconda &amp; Jupyter Notebook 설치 및 가상환경 설정 - Sol Han tech blog!</title>
+<meta name="description" content="ANACONDA">
+
+
+  <meta name="author" content="Sol Han">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sol Han tech blog!">
+<meta property="og:title" content="[Python] Anaconda &amp; Jupyter Notebook 설치 및 가상환경 설정">
+<meta property="og:url" content="http://localhost:4000/python/Anaconda/">
+
+
+  <meta property="og:description" content="ANACONDA">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/image/image-20200904205041347.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-09-04T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/python/Anaconda/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Sol Han",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sol Han tech blog! Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/image/logo.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          Sol Han tech blog!
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/welcome/welcome/">Welcome</a>
+            </li><li class="masthead__menu-item">
+              <a href="/python/PythonPage/">Python</a>
+            </li><li class="masthead__menu-item">
+              <a href="/html/css/javascript/Web-CSS-JAVASCRIPT/">HTML & CSS & JavaScript</a>
+            </li><li class="masthead__menu-item">
+              <a href="/django/DjangoPage/">Django</a>
+            </li><li class="masthead__menu-item">
+              <a href="/api/APIPage/">API</a>
+            </li><li class="masthead__menu-item">
+              <a href="/git/github/GITPage/">GIT</a>
+            </li><li class="masthead__menu-item">
+              <a href="/sitemap/">Sitemap</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/image/%EA%B7%B8%EB%A6%BC1.png" alt="Sol Han" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Sol Han</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I’m an <strong>AI engineer</strong></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/Souuul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/sol-han-134296131" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">Linkedin</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:hans53400@naver.com">
+            <meta itemprop="email" content="hans53400@naver.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Python] Anaconda &amp; Jupyter Notebook 설치 및 가상환경 설정">
+    <meta itemprop="description" content="ANACONDA">
+    <meta itemprop="datePublished" content="2020-09-04T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[Python] Anaconda &amp; Jupyter Notebook 설치 및 가상환경 설정
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="anaconda">ANACONDA</h2>
+
+<p>오늘은 <code class="language-plaintext highlighter-rouge">ANACONDA</code> 에 대하여 알아보도록 하겠습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">ANACONDA</code> 를 사용하는 이유는 다음과 같습니다.</p>
+
+<ol>
+  <li>라이브러리를 별도로 설치하지 않아도 된다.</li>
+  <li>가상환경을 사용할 수 있다.</li>
+</ol>
+
+<h3 id="anaconda-설치">ANACONDA 설치</h3>
+
+<p>그렇다면 우선 설치부터 해보도록 하겠습니다.</p>
+
+<ol>
+  <li><a href="https://www.anaconda.com/products/individual">아나콘다 다운로드 링크</a> 에 접속하여 해당되는 버전을 다운로드 하도록 하겠습니다.
+    <blockquote>
+      <p>저는 MAC 환경에서 사용하므로 MAC 버전용으로 다운로드 하도록 하겠습니다.</p>
+    </blockquote>
+  </li>
+  <li>다운로드가 되었다면 별다른 설정없이 설치를 해주시면 됩니다.
+    <blockquote>
+      <p>다만 윈도우 사용자분들께서는 경로설정(path)를 유의하시어 설치하시면 되겠습니다.</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h3 id="가상환경-생성">가상환경 생성</h3>
+
+<p>설치가 완료되었다면 가상환경을 만들어 보도록 하겠습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Mac</code>사용자분들을 <code class="language-plaintext highlighter-rouge">터미널</code>을 열어주시고 <code class="language-plaintext highlighter-rouge">윈도우</code> 사용자분들께서는 <code class="language-plaintext highlighter-rouge">Anaconda prompt</code>를 실행시켜주시면 되겠습니다.</p>
+
+<p>실행하시면 이전과는 다르게 (base) 라는 부분이 생성이 되어있는 것을 확인하실 수가 있습니다.</p>
+
+<p><img src="../../assets/image/image-20200904211002265.png" alt="image-20200904211002265" style="zoom:50%;" /></p>
+
+<ol>
+  <li>가상환경이름은 “data_env” 로 지정하고 파이썬 버전은 3.7 버전으로 설치하겠습니다.
+    <blockquote>
+      <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda create <span class="nt">-n</span> data_env <span class="nv">python</span><span class="o">=</span>3.7 openssl
+</code></pre></div>      </div>
+    </blockquote>
+  </li>
+  <li>설치가 다 되었다면 제대로 설치가 되어있는지 확인하겠습니다.
+    <blockquote>
+      <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda info -—envs
+</code></pre></div>      </div>
+    </blockquote>
+  </li>
+  <li>만들어진 가상환경으로 접속합니다.
+    <blockquote>
+      <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda activate data_env
+</code></pre></div>      </div>
+    </blockquote>
+  </li>
+  <li>가상환경을 탈출하기 위해서는 하기 명령어를 입력합니다.
+    <blockquote>
+      <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda deactivate
+</code></pre></div>      </div>
+    </blockquote>
+  </li>
+</ol>
+
+<h2 id="jupyter-notebook">Jupyter notebook</h2>
+<p>가상환경 설치가 완료되면 개발도구인 IDE를 설치를 해야합니다.
+저는 Jupiter notebook이라는 web기반의 개발툴을 이용하겠습니다.</p>
+
+<p>현재 data_env 가상환경에서 하기명령어를 이용하여 nb_conda를 설치하도록 하겠습니다.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda <span class="nb">install </span>nb_conda
+</code></pre></div></div>
+
+<h3 id="경로설정">경로설정</h3>
+
+<p>Jupyter notebook 이 사용할 기본 디렉토리 (working directory)를 지정 하도록 하겠습니다.
+이 작업을 하기위해 환경 설정 파일을 하나 생성해서 기본 디렉토리를 지정해서 사용해보도록 하겠습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>jupyter notebook <span class="nt">--generate-config</span>
+</code></pre></div></div>
+
+<p>명령어를 입력하면 <code class="language-plaintext highlighter-rouge">.jupyter</code> 라는 숨김폴더가 생성되고 그 안에<code class="language-plaintext highlighter-rouge"> jupter_notebook_config.py</code> 파일이 생성됩니다.</p>
+
+<p>그 중 <code class="language-plaintext highlighter-rouge">jupter_notebook_config.py</code> 파일에서 하기항목에 경로이름을 입력하여 기본 디렉토리 (working directory)를 설정하겠습니다.</p>
+
+<blockquote>
+  <p>##The directory to use for notebooks and kernels.
+#c.NotebookApp.notebook_dir = ‘경로이름’</p>
+</blockquote>
+
+<h3 id="jupyter-notebook-실행">Jupyter Notebook 실행</h3>
+
+<p>상기 설정이 전부 완료되었다면 <code class="language-plaintext highlighter-rouge">Jupyternotebook</code>을 실행해보도록 하겠습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>jupyter notebook
+</code></pre></div></div>
+
+<p>명령어를 입력하면 바로 Jupyter Notebook이 실행되는 것을 확인할 수 있습니다.</p>
+
+<p>오늘은 <code class="language-plaintext highlighter-rouge">Anaconda</code>와 <code class="language-plaintext highlighter-rouge">Jupyternotebook</code>에 대하여 알아보았습니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#anaconda" class="page__taxonomy-item" rel="tag">ANACONDA</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#python" class="page__taxonomy-item" rel="tag">Python</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-09-04T00:00:00+09:00">September 4, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BPython%5D+Anaconda+%26+Jupyter+Notebook+%EC%84%A4%EC%B9%98+%EB%B0%8F+%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD+%EC%84%A4%EC%A0%95%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2FAnaconda%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2FAnaconda%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2FAnaconda%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/algorithm/Implementation/" class="pagination--pager" title="[Algorithm] Implementation
+">Previous</a>
+    
+    
+      <a href="/python/Numpy/" class="pagination--pager" title="[Python] Numpy
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/List.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Numpy/" rel="permalink">[Python] Numpy
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  8 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Numpy
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/Algorithm.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/Implementation/" rel="permalink">[Algorithm] Implementation
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Implementation
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/Algorithm.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/Greedy-Algorithm/" rel="permalink">[Algorithm] Greedy Algorithm
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Greedy Algorithm
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/kakao.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/api/kakao_api_selfmessage/" rel="permalink">[Kakao API] 나에게 메세지보내기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Kakao API [Self message]
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Sol Han. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/python/Anaconda/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/python/Anaconda"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-souuul-github-io-souuul.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

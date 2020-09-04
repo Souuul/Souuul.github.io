@@ -1,0 +1,48 @@
+I"�	<h2 id="anaconda">ANACONDA</h2>
+
+<p>오늘은 <code class="language-plaintext highlighter-rouge">ANACONDA</code> 에 대하여 알아보도록 하겠습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">ANACONDA</code> 를 사용하는 이유는 다음과 같습니다.</p>
+
+<ol>
+  <li>라이브러리를 별도로 설치하지 않아도 된다.</li>
+  <li>가상환경을 사용할 수 있다.</li>
+</ol>
+
+<h3 id="anaconda-설치">ANACONDA 설치</h3>
+
+<p>그렇다면 우선 설치부터 해보도록 하겠습니다.</p>
+
+<ol>
+  <li><a href="https://www.anaconda.com/products/individual">아나콘다 다운로드 링크</a> 에 접속하여 해당되는 버전을 다운로드 하도록 하겠습니다.</li>
+</ol>
+
+<blockquote>
+  <p>저는 MAC 환경에서 사용하므로 MAC 버전용으로 다운로드 하도록 하겠습니다.</p>
+</blockquote>
+
+<ol>
+  <li>다운로드가 되었다면 별다른 설정없이 설치를 해주시면 됩니다.</li>
+</ol>
+
+<blockquote>
+  <p>다만 윈도우 사용자분들께서는 경로설정(path)를 유의하시어 설치하시면 되겠습니다.</p>
+</blockquote>
+
+<h3 id="가상환경-생성">가상환경 생성</h3>
+
+<p>설치가 완료되었다면 가상환경을 만들어 보도록 하겠습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Mac</code>사용자분들을 <code class="language-plaintext highlighter-rouge">터미널</code>을 열어주시고 <code class="language-plaintext highlighter-rouge">윈도우</code> 사용자분들께서는 <code class="language-plaintext highlighter-rouge">Anaconda prompt</code>를 실행시켜주시면 되겠습니다.</p>
+
+<p>실행하시면 이전과는 다르게 (base) 라는 부분이 생성이 되어있는 것을 확인하실 수가 있습니다. 이곳에서부터 특정 가상환경을 만들어 보도록하겠습니다.</p>
+
+<p><img src="../../assets/image/image-20200904211002265.png" alt="image-20200904211002265" style="zoom:50%;" /></p>
+
+<p>가상환경이름은 “data_env” 로 지정하고 파이썬 버전은 3.7 버전으로 설치하도록 하겠습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda create <span class="nt">-n</span> data_env <span class="nv">python</span><span class="o">=</span>3.7 openssl
+</code></pre></div></div>
+
+<h2 id="jupyter-notebook">Jupyter notebook</h2>
+:ET
