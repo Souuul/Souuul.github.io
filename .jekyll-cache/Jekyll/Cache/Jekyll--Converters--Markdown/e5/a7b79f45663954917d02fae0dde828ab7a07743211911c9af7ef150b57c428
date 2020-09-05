@@ -1,332 +1,4 @@
-<!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
-  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
-<html lang="en" class="no-js">
-  <head>
-    <meta charset="utf-8">
-
-<!-- begin _includes/seo.html --><title>[Python] ndarray - Sol Tech</title>
-<meta name="description" content="ndarray">
-
-
-  <meta name="author" content="Sol Han">
-
-
-<meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Sol Tech">
-<meta property="og:title" content="[Python] ndarray">
-<meta property="og:url" content="http://localhost:4000/python/ndarray/">
-
-
-  <meta property="og:description" content="ndarray">
-
-
-
-  <meta property="og:image" content="http://localhost:4000/assets/image/1*cyXCE-JcBelTyrK-58w6_Q.png">
-
-
-
-
-
-  <meta property="article:published_time" content="2020-09-04T00:00:00+09:00">
-
-
-
-
-
-  
-
-  
-
-
-<link rel="canonical" href="http://localhost:4000/python/ndarray/">
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Sol Han",
-      "url": "http://localhost:4000/"
-    
-  }
-</script>
-
-
-
-
-
-
-<!-- end _includes/seo.html -->
-
-
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sol Tech Feed">
-
-<!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
-
-<!--[if IE]>
-  <style>
-    /* old IE unsupported flexbox fixes */
-    .greedy-nav .site-title {
-      padding-right: 3em;
-    }
-    .greedy-nav button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-    }
-  </style>
-<![endif]-->
-
-
-
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
-  </head>
-
-  <body class="layout--single">
-    <nav class="skip-links">
-  <h2 class="screen-reader-text">Skip links</h2>
-  <ul>
-    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
-    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
-    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
-  </ul>
-</nav>
-
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
-    
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        
-          <a class="site-logo" href="/"><img src="/assets/image/logo.png" alt=""></a>
-        
-        <a class="site-title" href="/">
-          Sol Tech
-          
-        </a>
-        <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/welcome/welcome/">Welcome</a>
-            </li><li class="masthead__menu-item">
-              <a href="/python/PythonPage/">Python</a>
-            </li><li class="masthead__menu-item">
-              <a href="/html/css/javascript/Web-CSS-JAVASCRIPT/">HTML & CSS & JavaScript</a>
-            </li><li class="masthead__menu-item">
-              <a href="/django/DjangoPage/">Django</a>
-            </li><li class="masthead__menu-item">
-              <a href="/api/APIPage/">API</a>
-            </li><li class="masthead__menu-item">
-              <a href="/git/github/GITPage/">GIT</a>
-            </li></ul>
-        
-        <button class="search__toggle" type="button">
-          <span class="visually-hidden">Toggle search</span>
-          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
-            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
-          </svg>
-        </button>
-        
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle menu</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-
-    <div class="initial-content">
-      
-
-
-
-<div id="main" role="main">
-  
-  <div class="sidebar sticky">
-  
-
-
-<div itemscope itemtype="https://schema.org/Person">
-
-  
-    <div class="author__avatar">
-      
-        <img src="/assets/image/%EA%B7%B8%EB%A6%BC1.png" alt="Sol Han" itemprop="image">
-      
-    </div>
-  
-
-  <div class="author__content">
-    
-      <h3 class="author__name" itemprop="name">Sol Han</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
-        <p>I’m an <strong>AI engineer</strong></p>
-
-      </div>
-    
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      
-        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul</span>
-        </li>
-      
-
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-            <li><a href="https://github.com/Souuul" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
-          
-        
-          
-        
-          
-            <li><a href="https://www.linkedin.com/in/sol-han-134296131" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">Linkedin</span></a></li>
-          
-        
-      
-
-      
-
-      
-        <li>
-          <a href="mailto:hans53400@naver.com">
-            <meta itemprop="email" content="hans53400@naver.com" />
-            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
-          </a>
-        </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
-    </ul>
-  </div>
-</div>
-
-  
-  </div>
-
-
-
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Python] ndarray">
-    <meta itemprop="description" content="ndarray">
-    <meta itemprop="datePublished" content="2020-09-04T00:00:00+09:00">
-    
-
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[Python] ndarray
-</h1>
-          
-            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  6 minute read
-
-</p>
-          
-        </header>
-      
-
-      <section class="page__content" itemprop="text">
-        
-        <h2 id="ndarray">ndarray</h2>
+I"��<h2 id="ndarray">ndarray</h2>
 
 <p>다차원 <code class="language-plaintext highlighter-rouge">ndarray</code>를 만들어 보겠습니다. List도 비슷한 형태를 만들 수 있지만 List는 중첩리스트만 존재합니다.</p>
 
@@ -351,7 +23,7 @@
 '''</span>
 </code></pre></div></div>
 
-<h3 id="ndarray---차원과-크기">ndarray - 차원과 크기</h3>
+<h3 id="ndarray의-차원과-크기">ndarray의 차원과 크기</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">float64</span><span class="p">)</span> <span class="c1"># dtype으로 데이터의 속성을 지정할수 있어요
@@ -388,7 +60,7 @@
 </span>                 <span class="c1"># (2, 2, 3)
 </span></code></pre></div></div>
 
-<h3 id="ndarray---shape-변경">ndarray - shape 변경</h3>
+<h3 id="ndarray-shape-변경">ndarray shape 변경</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]]</span> <span class="c1"># 4 X 3
 </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">float64</span><span class="p">)</span>
@@ -432,7 +104,7 @@ ValueError: cannot reshape array of size 12 into shape (3,2,3)
 '''</span>
 </code></pre></div></div>
 
-<h3 id="ndarray---데이터-타입-변경">ndarray - 데이터 타입 변경</h3>
+<h3 id="ndarray-데이터-타입-변경">ndarray 데이터 타입 변경</h3>
 
 <p>ndarray를 생성할 때 dtype을 지정해서 만들지만 변경이 가능합니다. 바로 <code class="language-plaintext highlighter-rouge">astype</code> 을 통해서 변경이 가능합니다.</p>
 
@@ -447,11 +119,7 @@ ValueError: cannot reshape array of size 12 into shape (3,2,3)
 </span><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">dtype</span><span class="p">)</span> <span class="c1">#int32
 </span></code></pre></div></div>
 
-<h3 id="ndarray---만드는-방법">ndarray - 만드는 방법</h3>
-
-<p>ndarray를 생성할 때 타이핑을 치지않고 명령어를 통하여 만들 수 있습니다.</p>
-
-<p>하기 예제를 통해서 알아보도록 하겠습니다.</p>
+<h3 id="ndarray-만드는-방법">ndarray 만드는 방법</h3>
 
 <blockquote>
   <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
@@ -491,7 +159,7 @@ ValueError: cannot reshape array of size 12 into shape (3,2,3)
 '''</span>
 </code></pre></div>  </div>
 
-  <h4 id="1-ndarray를-만드는-다른-방법---_like">1. ndarray를 만드는 다른 방법 - _like</h4>
+  <h4 id="1-_like">1. _like</h4>
 
   <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
@@ -548,17 +216,15 @@ start 부터 시작해서 stop의 범위에서 num개의 숫자를
 <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="s">'''
-[ 0. 0.83333333  1.66666667  2.5 3.33333333  4.16666667
+[ 0.          0.83333333  1.66666667  2.5         3.33333333  4.16666667
 
-  5. 5.83333333  6.66666667  7.5 8.33333333  9.16666667
- 6.]
-'''</span>
+  5.          5.83333333  6.66666667  7.5         8.33333333  9.16666667
+ 6.          ]
+             '''</span>
 
 
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">31</span><span class="p">)</span> 
-<span class="c1">#원소간의 간격은 (stop - start) / (num -1)
-</span>
-<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">31</span><span class="p">)</span> <span class="c1">#원소간의 간격은 (stop - start) / (num -1)
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 
 <span class="s">'''
 [  1.   5.   9.  13.  17.  21.  25.  29.  33.  37.  41.  
@@ -570,96 +236,93 @@ start 부터 시작해서 stop의 범위에서 num개의 숫자를
 </span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>  </div>
 
-  <p align="center"><img src="../../assets/image/2020-09-04_15-22-04.png" alt="2020-09-04_15-22-04" style="zoom:50%;" /></p>
+  <p><img src="../../assets/image/2020-09-04_15-22-04.png" alt="2020-09-04_15-22-04" aline="center" style="zoom:50%;" /></p>
 </blockquote>
 
-<h3 id="난수-기반의-ndarray-생성">난수 기반의 ndarray 생성</h3>
+<h4 id="ndarray를-생성할-때-랜덤값-기반으로-생성할-수-있어요">ndarray를 생성할 때 랜덤값 기반으로 생성할 수 있어요</h4>
 
-<p>총 다섯가지 방법으로 ndarray를 생성할 수 있습니다.</p>
+<p>총 다섯가지 방법으로 ndarray를 생성할 수 있어요!!</p>
 
-<h4 id="nprandomnormal">np.random.normal()</h4>
+<ol>
+  <li>
+    <p>np.random.normal() : 정규분포 확률 밀도함수에서 실수 표본을 추출해서 ndarray 생성 (평균, 표준편차)</p>
 
-<p>정규분포 확률 밀도함수에서 실수 표본을 추출해서 ndarray 생성 (평균, 표준편차)</p>
-
-<blockquote>
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+   
 <span class="n">mean</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">std</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="p">(</span><span class="mi">10000</span><span class="p">,))</span> <span class="c1"># 10000개의 데이터 추출
 </span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="s">'''
 [47.48597904 51.09675807 48.58847913 ... 48.31064207 47.61720963
-50.06721122]
+ 50.06721122]
 '''</span>
+   
 <span class="c1"># 히스토그램
-</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># 히스토그램의 x축의 간격을 100개로 쪼개서 만듦
+</span><span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># 히스토그램의 x축의 간격을 100개로 쪼개서 만듦
 </span><span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>  </div>
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <p align="center"><img src="../../assets/image/image-20200904152543592.png" alt="image-20200904152543592" style="zoom:50%;" /></p>
-</blockquote>
-
-<h4 id="nprandomrand">np.random.rand()</h4>
-
-<p>실수를 추출하는데 (0,1) 범위에서 추출하고 균등분포로 추출</p>
-
-<blockquote>
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>  </div>
-
-  <p align="center"><img src="../../assets/image/image-20200904152655800.png" alt="image-20200904152655800" style="zoom:50%;" /></p>
-</blockquote>
-
-<h4 id="nprandomrandnd0d1d2-">np.random.randn(d0,d1,d2, …)</h4>
-
-<p>실수추출 , 표준정규분포에서 난수를 추출 평균0, 표준편차 1</p>
-
-<blockquote>
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
-   <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-   <span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-   <span class="n">plt</span><span class="p">.</span><span class="n">show</span>
-</code></pre></div>  </div>
-
-  <p align="center"><img src="../../assets/image/image-20200904152712202.png" alt="image-20200904152712202" style="zoom:50%;" /></p>
-</blockquote>
-
-<h4 id="nprandomrandintlowhigh-shape">np.random.randint(low,high, shape)</h4>
-<p>균등분포 확률밀도함수에서 난수를 추출하는데 정수값을 난수로 추출</p>
-
-<blockquote>
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,(</span><span class="mi">100000</span><span class="p">,</span> <span class="p">))</span>
-   <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-   <span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-   <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>  </div>
-
-  <p align="center"><img src="../../assets/image/image-20200904152750744.png" alt="image-20200904152750744" style="zoom:50%;" /></p>
-</blockquote>
-
-<h4 id="nprandomrandomshape">np.random.random(shape)</h4>
-<p>[0,1) 균등분포에서 실수 난수를 추출합니다.</p>
-
-<blockquote>
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">((</span><span class="mi">100000</span><span class="p">,</span> <span class="p">))</span>
-   <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-   <span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-   <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>  </div>
-
-  <p align="center"><img src="../../assets/image/image-20200904152921533.png" alt="image-20200904152921533" style="zoom:50%;" /></p>
-</blockquote>
-
-<h3 id="numpy-가-제공하는-랜덤-관련-함수">Numpy 가 제공하는 랜덤 관련 함수</h3>
+<p><img src="../../assets/image/image-20200904152543592.png" alt="image-20200904152543592" style="zoom:50%;" /></p>
 
 <ol>
   <li>
-    <h4 id="난수의-재현">난수의 재현</h4>
+    <p>np.random.rand() : 실수를 추출하는데 (0,1) 범위에서 추출하고 균등분포로 추출</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>    </div>
+
+    <p><img src="../../assets/image/image-20200904152655800.png" alt="image-20200904152655800" style="zoom:50%;" /></p>
+  </li>
+  <li>
+    <p>np.random.randn(d0,d1,d2, …) : 실수추출 , 표준정규분포에서 난수를 추출 평균0, 표준편차 1</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><img src="../../assets/image/image-20200904152712202.png" alt="image-20200904152712202" style="zoom:50%;" /></p>
+
+<ol>
+  <li>
+    <p>np.random.randint(low,high, shape) : 균등분포 확률밀도함수에서 난수를 추출하는데 정수값을 난수로 추출</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,(</span><span class="mi">100000</span><span class="p">,</span> <span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>    </div>
+
+    <p><img src="../../assets/image/image-20200904152750744.png" alt="image-20200904152750744" style="zoom:50%;" /></p>
+  </li>
+  <li>
+    <p>np.random.random(shape) : [0,1) 균등분포에서 실수 난수를 추출!</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">((</span><span class="mi">100000</span><span class="p">,</span> <span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">hist</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>    </div>
+
+    <p><img src="../../assets/image/image-20200904152921533.png" alt="image-20200904152921533" style="zoom:50%;" /></p>
+  </li>
+</ol>
+
+<h4 id="numpy-가-제공하는-랜덤-관련-함수">Numpy 가 제공하는 랜덤 관련 함수</h4>
+
+<ol>
+  <li>
+    <p>난수의 재현</p>
 
     <p>하기코드로 작성하면 매번 실행시 마다 새로운 random 값이 도출됩니다.</p>
 
@@ -679,11 +342,9 @@ start 부터 시작해서 stop의 범위에서 num개의 숫자를
 [ 9 15 64 28 89 93 29  8 73  0]
 '''</span>
 </code></pre></div>    </div>
-
-    <p><br /></p>
   </li>
   <li>
-    <h4 id="ndarray의-순서를-램덤하게-바꿀려면-어떻게-해야하나요">ndarray의 순서를 램덤하게 바꿀려면 어떻게 해야하나요?</h4>
+    <p>ndarray의 순서를 램덤하게 바꿀려면 어떻게 해야하나요?</p>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="c1"># [0 1 2 3 4 5 6 7 8 9]
@@ -691,26 +352,18 @@ start 부터 시작해서 stop의 범위에서 num개의 숫자를
 <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="c1"># ndarray 자체가 변형되요!
 </span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="c1"># [1 5 2 9 7 0 3 4 6 8]
 </span></code></pre></div>    </div>
-
-    <p><br /></p>
   </li>
   <li>
-    <h4 id="ndarray-sampling---일부-무작위로-선택하는-기능">ndarray sampling - 일부 무작위로 선택하는 기능.</h4>
+    <p>ndarray 안에서 일부 부작위로 선택하는 기능. sampling기능을 수행하려면</p>
 
-    <ul>
-      <li>
-        <p>np.random.choice(arr, size, replace, p)</p>
-      </li>
-      <li>
-        <p>arr : numpy array가 나오거나 혹은 정수가 나올 수 있어요</p>
+    <p>np.random.choice(arr, size, replace, p)</p>
 
-        <p>=&gt; 만약 정수면 정수만 쓰면 : arange(정수) 가 실행</p>
-      </li>
-      <li>size : 정수값. 샘플의 숫자</li>
-      <li>replace : Boolean (True, False)
-          True : 한번 선택한 데이터를 다시 샘플링 가능 (중복 인자)</li>
-      <li>p(확률) : ndarray. 각 데이터가 샘플링 될 확률을 가지고 있는 ndarray</li>
-    </ul>
+    <p>arr : numpy array가 나오거나 혹은 정수가 나올 수 있어요! 만약 정수면
+      정수만 쓰면 : arange(정수) 가 실행
+size : 정수값. 샘플의 숫자
+replace : Boolean (True, False)
+          True : 한번 선택한 데이터를 다시 샘플링 할 수 있어요!
+p(확률) : ndarray. 각 데이터가 샘플링 될 확률을 가지고 있는 ndarray</p>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">replace</span> <span class="o">=</span> <span class="bp">True</span> <span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="c1">#[1 1 3] 값 중복 가능
@@ -724,7 +377,7 @@ start 부터 시작해서 stop의 범위에서 num개의 숫자를
   </li>
 </ol>
 
-<h3 id="ndarray는-shape을-가지고-있어요">ndarray는 shape을 가지고 있어요!</h3>
+<p>ndarray는 shape을 가지고 있어요!</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># shape 속성의 값을 바꾸어서 ndarray의 형태를 변경하는 것은 그다지 좋지 않아요!
 # reshape() 항수를 이용해서 처리합니다.
@@ -795,324 +448,4 @@ start 부터 시작해서 stop의 범위에서 num개의 숫자를
 '''</span>
 </code></pre></div></div>
 
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-  
-
-
-  
-  
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
-    <span itemprop="keywords">
-    
-      
-      
-      <a href="/tags/#ndarray" class="page__taxonomy-item" rel="tag">ndarray</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#numpy" class="page__taxonomy-item" rel="tag">Numpy</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-  
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
-    <span itemprop="keywords">
-    
-      
-      
-      <a href="/categories/#python" class="page__taxonomy-item" rel="tag">Python</a>
-    
-    </span>
-  </p>
-
-
-        
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-09-04T00:00:00+09:00">September 4, 2020</time></p>
-
-
-      </footer>
-
-      <section class="page__share">
-  
-    <h4 class="page__share-title">Share on</h4>
-  
-
-  <a href="https://twitter.com/intent/tweet?text=%5BPython%5D+ndarray%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fndarray%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fndarray%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fndarray%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-</section>
-
-
-      
-  <nav class="pagination">
-    
-      <a href="/python/PythonPage/" class="pagination--pager" title="Python Page
-">Previous</a>
-    
-    
-      <a href="#" class="pagination--pager disabled">Next</a>
-    
-  </nav>
-
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h4 class="page__related-title">You may also enjoy</h4>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/python.jpg" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/python/PythonPage/" rel="permalink">Python Page
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  less than 1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">
-	
-
-파이썬 기본편
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/1*cyXCE-JcBelTyrK-58w6_Q.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/python/Numpy/" rel="permalink">[Python] Numpy
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  7 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Numpy
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/image-20200904205041347.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/python/Anaconda/" rel="permalink">[Python] Anaconda &amp; Jupyter Notebook 설치 및 가상환경 설정
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">ANACONDA
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/Algorithm.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/Implementation/" rel="permalink">[Algorithm] Implementation
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Implementation
-</p>
-  </article>
-</div>
-
-        
-      </div>
-    </div>
-  
-  
-</div>
-
-    </div>
-
-    
-      <div class="search-content">
-        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
-    <label class="sr-only" for="search">
-      Enter your search term...
-    </label>
-    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
-  </form>
-  <div id="results" class="results"></div></div>
-
-      </div>
-    
-
-    <div id="footer" class="page__footer">
-      <footer>
-        <!-- start custom footer snippets -->
-
-<!-- end custom footer snippets -->
-        <div class="page__footer-follow">
-  <ul class="social-icons">
-    
-      <li><strong>Follow:</strong></li>
-    
-
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-
-    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
-  </ul>
-</div>
-
-<div class="page__footer-copyright">&copy; 2020 Sol Han. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
-
-      </footer>
-    </div>
-
-    
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-<script src="/assets/js/lunr/lunr.min.js"></script>
-<script src="/assets/js/lunr/lunr-store.js"></script>
-<script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-    
-  <script>
-    var disqus_config = function () {
-      this.page.url = "http://localhost:4000/python/ndarray/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/python/ndarray"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
-    };
-    (function() { /* DON'T EDIT BELOW THIS LINE */
-      var d = document, s = d.createElement('script');
-      s.src = 'https://https-souuul-github-io-souuul.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-  
-
-
-
-
-
-  </body>
-</html>
+:ET
