@@ -1,4 +1,4 @@
-I"¾
+I"T
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -8,7 +8,7 @@
           <a class="site-logo" href="/"><img src="/assets/image/logo.png" alt=""></a>
         
         <a class="site-title" href="/">
-          Sol Han tech blog!
+          Sol Tech
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
@@ -23,8 +23,6 @@
               <a href="/api/APIPage/">API</a>
             </li><li class="masthead__menu-item">
               <a href="/git/github/GITPage/">GIT</a>
-            </li><li class="masthead__menu-item">
-              <a href="/sitemap/">Sitemap</a>
             </li></ul>
         
         <button class="search__toggle" type="button">

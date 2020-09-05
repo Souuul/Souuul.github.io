@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Python] Numpy - Sol Han tech blog!</title>
+<!-- begin _includes/seo.html --><title>[Python] Numpy - Sol Tech</title>
 <meta name="description" content="Numpy">
 
 
@@ -18,7 +18,7 @@
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Sol Han tech blog!">
+<meta property="og:site_name" content="Sol Tech">
 <meta property="og:title" content="[Python] Numpy">
 <meta property="og:url" content="http://localhost:4000/python/Numpy/">
 
@@ -27,7 +27,7 @@
 
 
 
-  <meta property="og:image" content="http://localhost:4000/assets/image/List.png">
+  <meta property="og:image" content="http://localhost:4000/assets/image/1*cyXCE-JcBelTyrK-58w6_Q.png">
 
 
 
@@ -68,7 +68,7 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sol Han tech blog! Feed">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sol Tech Feed">
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -130,7 +130,7 @@
           <a class="site-logo" href="/"><img src="/assets/image/logo.png" alt=""></a>
         
         <a class="site-title" href="/">
-          Sol Han tech blog!
+          Sol Tech
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
@@ -145,8 +145,6 @@
               <a href="/api/APIPage/">API</a>
             </li><li class="masthead__menu-item">
               <a href="/git/github/GITPage/">GIT</a>
-            </li><li class="masthead__menu-item">
-              <a href="/sitemap/">Sitemap</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -319,7 +317,7 @@
 
 
 
-  8 minute read
+  7 minute read
 
 </p>
           
@@ -330,41 +328,21 @@
         
         <h2 id="numpy">Numpy</h2>
 
-<p>오늘은 <code class="language-plaintext highlighter-rouge">파이썬</code>의 <code class="language-plaintext highlighter-rouge">Numpy</code> 에 대하여 알아보도록 하겠습니다.</p>
+<p>오늘은  <code class="language-plaintext highlighter-rouge">Numpy</code> 에 대하여 알아보도록 하겠습니다. <code class="language-plaintext highlighter-rouge">Numpy</code> 란 Numerical Python 의 약자입니다. 대규모 다차원 배열과 행렬 연산에 필요한 다양한 함수를 제공합니다.</p>
 
-<p>Numpy module &gt; 자료구조를 배워보아요 , ndarray 배열에 대해서 배우게 되요!</p>
+<h3 id="numpy-module">Numpy module</h3>
 
-<p>pandas module &gt; data handling, machine learing 에 학습할 데이터를 준비하는 것</p>
+<p>Numpy의 자료구조를 배워보도록 하겠습니다. <code class="language-plaintext highlighter-rouge">ndarray</code> 배열에 대하여 배워보도록 하겠습니다.</p>
 
-<p>기본 설정방법은 아나콘다부터 설치를 하셔야합니다. 설치후에 가상환경을 잡아주시고 working directory 까지 잡아줍니다.</p>
+<p>Numpy는 <code class="language-plaintext highlighter-rouge">ndarray</code> 라고 불리는 n-차원의 배열을 제공합니다.</p>
 
-<p><img src="../../assets/image/image-20200904091457898.png" alt="image-20200904091457898" /></p>
+<h3 id="numpy--pandas">Numpy &amp; Pandas</h3>
 
-<p><img src="../../assets/image/image-20200904091555177.png" alt="image-20200904091555177" /></p>
+<p><code class="language-plaintext highlighter-rouge">pandas module</code>은  data handling, machine learing 에 학습할 데이터를 준비하는 module입니다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">B</code>는 아래 쪽에 셀 추가 <code class="language-plaintext highlighter-rouge">A</code> 키는 cell을 위쪽에 추가 하는 명령어 입니다. 지우려면 <code class="language-plaintext highlighter-rouge">D</code> 키를 두번 눌러서 지울수 있습니다.</p>
+<p>Numpy는 vector와 matrix 연산에 특화되어 있습니다. 또한 Pandas와 Matplotlib의 기반이 되는 module 이며 machine learning, deep learning 에서 많이 사용됩니다.</p>
 
-<p><img src="../../assets/image/image-20200904091702847.png" alt="image-20200904091702847" /></p>
-
-<p>NumPy</p>
-
-<p>NumPy : Numerical Python</p>
-
-<p>Numpy는 vector와 matrix 연산에 특화되어 있어요!</p>
-
-<p>Numpy : Pandas와 Matplotlib의 기반이 되는 module</p>
-
-<p>machine learning, deep learning 에서 많이 사용되요!</p>
-
-<p>Numpy는 ndarray 라고 불리는 n-차원의 배열을 제공!</p>
-
-<p>ndarray의 특징 : python의 list와 상당히 유사  (표로 작성해봅시다 !!)</p>
-
-<ol>
-  <li>python의 list 는 다른 데이터 타입을 같이 list안에 저장이 가능!</li>
-  <li>Numpy의 ndarray는 모두 같은 데이터 타입을 사용해야 해요!</li>
-  <li>Python의 list 보다 메모리 효율이나 실행속도면에서 우위…</li>
-</ol>
+<h3 id="numpy-설치">Numpy 설치</h3>
 
 <p>numpy를 실행해보아요 !! 하지만 깔려있지 않기 때문에 Numpy 모듈을 설치하고 진행해야 합니다.</p>
 
@@ -381,36 +359,37 @@
 
 <p>주의 할점은 꼭 설정된 가상환경을 활성화 시킨 이후에 명령어를 작성하셔야 합니다.</p>
 
-<p>numpy.array()</p>
+<h3 id="numpy-vs-list">Numpy VS List</h3>
 
-<p>python의 list 부터 살펴보아요 !</p>
+<p>ndarray의 특징 : python의 list와 상당히 유사  (표로 작성해봅시다 !!)</p>
 
-<p>a = [1,2,3,4,5] # python의 list</p>
+<ol>
+  <li>python의 list 는 다른 데이터 타입을 같이 list안에 저장이 가능합니다.</li>
+  <li>Numpy의 ndarray는 모두 같은 데이터 타입을 사용해야 해요.</li>
+  <li>Python의 list 보다 메모리 효율이나 실행속도면에서 우위가 있습니다.</li>
+</ol>
 
-<p>print(a) # [1,2,3,4,5] &gt; list literal</p>
+<p>하기 예제를 보면서 차이점을 찾아보도록 하겠습니다.</p>
 
-<p>print(type(a))# &lt;class ‘list’&gt;</p>
-
-<p>arr = np.array([1,2,3,4,5])</p>
-
-<p>arr = np.array(파이썬의 list)</p>
-
-<p>print(arr) #[1 2 3 4 5] 콤마로 구분되지 않고 띄어쓰기로 구분됩니다.</p>
-
-<p>print(type(arr)) # &lt;class ‘numpy.ndarray’&gt;</p>
-
-<p>print(arr.dtype) # int64(int : 정수, 64:64bit)</p>
-
-<p>print(arr[0]) # 1 &gt; python 에서는 ‘int’</p>
-
-<p>print(type(arr[0])) # &lt;class ‘numpy.int64’&gt; class type이 다름</p>
-
-<p>arr = np.array([100,3.14,True,’Hello’]) # Numpy 안에는 같은 데이터 타입이 들어가야합니다.
-print(arr) # [‘100’ ‘3.14’ ‘True’ ‘Hello’] 가능한 데이터 타입을 일치시켜서 출력</p>
-
-<p><img src="../../assets/image/image-20200904101048587.png" alt="image-20200904101048587" /></p>
-
-<p>셀을 이동하여도 출력이 가능합니다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#### List
+</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># python의 list
+</span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># [1,2,3,4,5] &gt; list literal
+</span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="c1"># &lt;class 'list'&gt;
+</span>
+<span class="c1">#### Numpy
+</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">파이썬의</span> <span class="nb">list</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="c1">#[1 2 3 4 5] 콤마로 구분되지 않고 띄어쓰기로 구분됩니다.
+</span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1"># &lt;class 'numpy.ndarray'&gt;
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">dtype</span><span class="p">)</span> <span class="c1"># int64(int : 정수, 64:64bit)
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 1 &gt; python 에서는 'int'
+</span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="c1"># &lt;class 'numpy.int64'&gt; class type이 다름 
+</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span><span class="mf">3.14</span><span class="p">,</span><span class="bp">True</span><span class="p">,</span><span class="s">'Hello'</span><span class="p">])</span> <span class="c1"># Numpy 안에는 같은 데이터 타입이 들어가야합니다.
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="c1"># ['100' '3.14' 'True' 'Hello'] 가능한 데이터 타입을 일치시켜서 출력
+</span></code></pre></div></div>
 
 <p>다차원 ndarray를 만들어 보아요!
 Python의 list는 중첩리스트만 존재해요!</p>
@@ -430,7 +409,7 @@ print(arr)</p>
 <p>[[1. 2. 3.]
  [4. 5. 6.]]</p>
 
-<h4 id="ndarray의-차원-관련-속성을-알아보아요">ndarray의 차원 관련 속성을 알아보아요!!</h4>
+<h3 id="ndarray의-차원-관련-속성을-알아보아요">ndarray의 차원 관련 속성을 알아보아요!!</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -468,7 +447,7 @@ print(arr)</p>
 </span>                 <span class="c1"># (2, 2, 3)
 </span></code></pre></div></div>
 
-<h4 id="numpy-arrayndarray의-크기를-알아보아요">numpy array(ndarray)의 크기를 알아보아요!</h4>
+<h3 id="numpy-arrayndarray의-크기를-알아보아요">numpy array(ndarray)의 크기를 알아보아요!</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]]</span> <span class="c1"># 4 X 3
 </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">float64</span><span class="p">)</span>
@@ -512,7 +491,7 @@ ValueError: cannot reshape array of size 12 into shape (3,2,3)
 '''</span>
 </code></pre></div></div>
 
-<h4 id="ndarray의-데이터-타입을-변경하려면">ndarray의 데이터 타입을 변경하려면??</h4>
+<h3 id="ndarray의-데이터-타입을-변경하려면">ndarray의 데이터 타입을 변경하려면??</h3>
 
 <p>ndarray를 생성할 때 dtype을 지정해서 만들지만 변경이 가능합니다. 바로 <code class="language-plaintext highlighter-rouge">astype</code> 을 통해서 변경이 가능합니다.</p>
 
@@ -527,7 +506,7 @@ ValueError: cannot reshape array of size 12 into shape (3,2,3)
 </span><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">dtype</span><span class="p">)</span> <span class="c1">#int32
 </span></code></pre></div></div>
 
-<h4 id="ndarray를-만드는-형태는-여러가지입니다">ndarray를 만드는 형태는 여러가지입니다.</h4>
+<h3 id="ndarray를-만드는-형태는-여러가지입니다">ndarray를 만드는 형태는 여러가지입니다.</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="c1">#0으로 채워서 ndarray를 만들수 있어요
@@ -566,7 +545,7 @@ ValueError: cannot reshape array of size 12 into shape (3,2,3)
 
 </code></pre></div></div>
 
-<h5 id="_like">_like</h5>
+<h4 id="_like">_like</h4>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
@@ -926,7 +905,8 @@ p(확률) : ndarray. 각 데이터가 샘플링 될 확률을 가지고 있는 n
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/python/PythonPage/" class="pagination--pager" title="Python Page
+">Next</a>
     
   </nav>
 
@@ -940,6 +920,75 @@ p(확률) : ndarray. 각 데이터가 샘플링 될 확률을 가지고 있는 n
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/1*cyXCE-JcBelTyrK-58w6_Q.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/ndarray/" rel="permalink">[Python] ndarray
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  7 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">ndarray
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/python.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/PythonPage/" rel="permalink">Python Page
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+	
+
+파이썬 기본편
+</p>
+  </article>
+</div>
+
         
           
 
@@ -1002,72 +1051,6 @@ p(확률) : ndarray. 각 데이터가 샘플링 될 확률을 가지고 있는 n
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Implementation
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/Algorithm.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/Greedy-Algorithm/" rel="permalink">[Algorithm] Greedy Algorithm
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Greedy Algorithm
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/kakao.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/api/kakao_api_selfmessage/" rel="permalink">[Kakao API] 나에게 메세지보내기
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Kakao API [Self message]
 </p>
   </article>
 </div>
