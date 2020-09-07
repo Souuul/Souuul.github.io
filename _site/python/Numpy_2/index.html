@@ -317,7 +317,7 @@
 
 
 
-  4 minute read
+  7 minute read
 
 </p>
           
@@ -574,6 +574,215 @@
 <span class="k">print</span><span class="p">(</span><span class="n">t_array</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h3 id="numpy-iterator">Numpy iterator</h3>
+
+<p>iterator 의 동작방식입니다. 간단하게 행렬의 요소들을 출력하는 방식이라고 생각하시면 되겠습니다.</p>
+
+<h4 id="for-vs-iterator">For VS iterator</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="c1"># for문을 이용하면 편해요!!
+</span><span class="k">for</span> <span class="n">tmp</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span> <span class="c1"># 1 2 3 4 5 
+</span>
+<span class="c1"># 일단은 불편하지만 이 작업을 iterator를 이용해서 구현해보겠습니다.
+# 각각의 칸을 지칭하는 것이 iterator
+</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="p">[</span><span class="s">'c_index'</span><span class="p">])</span> <span class="c1"># flags 1차원인경우 'c_index' 
+</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">it</span><span class="p">.</span><span class="n">finished</span><span class="p">:</span> <span class="c1"># iterator 가 지정하는 위치가 끝이 아닐동안 반복
+</span>    <span class="n">idx</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">index</span> <span class="c1"># iterator가 현재 가리키는 곳의 index숫자를 가져와요!
+</span>    <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span>
+    <span class="n">it</span><span class="p">.</span><span class="n">iternext</span><span class="p">()</span> <span class="c1"># iterator를 다음요소로 이동시키는 작업을 해요 !!
+</span>    
+<span class="c1">################
+</span>
+<span class="c1"># 2차원 ndarray에 대해서 각 요소를 순서대로 출력해보아요!!
+# 요소를 순서대로 출력 =&gt; 0행0열 &gt; 0행1열 &gt; 0행2열 &gt; 1행0열 &gt; 1행1열 &gt; 1행2열
+</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="c1"># 요소를 하나씩 뽑아서 순서대로 출력해보세요!!
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span>
+        
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">shape</span><span class="p">(</span><span class="mi">0</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">shape</span><span class="p">(</span><span class="mi">1</span><span class="p">)):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span>
+        
+
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="p">[</span><span class="s">'multi_index'</span><span class="p">])</span> <span class="c1"># flags 1차원인경우 'c_index' 
+</span><span class="k">while</span> <span class="ow">not</span> <span class="n">it</span><span class="p">.</span><span class="n">finished</span><span class="p">:</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">multi_index</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span>
+    <span class="n">it</span><span class="p">.</span><span class="n">iternext</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="ndarray-비교연산">ndarray 비교연산</h3>
+
+<p>사칙연산과 마찬가지로 비교연산도 같은 index끼리 수행됩니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr1</span> <span class="o">==</span> <span class="n">arr2</span><span class="p">)</span> <span class="c1"># boolena 형 마스크
+</span>
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">))</span> <span class="c1"># True False 로 표현
+</span></code></pre></div></div>
+
+<h3 id="numpy--집계함수--axis-축">Numpy  집계함수 &amp; axis (축)</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">).</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="nb">sum</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1">#누적합 #피보나치
+</span><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1"># 평균
+</span><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1"># 최대값
+</span><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">min</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1"># 최소값
+</span><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1"># 최대값을 찾고 최대값의 index를 반환 순번으로 나타냄
+</span><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1"># 최대값을 찾고 최소값의 index를 반환 순번으로 나타냄
+</span><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">std</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1"># 표준편차 1.707825127659933
+</span><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1"># 자연상수 제곱
+</span><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">log10</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1"># 로그
+#이런 수많은 numpy의 집게함수와 수학함수가 우리에게 제공되요 !!
+#Numpy의 모든 집계함수는 axis를 기준으로 계산되요!!
+# np.sum()
+# 만약 axis를 지정하지 않으면.. axis는 None으로 설정되고..
+# 함수의 대상범위를 전체 ndarray로 지정하게 되요! 
+</span>
+<span class="c1"># axis를 어떻게 설정하고 어떤 효과가 나타나나요??
+</span>
+<span class="c1"># 1차원 ndarray를 생성.
+</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1"># axis를 지정하지 않았기 떄문에 전체 ndarray를 대상으로 sum()수행
+# 1차원은 축이 1개, 2차원은 축이 2개, 3차원은 축이 3개존재
+# 1차원인 경우 axis = 0 열방향 !! 가로방향!!
+# print(arr.sum(axis=0))
+# print(arr.sum(axis=1)) # error
+</span>
+<span class="c1"># 2차원 ndarray를 생성.
+</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="c1">#2차원에서 axis=0 이면 행방향!! &gt; 세로방향 [5 7 9]
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="c1">#2차원에서 axis=0 이면 열방향!! &gt; 가로방향 [6 15]
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="c1">#2차원에서 axis=0 이면 열방향!! &gt; 가로방향 [6 15]
+</span>
+
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr1</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> 
+<span class="c1"># 3차원에서 axis=0은 =&gt; depth방향
+# 3차원에서 axis=1은 =&gt; 행 / 세로방향
+# 3차원에서 axis=2은 =&gt; 열 / 가로방향
+</span></code></pre></div></div>
+
+<h4 id="집계함수를-사용해야하는-이유">집계함수를 사용해야하는 이유!</h4>
+
+<p>처리하는 시간 및 메모리 사용이 적어지는 이유가 가장 큽니다. 앞서 본대로 정답을 구하는 방식은 여러가지가 있습니다. 다만 처리하는 시간 및 사용하는 메모리가 한정될 경우 최적의 경로를 통하여 코드를 작성해야하는데 집계함수를 이용하면 최대한 시간 및 메모리를 절약할 수 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">%% time</code>  을 사용해서 소요시간비교를 해보도록 하겠습니다. <code class="language-plaintext highlighter-rouge">%% time</code> 은 jupyter notebook에서만 사용가능합니다.</p>
+
+<h5 id="for-문">for 문</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">time</span>
+
+<span class="c1"># for 문을 이용해서 합을 구하거나
+</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100000</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">tmp</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="n">tmp</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># 4999950000.0
+# CPU times: user 28.6 ms, sys: 1.27 ms, total: 29.9 ms
+# Wall time: 29.1 ms
+</span></code></pre></div></div>
+
+<h5 id="집계함수">집계함수</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">time</span>
+
+<span class="c1"># 집계함수를 이용해서 구할 수 있어요!!
+</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100000</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="nb">sum</span><span class="p">())</span>
+
+<span class="c1"># 4999950000.0
+# CPU times: user 485 µs, sys: 219 µs, total: 704 µs
+# Wall time: 379 µs
+</span></code></pre></div></div>
+
+<h3 id="ndarray-정렬">ndarray 정렬</h3>
+
+<p>numpy array는 axis를 기준으로 정렬하는 sort()함수를 제공합니다. 만약 axis를 지정하지 않으면  -1값으로 지정하며 마지막 axis를 지정합니다.</p>
+
+<p>정렬하는 방법은 두 가지 방법이 있습니다.</p>
+
+<ol>
+  <li>np.sort() : 정렬된 결과 ndarray를 리턴</li>
+  <li>arr.sort() : 원본을 정렬 return값은 None</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">arr3</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span> <span class="c1"># None
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr3</span><span class="p">)</span> <span class="c1"># [0 1 2 3 4 5 6 7 8 9]
+</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1">#오름 차순으로 정렬 (default 가 오름차순)
+# ndarray는 특수한 indexing 을 제공 &gt; 역순으로 정렬하기 위한 indexing 을 제공
+</span><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">17</span><span class="p">)</span>
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">).</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="s">'''
+[[ 4 13  7  6]
+ [10  2  5 11]
+ [12  3  8  1]
+ [14 16 15  9]]
+'''</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">))</span>
+<span class="s">'''
+[[ 4  2  5  1]
+ [10  3  7  6]
+ [12 13  8  9]
+ [14 16 15 11]]
+'''</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
+<span class="s">'''
+[[ 3  7 10 14]
+ [ 4  5 12 13]
+ [ 1  2  6 16]
+ [ 8  9 11 15]]
+'''</span>
+</code></pre></div></div>
+
+<p>오늘은 <code class="language-plaintext highlighter-rouge">Numpy</code>에 대하여 자세하게 알아보았습니다. 질문이 있으시면 아래 댓글에 남겨주세요!</p>
 
         
       </section>
