@@ -1,0 +1,29 @@
+I"<h2 id="numpy--2">Numpy -2</h2>
+
+<p>오늘은 numpy 에 대하여 조금 더 알아보도록 하겠습니다.</p>
+
+<h3 id="reshape-vs-resize">Reshape vs Resize</h3>
+
+<p>numpy 내장 함수인 <code class="language-plaintext highlighter-rouge">reshape</code> 와 <code class="language-plaintext highlighter-rouge">resize</code>에 대하여 알아보겠습니다. <code class="language-plaintext highlighter-rouge">reshape</code> 와 <code class="language-plaintext highlighter-rouge">resize</code>는 행렬의 array를 shape을 변경하는 점에서 동일하나 차이점이 한가지가 있습니다. <code class="language-plaintext highlighter-rouge">resize</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1">#정수형태의 난수를 이용해서 (3,4) shape을 가지는 ndarray를 생성할 꺼에요!
+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># 원본을 변경
+</span><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># None
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">arr</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+ <span class="c1"># reshape은 안됨 error 하지만 resize는 나머지 요소를 0으로 맞춤
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">arr</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+ <span class="c1"># 요소수가 줄면 나머지데이터를 버립니다.
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</code></pre></div></div>
+
+:ET

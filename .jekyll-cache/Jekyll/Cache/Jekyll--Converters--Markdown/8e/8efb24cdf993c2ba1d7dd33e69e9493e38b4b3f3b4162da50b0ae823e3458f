@@ -1,0 +1,135 @@
+I";9<h2 id="numpy--2">Numpy -2</h2>
+
+<p>오늘은 numpy 에 대하여 조금 더 알아보도록 하겠습니다.</p>
+
+<h3 id="reshape-vs-resize">Reshape vs Resize</h3>
+
+<p>numpy 내장 함수인 <code class="language-plaintext highlighter-rouge">reshape</code> 와 <code class="language-plaintext highlighter-rouge">resize</code>에 대하여 알아보겠습니다. <code class="language-plaintext highlighter-rouge">reshape</code> 와 <code class="language-plaintext highlighter-rouge">resize</code>는 행렬의 array를 shape을 변경하는 점에서 동일하나 차이점이 한가지가 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">reshape</code> 이전의 행렬의 인자의 개수와 변경될 인자의 개수가 동일해야만 사용할 수 있습니다.</p>
+
+<p>하지만 <code class="language-plaintext highlighter-rouge">resize</code> 경우에는 상관없이 사용가능합니다. 이전에 비해 인자가 부족할 경우 나머지 요소를 0으로 채우고, 남는경우에는 필요한 요소를 제외하고는 전부다 버려 행렬을 완성합니다.</p>
+
+<p>하기 예제를 보며 차이점을 알아보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1">#정수형태의 난수를 이용해서 (3,4) shape을 가지는 ndarray를 생성할 꺼에요!
+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># 원본을 변경
+</span><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># None
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">arr</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+ <span class="c1"># reshape은 안됨 error 하지만 resize는 나머지 요소를 0으로 맞춤
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">arr</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+ <span class="c1"># 요소수가 줄면 나머지데이터를 버립니다.
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="indexing--slicing">Indexing &amp; Slicing</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Indexing</code>과  <code class="language-plaintext highlighter-rouge">Slicing</code> 모두 List 혹은 문자열에서 많이 사용하였습니다. 하지만 <code class="language-plaintext highlighter-rouge">Numpy</code>에서도 비슷하게 사용할 수 있습니다.</p>
+
+<p>자세한 내용은 하기 코드를 보면서 익혀보도록 하겠습니다.</p>
+
+<h4 id="indexing">Indexing</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">ndarray의</span> <span class="n">각요소를</span> <span class="n">축력하려면</span> <span class="n">어떻게</span> <span class="n">해야하나요</span><span class="err">?</span>
+<span class="k">for</span> <span class="n">tmp</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">tmp</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'인덱스 : {}, 데이터 : {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">tmp</span><span class="p">))</span>
+<span class="s">'''
+인덱스 : 0, 데이터 : 10
+인덱스 : 1, 데이터 : 11
+인덱스 : 2, 데이터 : 12
+인덱스 : 3, 데이터 : 13
+인덱스 : 4, 데이터 : 14
+인덱스 : 5, 데이터 : 15
+인덱스 : 6, 데이터 : 16
+인덱스 : 7, 데이터 : 17
+인덱스 : 8, 데이터 : 18
+인덱스 : 9, 데이터 : 19
+'''</span>
+</code></pre></div></div>
+
+<h4 id="slicing">Slicing</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># 13
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span> <span class="c1"># slicing은 원본의 형태를 그대로 가져옴
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#[10 11 12 13 14 15 16 17 18]
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1">#[11 13 15 17] ,없이 표현
+</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">1</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">).</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="s">'''
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]
+ [13 14 15 16]]
+'''</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># 7
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># 7
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">,:])</span> <span class="c1">#[ 9 10 11 12]
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,:])</span>
+<span class="s">'''
+[[ 5  6  7  8]
+ [ 9 10 11 12]]
+'''</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,:</span><span class="mi">2</span><span class="p">])</span>
+<span class="s">'''
+[[ 5  6]
+ [ 9 10]]
+'''</span>
+</code></pre></div></div>
+
+<h3 id="boolean-indexing--fancy-indexing">Boolean indexing &amp; Fancy indexing</h3>
+
+<p>Numpy에는 특수한 indexing 방식이 있습니다.  <code class="language-plaintext highlighter-rouge">Boolean indexing </code>과 <code class="language-plaintext highlighter-rouge">Fancy indexing</code> 입니다.</p>
+
+<p>먼저 <code class="language-plaintext highlighter-rouge">Boolean indexing</code> 부터 알아보도록 하겠습니다.</p>
+
+<h4 id="boolean-indexing">Boolean indexing</h4>
+
+<p>True, False로 구성된 Boolean mask를 이용하여 지정하는 방식입니다. boolean mask의 True에 해당하는 index 만을 조회하는 방식으로도 활용이 가능합니다.  즉 boolean indexing은 ndarray의 각 요소의 선택여부를 결정할 수 있습니다.</p>
+
+<p>예제를 통하여 알아보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,(</span><span class="mi">5</span><span class="p">,))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="c1"># [5 8 9 5 0]
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># [1 0 1 1 0]
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># [False  True False False  True] =&gt; boolean mask
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">arr</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span> <span class="c1"># [8 0] =&gt; boolean indexing
+</span></code></pre></div></div>
+
+<h4 id="fancy-indexing">Fancy indexing</h4>
+
+<p>ndarray에 index배열을 전달하여 배열요소를 참조하는 방식입니다.</p>
+
+<p>예제를 통하여 알아보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">1</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">).</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># indexing : 10
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c1"># slicing : [6]
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># slicing : [[5]] =&gt; 차원 주의 !!
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># [ 2 10]
+</span><span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> 
+</code></pre></div></div>
+
+:ET
