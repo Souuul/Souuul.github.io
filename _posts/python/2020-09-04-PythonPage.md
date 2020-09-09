@@ -39,3 +39,5 @@ tags:
 <img src="/assets/image/python.jpg" alt="python" style="width:50px">[[Python]Numpy-2](/python/Numpy_2/) 
 
 <img src="/assets/image/python.jpg" alt="python" style="width:50px">[[Python]ndarray](/python/ndarray/) 
+
+<img src="/assets/image/python.jpg" alt="python" style="width:50px">[[Python]Pandas](/python/Pandas/) 

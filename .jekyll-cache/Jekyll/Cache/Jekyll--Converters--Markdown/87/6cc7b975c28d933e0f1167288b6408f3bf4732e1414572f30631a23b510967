@@ -1,0 +1,162 @@
+I"�)<h2 id="pandas">Pandas</h2>
+
+<p>오늘은 Pandas에 대하여 알아보겠습니다. Pandas는 ndarray(Numpy)를 기본 자료 구조로 사용하며 두개의 또 다른 자료구조<code class="language-plaintext highlighter-rouge">Series</code> 와 <code class="language-plaintext highlighter-rouge">DataFrame</code>를 이용합니다.</p>
+
+<p>​</p>
+
+<h3 id="series--dataframe">Series &amp; DataFrame</h3>
+
+<p>Series : 동일한 데이터 타입의 복수개의 성분으로 구성되는 자료구조 ( 1차원 )</p>
+
+<p>DataFrame : 엑셀에서 Table 과 같은 개념입니다. Database의 Table 이며 여러개의 Series로 구성됩니다. (2차원)</p>
+
+<p>먼저 Pandas를 설치하고 시작하도록 하겠습니다. 하기 명령어를 터미널에서 입력하여 설치합니다.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$conda</span><span class="w"> </span><span class="nf">install</span><span class="w"> </span><span class="nx">pandas</span><span class="w">
+</span></code></pre></div></div>
+
+<p>설치가 완료되었다면 예제를 통하여 차이점을 알아보도록 하겠습니다.</p>
+
+<h4 id="series">Series</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># ndarray
+</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">99</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="c1"># print(arr)
+</span>
+<span class="c1"># pandas의 Series부터 만들어 보아요!
+</span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">99</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="s">'''
+0    -1.0
+1     4.0
+2     5.0
+3    99.0
+'''</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">values</span><span class="p">)</span> <span class="c1"># [-1.  4.  5. 99.] ndarray
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">index</span><span class="p">)</span> <span class="c1"># RangeIndex(start=0, stop=4, step=1) RangeIndex객체로 만들어짐
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">dtype</span><span class="p">)</span> <span class="c1"># float64
+</span>
+<span class="c1"># Series 생성 시 index를 별도로 지정할 수 있어요! =&gt; list, ndarray 로 지정할 수 있어요!
+# 숫자 index는 기본으로 사용이 가능!!
+# s = pd.Series([-1, 8, 5, 10 ], dtype=np.float64, index=['c','b','a','k'])
+# print(s)
+# '''
+# c    -1.0
+# b     8.0
+# a     5.0
+# k    10.0
+# dtype: float64
+# '''
+# print(s[0]) # -1.0
+# print(s['c']) # -1.0
+</span>
+<span class="c1"># 그러면 만약 index를 우리가 새로 지정해서 사용할 때
+# 같은 index가 있으면 어떻게 되나요??
+</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span> <span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">float64</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">'c'</span><span class="p">,</span><span class="s">'b'</span><span class="p">,</span><span class="s">'c'</span><span class="p">,</span><span class="s">'k'</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s">'c'</span><span class="p">])</span>
+<span class="s">'''
+c   -1.0
+c    5.0
+dtype: float64
+'''</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s">'c'</span><span class="p">].</span><span class="n">values</span><span class="p">)</span> <span class="c1"># [-1.  5.]
+</span>
+<span class="c1"># Series에서 Slicing 도 가능할까요??
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># Series로 결과 return
+</span><span class="s">'''
+b    8.0
+c    5.0
+dtype: float64
+'''</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s">'b'</span><span class="p">:</span><span class="s">'k'</span><span class="p">])</span> <span class="c1"># 앞 뒤 범위 둘다 포함
+</span><span class="s">'''
+dtype: float64
+b     8.0
+c     5.0
+k    10.0
+dtype: float64
+'''</span>
+
+<span class="c1"># Boolean Indexing
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">s</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span> <span class="c1"># 짝수만 출력!!
+</span><span class="s">'''
+b     8.0
+k    10.0
+'''</span>
+
+<span class="c1"># Fancy Indexing
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+<span class="s">'''
+c    -1.0
+c     5.0
+k    10.0
+'''</span>
+
+<span class="c1"># Numpy에서 했던 여러가지 작업들이 그대로 사용될 수 있어요 !!
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="nb">sum</span><span class="p">())</span> <span class="c1"># 22.0
+</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="c1"># 새로운 데이터를 Series에 추가하려면 ??
+</span><span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># 5를 제외해도 6이 새로 생김
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="s">'''
+0      1
+1      2
+2      3
+3      4
+4    100
+6    100
+'''</span>
+
+<span class="c1"># Series에서 특정 index를 삭제하려면 ??
+</span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="s">'''
+0      1
+1      2
+3      4
+4    100
+6    100
+dtype: int64
+'''</span>
+
+<span class="c1"># python의 dictionary를 이용해서 Series를 만들 수 있어요 !!
+# dictionary의 key가 index가 되요!!
+</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">'서울'</span> <span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="s">'부산'</span> <span class="p">:</span> <span class="mi">2000</span> <span class="p">,</span> <span class="s">'제주'</span> <span class="p">:</span> <span class="mi">3000</span><span class="p">}</span>
+<span class="n">s</span> <span class="o">=</span><span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="s">'''
+서울    1000
+부산    2000
+제주    3000
+dtype: int64
+'''</span>
+
+<span class="n">s</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">'지역별 가격 데이터!!'</span> <span class="c1">#  Name: 지역별 가격 데이터!! // 시리즈의 이름을 부여가 가능
+</span><span class="n">s</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">'지역명'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="s">'''
+지역명
+서울    1000
+부산    2000
+제주    3000
+Name: 지역별 가격 데이터!!, dtype: int64
+'''</span>
+</code></pre></div></div>
+
+<h4 id="dataframe">DataFrame</h4>
+:ET

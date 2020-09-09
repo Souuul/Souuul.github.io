@@ -1,0 +1,316 @@
+I"a<h2 id="pandas">Pandas</h2>
+
+<p>오늘은 Pandas에 대하여 알아보겠습니다. Pandas는 ndarray(Numpy)를 기본 자료 구조로 사용하며 두 개의 또 다른 자료구조<code class="language-plaintext highlighter-rouge">Series</code> 와 <code class="language-plaintext highlighter-rouge">DataFrame</code>를 이용합니다.</p>
+
+<p>먼저 Pandas를 설치하고 시작하도록 하겠습니다. 하기 명령어를 터미널에서 입력하여 설치합니다.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$conda</span><span class="w"> </span><span class="nf">install</span><span class="w"> </span><span class="nx">pandas</span><span class="w">
+</span></code></pre></div></div>
+
+<p>설치가 완료되었다면 예제를 통하여 자세하게 알아보도록 하겠습니다.</p>
+
+<h3 id="series">Series</h3>
+
+<p>동일한 데이터 타입의 복수개의 성분으로 구성되는 자료구조 ( 1차원 )</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># ndarray
+</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">99</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="c1"># print(arr)
+</span>
+<span class="c1"># pandas의 Series부터 만들어 보아요!
+</span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">99</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="s">'''
+0    -1.0
+1     4.0
+2     5.0
+3    99.0
+'''</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">values</span><span class="p">)</span> <span class="c1"># [-1.  4.  5. 99.] ndarray
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">index</span><span class="p">)</span> <span class="c1"># RangeIndex(start=0, stop=4, step=1) RangeIndex객체로 만들어짐
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">dtype</span><span class="p">)</span> <span class="c1"># float64
+</span>
+<span class="c1"># Series 생성 시 index를 별도로 지정할 수 있어요! =&gt; list, ndarray 로 지정할 수 있어요!
+# 숫자 index는 기본으로 사용이 가능!!
+</span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span> <span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">float64</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">'c'</span><span class="p">,</span><span class="s">'b'</span><span class="p">,</span><span class="s">'a'</span><span class="p">,</span><span class="s">'k'</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="s">'''
+c    -1.0
+b     8.0
+a     5.0
+k    10.0
+dtype: float64
+'''</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># -1.0
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s">'c'</span><span class="p">])</span> <span class="c1"># -1.0
+</span>
+<span class="c1"># 그러면 만약 index를 우리가 새로 지정해서 사용할 때
+# 같은 index가 있으면 어떻게 되나요??
+</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span> <span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">float64</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">'c'</span><span class="p">,</span><span class="s">'b'</span><span class="p">,</span><span class="s">'c'</span><span class="p">,</span><span class="s">'k'</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s">'c'</span><span class="p">])</span>
+<span class="s">'''
+c   -1.0
+c    5.0
+dtype: float64
+'''</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s">'c'</span><span class="p">].</span><span class="n">values</span><span class="p">)</span> <span class="c1"># [-1.  5.]
+</span>
+<span class="c1"># Series에서 Slicing 도 가능할까요??
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># Series로 결과 return
+</span><span class="s">'''
+b    8.0
+c    5.0
+dtype: float64
+'''</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s">'b'</span><span class="p">:</span><span class="s">'k'</span><span class="p">])</span> <span class="c1"># 앞 뒤 범위 둘다 포함
+</span><span class="s">'''
+dtype: float64
+b     8.0
+c     5.0
+k    10.0
+dtype: float64
+'''</span>
+
+<span class="c1"># Boolean Indexing
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">s</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span> <span class="c1"># 짝수만 출력!!
+</span><span class="s">'''
+b     8.0
+k    10.0
+'''</span>
+
+<span class="c1"># Fancy Indexing
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+<span class="s">'''
+c    -1.0
+c     5.0
+k    10.0
+'''</span>
+
+<span class="c1"># Numpy에서 했던 여러가지 작업들이 그대로 사용될 수 있어요 !!
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="nb">sum</span><span class="p">())</span> <span class="c1"># 22.0
+</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="c1"># 새로운 데이터를 Series에 추가하려면 ??
+</span><span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># 5를 제외해도 6이 새로 생김
+</span><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="s">'''
+0      1
+1      2
+2      3
+3      4
+4    100
+6    100
+'''</span>
+
+<span class="c1"># Series에서 특정 index를 삭제하려면 ??
+</span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="s">'''
+0      1
+1      2
+3      4
+4    100
+6    100
+dtype: int64
+'''</span>
+
+<span class="c1"># python의 dictionary를 이용해서 Series를 만들 수 있어요 !!
+# dictionary의 key가 index가 되요!!
+</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">'서울'</span> <span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="s">'부산'</span> <span class="p">:</span> <span class="mi">2000</span> <span class="p">,</span> <span class="s">'제주'</span> <span class="p">:</span> <span class="mi">3000</span><span class="p">}</span>
+<span class="n">s</span> <span class="o">=</span><span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="s">'''
+서울    1000
+부산    2000
+제주    3000
+dtype: int64
+'''</span>
+
+<span class="n">s</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">'지역별 가격 데이터!!'</span> <span class="c1">#  Name: 지역별 가격 데이터!! // 시리즈의 이름을 부여가 가능
+</span><span class="n">s</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">'지역명'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="s">'''
+지역명
+서울    1000
+부산    2000
+제주    3000
+Name: 지역별 가격 데이터!!, dtype: int64
+'''</span>
+</code></pre></div></div>
+
+<h3 id="dataframe">DataFrame</h3>
+
+<p>엑셀에서 Table 과 같은 개념입니다. Database의 Table 이며 여러개의 Series로 구성됩니다. (2차원)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Pandas DataFrame 생성 !!
+# python의 dictionary를 가지고 만들어요!!
+</span>
+<span class="c1"># dictionary 로 DataFrame을 생성할때 데이터의 개수가 맞지 않으면 Error발생
+# dictionary의 key가 DataFrame의 column으로 들어가게 됩니다.
+# DataFrame은 Series의 집합으로 구성됩니다!! (각각의 column이 Series)
+</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="c1"># dictionary
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">'names'</span> <span class="p">:</span> <span class="p">[</span><span class="s">'홍길동'</span><span class="p">,</span> <span class="s">'아이유'</span><span class="p">,</span> <span class="s">'김연아'</span><span class="p">,</span> <span class="s">'강감찬'</span><span class="p">,</span> <span class="s">'이순신'</span><span class="p">],</span> 
+        <span class="s">'year'</span> <span class="p">:</span> <span class="p">[</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2017</span><span class="p">],</span>
+        <span class="s">'points'</span> <span class="p">:</span> <span class="p">[</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]</span>
+       <span class="p">}</span>
+
+<span class="c1"># DataFrame을 생성
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Data Frame 을 출력할떄는 display()를 이용해서 출력하느 것이 좋아요!
+</span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="s">'''
+names	year	points
+0	홍길동	2015	3.5
+1	아이유	2019	1.5
+2	김연아	2020	2.0
+3	강감찬	2013	3.4
+4	이순신	2017	4.0
+'''</span>
+
+<span class="c1"># 기억해야 하는 속성을 알아보아요!!
+</span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># tuple 로 표현되구요! (5,3)
+</span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">size</span><span class="p">)</span> <span class="c1"># 15 모든 요소의 개수
+</span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">ndim</span><span class="p">)</span> <span class="c1"># 차원
+</span>
+
+<span class="c1"># DataFrame의 index, values, columns
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="c1"># dictionary
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">'names'</span> <span class="p">:</span> <span class="p">[</span><span class="s">'홍길동'</span><span class="p">,</span> <span class="s">'아이유'</span><span class="p">,</span> <span class="s">'김연아'</span><span class="p">,</span> <span class="s">'강감찬'</span><span class="p">,</span> <span class="s">'이순신'</span><span class="p">],</span> 
+        <span class="s">'year'</span> <span class="p">:</span> <span class="p">[</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2017</span><span class="p">],</span>
+        <span class="s">'points'</span> <span class="p">:</span> <span class="p">[</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]</span>
+       <span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">index</span><span class="p">)</span> <span class="c1"># RangeIndex(start=0, stop=5, step=1)
+</span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">)</span> <span class="c1"># Index(['names', 'year', 'points'], dtype='object')
+</span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">values</span><span class="p">)</span> <span class="c1"># 2차원 ndarray
+</span><span class="s">'''
+[['홍길동' 2015 3.5]
+ ['아이유' 2019 1.5]
+ ['김연아' 2020 2.0]
+ ['강감찬' 2013 3.4]
+ ['이순신' 2017 4.0]]
+'''</span>
+
+<span class="n">df</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">'학번'</span>
+<span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">'학생정보'</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="s">'''
+학생정보	names	year	points
+학번			
+0	홍길동	2015	3.5
+1	아이유	2019	1.5
+2	김연아	2020	2.0
+3	강감찬	2013	3.4
+4	이순신	2017	4.0
+'''</span>
+
+</code></pre></div></div>
+
+<h4 id="dataframe-을-생성하는-다양한-방법---1-csv-파일을-이용해서-dataframe을-생성">DataFrame 을 생성하는 다양한 방법 - 1. CSV 파일을 이용해서 DataFrame을 생성</h4>
+
+<p>CSV 파일을 하나 만들어서 DataFrame을 생성해 보아요!! <a href="/assets/download_file/student.csv">Student.csv</a>를 다운 받아서 사용해보겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./data/student.csv'</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="dataframe을-생성하는-다양한-방법--2-database를-이용해서-dataframe을-생성">DataFrame을 생성하는 다양한 방법 -2. Database를 이용해서 DataFrame을 생성</h4>
+
+<p>이번시간에는 MySQL을 사용하여 데이터를 구축한 후 pandas의 DataFrame으로 읽어오도록 하겠습니다.</p>
+
+<p>SQL 파일은 <a href="/assets/download_file/student.csv">_BookTableDump.sql</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 여러가지 DBMS제품들이 있어요
+# 데이터베이스??
+# 데이터베이스는 일반적으로 정제된, 연관성이 있는 자료의 집합.
+#우리는 이런 데이터베이스를 활용하고 싶어요! CS분야에서는 데이터베이스가 파일에 저장되어 있어요
+#이런 데이터베이스를 다루기 위한 프로그램이 필요해요!
+# 이런 프로그램들을 DBMS(DataBase Management System) 라고해요!
+# Oracle, Cybase, DB2, Informix, MySQL, SQLite, etc...
+# MySQL을 가지고 데이터베이스를 구축한 후 이 데이터를 pandas의 DataFrame으로 가져올꺼에요!
+# MySQL이라는 DBMS로 데이터베이스를 생성해서 데이터베이스를 구축해요!!
+# 그 안에 있는 데이터를 추축해서 DataFrame으로 생성!
+# 사용할 MySQL버전은 5.6 버전을 사용할 꺼에요!
+</span>
+<span class="c1"># 데이터를 정제하고 전처리를 하는데 pandas가 이용될 꺼에요!!
+# 1. MySQL 5.6버전을 다운로드한 후 바탕화면에 압축을 풀어요! 
+# 2. bin폴더로 이동한 후./mysqld를 실행해서 MYSQL DMBS Sever를 시작해요!
+# 3. MySQL Server를 실행시켰기 때문에 MySQL console에 들어갈 수 있어요!
+# 4. MySQL Server를 정상적으로 중지하려면 새로운 command창을 띄워요! 다시 해당 bin 폴더로 이동
+# ./mysqladmin -u root shutdown
+# 5. MySQL Server를 다시 기동시킨 후
+# 6. MySQL 시스템에 접속해요! =&gt; command창을 열어서 다음의 명령어를 ./mysql -u root
+# 7. 새로운 사용자를 생성해요!!
+#     =&gt; create user data identified by "data";
+# 8. 새로운 사용자를 하나 더 생성해야 합니다.
+#     =&gt; create user data@localhost identified by "data";
+# 9. 데이터베이스를 생성해야 해요!!
+#     =&gt; create database library;
+# 10. 생성한 데이터베이스(library)에 대한 사용권한을 새롭게 생성한 data 사용자에게 부여
+#     =&gt; grant all privileges on library.* to data;
+#     =&gt; grant all privileges on library.* to data@localhost;
+# 11. 지금까지 작업한 권한부여작업을 flush
+#     =&gt; flush privileges;
+# 12. 작업이 완료되었으니 console 을 종료
+#     =&gt; exit;
+# 13. 제공된 파일을 이용해서 실제 사용할 데이터베이스를 구축해보아요!!
+# 14. 파일을 복사한 다음 다음의 명령어를 도스창에서 실행!
+# mysql -u data -p library &lt; _BookTableDump.sql
+# mysql -u '유저명' -p '라이브러리명' &lt; _BookTableDump.sql
+</span>
+
+
+<span class="c1">## 데이터 베이스 구축이 끝났으니... pandas로 데이터베이스에 접속해서 데이터를 가져다가 DataFrame으로 만들어 보아요!
+# 그런데 특별한 기능을 사용하고 있어요. python으로 MySQL database를 사용하는 기능을 하려고해요
+# 이 기능을 하기위한 package(module)이 필요해요! 이 모듈을 설치해야 해요! &gt; pip install pymysql
+</span>
+<span class="kn">import</span> <span class="nn">pymysql.cursors</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="c1"># pymysql이라는 module을 이용해서 데이터 베이스에 연결
+</span>
+
+<span class="c1"># mysql -u data -p library &lt; _BookTableDump.sql
+# mysql -u '유저명' -p '라이브러리명' &lt; _BookTableDump.sql
+</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span> <span class="s">'localhost'</span><span class="p">,</span>
+                      <span class="n">user</span> <span class="o">=</span> <span class="s">'data'</span><span class="p">,</span> <span class="c1"># '유저명'
+</span>                      <span class="n">password</span> <span class="o">=</span> <span class="s">'data'</span><span class="p">,</span>
+                      <span class="n">db</span><span class="o">=</span><span class="s">'library'</span><span class="p">,</span> <span class="c1"># '라이브러리명'
+</span>                      <span class="n">charset</span><span class="o">=</span><span class="s">'utf8'</span><span class="p">)</span>
+
+<span class="c1"># 데이터베이스에 접속되면 SQL문을 실행시켜서 Database로 부터
+# 데이터를 가져온 후 이놈을 DataFrame으로 생성
+</span>
+<span class="n">sql</span> <span class="o">=</span> <span class="s">'select btitle, bauthor, bprice from book'</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">con</span> <span class="o">=</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></div>
+
+:ET
