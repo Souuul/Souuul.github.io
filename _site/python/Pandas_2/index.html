@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Git Hub] 가상환경 - Sol Tech</title>
-<meta name="description" content="파이썬 가상 환경">
+<!-- begin _includes/seo.html --><title>[Python] Pandas-2 - Sol Tech</title>
+<meta name="description" content="Pandas - 2">
 
 
   <meta name="author" content="Sol Han">
@@ -19,32 +19,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sol Tech">
-<meta property="og:title" content="[Git Hub] 가상환경">
-<meta property="og:url" content="http://localhost:4000/git/virtualenvironmnet/">
+<meta property="og:title" content="[Python] Pandas-2">
+<meta property="og:url" content="http://localhost:4000/python/Pandas_2/">
 
 
-  <meta property="og:description" content="파이썬 가상 환경">
-
-
-
-  <meta property="og:image" content="http://localhost:4000/assets/image/Git.png">
+  <meta property="og:description" content="Pandas - 2">
 
 
 
-
-
-  <meta property="article:published_time" content="2020-08-21T00:00:00+09:00">
+  <meta property="og:image" content="http://localhost:4000/assets/image/1200px-Pandas_logo.svg.png">
 
 
 
 
 
-  
+  <meta property="article:published_time" content="2020-09-10T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/git/virtualenvironmnet/">
+
+<link rel="canonical" href="http://localhost:4000/python/Pandas_2/">
 
 
 
@@ -301,15 +301,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Git Hub] 가상환경">
-    <meta itemprop="description" content="파이썬 가상 환경">
-    <meta itemprop="datePublished" content="2020-08-21T00:00:00+09:00">
+    <meta itemprop="headline" content="[Python] Pandas-2">
+    <meta itemprop="description" content="Pandas - 2">
+    <meta itemprop="datePublished" content="2020-09-10T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[Git Hub] 가상환경
+          <h1 id="page-title" class="page__title" itemprop="headline">[Python] Pandas-2
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -326,51 +326,45 @@
 
       <section class="page__content" itemprop="text">
         
-        <h1 id="파이썬-가상-환경">파이썬 가상 환경</h1>
+        <h2 id="pandas---2">Pandas - 2</h2>
 
-<h2 id="사용법">사용법</h2>
+<p>Pandas - 1에서는 전반적인 Pandas의 활용에 대하여 알아보았습니다. 이번시간에는 본격적으로 좀더 자세하게 알아보도록 하겠습니다.</p>
 
-<ul>
-  <li>
-    <p>가상환경 생성</p>
+<p>Database안에 Table을 사용하는 방법이 크게 2가지가 있습니다.</p>
 
-    <ul>
-      <li>
-        <p><code>venv</code> 라는 이름의 가상환경을 생성</p>
+<ol>
+  <li>Django에서 사용했던 ORM방식 ( Model 을 이용해서 Table을 사용하는 방법)
+ =&gt; SQL이라고 불리는 Database 언어를 몰라도 Table을 사용할 수 있습니다.</li>
+  <li>일반적으로 SQL 구문을 이용해서 Database안의 Table을 사용합니다.
+ =&gt; SQL 구문을 알아야 table에서 내가 원하는 데이터를 추출할 수 있습니다.</li>
+</ol>
 
-        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="p">{</span><span class="n">가상환경이름</span><span class="p">}</span>
-<span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">venv</span> 
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p>가상환경을 생성하면 해당 디렉토리에 <code>venv</code> 폴터가 생성된다.</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>가상환경 실행</p>
+<p>그렇다면 간단하게 SQL 구문을 알아보도록 하겠습니다.</p>
 
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">source</span> <span class="n">venv</span><span class="o">/</span><span class="n">Scripts</span><span class="o">/</span><span class="n">activate</span>			<span class="c1"># git bash용
-</span><span class="err">$</span> <span class="n">source</span> <span class="n">venv</span><span class="o">/</span><span class="n">Scripts</span><span class="o">/</span><span class="n">activate</span><span class="p">.</span><span class="n">bat</span>	<span class="c1"># cmd용
-</span><span class="err">$</span> <span class="n">source</span> <span class="n">venv</span><span class="o">/</span><span class="n">Scripts</span><span class="o">/</span><span class="n">activate</span><span class="p">.</span><span class="n">psl</span>	<span class="c1"># 파워쉘 용
-</span><span class="p">(</span><span class="n">venv</span><span class="p">)</span> <span class="err">$</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>가상환경을 실행시킨 상태에서 파이썬 패키지(pip)를 설치하게 되면 venv 폴더의 Lib폴더에 설치를 하게 된다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pymysql.cursors</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
-    <ul>
-      <li>해당프로젝트를 위한 패키지들을 따로 관리할 수 있다.</li>
-    </ul>
-  </li>
-</ul>
+<span class="c1"># pymysql이라는 module을 이용해서 데이터 베이스에 연결
+</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span> <span class="s">'localhost'</span><span class="p">,</span>
+                      <span class="n">user</span> <span class="o">=</span> <span class="s">'data'</span><span class="p">,</span>
+                      <span class="n">password</span> <span class="o">=</span> <span class="s">'data'</span><span class="p">,</span>
+                      <span class="n">db</span><span class="o">=</span><span class="s">'library'</span><span class="p">,</span>
+                      <span class="n">charset</span><span class="o">=</span><span class="s">'utf8'</span><span class="p">)</span>
 
-<h2 id="pip">pip</h2>
+<span class="c1"># 데이터베이스에 접속되면 SQL문을 실행시켜서 Database로 부터
+# 데이터를 가져온 후 이놈을 DataFrame으로 생성
+# sql은 대소문자를 구분하지 않음
+# WHERE 조건
+</span>
+<span class="c1"># sql = 'SELECT btitle, bprice FROM book WHERE bprice &gt;30000'
+</span>
+<span class="c1"># 책 제목에 특정 키워드가 들어가 있는 책들만 골라오고 싶어요! (패턴매칭)
+# sql = 'SELECT btitle, bprice FROM book WHERE btitle like "%java%"'
+</span><span class="n">sql</span> <span class="o">=</span> <span class="s">'SELECT btitle, bprice FROM book WHERE btitle like "%여행%"'</span>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># requirements.txt에 설치된 패키지 기록
-$ pip freeze &gt; requirements.txt
-# requirements.txt에 설치된 패키지들을 설치
-$ pip install -r requirements.txt
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">con</span> <span class="o">=</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div></div>
 
 
@@ -393,15 +387,11 @@ $ pip install -r requirements.txt
     
       
       
-      <a href="/tags/#github" class="page__taxonomy-item" rel="tag">Github</a><span class="sep">, </span>
+      <a href="/tags/#json" class="page__taxonomy-item" rel="tag">Json</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#git" class="page__taxonomy-item" rel="tag">Git</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#python" class="page__taxonomy-item" rel="tag">Python</a>
+      <a href="/tags/#pandas" class="page__taxonomy-item" rel="tag">Pandas</a>
     
     </span>
   </p>
@@ -422,14 +412,14 @@ $ pip install -r requirements.txt
     
       
       
-      <a href="/categories/#git" class="page__taxonomy-item" rel="tag">Git</a>
+      <a href="/categories/#python" class="page__taxonomy-item" rel="tag">Python</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-08-21T00:00:00+09:00">August 21, 2020</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-09-10T00:00:00+09:00">September 10, 2020</time></p>
 
 
       </footer>
@@ -439,23 +429,22 @@ $ pip install -r requirements.txt
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BGit+Hub%5D+%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%20http%3A%2F%2Flocalhost%3A4000%2Fgit%2Fvirtualenvironmnet%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BPython%5D+Pandas-2%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2FPandas_2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fgit%2Fvirtualenvironmnet%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2FPandas_2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fgit%2Fvirtualenvironmnet%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2FPandas_2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/git/gitignore/" class="pagination--pager" title="[Git Hub] 가상환경
+      <a href="/python/Pandas/" class="pagination--pager" title="[Python] Pandas-1
 ">Previous</a>
     
     
-      <a href="/api/kakao_api_selfmessage/" class="pagination--pager" title="[Kakao API] 나에게 메세지보내기
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -469,39 +458,6 @@ $ pip install -r requirements.txt
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/1200px-Pandas_logo.svg.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/python/Pandas_2/" rel="permalink">[Python] Pandas-2
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  less than 1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Pandas - 2
-</p>
-  </article>
-</div>
-
         
           
 
@@ -559,7 +515,7 @@ $ pip install -r requirements.txt
 
 
 
-  9 minute read
+  8 minute read
 
 </p>
     
@@ -592,11 +548,47 @@ $ pip install -r requirements.txt
 
 
 
-  7 minute read
+  6 minute read
 
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">ndarray
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/python.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/PythonPage/" rel="permalink">Python Page
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+	
+
+파이썬 기본편
 </p>
   </article>
 </div>
@@ -675,8 +667,8 @@ $ pip install -r requirements.txt
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/git/virtualenvironmnet/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/git/virtualenvironmnet"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/python/Pandas_2/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/python/Pandas_2"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

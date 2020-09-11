@@ -40,4 +40,7 @@ tags:
 
 <img src="/assets/image/python.jpg" alt="python" style="width:50px">[[Python]ndarray](/python/ndarray/) 
 
-<img src="/assets/image/python.jpg" alt="python" style="width:50px">[[Python]Pandas](/python/Pandas/) 
+<img src="/assets/image/python.jpg" alt="python" style="width:50px">[[Python]Pandas-1](/python/Pandas/) 
+
+<img src="/assets/image/python.jpg" alt="python" style="width:50px">[[Python]Pandas-2](/python/Pandas_2/) 
+

@@ -1,4 +1,4 @@
-I"�<figure>
+I"$<figure>
 	<img src="/assets/image/python.jpg" alt="python" style="width:500px" />
 </figure>
 <h2 id="파이썬-기본편">파이썬 기본편</h2>
@@ -29,5 +29,8 @@
 
 <p><img src="/assets/image/python.jpg" alt="python" style="width:50px" /><a href="/python/ndarray/">[Python]ndarray</a></p>
 
-<p><img src="/assets/image/python.jpg" alt="python" style="width:50px" /><a href="/python/Pandas/">[Python]Pandas</a></p>
+<p><img src="/assets/image/python.jpg" alt="python" style="width:50px" /><a href="/python/Pandas/">[Python]Pandas-1</a></p>
+
+<p><img src="/assets/image/python.jpg" alt="python" style="width:50px" /><a href="/python/Pandas_2/">[Python]Pandas-2</a></p>
+
 :ET
