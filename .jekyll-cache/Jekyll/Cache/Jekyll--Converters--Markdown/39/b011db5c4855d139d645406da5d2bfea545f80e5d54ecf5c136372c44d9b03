@@ -1,4 +1,4 @@
-I"�<h2 id="pandas---2">Pandas - 2</h2>
+I"�<h2 id="pandas---2">Pandas - 2</h2>
 
 <p>Pandas - 1에서는 전반적인 Pandas의 활용에 대하여 알아보았습니다. 이번시간에는 본격적으로 좀더 자세하게 알아보도록 하겠습니다.</p>
 
@@ -25,7 +25,7 @@
                       <span class="n">charset</span><span class="o">=</span><span class="s">'utf8'</span><span class="p">)</span>
 
 <span class="c1"># 데이터베이스에 접속되면 SQL문을 실행시켜서 Database로 부터
-# 데이터를 가져온 후 이놈을 DataFrame으로 생성
+# 데이터를 가져온 후 DataFrame으로 생성
 # sql은 대소문자를 구분하지 않음
 # WHERE 조건
 </span>
@@ -39,4 +39,10 @@
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div></div>
 
+<p align="center"><img src="../../assets/image/2020-09-13_22-54-13.png" alt="2020-09-13_22-54-13" style="zoom:50%;" /></p>
+
+<p>이렇게 Database나 CSV파일로부터 데이터를 읽어들여서 DataFrame으로 만들었어요!!
+이렇게 만든 DataFrame을 JSON으로 저장할 수 있어요!!
+JSON 파일로 저장할 때 4가지 방식이 있어요!!
+Database안의 book table에서 원하는 내용의 데이터를 가져온 후 DataFrame으로 만들어서 이 DataFrame을 JSON 파일로 저장해 보아요!</p>
 :ET
