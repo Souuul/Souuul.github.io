@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-15T14:03:11+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Python] Pandas-2</title><link href="http://localhost:4000/python/Pandas_2/" rel="alternate" type="text/html" title="[Python] Pandas-2" /><published>2020-09-10T00:00:00+09:00</published><updated>2020-09-10T00:00:00+09:00</updated><id>http://localhost:4000/python/Pandas_2</id><content type="html" xml:base="http://localhost:4000/python/Pandas_2/">&lt;h2 id=&quot;pandas---2&quot;&gt;Pandas - 2&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-20T23:50:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Algorithm] 계산복잡도</title><link href="http://localhost:4000/algorithm/BigO/" rel="alternate" type="text/html" title="[Algorithm] 계산복잡도" /><published>2020-09-20T00:00:00+09:00</published><updated>2020-09-20T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/BigO</id><content type="html" xml:base="http://localhost:4000/algorithm/BigO/">&lt;h2 id=&quot;계산-복잡도&quot;&gt;계산 복잡도&lt;/h2&gt;
+
+&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;알고리즘의 복잡도&lt;/code&gt;에 대하여 알아보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;알고리즘을 공부하는 이유는 좀더 빠르고 효율적이게 하기 위함입니다. 이번시간에는 저희가 짠 코드가 얼마만큼의 복잡도를 가지고 있는지 빅 오 개념을 배워보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;간단한 예제를 보도록 하겠습니다. 1부터 n까지의 합을 구하는 코드를 for 문을 이용하여 구해보도록 하겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;s는 n번 반복하여 1부터 n까지의 합을 구할 수 있습니다. n이 커질수록 점점 계산의 복잡도가 커지게 됩니다. 이떄 알고리즘의 계산 복잡도를 O(n)이라고 표현합니다. 만약 1부터 2n 까지의 합을 구한다면 복잡도는 O(2n) 만큼으로 증가하게됩니다.&lt;/p&gt;
+
+&lt;p&gt;하지만 조금이상하죠?? 저희는 고등교육에서 수열의 합이라는 것을 통해 반복하지 않아도 1부터 n까지의 수를 간단한 공식을 통하여 구할수 있었습니다. 바로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n(n+1) / 2&lt;/code&gt; 를 통해서 바로 값을 구할 수 있었습니다. 이때의 계산복잡도는 O(1)입니다. n의 크기와 상관없이 덧셈, 곱셈, 나눗셈으로 &lt;u&gt;&lt;i&gt;한번에&lt;/i&gt;&lt;/u&gt;  표현할 수 있기때문에 O(3)이 아닌 O(1)로 표현하는 것입니다. 이렇게 최적화된 알고리즘을 사용하거나 수학을 이용하면 좀더 효율적으로 프로그래밍을 할 수 있습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Algorithm" /><category term="complexity" /><summary type="html">계산 복잡도</summary></entry><entry><title type="html">[Python] Pandas-2</title><link href="http://localhost:4000/python/Pandas_2/" rel="alternate" type="text/html" title="[Python] Pandas-2" /><published>2020-09-10T00:00:00+09:00</published><updated>2020-09-10T00:00:00+09:00</updated><id>http://localhost:4000/python/Pandas_2</id><content type="html" xml:base="http://localhost:4000/python/Pandas_2/">&lt;h2 id=&quot;pandas---2&quot;&gt;Pandas - 2&lt;/h2&gt;
 
 &lt;p&gt;Pandas - 1에서는 전반적인 Pandas의 활용에 대하여 알아보았습니다. 이번시간에는 본격적으로 좀더 자세하게 알아보도록 하겠습니다.&lt;/p&gt;
 
@@ -2267,117 +2284,4 @@ start 부터 시작해서 stop의 범위에서 num개의 숫자를
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sum_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;오늘은  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Greedy Algorithm&lt;/code&gt;에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Algorithm" /><category term="Greedy" /><summary type="html">Greedy Algorithm</summary></entry><entry><title type="html">[Kakao API] 나에게 메세지보내기</title><link href="http://localhost:4000/api/kakao_api_selfmessage/" rel="alternate" type="text/html" title="[Kakao API] 나에게 메세지보내기" /><published>2020-08-22T00:00:00+09:00</published><updated>2020-08-22T00:00:00+09:00</updated><id>http://localhost:4000/api/kakao_api_selfmessage</id><content type="html" xml:base="http://localhost:4000/api/kakao_api_selfmessage/">&lt;h2 id=&quot;kakao-api-self-message&quot;&gt;Kakao API [Self message]&lt;/h2&gt;
-
-&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;카카오톡 나에게 메세지보내기&lt;/code&gt;에 대하여 알아보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;토큰을 받지 못하신 분은 &lt;a href=&quot;/api/kakao_api_usertoken/&quot;&gt;[Kakao API] 사용자토큰&lt;/a&gt; , &lt;a href=&quot;/api/kakao_api_refresh-token/&quot;&gt;[Kakao API] Refresh token&lt;/a&gt; 을 참고하셔서 토큰을 선행해서 받아주세요.&lt;/p&gt;
-
-&lt;h3&gt;카카오톡 나에게 메세지 보내기&lt;/h3&gt;
-
-&lt;p&gt;이번에도 여러분들이 직접 카카오에 있는 사용법을 보고 사용할 수 있도록 설명하겠습니다. 메세지를 보내기 위해 &lt;a href=&quot;https://developers.kakao.com/docs/latest/ko/message/rest-api#send-me&quot;&gt;나에게 보내기&lt;/a&gt; 항목을 참고합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/image/2020-08-22_21-07-16.png&quot; alt=&quot;2020-08-22_21-07-16&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;request&quot;&gt;Request&lt;/h4&gt;
-
-&lt;div class=&quot;language-http highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;POST&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;/v2/api/talk/memo/default/send&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;HTTP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1.1&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;Host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;kapi.kakao.com&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;Authorization&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Bearer {USER_ACCESS_TOKEN}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;parameter&quot;&gt;Parameter&lt;/h5&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Name&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Type&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Description&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Required&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;template_object&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JSON Object&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;메시지 구성 요소를 담은 객체(Object) &lt;a href=&quot;https://developers.kakao.com/docs/latest/ko/message/message-template#feed&quot;&gt;피드&lt;/a&gt;, &lt;a href=&quot;https://developers.kakao.com/docs/latest/ko/message/message-template#list&quot;&gt;리스트&lt;/a&gt;, &lt;a href=&quot;https://developers.kakao.com/docs/latest/ko/message/message-template#location&quot;&gt;위치&lt;/a&gt;, &lt;a href=&quot;https://developers.kakao.com/docs/latest/ko/message/message-template#commerce&quot;&gt;커머스&lt;/a&gt;, &lt;a href=&quot;https://developers.kakao.com/docs/latest/ko/message/message-template#text&quot;&gt;텍스트&lt;/a&gt; 중 하나&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;O&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&quot;response&quot;&gt;Response&lt;/h4&gt;
-
-&lt;h5 id=&quot;key&quot;&gt;Key&lt;/h5&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Name&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Type&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;result_code&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Integer&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;전송 성공 시 0&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&quot;sample&quot;&gt;Sample&lt;/h4&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;POST&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://kapi.kakao.com/v2/api/talk/memo/default/send&quot;&lt;/span&gt; \
-    &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;H&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Authorization: Bearer {USER_ACCESS_TOKEN}&quot;&lt;/span&gt; \
-    &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'template_object={
-        &quot;object_type&quot;: &quot;text&quot;,
-        &quot;text&quot;: &quot;텍스트 영역입니다. 최대 200자 표시 가능합니다.&quot;,
-        &quot;link&quot;: {
-            &quot;web_url&quot;: &quot;https://developers.kakao.com&quot;,
-            &quot;mobile_web_url&quot;: &quot;https://developers.kakao.com&quot;
-        },
-        &quot;button_title&quot;: &quot;바로 확인&quot;
-    }'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;오늘은 텍스트를 보내보도록 하겠습니다. parameter에 텍스트를 클릭하여 하여도 가능하지만 아주쉽게 샘플코드를 복사하여 코드를 작성해보겠습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;static/my_squat/kakao_token.json&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;tokens&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://kapi.kakao.com/v2/api/talk/memo/default/send&quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Authorization&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Bearer &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tokens&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'access_token'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;template_object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;s&quot;&gt;'object_type'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'text'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-		&lt;span class=&quot;s&quot;&gt;'text'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'텍스트 영역입니다. 최대 200자 표시 가능합니다.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-		&lt;span class=&quot;s&quot;&gt;'link'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-				&lt;span class=&quot;s&quot;&gt;'web_url'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://daum.net'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;'button_title'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'바로 확인'&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'template_object'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dumps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;template_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# return request('post', url, data=data, json=json, **kwargs)
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;샘플을 보고 작성을 하고 동일하게 작성을 해보았습니다.&lt;/p&gt;
-
-&lt;h5 id=&quot;코드설명&quot;&gt;코드설명&lt;/h5&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'template_object'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dumps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;template_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Data 는&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; template_object&lt;/code&gt;이름으로 json 파일 형식으로 url을 통해 요청을 보냅니다.&lt;/p&gt;
-
-&lt;p&gt;요청이 성공적으로 전송이 되면  &lt;code&gt;print(response.status_code)&lt;/code&gt; 코드에서 200이라는 메세지와 함께 카카오톡 메세지를 확인할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/image/2020-08-22_21-37-01.png&quot; alt=&quot;2020-08-22_21-37-01&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;카카오톡 나에게 보내기&lt;/code&gt;를 해보았습니다. 궁금하시거나 안되는 기능이 있으면 언제든 댓글을 남겨주세요!&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="API" /><category term="Kakao" /><category term="API" /><category term="Self message" /><summary type="html">Kakao API [Self message]</summary></entry></feed>
+&lt;p&gt;오늘은  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Greedy Algorithm&lt;/code&gt;에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Algorithm" /><category term="Greedy" /><summary type="html">Greedy Algorithm</summary></entry></feed>

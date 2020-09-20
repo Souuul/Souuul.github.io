@@ -1,4 +1,4 @@
-I"�<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
+I"��<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
 
 <h2>Pages</h2>
 
@@ -479,6 +479,30 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/algorithm/BigO/" rel="permalink">[Algorithm] 계산복잡도
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">계산 복잡도
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/python/Pandas_2/" rel="permalink">[Python] Pandas-2
 </a>
       
@@ -489,7 +513,7 @@
 
 
 
-  1 minute read
+  2 minute read
 
 </p>
     
