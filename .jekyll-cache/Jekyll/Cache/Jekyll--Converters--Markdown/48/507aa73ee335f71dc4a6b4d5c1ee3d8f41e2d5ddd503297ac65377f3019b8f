@@ -1,0 +1,183 @@
+I"�3<h2 id="machine-learning">Machine Learning</h2>
+
+<p>Machine Learning 은 학습방법에 따라서 크게 4가지로 분류합니다.</p>
+<ol>
+  <li>
+    <p>지도학습(Supervised Learning)</p>
+  </li>
+  <li>
+    <p>비지도학습(Unsupervised Learning)</p>
+  </li>
+  <li>
+    <p>준지도학습(SemiSupervised Learning)</p>
+  </li>
+  <li>
+    <p>강화학습(Reinforcement Learning)</p>
+  </li>
+</ol>
+
+<p>간단한 이론부터 먼저 알아보고 세부적으로 알아보도록 하겠습니다.</p>
+
+<h3 id="지도학습-supervised-learning">지도학습 (Supervised Learning)</h3>
+
+<p>지도학습은 학습에 사용되는 데이터와 그 정답(label)을 이용해서 데이터의 특성과 분포를 학습하고 미래결과를 예측하는 방법</p>
+
+<ol>
+  <li>
+    <p>Regression(회귀)</p>
+
+    <ul>
+      <li>
+        <p>학습된 결과를 바탕은 연속적인 숫자값을 예측</p>
+      </li>
+      <li>
+        <p>Linear Regression(선형회귀)  : ‘얼마나’를 예측하는 방법</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Classification(분류)</p>
+
+    <ul>
+      <li>binary classification (둘 중 하나를 예측)</li>
+      <li>multinomial classification (여러 개 중 하나를 예측)</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="비지도학습-unsuperviese-learning">비지도학습 (unsuperviese learning)</h3>
+
+<p>비지도학습은 학습에 사용되는 데이터가 label 이 없는 데이터가 사용됩니다. 이 부분이 지도학습과 가장 큰 차이입니다.
+비지도학습은 정답(label)이 없는 데이터만을 이용하기 떄문에 입력값 자체가 가지고 있는 특성과 분포를 이용해서 Grouping하는 <code class="language-plaintext highlighter-rouge">Clustering(군집화)</code>하는데 주로 사용합니다.</p>
+
+<h5 id="classification분류-vs-clustering군집화">Classification(분류) VS clustering(군집화)</h5>
+
+<ol>
+  <li>
+    <p>Clustering(군집화) : 비슷한 데이터끼리 Grouping 해주는 것</p>
+  </li>
+  <li>
+    <p>Classification(분류) : 어떤 분류에 속하는가에 대한 정답을 예측.</p>
+  </li>
+</ol>
+
+<h3 id="준지도학습-semisupervised-learning">준지도학습 (SemiSupervised Learning)</h3>
+
+<p>지도학습 + 비지도학습 데이터의 일부분만 label 이 제공되는 경우!!</p>
+
+<h3 id="강화학습-reinforcement-learning">강화학습 (Reinforcement Learning)</h3>
+
+<p>위에서 말한 3가지 방식과는 완전히 다른 학습 방법 Agent, Environment, Action, Reward 개념을 이용
+게임쪽에서 많이 사용되는 학습방법 google 알파고의 메인 알고리즘이 바로 이 강화학습.</p>
+
+<p>많은 학습방법이 있지만 이번시간에는 지도학습에 대하여 알아보도록 하겠습니다. 먼저 실습에 앞서 미분에 대하여 간략하게 정리하고 넘어가도록 하겠습니다.</p>
+
+<h3 id="미분">미분</h3>
+
+<p>어떤 함수의 정의역 속 각점에서 독립변수의 값의 변화량과 함수 값의 변화량 비율의 극한 혹은 극한의 집합. 치역으로 가지는 새로운 함수입니다.</p>
+
+<p>미분에는 크게 두가지 방식이 있습니다. 해석미분과 수치미분이 있습니다.</p>
+
+<h4 id="해석-미분-anaytical-differentiation">해석 미분 (Anaytical differentiation)</h4>
+
+<p>종이와 펜을 가지고 논리적인 전개로 미분을 수행하는 해석미분</p>
+
+<h4 id="수치미분">수치미분</h4>
+
+<p>해석미분으로 문제를 해결할 수 없을때 수치적 근사값을 이용해서 미분을 수행하는 방법입니다. 한가지 조심해야할점은 delta_x라고 0과 근사한 값을 이용해야 하는데 delta_x는 소수점 8자리 이하로 내려가면 안됩니다. (파이썬에러)
+그렇기 때문에 일반적으로 delta_x를 0.00001 수준으로 설정해서 수치미분을 수행합니다.</p>
+
+<p>수치미분에는 전형차분, 후향차분, 중앙차분이 있습니다. 이번시간에는 중앙차분 방식을 사용하도록 하겠습니다.</p>
+
+<p>파이썬 코드를 통하여 수치미분을 알아보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># f(x) = x^2
+# f'(5) = 10
+</span>
+<span class="k">def</span> <span class="nf">numerical_derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="c1"># f : 미분하려는 함수가 들어와요!
+</span>    <span class="c1"># x : 미분값을 알고자하는 입력값.
+</span>    <span class="c1"># delta_x는 1e-4 ~ 1e-6 정도의 수로 설정하면 됩니다 !! (1e-4)
+</span>    <span class="c1"># delta_x는 0과 가까운 작은값을 이용하고 1e-8이하는 사용하면 안됩니다.
+</span>    <span class="n">delta_x</span> <span class="o">=</span> <span class="mf">1e-4</span>
+    
+    <span class="c1"># 중앙차분
+</span>    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">delta_x</span><span class="p">)</span> <span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">delta_x</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">delta_x</span><span class="p">)</span>
+
+  
+<span class="c1"># 미분하려는 함수를 만들어요!
+# f(x) = x^2
+</span>
+<span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    
+<span class="c1"># 함수 f(x) = x^2 에서 미분계수 f'(5)를 구하세요!
+</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">numerical_derivative</span><span class="p">(</span><span class="n">my_func</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># 9.9999999
+</span></code></pre></div></div>
+
+<p>그렇다면 변수가 한 가지가 아닌 다변수 함수에 대한 미분을 해보도록 하겠습니다. 이번에는 편미분을 이용하여 코드로 구현해보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># f(x,y) = 2x +3xy + y^3
+# f'(1.0, 2.0) == (8, 15)
+</span>
+<span class="c1"># 수치미문 최종코드
+</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="k">def</span> <span class="nf">numerical_derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="c1"># f : 미분하려고 하는 다변수 함수
+</span>    <span class="c1"># x : 모든 변수를 포함하고 있어야 해요! ndarray (차원상관없이)
+</span>    <span class="n">delta_x</span> <span class="o">=</span> <span class="mf">1e-4</span>
+<span class="c1">#     derivative_x = np.zeros((3,4))
+</span>    <span class="n">derivative_x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 미분한 결과를 저장하는 ndarray
+</span>    
+    <span class="c1"># iterator 를 이용해서 입력변수 x에 대해 편미분을 수행
+</span>    <span class="n">it</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="p">[</span><span class="s">'multi_index'</span><span class="p">])</span>
+    
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">it</span><span class="p">.</span><span class="n">finished</span><span class="p">:</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">it</span><span class="p">.</span><span class="n">multi_index</span> <span class="c1"># iterator의 현재 index를 추출(tuple로 추출)
+</span>        
+        <span class="c1"># 현재 같의 값을 어딘가에 잠시 저장해야해요!!
+</span>        <span class="c1"># 해당되는 x에 맞춰서 넣어줘야 하기떄문에 그렇습니다.
+</span>        <span class="n">tmp</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        
+        <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">=</span> <span class="n">tmp</span> <span class="o">+</span> <span class="n">delta_x</span> 
+        <span class="n">fx_plus_delta</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># f(x + delta_x)
+</span>        
+        <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">=</span> <span class="n">tmp</span> <span class="o">-</span> <span class="n">delta_x</span>
+        <span class="n">fx_minus_delta</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># f(x - delta_x)
+</span>        
+        <span class="n">derivative_x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fx_plus_delta</span> <span class="o">-</span> <span class="n">fx_minus_delta</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">delta_x</span><span class="p">)</span>
+        
+        <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span> <span class="c1"># 데이터를 원상복구
+</span>        
+        <span class="n">it</span><span class="p">.</span><span class="n">iternext</span><span class="p">()</span>
+        
+    <span class="k">return</span> <span class="n">derivative_x</span>
+
+
+<span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>    
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="c1">## f(x) = x^2에서 f'(3) ??
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">numerical_derivative</span><span class="p">(</span><span class="n">my_func</span><span class="p">,</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.0</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># [6.]
+</span>
+
+<span class="c1"># 이변수 함수를 미분해 보아요!
+# f(x,y) = 2x + 3xy +np.power(y,3)
+</span><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">input_data</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">power</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">numerical_derivative</span><span class="p">(</span><span class="n">my_func</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># [ 8.         15.00000001]
+</span></code></pre></div></div>
+
+<h3 id="regression">Regression</h3>
+
+<p>Training Data Set 을 이용해서 학습된 결과를 만드록 연속적인 숫자값을 예측하는 것을 의미해요</p>
+:ET
