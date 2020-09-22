@@ -1,12 +1,11 @@
 ---
-title:  "[Python] Pandas-2"
+title:  "[Python] Machin Learning"
 header:
   teaser: "/assets/image/1200px-Pandas_logo.svg.png"
 categories: 
   - Python
 tags:
-  - Pandas
-  - Json
+  - Machin learning
 ---
 
 ## Machine Learning

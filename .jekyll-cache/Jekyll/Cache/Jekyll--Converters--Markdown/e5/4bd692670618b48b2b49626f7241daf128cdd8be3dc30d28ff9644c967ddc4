@@ -1,0 +1,9 @@
+I"�<h2 id="linear-regression-model">Linear Regression Model</h2>
+
+<p>Linear Regression을 함수로 표현하기전에 경사하강법에 대하여 알아보도록 하겠습니다.</p>
+
+<p>학습데이터를 관통하는 하나의 직선이 존재한다는 Hypothesis를 만들어 낼 수 있으며 그 식은 <code class="language-plaintext highlighter-rouge">H(x) = Wx +b</code>라고 표현하였습니다. 그렇다면 최적의 Hypothesis를 만들기 위해서는 loss function 혹은 cost function 의 수치가 적어야하는데 최소값을 구하기 어렵습니다. 그렇기 때문에 이번에는 손실함수의 미분을</p>
+
+<p align="center"><img src="../../assets/image/image-20200922223143462.png" alt="image-20200922223143462" /></p>
+
+:ET
