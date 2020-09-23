@@ -1,4 +1,212 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-22T23:25:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Python] Machine Learning-2</title><link href="http://localhost:4000/python/Machine_learning2/" rel="alternate" type="text/html" title="[Python] Machine Learning-2" /><published>2020-09-22T00:00:00+09:00</published><updated>2020-09-22T00:00:00+09:00</updated><id>http://localhost:4000/python/Machine_learning2</id><content type="html" xml:base="http://localhost:4000/python/Machine_learning2/">&lt;h2 id=&quot;linear-regression-model&quot;&gt;Linear Regression Model&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-23T20:24:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Python] Machine Learning-3</title><link href="http://localhost:4000/python/Machine_learning-3/" rel="alternate" type="text/html" title="[Python] Machine Learning-3" /><published>2020-09-23T00:00:00+09:00</published><updated>2020-09-23T00:00:00+09:00</updated><id>http://localhost:4000/python/Machine_learning-3</id><content type="html" xml:base="http://localhost:4000/python/Machine_learning-3/">&lt;h2 id=&quot;simple-linear-regression&quot;&gt;Simple Linear Regression&lt;/h2&gt;
+
+&lt;p&gt;이번 시간에는 실제 예제를 가지고 Linear Regression을 이용하여 예측 값을 산출해보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;예제는 하기표처럼 온도와 오존량에 대한 데이터를 Training data로 사용할 예정이며 파일은 추가적으로 제공하도록 하겠습니다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Ozone&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Solar.R&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Wind&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Temp&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Month&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Day&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;41.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;190.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;7.4&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;67&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;36.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;118.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;8.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;72&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;12.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;149.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;12.6&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;74&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;18.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;313.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;11.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;62&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;NaN&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;NaN&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;14.3&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;56&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;…&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;…&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;…&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;…&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;…&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;…&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;148&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;30.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;193.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;6.9&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;70&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;9&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;26&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;149&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;NaN&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;145.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;13.2&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;77&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;9&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;27&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;150&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;14.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;191.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;14.3&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;75&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;9&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;28&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;151&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;18.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;131.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;8.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;76&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;9&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;29&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;152&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;20.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;223.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;11.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;68&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;9&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;30&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;저번시간과 똑같은 절차로 예측모델을 만들어 보도록 하겠습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Raw Data Loading&lt;/li&gt;
+    &lt;li&gt;Data Preprocessing ( 데이터 전처리 )&lt;/li&gt;
+    &lt;li&gt;Training Data Set&lt;/li&gt;
+    &lt;li&gt;초기 W, b 세팅&lt;/li&gt;
+    &lt;li&gt;Loss function 정의&lt;/li&gt;
+    &lt;li&gt;학습 예측 함수생성&lt;/li&gt;
+    &lt;li&gt;기타 프로그램에사 필요한 변수 정의&lt;/li&gt;
+    &lt;li&gt;학습진행&lt;/li&gt;
+    &lt;li&gt;예측값 확인&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;data.my_library.machine_learning_library&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numerical_derivative&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nd&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 1. Raw Data Loading
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./data/ozone.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# display(df)
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 2. Data Preprocessing(데이터 전처리)
+# - 결측치 처리...
+# - 삭제, 값을 변경(평균, 최대, 최소), 값을 예측해서 값을 대체 
+# - 이상치 처리(outlier)
+# - 이상치를 검출하고, 변경하는 작업
+# - 데이터 정규화 작업
+# - 학습에 필요한 컬럼을 추출, 새로 생성.
+&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 필요한 column 만 추출
+# 결치값을 제거!!
+#
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;training_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Temp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Ozone'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# display(training_data)
+# print(training_data.shape) #(153, 2)
+&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 결측값을 제거할꺼에요.. 리스크가 있지만 그냥 이렇게 진행해요!!
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;training_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;training_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dropna&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;how&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'any'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# display(training_data)
+# print(training_data.shape) #(116, 2)
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 3. Training Data Set
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;training_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Temp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reshape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;t_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;training_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Ozone'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reshape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 4. 지금 우리는 Simple Linear Regression
+#    y = Wx + b
+# 그래서 우리가 구해야 하는 W,b를 정의
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;W&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 5. loss function 정의
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;loss_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;W&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;power&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 최소제곱법
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 6. 학습종료 후 
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;W&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 7. 기타 프로그램에서 필요한 변수들을 정의
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1e-4&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;loss_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 8. 학습을 진행!
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;W&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;W&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'W : {}, b : {}, loss : {}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;W&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;loss_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+    
+&lt;span class=&quot;c1&quot;&gt;# 9. 그래프로 확인해 보아요!
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;W&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;62&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Machin learning" /><category term="Scikit-learn" /><summary type="html">Simple Linear Regression</summary></entry><entry><title type="html">[Python] Machine Learning-2</title><link href="http://localhost:4000/python/Machine_learning2/" rel="alternate" type="text/html" title="[Python] Machine Learning-2" /><published>2020-09-22T00:00:00+09:00</published><updated>2020-09-22T00:00:00+09:00</updated><id>http://localhost:4000/python/Machine_learning2</id><content type="html" xml:base="http://localhost:4000/python/Machine_learning2/">&lt;h2 id=&quot;linear-regression-model&quot;&gt;Linear Regression Model&lt;/h2&gt;
 
 &lt;p&gt;Linear Regression을 함수로 표현하기전에 경사하강법에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
 
@@ -375,7 +583,7 @@
 
 &lt;p&gt;&lt;img src=&quot;../../assets/image/image-20200921234704319.png&quot; alt=&quot;image-20200921234704319&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;노란색의 y값 차이만큼의 수치차이가 나게되며 이것을 수식으로 표현하면 n번째 위치에서의 오차는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tn - (wxn + b)&lt;/code&gt;이 됩니다. 하지만 부호가 존재하기 때문에 실직적으로 정확한 오차를 판별하기 어려우며 이를 해결하기 위해 최소제곱법으로 오차를 나타내면  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[tn - (wxn + b)]^2&lt;/code&gt; 형태가 되며 이것의 평균을 구하여 나타낼 수 있습니다.&lt;/p&gt;
+&lt;p&gt;노란색의 y값 차이만큼의 수치차이가 나게되며 이것을 수식으로 표현하면 n번째 위치에서의 오차는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tn - (wxn + b)&lt;/code&gt;이 됩니다. 하지만 부호가 존재하기 때문에 실직적으로 정확한 오차를 판별하기 어려우며 이를 해결하기 위해 최소제곱법으로 오차표현하면   &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[tn - (wxn + b)]^2 / n&lt;/code&gt;   입니다.&lt;/p&gt;
 
 &lt;p&gt;오차와 y = Wx + b (W : weight, 가중치) (b : bias, 바이어스) 의 관계에 대하여 다시 함수식을 나타낼 수 있는데 이것은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;손실함수(loss function)&lt;/code&gt;이라고 부르며 이것을 수식으로 나타내면 하기와 같습니다.&lt;/p&gt;
 
@@ -2353,125 +2561,4 @@ p(확률) : ndarray. 각 데이터가 샘플링 될 확률을 가지고 있는 n
 [[ 0  1  2  3  4  5]
  [ 6  7  8  9 10 11]]
 '''&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Numpy" /><summary type="html">Numpy -1</summary></entry><entry><title type="html">[Python] Anaconda &amp;amp; Jupyter Notebook 설치 및 가상환경 설정</title><link href="http://localhost:4000/python/Anaconda/" rel="alternate" type="text/html" title="[Python] Anaconda &amp;amp; Jupyter Notebook 설치 및 가상환경 설정" /><published>2020-09-04T00:00:00+09:00</published><updated>2020-09-04T00:00:00+09:00</updated><id>http://localhost:4000/python/Anaconda</id><content type="html" xml:base="http://localhost:4000/python/Anaconda/">&lt;h2 id=&quot;anaconda&quot;&gt;ANACONDA&lt;/h2&gt;
-
-&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ANACONDA&lt;/code&gt; 에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ANACONDA&lt;/code&gt; 를 사용하는 이유는 다음과 같습니다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;라이브러리를 별도로 설치하지 않아도 된다.&lt;/li&gt;
-  &lt;li&gt;가상환경을 사용할 수 있다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;anaconda-설치&quot;&gt;ANACONDA 설치&lt;/h3&gt;
-
-&lt;p&gt;그렇다면 우선 설치부터 해보도록 하겠습니다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.anaconda.com/products/individual&quot;&gt;아나콘다 다운로드 링크&lt;/a&gt; 에 접속하여 해당되는 버전을 다운로드 하도록 하겠습니다.
-    &lt;blockquote&gt;
-      &lt;p&gt;저는 MAC 환경에서 사용하므로 MAC 버전용으로 다운로드 하도록 하겠습니다.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;다운로드가 되었다면 별다른 설정없이 설치를 해주시면 됩니다.
-    &lt;blockquote&gt;
-      &lt;p&gt;다만 윈도우 사용자분들께서는 경로설정(path)를 유의하시어 설치하시면 되겠습니다.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;가상환경-생성&quot;&gt;가상환경 생성&lt;/h3&gt;
-
-&lt;p&gt;설치가 완료되었다면 가상환경을 만들어 보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Mac&lt;/code&gt;사용자분들을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;터미널&lt;/code&gt;을 열어주시고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;윈도우&lt;/code&gt; 사용자분들께서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Anaconda prompt&lt;/code&gt;를 실행시켜주시면 되겠습니다.&lt;/p&gt;
-
-&lt;p&gt;실행하시면 이전과는 다르게 (base) 라는 부분이 생성이 되어있는 것을 확인하실 수가 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/image/image-20200904211002265.png&quot; alt=&quot;image-20200904211002265&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;가상환경이름은 “data_env” 로 지정하고 파이썬 버전은 3.7 버전으로 설치하겠습니다.
-    &lt;blockquote&gt;
-      &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda create &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; data_env &lt;span class=&quot;nv&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3.7 openssl
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;설치가 다 되었다면 제대로 설치가 되어있는지 확인하겠습니다.
-    &lt;blockquote&gt;
-      &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda info -—envs
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;만들어진 가상환경으로 접속합니다.
-    &lt;blockquote&gt;
-      &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda activate data_env
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;가상환경을 탈출하기 위해서는 하기 명령어를 입력합니다.
-    &lt;blockquote&gt;
-      &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda deactivate
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;jupyter-notebook&quot;&gt;Jupyter notebook&lt;/h2&gt;
-&lt;p&gt;가상환경 설치가 완료되면 개발도구인 IDE를 설치를 해야합니다.
-저는 Jupiter notebook이라는 web기반의 개발툴을 이용하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;현재 data_env 가상환경에서 하기명령어를 이용하여 nb_conda를 설치하도록 하겠습니다.&lt;/p&gt;
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;nb_conda
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;경로설정&quot;&gt;경로설정&lt;/h3&gt;
-
-&lt;p&gt;Jupyter notebook 이 사용할 기본 디렉토리 (working directory)를 지정 하도록 하겠습니다.
-이 작업을 하기위해 환경 설정 파일을 하나 생성해서 기본 디렉토리를 지정해서 사용해보도록 하겠습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jupyter notebook &lt;span class=&quot;nt&quot;&gt;--generate-config&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;명령어를 입력하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.jupyter&lt;/code&gt; 라는 숨김폴더가 생성되고 그 안에&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; jupter_notebook_config.py&lt;/code&gt; 파일이 생성됩니다.&lt;/p&gt;
-
-&lt;p&gt;그 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jupter_notebook_config.py&lt;/code&gt; 파일에서 하기항목에 경로이름을 입력하여 기본 디렉토리 (working directory)를 설정하겠습니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;##The directory to use for notebooks and kernels.
-#c.NotebookApp.notebook_dir = ‘경로이름’&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;jupyter-notebook-실행&quot;&gt;Jupyter Notebook 실행&lt;/h3&gt;
-
-&lt;p&gt;상기 설정이 전부 완료되었다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jupyternotebook&lt;/code&gt;을 실행해보도록 하겠습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jupyter notebook
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;명령어를 입력하면 바로 Jupyter Notebook이 실행되는 것을 확인할 수 있습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;jupyter-notebook-사용&quot;&gt;Jupyter Notebook 사용&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jupyternotebook&lt;/code&gt; 에서  ` cell`에 대하여 설명하도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; cell&lt;/code&gt;을 선택하면 초록색으로 표시되며 선택하지 않으면 파란색으로 표시됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/image/image-20200904091457898.png&quot; alt=&quot;image-20200904091457898&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/image/image-20200904091555177.png&quot; alt=&quot;image-20200904091555177&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;셀-추가&quot;&gt;셀 추가&lt;/h4&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt;는 아래 쪽에 셀 추가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; 키는 cell을 위쪽에 추가 하는 명령어 입니다. 지우려면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;D&lt;/code&gt; 키를 두번 눌러서 지울수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/image/image-20200904091702847.png&quot; alt=&quot;image-20200904091702847&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;셀-추가-1&quot;&gt;셀 추가&lt;/h4&gt;
-
-&lt;p&gt;셀은 서로 데이터나 정보가 공유됩니다. 앞서 셀에서 ‘a’를 정의하였다면 다른 셀에서 사용할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/image/image-20200904101048587.png&quot; alt=&quot;image-20200904101048587&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Anaconda&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jupyternotebook&lt;/code&gt;에 대하여 알아보았습니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="ANACONDA" /><summary type="html">ANACONDA</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Numpy" /><summary type="html">Numpy -1</summary></entry></feed>
