@@ -62,14 +62,12 @@ df = pd.read_csv('./data/ozone.csv')
 
 # 필요한 column 만 추출
 # 결치값을 제거!!
-#
+
 
 training_data = df[['Temp','Ozone', ]]
 # display(training_data)
 # print(training_data.shape) #(153, 2)
 
-
-# 결측값을 제거할꺼에요.. 리스크가 있지만 그냥 이렇게 진행해요!!
 
 training_data = training_data.dropna(how='any')
 # display(training_data)
@@ -79,9 +77,8 @@ training_data = training_data.dropna(how='any')
 x_data = training_data['Temp'].values.reshape(-1,1)
 t_data = training_data['Ozone'].values.reshape(-1,1)
 
-# 4. 지금 우리는 Simple Linear Regression
-#    y = Wx + b
-# 그래서 우리가 구해야 하는 W,b를 정의
+# 4. Simple Linear Regression
+#    y = Wx + b //  W,b를 정의
 W = np.random.rand(1,1)
 b = np.random.rand(1)
 
@@ -90,7 +87,7 @@ def loss_func(x, t):
     y = np.dot(x, W) + b
     return np.mean(np.power(t-y,2)) # 최소제곱법
 
-# 6. 학습종료 후 
+# 6. 학습종료 후 예측함수
 def predict(x):
     return np.dot(x,W) +b
 
@@ -99,7 +96,7 @@ learning_rate = 1e-4
 
 f = lambda x: loss_func(x_data, t_data)
 
-# 8. 학습을 진행!
+# 8. 학습을 진행
 for step in range(30000):
     W -= learning_rate * nd(f, W)
     b -= learning_rate * nd(f, b)
@@ -107,7 +104,7 @@ for step in range(30000):
     if step %3000 ==0:
         print ('W : {}, b : {}, loss : {}'.format(W, b, loss_func(x_data,t_data)))
     
-# 9. 그래프로 확인해 보아요!
+# 9. 그래프로 확인
 plt.scatter(x_data, t_data)
 plt.plot(x_data, np.dot(x_data, W)+b, 'r')
 plt.show()
@@ -115,3 +112,85 @@ plt.show()
 print(predict(62))
 ```
 
+```
+W : [[0.48898185]], b : [0.1382576], loss : 903.6007199549715
+W : [[0.58275697]], b : [-1.13623806], loss : 861.0875644794504
+W : [[0.59874403]], b : [-2.39947113], loss : 855.7685424676351
+W : [[0.61459263]], b : [-3.65176381], loss : 850.5412536613877
+W : [[0.63030397]], b : [-4.89321085], loss : 845.4041160065931
+W : [[0.64587924]], b : [-6.12390617], loss : 840.3555747335402
+W : [[0.66131962]], b : [-7.34394289], loss : 835.3941018864972
+W : [[0.67662628]], b : [-8.55341332], loss : 830.518195861303
+W : [[0.69180037]], b : [-9.75240898], loss : 825.7263809507612
+W : [[0.70684304]], b : [-10.94102059], loss : 821.0172068981508
+```
+
+<p align='center'><img src="../../assets/image/9B0AD36F-4089-4B4A-8079-29B5A4697B8D.png" alt="img" style="zoom:100%;" /></p>
+
+### Scikit-learn
+
+앞선 코드를 통하여 상기의 그래프를 얻었습니다. 육안으로 판단을 해보았을때 y 절편인 b 값이 좀더 내려오고 기울기값인 W 가 높은 값을 가져야만 할 것 같은데요. 물론 그래프의 조정이나 learning_rate를 조정하면서 원하는 결과치를 얻을 수 있겠지만 이번시간에는 `Scikit-learn`을 통해서 좀더 쉽게 최적의 그래프를 얻어보도록 하겠습니다. 코드를 통해서 알아보도록 하겠습니다.
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt 
+from sklearn import linear_model
+
+# 1. Raw Data Loading
+df = pd.read_csv('./data/ozone.csv')
+# display(df)
+
+# 2. Data Preprocessing(데이터 전처리)
+# - 결측치 처리...
+# - 삭제, 값을 변경(평균, 최대, 최소), 값을 예측해서 값을 대체 
+# - 이상치 처리(outlier)
+# - 이상치를 검출하고, 변경하는 작업
+# - 데이터 정규화 작업
+# - 학습에 필요한 컬럼을 추출, 새로 생성.
+
+
+# 필요한 column 만 추출
+# 결치값을 제거!!
+#
+
+training_data = df[['Temp','Ozone', ]]
+
+
+training_data = training_data.dropna(how='any')
+# display(training_data)
+# print(training_data.shape) #(116, 2)
+
+# 3. Training Data Set
+x_data = training_data['Temp'].values.reshape(-1,1)
+t_data = training_data['Ozone'].values.reshape(-1,1)
+
+# 4. sklearn을 이용해서 linear regression model 객체를 생성
+# 아직 완성되지않은( 학습되지 않은 모델을 일단생성)
+model = linear_model.LinearRegression()
+
+# 5. Training Data Set을 이용해서 학습을 진행!
+model.fit(x_data, t_data)
+
+# 6. W와 b 값을 알아내야 해요!
+print('W:{}, b:{}'.format(model.coef_, model.intercept_)) 
+# W:[[2.4287033]], b:[-146.99549097]
+
+
+# 7. 그래프로 확인해보아요!
+plt.scatter(x_data, t_data)
+plt.plot(x_data, np.dot(x_data, model.coef_)+model.intercept_, 'r')
+plt.show() 
+
+# 8. 예측을 한번 해보아요!!
+predict_val = model.predict([[62]])
+print(predict_val) #[[3.58411393]]
+```
+
+<p align='center'><img src="../../assets/image/40F5C7F4-8DAD-4080-A76E-4D2BE9519FFA.png" alt="img" style="zoom:100%;" /></p>
+
+`Scikit-learn`을 통해서 좀더 쉽게 최적의 그래프를 얻을 수 있었습니다. 그렇다면 왜 이런현상이 발생하는 것일까요?? 바로 데이터의 전처리가 잘안되서 발생하는 문제입니다.
+
+<p align='center'><img src="../../assets/image/image-20200924235714747.png" alt="image-20200924235714747" style="zoom:50%;" /></p>
+
+그래프를 보면 노란색으로 표시된 부분의 데이터가 비정상적으로 튀는 것을 확인할 수 있습니다.

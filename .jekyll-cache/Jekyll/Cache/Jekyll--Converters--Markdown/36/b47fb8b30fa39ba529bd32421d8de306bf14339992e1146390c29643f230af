@@ -1,0 +1,210 @@
+I"�2<h2 id="simple-linear-regression">Simple Linear Regression</h2>
+
+<p>이번 시간에는 실제 예제를 가지고 Linear Regression을 이용하여 예측 값을 산출해보도록 하겠습니다.</p>
+
+<p>예제는 하기표처럼 온도와 오존량에 대한 데이터를 Training data로 사용할 예정이며 파일은 추가적으로 제공하도록 하겠습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right"> </th>
+      <th style="text-align: right">Ozone</th>
+      <th style="text-align: right">Solar.R</th>
+      <th style="text-align: right">Wind</th>
+      <th style="text-align: right">Temp</th>
+      <th style="text-align: right">Month</th>
+      <th style="text-align: right">Day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">41.0</td>
+      <td style="text-align: right">190.0</td>
+      <td style="text-align: right">7.4</td>
+      <td style="text-align: right">67</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">36.0</td>
+      <td style="text-align: right">118.0</td>
+      <td style="text-align: right">8.0</td>
+      <td style="text-align: right">72</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: right">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">12.0</td>
+      <td style="text-align: right">149.0</td>
+      <td style="text-align: right">12.6</td>
+      <td style="text-align: right">74</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: right">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">18.0</td>
+      <td style="text-align: right">313.0</td>
+      <td style="text-align: right">11.5</td>
+      <td style="text-align: right">62</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: right">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">NaN</td>
+      <td style="text-align: right">NaN</td>
+      <td style="text-align: right">14.3</td>
+      <td style="text-align: right">56</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: right">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">…</td>
+      <td style="text-align: right">…</td>
+      <td style="text-align: right">…</td>
+      <td style="text-align: right">…</td>
+      <td style="text-align: right">…</td>
+      <td style="text-align: right">…</td>
+      <td style="text-align: right">…</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">148</td>
+      <td style="text-align: right">30.0</td>
+      <td style="text-align: right">193.0</td>
+      <td style="text-align: right">6.9</td>
+      <td style="text-align: right">70</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">26</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">149</td>
+      <td style="text-align: right">NaN</td>
+      <td style="text-align: right">145.0</td>
+      <td style="text-align: right">13.2</td>
+      <td style="text-align: right">77</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">27</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">150</td>
+      <td style="text-align: right">14.0</td>
+      <td style="text-align: right">191.0</td>
+      <td style="text-align: right">14.3</td>
+      <td style="text-align: right">75</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">28</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">151</td>
+      <td style="text-align: right">18.0</td>
+      <td style="text-align: right">131.0</td>
+      <td style="text-align: right">8.0</td>
+      <td style="text-align: right">76</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">29</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">152</td>
+      <td style="text-align: right">20.0</td>
+      <td style="text-align: right">223.0</td>
+      <td style="text-align: right">11.5</td>
+      <td style="text-align: right">68</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">30</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>저번시간과 똑같은 절차로 예측모델을 만들어 보도록 하겠습니다.</p>
+
+<blockquote>
+  <ol>
+    <li>Raw Data Loading</li>
+    <li>Data Preprocessing ( 데이터 전처리 )</li>
+    <li>Training Data Set</li>
+    <li>초기 W, b 세팅</li>
+    <li>Loss function 정의</li>
+    <li>학습 예측 함수생성</li>
+    <li>기타 프로그램에사 필요한 변수 정의</li>
+    <li>학습진행</li>
+    <li>예측값 확인</li>
+  </ol>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">data.my_library.machine_learning_library</span> <span class="kn">import</span> <span class="n">numerical_derivative</span> <span class="k">as</span> <span class="n">nd</span>
+
+<span class="c1"># 1. Raw Data Loading
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./data/ozone.csv'</span><span class="p">)</span>
+<span class="c1"># display(df)
+</span>
+<span class="c1"># 2. Data Preprocessing(데이터 전처리)
+# - 결측치 처리...
+# - 삭제, 값을 변경(평균, 최대, 최소), 값을 예측해서 값을 대체 
+# - 이상치 처리(outlier)
+# - 이상치를 검출하고, 변경하는 작업
+# - 데이터 정규화 작업
+# - 학습에 필요한 컬럼을 추출, 새로 생성.
+</span>
+
+<span class="c1"># 필요한 column 만 추출
+# 결치값을 제거!!
+#
+</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s">'Temp'</span><span class="p">,</span><span class="s">'Ozone'</span><span class="p">,</span> <span class="p">]]</span>
+<span class="c1"># display(training_data)
+# print(training_data.shape) #(153, 2)
+</span>
+
+<span class="c1"># 결측값을 제거할꺼에요.. 리스크가 있지만 그냥 이렇게 진행해요!!
+</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s">'any'</span><span class="p">)</span>
+<span class="c1"># display(training_data)
+# print(training_data.shape) #(116, 2)
+</span>
+<span class="c1"># 3. Training Data Set
+</span><span class="n">x_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="s">'Temp'</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">t_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="s">'Ozone'</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 4. 지금 우리는 Simple Linear Regression
+#    y = Wx + b //  W,b를 정의
+</span><span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 5. loss function 정의
+</span><span class="k">def</span> <span class="nf">loss_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">power</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># 최소제곱법
+</span>
+<span class="c1"># 6. 학습종료 후 예측함수
+</span><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">W</span><span class="p">)</span> <span class="o">+</span><span class="n">b</span>
+
+<span class="c1"># 7. 기타 프로그램에서 필요한 변수들을 정의
+</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">1e-4</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">)</span>
+
+<span class="c1"># 8. 학습을 진행
+</span><span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30000</span><span class="p">):</span>
+    <span class="n">W</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">nd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">nd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">step</span> <span class="o">%</span><span class="mi">3000</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s">'W : {}, b : {}, loss : {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span><span class="n">t_data</span><span class="p">)))</span>
+    
+<span class="c1"># 9. 그래프로 확인
+</span><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">predict</span><span class="p">(</span><span class="mi">62</span><span class="p">))</span>
+</code></pre></div></div>
+
+:ET
