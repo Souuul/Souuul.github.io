@@ -205,3 +205,63 @@ Tukey Outlier(4분위값을 이용하는 이상치 검출방식)
 안정성을 저해하는 요소.
 그래서 이상치는 반드시 처리해야 하고 이것을 검출하고 처리하는데 상당히 
 많은 시간이 소요되는게 일반적
+
+
+
+독립변수(온도)에 있는 이상치를 지대점이라고 하고 종속변수(오존량)에 있는 이상치를 outlier라고 해요!
+
+Tukey outlier를 이용해서 처리해보아요!
+4분위값을 이용해서 outlier를 감지할 수 있어요
+boxplot이라는걸 이용해서 확인할 수 있어요!
+
+Boxplot을 사용할 떄 이상치를 분류하는 기준은 IQR value를 사용
+IQR value = 3사분위값 - 1사분위값
+어떤 값을 이상치로 판별하는가
+1사분위수 -1.5 *IQR value이 값보다 작은 값은 이상치로 판별
+3사분위수 +1.5 * IQR value이 값보다 더 큰 값은 이상치로 판별
+
+``` python
+import numpy as np
+import matplotlib.pyplot as plt
+data = np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,22.1])
+
+plt.boxplot(data)
+plt.show()
+
+fig = plt.figure() # 새로운 그림(figure)을 생성
+
+fig_1 = fig.add_subplot(1,2,1) # 1행 2열의 subplot의 위치가 1번 위치
+fig_2 = fig.add_subplot(1,2,2) # 1행 2열의 subplot의 위치가 2번 위치
+
+fig_1.set_title('Original Data Boxplot')
+fig_1.boxplot(data)
+
+
+# numpy로 사분위수를 구하려면 percentile() 함수를 이용해요!
+print(np.mean(data)) # 평균
+print(np.median(data)) # 중위수, 2사분위, 미디언
+print(np.percentile(data,25)) # 1사분위
+print(np.percentile(data,50)) # 2사분위
+print(np.percentile(data,75)) # 3사분위
+
+# 이상치를 검출하려면 IQR value가 필요
+IQR_val = np.percentile(data,75) - np.percentile(data,25)
+
+upper_fense = np.percentile(data,75) + 1.5*IQR_val
+lower_fense = np.percentile(data,25) - 1.5*IQR_val
+
+print ('upper_fence :{}'.format(upper_fense))
+print ('lower_fense :{}'.format(lower_fense))
+
+# 데이터 중에 이상치를 출력하고
+# 이상치를 제거한 데이터로 boxplot을 그려보세요!!
+
+result_data = data[(data <= upper_fense)&(data >= lower_fense)]
+fig_2.set_title('Remove Outlier Boxplot')
+fig_2.boxplot(result_data)
+
+plt.show()
+```
+
+<p align='center'><img src="../../assets/image/image-20200927234800444.png" alt="image-20200927234800444" style="zoom:50%;" /></p>
+
