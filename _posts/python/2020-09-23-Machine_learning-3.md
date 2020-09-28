@@ -197,27 +197,23 @@ print(predict_val) #[[3.58411393]]
 
 ### 이상치 처리(Outlier)
 
-Z-Score (분산, 표준편차를 이용하는 이상치 검출방식 - 통계기반)
-Tukey Outlier(4분위값을 이용하는 이상치 검출방식)
-이상치(Outlier)는 속성의 값이 일반적인 값보다 편차가 큰 값을 의미.
-즉, 데이터 전체 패턴에서 동떨어져 있는 관측치를 지칭!!
-평균뿐아니라 분산에도 영향을 미치기 떄문에 결국은 데이터 전체의 
-안정성을 저해하는 요소.
-그래서 이상치는 반드시 처리해야 하고 이것을 검출하고 처리하는데 상당히 
-많은 시간이 소요되는게 일반적
+비정상적인 데이터를 처리하는 방법에는 두 가지가 있습니다. 
 
+1. Tukey Outlier(4분위값을 이용하는 이상치 검출방식)
+2. Z-Score (분산, 표준편차를 이용하는 이상치 검출방식 - 통계기반)
 
+이상치(Outlier)는 속성의 값이 일반적인 값보다 편차가 큰 값을 의미합니다. 즉, 데이터 전체 패턴에서 동떨어져 있는 관측치를 지칭해요. 평균 뿐아니라 분산에도 영향을 미치기 떄문에 결국은 데이터 전체의 안정성을 저해하는 요소입니다. 그래서 이상치는 반드시 처리해야 하고 이것을 검출하고 처리하는데 상당히 많은 시간이 소요되는게 일반적입니다.독립변수(온도)에 있는 이상치를 지대점이라고 하고 종속변수(오존량)에 있는 이상치를 outlier라고 합니다.
 
-독립변수(온도)에 있는 이상치를 지대점이라고 하고 종속변수(오존량)에 있는 이상치를 outlier라고 해요!
+#### Turkey Outlier
 
-Tukey outlier를 이용해서 처리해보아요!
-4분위값을 이용해서 outlier를 감지할 수 있어요
-boxplot이라는걸 이용해서 확인할 수 있어요!
+그러면 첫번째로 `Tukey outlier`를 이용해서 처리해보겠습니다. 4분위값을 이용해서 outlier를 감지할 수 있어요.
+4분위 그래프는 boxplot이라는걸 이용해서 확인할 수 있습니다. Boxplot을 사용할 떄 이상치를 분류하는 기준은 `IQR value`를 사용합니다. 
 
-Boxplot을 사용할 떄 이상치를 분류하는 기준은 IQR value를 사용
+<p align='center'><img src="../../assets/image/20190319-boxplot.png" alt="What is box plot ? – Jingwen Zheng – Data Science Enthusiast" style="zoom:100%;" /></p>
 IQR value = 3사분위값 - 1사분위값
-어떤 값을 이상치로 판별하는가
+
 1사분위수 -1.5 *IQR value이 값보다 작은 값은 이상치로 판별
+
 3사분위수 +1.5 * IQR value이 값보다 더 큰 값은 이상치로 판별
 
 ``` python
@@ -232,10 +228,8 @@ fig = plt.figure() # 새로운 그림(figure)을 생성
 
 fig_1 = fig.add_subplot(1,2,1) # 1행 2열의 subplot의 위치가 1번 위치
 fig_2 = fig.add_subplot(1,2,2) # 1행 2열의 subplot의 위치가 2번 위치
-
 fig_1.set_title('Original Data Boxplot')
 fig_1.boxplot(data)
-
 
 # numpy로 사분위수를 구하려면 percentile() 함수를 이용해요!
 print(np.mean(data)) # 평균
@@ -264,4 +258,95 @@ plt.show()
 ```
 
 <p align='center'><img src="../../assets/image/image-20200927234800444.png" alt="image-20200927234800444" style="zoom:50%;" /></p>
+
+#### Z-Score
+
+Z-Score에서는 좀더 쉽게 이상치를 제거할 수 있습니다. 임계값을 설정하고 정규분포에 의해 이상치를 분류하거나 제외할 수 있습니다. 
+
+```python
+from scipy import stats
+data = np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,22.1])
+
+zscore_threshold = 1.8 # zscore outlier 임계값 ( 일반적 2)
+stats.zscore(data)
+
+outliers = data[np.abs(stats.zscore(data))>zscore_threshold]
+print(outliers) #[22.1]
+print(data[np.isin(data,outliers, invert = True)])
+#[ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10. 11. 12. 13. 14.]
+```
+
+
+
+이상치를 전부 제거했다면 제거된 이상치를 바탕으로 학습을 시켜 예측을 해보면 좀더 정확한 값을 얻을 수 있습니다. 하기예제를 보며서 이상치를 제거한 산포도와 그렇지 않은 산포도를 비교하면서 보도록 하겠습니다.
+
+```python
+# 필요한 모듈 module import
+import numpy as np
+import pandas as pd
+from data.machine_learning_library import numerical_derivative
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Raw Data Loading
+df = pd.read_csv('./data/ozone.csv')
+display(df)
+training_data = df[['Temp','Ozone']]
+training_data = training_data.dropna(how='any')
+print(training_data.shape)
+
+zscore_theshold = 2.0
+# outlier를 출력
+# Temp에 대한 이상치(지대점)를 확인
+outliers = training_data['Temp'][np.abs(stats.zscore(training_data['Temp']))>zscore_theshold]
+training_data = training_data.loc[~training_data['Temp'].isin(outliers)]
+display(training_data.shape)
+
+
+outliers = training_data['Ozone'][np.abs(stats.zscore(training_data['Ozone']))>zscore_theshold]
+training_data = training_data.loc[~training_data['Ozone'].isin(outliers)]
+display(training_data.shape)
+display(training_data)
+
+
+
+# Training Data Set
+x_data = training_data['Temp'].values.reshape(-1,1)
+t_data = training_data['Ozone'].values.reshape(-1,1)
+
+# Weight & bias
+W = np.random.rand(1,1)
+b = np.random.rand(1)
+
+# loss function 
+def loss_func(x, t):
+    y = np.dot(x, W)+b
+    return np.mean(np.power(t-y,2))
+
+def predict(x):
+    return np.dot(x,W)+b
+
+learning_rate = 1e-5
+
+f = lambda x: loss_func(x_data, t_data)
+
+for step in range(30000):
+    W -= learning_rate * numerical_derivative(f, W)
+    b -= learning_rate * numerical_derivative(f, b)
+    
+    if step % 3000 == 0:
+        print('W : {}, b : {}, loss : {}'.format(W,b,loss_func(x_data, t_data)))
+
+plt.scatter(x_data, t_data)
+plt.plot(x_data, np.dot(x_data, W)+b, 'r')
+plt.show()
+```
+
+ <p align='center'><img src="../../assets/image/image-20200928234752720.png" alt="image-20200928234752720" style="zoom:50%;" /></p>
+
+ 이전 산포도(왼쪽 산포도)와 비교했을때 이상치가 많이 없어진 것을 확인할 수 있습니다. 
+
+
+
+### 정규화 (Nomalization)
 

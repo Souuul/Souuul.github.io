@@ -317,7 +317,7 @@
 
 
 
-  4 minute read
+  6 minute read
 
 </p>
           
@@ -616,26 +616,26 @@ W : [[0.70684304]], b : [-10.94102059], loss : 821.0172068981508
 
 <h3 id="이상치-처리outlier">이상치 처리(Outlier)</h3>
 
-<p>Z-Score (분산, 표준편차를 이용하는 이상치 검출방식 - 통계기반)
-Tukey Outlier(4분위값을 이용하는 이상치 검출방식)
-이상치(Outlier)는 속성의 값이 일반적인 값보다 편차가 큰 값을 의미.
-즉, 데이터 전체 패턴에서 동떨어져 있는 관측치를 지칭!!
-평균뿐아니라 분산에도 영향을 미치기 떄문에 결국은 데이터 전체의 
-안정성을 저해하는 요소.
-그래서 이상치는 반드시 처리해야 하고 이것을 검출하고 처리하는데 상당히 
-많은 시간이 소요되는게 일반적</p>
+<p>비정상적인 데이터를 처리하는 방법에는 두 가지가 있습니다.</p>
 
-<p>독립변수(온도)에 있는 이상치를 지대점이라고 하고 종속변수(오존량)에 있는 이상치를 outlier라고 해요!</p>
+<ol>
+  <li>Tukey Outlier(4분위값을 이용하는 이상치 검출방식)</li>
+  <li>Z-Score (분산, 표준편차를 이용하는 이상치 검출방식 - 통계기반)</li>
+</ol>
 
-<p>Tukey outlier를 이용해서 처리해보아요!
-4분위값을 이용해서 outlier를 감지할 수 있어요
-boxplot이라는걸 이용해서 확인할 수 있어요!</p>
+<p>이상치(Outlier)는 속성의 값이 일반적인 값보다 편차가 큰 값을 의미합니다. 즉, 데이터 전체 패턴에서 동떨어져 있는 관측치를 지칭해요. 평균 뿐아니라 분산에도 영향을 미치기 떄문에 결국은 데이터 전체의 안정성을 저해하는 요소입니다. 그래서 이상치는 반드시 처리해야 하고 이것을 검출하고 처리하는데 상당히 많은 시간이 소요되는게 일반적입니다.독립변수(온도)에 있는 이상치를 지대점이라고 하고 종속변수(오존량)에 있는 이상치를 outlier라고 합니다.</p>
 
-<p>Boxplot을 사용할 떄 이상치를 분류하는 기준은 IQR value를 사용
-IQR value = 3사분위값 - 1사분위값
-어떤 값을 이상치로 판별하는가
-1사분위수 -1.5 *IQR value이 값보다 작은 값은 이상치로 판별
-3사분위수 +1.5 * IQR value이 값보다 더 큰 값은 이상치로 판별</p>
+<h4 id="turkey-outlier">Turkey Outlier</h4>
+
+<p>그러면 첫번째로 <code class="language-plaintext highlighter-rouge">Tukey outlier</code>를 이용해서 처리해보겠습니다. 4분위값을 이용해서 outlier를 감지할 수 있어요.
+4분위 그래프는 boxplot이라는걸 이용해서 확인할 수 있습니다. Boxplot을 사용할 떄 이상치를 분류하는 기준은 <code class="language-plaintext highlighter-rouge">IQR value</code>를 사용합니다.</p>
+
+<p align="center"><img src="../../assets/image/20190319-boxplot.png" alt="What is box plot ? – Jingwen Zheng – Data Science Enthusiast" style="zoom:100%;" /></p>
+<p>IQR value = 3사분위값 - 1사분위값</p>
+
+<p>1사분위수 -1.5 *IQR value이 값보다 작은 값은 이상치로 판별</p>
+
+<p>3사분위수 +1.5 * IQR value이 값보다 더 큰 값은 이상치로 판별</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -648,10 +648,8 @@ IQR value = 3사분위값 - 1사분위값
 </span>
 <span class="n">fig_1</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 1행 2열의 subplot의 위치가 1번 위치
 </span><span class="n">fig_2</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 1행 2열의 subplot의 위치가 2번 위치
-</span>
-<span class="n">fig_1</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Original Data Boxplot'</span><span class="p">)</span>
+</span><span class="n">fig_1</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Original Data Boxplot'</span><span class="p">)</span>
 <span class="n">fig_1</span><span class="p">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
 
 <span class="c1"># numpy로 사분위수를 구하려면 percentile() 함수를 이용해요!
 </span><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="c1"># 평균
@@ -680,6 +678,91 @@ IQR value = 3사분위값 - 1사분위값
 </code></pre></div></div>
 
 <p align="center"><img src="../../assets/image/image-20200927234800444.png" alt="image-20200927234800444" style="zoom:50%;" /></p>
+
+<h4 id="z-score">Z-Score</h4>
+
+<p>Z-Score에서는 좀더 쉽게 이상치를 제거할 수 있습니다. 임계값을 설정하고 정규분포에 의해 이상치를 분류하거나 제외할 수 있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mf">22.1</span><span class="p">])</span>
+
+<span class="n">zscore_threshold</span> <span class="o">=</span> <span class="mf">1.8</span> <span class="c1"># zscore outlier 임계값 ( 일반적 2)
+</span><span class="n">stats</span><span class="p">.</span><span class="n">zscore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">stats</span><span class="p">.</span><span class="n">zscore</span><span class="p">(</span><span class="n">data</span><span class="p">))</span><span class="o">&gt;</span><span class="n">zscore_threshold</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span> <span class="c1">#[22.1]
+</span><span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">outliers</span><span class="p">,</span> <span class="n">invert</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)])</span>
+<span class="c1">#[ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10. 11. 12. 13. 14.]
+</span></code></pre></div></div>
+
+<p>이상치를 전부 제거했다면 제거된 이상치를 바탕으로 학습을 시켜 예측을 해보면 좀더 정확한 값을 얻을 수 있습니다. 하기예제를 보며서 이상치를 제거한 산포도와 그렇지 않은 산포도를 비교하면서 보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 필요한 모듈 module import
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">data.machine_learning_library</span> <span class="kn">import</span> <span class="n">numerical_derivative</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># Raw Data Loading
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./data/ozone.csv'</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s">'Temp'</span><span class="p">,</span><span class="s">'Ozone'</span><span class="p">]]</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s">'any'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">training_data</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">zscore_theshold</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="c1"># outlier를 출력
+# Temp에 대한 이상치(지대점)를 확인
+</span><span class="n">outliers</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="s">'Temp'</span><span class="p">][</span><span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">stats</span><span class="p">.</span><span class="n">zscore</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s">'Temp'</span><span class="p">]))</span><span class="o">&gt;</span><span class="n">zscore_theshold</span><span class="p">]</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">training_data</span><span class="p">[</span><span class="s">'Temp'</span><span class="p">].</span><span class="n">isin</span><span class="p">(</span><span class="n">outliers</span><span class="p">)]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">training_data</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+
+
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="s">'Ozone'</span><span class="p">][</span><span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">stats</span><span class="p">.</span><span class="n">zscore</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s">'Ozone'</span><span class="p">]))</span><span class="o">&gt;</span><span class="n">zscore_theshold</span><span class="p">]</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">training_data</span><span class="p">[</span><span class="s">'Ozone'</span><span class="p">].</span><span class="n">isin</span><span class="p">(</span><span class="n">outliers</span><span class="p">)]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">training_data</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">training_data</span><span class="p">)</span>
+
+
+
+<span class="c1"># Training Data Set
+</span><span class="n">x_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="s">'Temp'</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">t_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="s">'Ozone'</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Weight &amp; bias
+</span><span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># loss function 
+</span><span class="k">def</span> <span class="nf">loss_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span><span class="o">+</span><span class="n">b</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">power</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">W</span><span class="p">)</span><span class="o">+</span><span class="n">b</span>
+
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">1e-5</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30000</span><span class="p">):</span>
+    <span class="n">W</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">numerical_derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">numerical_derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">step</span> <span class="o">%</span> <span class="mi">3000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'W : {}, b : {}, loss : {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">W</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">loss_func</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">)))</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p align="center"><img src="../../assets/image/image-20200928234752720.png" alt="image-20200928234752720" style="zoom:50%;" /></p>
+
+<p>이전 산포도(왼쪽 산포도)와 비교했을때 이상치가 많이 없어진 것을 확인할 수 있습니다.</p>
+
+<h3 id="정규화-nomalization">정규화 (Nomalization)</h3>
 
 
         
