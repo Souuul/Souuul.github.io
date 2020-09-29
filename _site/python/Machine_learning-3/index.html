@@ -317,7 +317,7 @@
 
 
 
-  6 minute read
+  7 minute read
 
 </p>
           
@@ -764,6 +764,129 @@ W : [[0.70684304]], b : [-10.94102059], loss : 821.0172068981508
 
 <h3 id="정규화-nomalization">정규화 (Nomalization)</h3>
 
+<p>데이터가 가진 feature들의 scale이 심하게 차이나는 경우 조정해줘야합니다. 예를들어 집에 대한 데이터를 판별할때 방의개수와 집의 연식(월)의 경우 방의 개수는 보통 한자리수의 정수로 표현되는데 비해 집의 연식의 경우 최대 세자리 정수로도 표현이 가능합니다. 이렇게 최대 100배 이상의 scale 이 차이가 나는경우 각 feature들에 대해 동일한 scale을 적용할 필요가 있습니다. 이것을 <code class="language-plaintext highlighter-rouge">정규화 (Nomalization)</code>라고 부릅니다.</p>
+
+<p>정규화에는 크게 2가지 방법으로 나뉩니다.</p>
+
+<ol>
+  <li>
+    <p>Min-Max Normalization (정규화)</p>
+
+    <p>데이터를 정규화하는 가장 일반적인 방법입니다. 모든 feature들에 대해 최소값 (0) ~ 최대값 (1) Scaling(변환)을 하는 방법입니다.</p>
+
+    <ul>
+      <li>
+        <p>변환공식 = (Xi - X(min)) / (X(max) - X(min))</p>
+      </li>
+      <li>장점 : 동일한 기준을 가지고 Scaling 가능</li>
+      <li>단점 : 이상치를 처리를 안하면 상당히 민감하게 반응</li>
+    </ul>
+  </li>
+  <li>
+    <p>Stadardization - Z-Score Normalization (표준화)</p>
+
+    <p>평균과 분산을 이용한 Scaling방법 입니다.</p>
+
+    <ul>
+      <li>
+        <p>변환공식 = x (scale) = (xi - 평균) / 분산</p>
+      </li>
+      <li>장점 : 이상치에 덜민감합니다.</li>
+      <li>단점 : 동일한 척도로 scaling 되지않습니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>그렇다면 상기에서 했던 예제를 다시사용하여 정규화까지 해보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 필요한 Module import
+</span>
+<span class="c1"># 필요한 모듈 module import
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">data.machine_learning_library</span> <span class="kn">import</span> <span class="n">numerical_derivative</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+
+<span class="c1"># Raw Data Loading
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./data/ozone.csv'</span><span class="p">)</span>
+<span class="c1"># display(df)
+</span><span class="n">training_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s">'Temp'</span><span class="p">,</span><span class="s">'Ozone'</span><span class="p">]]</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s">'any'</span><span class="p">)</span>
+<span class="c1"># print(training_data.shape)
+</span>
+<span class="n">zscore_theshold</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="c1"># outlier를 출력
+# Temp에 대한 이상치(지대점)를 확인하고 제거 
+</span><span class="n">outliers</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="s">'Temp'</span><span class="p">][</span><span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">stats</span><span class="p">.</span><span class="n">zscore</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s">'Temp'</span><span class="p">]))</span><span class="o">&gt;</span><span class="n">zscore_theshold</span><span class="p">]</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">training_data</span><span class="p">[</span><span class="s">'Temp'</span><span class="p">].</span><span class="n">isin</span><span class="p">(</span><span class="n">outliers</span><span class="p">)]</span>
+<span class="c1"># display(training_data.shape)
+</span>
+
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="s">'Ozone'</span><span class="p">][</span><span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">stats</span><span class="p">.</span><span class="n">zscore</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s">'Ozone'</span><span class="p">]))</span><span class="o">&gt;</span><span class="n">zscore_theshold</span><span class="p">]</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">training_data</span><span class="p">[</span><span class="s">'Ozone'</span><span class="p">].</span><span class="n">isin</span><span class="p">(</span><span class="n">outliers</span><span class="p">)]</span>
+<span class="c1"># display(training_data.shape)
+</span>
+<span class="c1"># 정규화 처리
+# 직접구현해도 되지만 sklearn을 이용하세요!!
+</span>
+<span class="c1"># 독립변수와 종속변수의 Scaler객체를 각각 생성
+</span><span class="n">scaler_x</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span> <span class="c1"># MinMaxScaler 클래스의 객체를 생성!
+</span><span class="n">scaler_t</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span> 
+
+<span class="n">scaler_x</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s">'Temp'</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">scaler_t</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s">'Ozone'</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">training_data</span><span class="p">[</span><span class="s">'Temp'</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler_x</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s">'Temp'</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">training_data</span><span class="p">[</span><span class="s">'Ozone'</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler_t</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s">'Ozone'</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Training Data Set
+</span><span class="n">x_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="s">'Temp'</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">t_data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="s">'Ozone'</span><span class="p">].</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Weight &amp; bias
+</span><span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># loss function 
+</span><span class="k">def</span> <span class="nf">loss_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span><span class="o">+</span><span class="n">b</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">power</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">W</span><span class="p">)</span><span class="o">+</span><span class="n">b</span>
+
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">1e-4</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">300000</span><span class="p">):</span>
+    <span class="n">W</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">numerical_derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">numerical_derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">step</span> <span class="o">%</span> <span class="mi">30000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'W : {}, b : {}, loss : {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">W</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">loss_func</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">)))</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="n">predict</span><span class="p">(</span><span class="mi">62</span><span class="p">))</span> <span class="c1">#사이킷 런은 3.5  하지만 이번에 결과는 24....
+</span>
+<span class="n">predict_data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">62</span><span class="p">])</span>
+<span class="n">scaled_predict_data</span> <span class="o">=</span> <span class="n">scaler_x</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">predict_data</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+
+<span class="n">scaled_result</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">scaled_predict_data</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">scaler_t</span><span class="p">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">scaled_result</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1">#사이킷 런은 3.5 4.2
+</span></code></pre></div></div>
+
+<p align="center"><img src="../../assets/image/image-20200929010928138.png" alt="image-20200929010928138" style="zoom:50%;" /></p>
+
+<p>그래프의 x축과 y축을 보면 0 - 1사이로 Scale이 변경된 것을 확인할 수 있습니다.</p>
+
 
         
       </section>
@@ -841,7 +964,8 @@ W : [[0.70684304]], b : [-10.94102059], loss : 821.0172068981508
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/python/Machine_learning-4/" class="pagination--pager" title="[Python] Machine Learning-4
+">Next</a>
     
   </nav>
 
@@ -855,6 +979,39 @@ W : [[0.70684304]], b : [-10.94102059], loss : 821.0172068981508
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/1200px-TensorFlowLogo.svg.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Machine_learning-4/" rel="permalink">[Python] Machine Learning-4
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Tensorflow
+</p>
+  </article>
+</div>
+
         
           
 
@@ -950,39 +1107,6 @@ W : [[0.70684304]], b : [-10.94102059], loss : 821.0172068981508
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">계산 복잡도
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/1200px-Pandas_logo.svg.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/python/Pandas_2/" rel="permalink">[Python] Pandas-2
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  2 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Pandas - 2
 </p>
   </article>
 </div>

@@ -350,3 +350,116 @@ plt.show()
 
 ### 정규화 (Nomalization)
 
+데이터가 가진 feature들의 scale이 심하게 차이나는 경우 조정해줘야합니다. 예를들어 집에 대한 데이터를 판별할때 방의개수와 집의 연식(월)의 경우 방의 개수는 보통 한자리수의 정수로 표현되는데 비해 집의 연식의 경우 최대 세자리 정수로도 표현이 가능합니다. 이렇게 최대 100배 이상의 scale 이 차이가 나는경우 각 feature들에 대해 동일한 scale을 적용할 필요가 있습니다. 이것을 `정규화 (Nomalization)`라고 부릅니다.
+
+정규화에는 크게 2가지 방법으로 나뉩니다.
+
+1. Min-Max Normalization (정규화)
+
+   데이터를 정규화하는 가장 일반적인 방법입니다. 모든 feature들에 대해 최소값 (0) ~ 최대값 (1) Scaling(변환)을 하는 방법입니다.
+
+   - 변환공식 = (Xi - X(min)) / (X(max) - X(min))
+
+   - 장점 : 동일한 기준을 가지고 Scaling 가능
+   - 단점 : 이상치를 처리를 안하면 상당히 민감하게 반응
+
+2. Stadardization - Z-Score Normalization (표준화)
+
+   평균과 분산을 이용한 Scaling방법 입니다.
+
+   - 변환공식 = x (scale) = (xi - 평균) / 분산
+
+   - 장점 : 이상치에 덜민감합니다.
+   - 단점 : 동일한 척도로 scaling 되지않습니다.
+
+그렇다면 상기에서 했던 예제를 다시사용하여 정규화까지 해보도록 하겠습니다.
+
+``` python
+# 필요한 Module import
+
+# 필요한 모듈 module import
+import numpy as np
+import pandas as pd
+from data.machine_learning_library import numerical_derivative
+import matplotlib.pyplot as plt
+from scipy import stats
+from sklearn.preprocessing import MinMaxScaler
+
+# Raw Data Loading
+df = pd.read_csv('./data/ozone.csv')
+# display(df)
+training_data = df[['Temp','Ozone']]
+training_data = training_data.dropna(how='any')
+# print(training_data.shape)
+
+zscore_theshold = 2.0
+# outlier를 출력
+# Temp에 대한 이상치(지대점)를 확인하고 제거 
+outliers = training_data['Temp'][np.abs(stats.zscore(training_data['Temp']))>zscore_theshold]
+training_data = training_data.loc[~training_data['Temp'].isin(outliers)]
+# display(training_data.shape)
+
+
+outliers = training_data['Ozone'][np.abs(stats.zscore(training_data['Ozone']))>zscore_theshold]
+training_data = training_data.loc[~training_data['Ozone'].isin(outliers)]
+# display(training_data.shape)
+
+# 정규화 처리
+# 직접구현해도 되지만 sklearn을 이용하세요!!
+
+# 독립변수와 종속변수의 Scaler객체를 각각 생성
+scaler_x = MinMaxScaler() # MinMaxScaler 클래스의 객체를 생성!
+scaler_t = MinMaxScaler() 
+
+scaler_x.fit(training_data['Temp'].values.reshape(-1,1))
+scaler_t.fit(training_data['Ozone'].values.reshape(-1,1))
+
+training_data['Temp'] = scaler_x.transform(training_data['Temp'].values.reshape(-1,1))
+training_data['Ozone'] = scaler_t.transform(training_data['Ozone'].values.reshape(-1,1))
+
+# Training Data Set
+x_data = training_data['Temp'].values.reshape(-1,1)
+t_data = training_data['Ozone'].values.reshape(-1,1)
+
+# Weight & bias
+W = np.random.rand(1,1)
+b = np.random.rand(1)
+
+# loss function 
+def loss_func(x, t):
+    y = np.dot(x, W)+b
+    return np.mean(np.power(t-y,2))
+
+def predict(x):
+    return np.dot(x,W)+b
+
+learning_rate = 1e-4
+
+f = lambda x: loss_func(x_data, t_data)
+
+for step in range(300000):
+    W -= learning_rate * numerical_derivative(f, W)
+    b -= learning_rate * numerical_derivative(f, b)
+    
+    if step % 30000 == 0:
+        print('W : {}, b : {}, loss : {}'.format(W,b,loss_func(x_data, t_data)))
+
+plt.scatter(x_data, t_data)
+plt.plot(x_data, np.dot(x_data, W)+b, 'r')
+plt.show()
+
+print (predict(62)) #사이킷 런은 3.5  하지만 이번에 결과는 24....
+
+predict_data = np.array([62])
+scaled_predict_data = scaler_x.transform(predict_data.reshape(-1,1))
+
+
+scaled_result = predict(scaled_predict_data)
+result = scaler_t.inverse_transform(scaled_result)
+print(result) #사이킷 런은 3.5 4.2
+```
+
+<p align='center'><img src="../../assets/image/image-20200929010928138.png" alt="image-20200929010928138" style="zoom:50%;" /></p>
+
+그래프의 x축과 y축을 보면 0 - 1사이로 Scale이 변경된 것을 확인할 수 있습니다.
+

@@ -1,0 +1,25 @@
+I"�	<h2 id="tensorflow">Tensorflow</h2>
+
+<p>이번시간에는 <code class="language-plaintext highlighter-rouge">Tensorflow</code>를 이용해서 Linear Regression을 해보도록 하겠습니다.</p>
+
+<p>먼저 Tensorflow를 설치하고 시작해보도록 하겠습니다. Tensorflow는 버전이 1.xx 버전과 2.xx 버전이 있습니다. 이번시간에는 1.15버전을 설치하여 사용하도록 하겠습니다.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="w"> </span><span class="nf">pip</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">tensorflow</span><span class="o">==</span><span class="mf">1.15</span><span class="w">
+</span></code></pre></div></div>
+
+<p>설치를 하였으니 ‘Hello World’를 출력해보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>
+
+<span class="n">node</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">constant</span><span class="p">(</span><span class="s">'Hello World'</span><span class="p">)</span>
+
+<span class="c1"># 우리가 만든 그래프를 실행하기 위해서 Session이 필요!
+</span><span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span>
+
+<span class="c1"># runner 인 Session 이 생성되었으니 이걸 이용해서 node를 실행해 보아요!
+</span><span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">node</span><span class="p">))</span> <span class="c1"># b'Hello World' b는 바이트
+</span><span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">node</span><span class="p">).</span><span class="n">decode</span><span class="p">())</span>  <span class="c1">#Hello World'
+</span></code></pre></div></div>
+
+:ET
