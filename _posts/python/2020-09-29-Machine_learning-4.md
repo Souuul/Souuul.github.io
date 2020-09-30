@@ -68,7 +68,7 @@ b = tf.Variable(tf.random.normal([1]), name = 'bias') # b = np.random.rand(1)
 H = W * x_data + b
 
 # 6. Loss function
-loss = tf.reduce_mean(tf.square(t_data-H))
+loss = tf.reduce_mean(tf.square(t_data-H)+b)
 #7. train node 생성
 optimizer = tf.train.GradientDescentOptimizer(learning_rate = 0.001)
 train = optimizer.minimize(loss)
@@ -88,5 +88,110 @@ print(sess.run(H)) # [ 6.9997516 10.999857  12.999908  17.000013  23.000172 ]
 
 # 10. predict!!
 print(sess.run(H, feed_dict={X:[6]})) # [13.111737]
+```
+
+### Classfication
+
+Training Data Set 특성과 분포를 파악한 후 미지의 입력데이터에 대해 어떤 종류의 값으로 분류될 수 있는지 예측합니다. 학습 후 예측데이터의 결과를 0혹은 1사이의 실수로 판단하고 0.5이상의 확률을 가진 인자들을 Pass (1) 그 이하인 확률을 Fail (0)으로 판단하여 분류하는 것을 Classification 
+
+### Logistic Regression
+
+이전까지 배웠던 Linear Regression과 더불어 Logistic Regression에 대하여 알아보도록 하겠습니다. Logistic Regression은 0~1사이의 값을 가지는 확률로 표현하기 위하여 사용됩니다.
+
+<p align = 'center'><img src="../../assets/image/logistic_regression_01.png" alt="Linear Regression vs Logistic Regression" style="zoom=100%;" /></p>
+
+<p align = 'center'><img src="../../assets/image/images-1460375.png" alt="Logistic Regression"  /></p>
+
+간단한 예시를 통해서 Logistic  Regression에 대하여 알아보도록 하겠습니다.
+
+공부시간에 따른 시험합격여부에 대한 데이터를 Linear Regression으로 분석하고 합격여부를 알아보도록 하겠습니다.
+
+``` python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import linear_model
+
+# Training Data Set
+x_data = np.array([1,2,5,8,10,30]) # 공부시간
+t_data = np.array([0,0,0,1,1,1]) # 시험합격여부(0:Fail, 1:Pass)
+
+model = linear_model.LinearRegression()
+model.fit(x_data.reshape(-1,1),
+         t_data.reshape(-1,1))
+print(model.coef_, model.intercept_) # [[0.03500583]] [0.17327888]
+model.coef_
+plt.scatter(x_data, t_data)
+plt.plot(x_data, x_data * model.coef_.ravel() + model.intercept_, 'r')
+```
+
+<p align='center'><img src="../../assets/image/image-20200930192313060.png" alt="image-20200930192313060" style="zoom:50%;" /></p>
+
+상기 그래프를 보면 실데이터에서는 8시간 이상 공부를 한다면 충분히 합격을 할 수 있지만 Linear Regression으로 분석을 한다면 24시간 정도를 공부를 해야 시험을 합격할 수 있습니다. 이러한 문제때문에 Classification을 하려고 할때에는 Logistic Regression을 사용한다고 보시면 되겠습니다. 
+
+그렇다면 다른 데이터를 사용해서 한번 구해보도록 하겠습니다.
+
+``` python
+# 예측모델 
+import tensorflow as tf
+import numpy as np
+
+# training data set
+# 외국어 공부시간(시간), 해외체류기간(년)
+x_data = np.array([[1,0],
+                 [2,0],
+                 [5,1],
+                 [2,3],
+                 [3,3],
+                 [8,1],
+                 [10,0]])
+
+
+# 시험합격여부(0:Fail, 1:Pass)
+t_data = np.array([[0],
+                  [0],
+                  [0],
+                  [1],
+                  [1],
+                  [1],
+                  [1]])
+# placeholder
+X = tf.placeholder(shape=[None,2], dtype = tf.float32)
+T = tf.placeholder(shape=[None,1], dtype = tf.float32)
+
+# Weight & bias
+W = tf.Variable(tf.random.normal([2,1]), name = 'weight')
+b = tf.Variable(tf.random.normal([1]), name = 'bias')
+
+# Hypothesis(Logistic Model)
+logit = tf.matmul(X,W) + b # Linear Regression Hypothesis
+H = tf.sigmoid(logit)
+
+# loss function 
+loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits = logit, labels=T))
+
+
+## 8. Training 노드생성
+train = tf.train.GradientDescentOptimizer(learning_rate=0.001).minimize(loss)
+
+# Session & 초기화
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+
+# 10. 학습을 진행(Graph를 실행)
+for step in range(3000):
+    _, W_val,b_val, loss_val = sess.run([train, W,b, loss], feed_dict={X:x_data, T:t_data})
+    
+    if step%300 ==0:
+        print ('W:{}, b:{}, loss:{}'.format(W_val,b_val,loss_val))
+
+
+# 11. 내가 알고싶은 값을 넣어서 predict!!
+# predict_data_x = np.array([[150,8,85]])
+# predict_data_x = scaler_x.transform(predict_data_x)
+result = sess.run(H, feed_dict={X:[[4,2]]})
+
+# result = scaler_t.inverse_transform(result)
+
+print(result)
 ```
 

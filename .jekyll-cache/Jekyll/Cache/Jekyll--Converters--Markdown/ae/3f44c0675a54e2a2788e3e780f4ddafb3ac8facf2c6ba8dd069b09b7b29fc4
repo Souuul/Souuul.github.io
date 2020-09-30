@@ -1,0 +1,177 @@
+I"�^<h2 id="tensorflow">Tensorflow</h2>
+
+<p>이번시간에는 <code class="language-plaintext highlighter-rouge">Tensorflow</code>를 이용해서 Linear Regression을 해보도록 하겠습니다.</p>
+
+<p>먼저 Tensorflow를 설치하고 시작해보도록 하겠습니다. Tensorflow는 버전이 1.xx 버전과 2.xx 버전이 있습니다. 이번시간에는 1.15버전을 설치하여 사용하도록 하겠습니다.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="w"> </span><span class="nf">pip</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">tensorflow</span><span class="o">==</span><span class="mf">1.15</span><span class="w">
+</span></code></pre></div></div>
+
+<p>설치를 하였으니 ‘Hello World’를 출력해보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>
+
+<span class="n">node</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">constant</span><span class="p">(</span><span class="s">'Hello World'</span><span class="p">)</span>
+
+<span class="c1"># 우리가 만든 그래프를 실행하기 위해서 Session이 필요!
+</span><span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span>
+
+<span class="c1"># runner 인 Session 이 생성되었으니 이걸 이용해서 node를 실행해 보아요!
+</span><span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">node</span><span class="p">))</span> <span class="c1"># b'Hello World' b는 바이트
+</span><span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">node</span><span class="p">).</span><span class="n">decode</span><span class="p">())</span>  <span class="c1">#Hello World'
+</span></code></pre></div></div>
+
+<p>이번에는 덧셈을 수행해보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># placeholder를 이용
+# 2개의 수를 입력으로 받아서 덧셈연산을 수행
+</span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="n">node1</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># scalar 형태의 값 1개를 실수로 받아들일 수 있는 Placeholder
+</span><span class="n">node2</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># scalar 형태의 값 1개를 실수로 받아들일 수 있는 Placeholder
+</span><span class="n">node3</span> <span class="o">=</span> <span class="n">node1</span> <span class="o">+</span> <span class="n">node2</span>
+
+<span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">node3</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">node1</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="n">node2</span><span class="p">:</span><span class="mi">20</span><span class="p">})</span>
+</code></pre></div></div>
+
+<p>간단한 예제를 통해서 예측모델을 만들어보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+
+<span class="c1"># 1. Raw Data Loading
+# 2. Data Preprocessing(데이터 전처리)
+# 3. Training data set
+</span><span class="n">x_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">t_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">23</span><span class="p">]</span>
+
+<span class="c1"># 4. Weight &amp; bias 정의
+</span><span class="n">W</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">([</span><span class="mi">1</span><span class="p">]),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">'weight'</span><span class="p">)</span> <span class="c1"># W = np.random.rand(1,1)
+</span><span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">([</span><span class="mi">1</span><span class="p">]),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">'bias'</span><span class="p">)</span> <span class="c1"># b = np.random.rand(1)
+</span>
+<span class="c1"># 5. hypothesis, simple Linear Regression Model
+</span><span class="n">H</span> <span class="o">=</span> <span class="n">W</span> <span class="o">*</span> <span class="n">x_data</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># 6. Loss function
+</span><span class="n">loss</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">square</span><span class="p">(</span><span class="n">t_data</span><span class="o">-</span><span class="n">H</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+<span class="c1">#7. train node 생성
+</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">train</span><span class="p">.</span><span class="n">GradientDescentOptimizer</span><span class="p">(</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">)</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">optimizer</span><span class="p">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+
+<span class="c1"># 8. 실행준비 및 초기화작업
+</span><span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">global_variables_initializer</span><span class="p">())</span> <span class="c1"># 초기화 작업
+</span>
+<span class="c1"># 9. 반복해서 학습을 진행!!
+</span>
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30000</span><span class="p">):</span>
+    <span class="n">_</span><span class="p">,</span><span class="n">W_val</span><span class="p">,</span> <span class="n">b_val</span> <span class="o">=</span> <span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">([</span><span class="n">train</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">b</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">step</span> <span class="o">%</span> <span class="mi">3000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'W:{}, b:{}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">W_val</span><span class="p">,</span> <span class="n">b_val</span><span class="p">))</span>
+        
+<span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">H</span><span class="p">))</span> <span class="c1"># [ 6.9997516 10.999857  12.999908  17.000013  23.000172 ]
+</span>
+<span class="c1"># 10. predict!!
+</span><span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">X</span><span class="p">:[</span><span class="mi">6</span><span class="p">]}))</span> <span class="c1"># [13.111737]
+</span></code></pre></div></div>
+
+<h3 id="logistic-regression">Logistic Regression</h3>
+
+<p>이전까지 배웠던 Linear Regression과 더불어 Logistic Regression에 대하여 알아보도록 하겠습니다. Logistic Regression은 0~1사이의 값을 가지는 확률로 표현하기 위하여 사용됩니다.</p>
+
+<p align="center"><img src="../../assets/image/logistic_regression_01.png" alt="Linear Regression vs Logistic Regression" style="zoom=100%;" /></p>
+
+<p align="center"><img src="../../assets/image/images-1460375.png" alt="Logistic Regression" /></p>
+
+<p>간단한 예시를 통해서 Logistic  Regression에 대하여 알아보도록 하겠습니다.</p>
+
+<p>공부시간에 따른 시험합격여부에 대한 데이터를 Linear Regression으로 분석하고 합격여부를 알아보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
+
+<span class="c1"># Training Data Set
+</span><span class="n">x_data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span> <span class="c1"># 공부시간
+</span><span class="n">t_data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># 시험합격여부(0:Fail, 1:Pass)
+</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">linear_model</span><span class="p">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_data</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+         <span class="n">t_data</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="n">intercept_</span><span class="p">)</span> <span class="c1"># [[0.03500583]] [0.17327888]
+</span><span class="n">model</span><span class="p">.</span><span class="n">coef_</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">t_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">x_data</span> <span class="o">*</span> <span class="n">model</span><span class="p">.</span><span class="n">coef_</span><span class="p">.</span><span class="n">ravel</span><span class="p">()</span> <span class="o">+</span> <span class="n">model</span><span class="p">.</span><span class="n">intercept_</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p align="center"><img src="../../assets/image/image-20200930192313060.png" alt="image-20200930192313060" style="zoom:50%;" /></p>
+
+<p>상기 그래프를 보면 실데이터에서는 8시간 이상 공부를 한다면 충분히 합격을 할 수 있지만 Linear Regression으로 분석을 한다면 24시간 정도를 공부를 해야 시험을 합격할 수 있습니다. 이러한 문제때문에 Logistic Regression을 사용한다고 보시면 되겠습니다.</p>
+
+<p>그렇다면 다른 데이터를 사용해서 한번 구해보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 예측모델 
+</span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># training data set
+# 외국어 공부시간(시간), 해외체류기간(년)
+</span><span class="n">x_data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+
+
+<span class="c1"># 시험합격여부(0:Fail, 1:Pass)
+</span><span class="n">t_data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="c1"># placeholder
+</span><span class="n">X</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="c1"># Weight &amp; bias
+</span><span class="n">W</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">'weight'</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">([</span><span class="mi">1</span><span class="p">]),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">'bias'</span><span class="p">)</span>
+
+<span class="c1"># Hypothesis(Logistic Model)
+</span><span class="n">logit</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">W</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span> <span class="c1"># Linear Regression Hypothesis
+</span><span class="n">H</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">logit</span><span class="p">)</span>
+
+<span class="c1"># loss function 
+</span><span class="n">loss</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">sigmoid_cross_entropy_with_logits</span><span class="p">(</span><span class="n">logits</span> <span class="o">=</span> <span class="n">logit</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">T</span><span class="p">))</span>
+
+
+<span class="c1">## 8. Training 노드생성
+</span><span class="n">train</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">train</span><span class="p">.</span><span class="n">GradientDescentOptimizer</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">).</span><span class="n">minimize</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+
+<span class="c1"># Session &amp; 초기화
+</span><span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
+
+<span class="c1"># 10. 학습을 진행(Graph를 실행)
+</span><span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3000</span><span class="p">):</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">W_val</span><span class="p">,</span><span class="n">b_val</span><span class="p">,</span> <span class="n">loss_val</span> <span class="o">=</span> <span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">([</span><span class="n">train</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span><span class="n">b</span><span class="p">,</span> <span class="n">loss</span><span class="p">],</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">X</span><span class="p">:</span><span class="n">x_data</span><span class="p">,</span> <span class="n">T</span><span class="p">:</span><span class="n">t_data</span><span class="p">})</span>
+    
+    <span class="k">if</span> <span class="n">step</span><span class="o">%</span><span class="mi">300</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s">'W:{}, b:{}, loss:{}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">W_val</span><span class="p">,</span><span class="n">b_val</span><span class="p">,</span><span class="n">loss_val</span><span class="p">))</span>
+
+
+<span class="c1"># 11. 내가 알고싶은 값을 넣어서 predict!!
+# predict_data_x = np.array([[150,8,85]])
+# predict_data_x = scaler_x.transform(predict_data_x)
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">X</span><span class="p">:[[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]]})</span>
+
+<span class="c1"># result = scaler_t.inverse_transform(result)
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+
+:ET
