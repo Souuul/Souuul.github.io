@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-30T20:15:23+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Python] Machine Learning-4</title><link href="http://localhost:4000/python/Machine_learning-4/" rel="alternate" type="text/html" title="[Python] Machine Learning-4" /><published>2020-09-29T00:00:00+09:00</published><updated>2020-09-29T00:00:00+09:00</updated><id>http://localhost:4000/python/Machine_learning-4</id><content type="html" xml:base="http://localhost:4000/python/Machine_learning-4/">&lt;h2 id=&quot;tensorflow&quot;&gt;Tensorflow&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-01T21:38:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Python] Machine Learning-4</title><link href="http://localhost:4000/python/Machine_learning-4/" rel="alternate" type="text/html" title="[Python] Machine Learning-4" /><published>2020-09-29T00:00:00+09:00</published><updated>2020-09-29T00:00:00+09:00</updated><id>http://localhost:4000/python/Machine_learning-4</id><content type="html" xml:base="http://localhost:4000/python/Machine_learning-4/">&lt;h2 id=&quot;tensorflow&quot;&gt;Tensorflow&lt;/h2&gt;
 
 &lt;p&gt;이번시간에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tensorflow&lt;/code&gt;를 이용해서 Linear Regression을 해보도록 하겠습니다.&lt;/p&gt;
 
@@ -77,15 +77,25 @@
 
 &lt;h3 id=&quot;classfication&quot;&gt;Classfication&lt;/h3&gt;
 
-&lt;p&gt;Training Data Set 특성과 분포를 파악한 후 미지의 입력데이터에 대해 어떤 종류의 값으로 분류될 수 있는지 예측합니다. 학습 후 예측데이터의 결과를 0혹은 1사이의 실수로 판단하고 0.5이상의 확률을 가진 인자들을 Pass (1) 그 이하인 확률을 Fail (0)으로 판단하여 분류하는 것을 Classification&lt;/p&gt;
+&lt;p&gt;Training Data Set 특성과 분포를 파악한 후 미지의 입력데이터에 대해 어떤 종류의 값으로 분류될 수 있는지 예측합니다. 학습 후 예측데이터의 결과를 0혹은 1사이의 실수로 판단하고 0.5이상의 확률을 가진 인자들을 Pass (1) 그 이하인 확률을 Fail (0)으로 판단하여 분류하는 것을 Classification이라고 합니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;logistic-regression&quot;&gt;Logistic Regression&lt;/h3&gt;
 
-&lt;p&gt;이전까지 배웠던 Linear Regression과 더불어 Logistic Regression에 대하여 알아보도록 하겠습니다. Logistic Regression은 0~1사이의 값을 가지는 확률로 표현하기 위하여 사용됩니다.&lt;/p&gt;
+&lt;p&gt;이전까지 배웠던 Linear Regression과 더불어 Logistic Regression에 대하여 알아보도록 하겠습니다. Logistic Regression은 0에서 1사이의 값을 가지는 확률로 표현하기 위하여 사용됩니다.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../../assets/image/logistic_regression_01.png&quot; alt=&quot;Linear Regression vs Logistic Regression&quot; style=&quot;zoom=100%;&quot; /&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;sigmoid&quot;&gt;Sigmoid&lt;/h3&gt;
+
+&lt;p&gt;먼저 구한 Linear Regression 모델에서 나온 값을 하기식에 대입하여 계산하면 0에서 1사이의 값을 추출할 수 있습니다.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../../assets/image/images-1460375.png&quot; alt=&quot;Logistic Regression&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;classification---costloss-function&quot;&gt;Classification - Cost(Loss) function&lt;/h3&gt;
+
+&lt;p&gt;Sigmoid를 사용할 경우 Linear regression에서 사용하였던 Cost Function을 사용할 수 없습니다. 왜냐하면 Convex fuction 이 되지 않기 때문에 자칫 잘못하면 Local optima가 생길 수 있어 Global minimum을 찾을수 없기 때문입니다. 그렇기 때문에 Logistic Regression의 Cost function 은 하기와 같이 정의 됩니다.&lt;/p&gt;
+
+&lt;p&gt;Loss function =  -(t*log y + (1-t)log(1-y))&lt;/p&gt;
 
 &lt;p&gt;간단한 예시를 통해서 Logistic  Regression에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
 
