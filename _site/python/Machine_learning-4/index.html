@@ -500,8 +500,9 @@
 
 <span class="c1"># 10. 학습을 진행(Graph를 실행)
 </span><span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3000</span><span class="p">):</span>
-    <span class="n">_</span><span class="p">,</span> <span class="n">W_val</span><span class="p">,</span><span class="n">b_val</span><span class="p">,</span> <span class="n">loss_val</span> <span class="o">=</span> <span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">([</span><span class="n">train</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span><span class="n">b</span><span class="p">,</span> <span class="n">loss</span><span class="p">],</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">X</span><span class="p">:</span><span class="n">x_data</span><span class="p">,</span> <span class="n">T</span><span class="p">:</span><span class="n">t_data</span><span class="p">})</span>
-    
+    <span class="n">_</span><span class="p">,</span> <span class="n">W_val</span><span class="p">,</span><span class="n">b_val</span><span class="p">,</span> <span class="n">loss_val</span> <span class="o">=</span> <span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">([</span><span class="n">train</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span><span class="n">b</span><span class="p">,</span> <span class="n">loss</span><span class="p">],</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">X</span><span class="p">:</span><span class="n">x_data</span><span class="p">,</span> <span class="n">T</span><span class="p">:</span><span class="n">t_data</span><span class="p">})</span> 
+    <span class="c1"># train = _ / W = W_val / b = b_val / loss = loss_val
+</span>    
     <span class="k">if</span> <span class="n">step</span><span class="o">%</span><span class="mi">300</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
         <span class="k">print</span> <span class="p">(</span><span class="s">'W:{}, b:{}, loss:{}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">W_val</span><span class="p">,</span><span class="n">b_val</span><span class="p">,</span><span class="n">loss_val</span><span class="p">))</span>
 
@@ -514,6 +515,30 @@
 <span class="c1"># result = scaler_t.inverse_transform(result)
 </span>
 <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="s">'''
+W:[[-0.09505238]
+ [-0.28877407]], b:[0.5809646], loss:0.9031272530555725
+W:[[ 0.07203682]
+ [-0.16718708]], b:[0.57360214], loss:0.7202726006507874
+W:[[ 0.09072737]
+ [-0.08331408]], b:[0.54003835], loss:0.6912368535995483
+W:[[ 0.08967677]
+ [-0.01323891]], b:[0.5013897], loss:0.6698331832885742
+W:[[0.08644719]
+ [0.04807308]], b:[0.46102154], loss:0.6518125534057617
+W:[[0.08408184]
+ [0.10256049]], b:[0.41977572], loss:0.6362107396125793
+W:[[0.08290234]
+ [0.15140326]], b:[0.37797752], loss:0.6224187016487122
+W:[[0.082752  ]
+ [0.19549072]], b:[0.33582368], loss:0.6100078225135803
+W:[[0.0834328 ]
+ [0.23553707]], b:[0.29346314], loss:0.5986728668212891
+W:[[0.0847775]
+ [0.2721263]], b:[0.25101608], loss:0.5881935954093933
+[[0.7625255]]
+'''</span>
 </code></pre></div></div>
 
 
@@ -593,7 +618,8 @@
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/python/Machine_learning-5/" class="pagination--pager" title="[Python] Evaluation - Sklearn
+">Next</a>
     
   </nav>
 
@@ -607,6 +633,72 @@
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/1200px-TensorFlowLogo.svg.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Machine_learning-6/" rel="permalink">[Python] Evaluation - Tensorflow
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Evaluation - Tensorflow
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/image/1200px-TensorFlowLogo.svg.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/python/Machine_learning-5/" rel="permalink">[Python] Evaluation - Sklearn
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Evaluation - Sklearn
+</p>
+  </article>
+</div>
+
         
           
 
@@ -669,72 +761,6 @@
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Linear Regression Model
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/1200px-Pandas_logo.svg.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/python/Machine_learning/" rel="permalink">[Python] Machin Learning
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  4 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Machine Learning
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src="/assets/image/Algorithm.png" alt="">
-      </div>
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/BigO/" rel="permalink">[Algorithm] 계산복잡도
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  less than 1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">계산 복잡도
 </p>
   </article>
 </div>

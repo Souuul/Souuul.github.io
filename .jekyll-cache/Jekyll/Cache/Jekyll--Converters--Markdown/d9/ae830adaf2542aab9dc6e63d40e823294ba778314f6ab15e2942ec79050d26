@@ -1,0 +1,104 @@
+I"�*<h2 id="evaluation---sklearn">Evaluation - Sklearn</h2>
+
+<p>예측모델을 만들고 예측을 하였다면 모델이 얼마나 정확도를 가지는지 평가를 해야합니다. 그렇다면 어떻게 모델을 평가를 해야할까요 ? 성능을 평가하는 방법은 <code class="language-plaintext highlighter-rouge">Metric</code>이라고 하며 크게 3가지가 있습니다.</p>
+
+<blockquote>
+  <ol>
+    <li>Precision :  맞다고 예측한 것과 실제로 맞은값의 비율
+      <ul>
+        <li>Precision = TP / (TP + FP)</li>
+      </ul>
+    </li>
+    <li>Recall : 실제로 True인 것과 실제 True와 모델이 True라과 예측한 것의 비율
+      <ul>
+        <li>Recall = TP / (TP + FN)</li>
+      </ul>
+    </li>
+    <li>Accuracy
+      <ul>
+        <li>Accuracy = TP + TN/ (TP + TN+ FN+ FP)</li>
+      </ul>
+    </li>
+  </ol>
+</blockquote>
+
+<p>최종모델의 Accuracy를 측정하기 위한 Data Set은 <code class="language-plaintext highlighter-rouge">Training set</code>, <code class="language-plaintext highlighter-rouge">Validation set</code>, <code class="language-plaintext highlighter-rouge">Test set</code> 이 있습니다.</p>
+
+<p align="center"><img src="../../assets/image/Dataset.png" alt="Clase 6 Machine Learning" style="zoom:50%;" /></p>
+
+<p>여기서 모델을 학습시키는데 관여하는 데 사용되는 Data set은 <code class="language-plaintext highlighter-rouge">Training set</code> 입니다. 중간에 조금 생소한 개념이 있습니다. 바로 <code class="language-plaintext highlighter-rouge">Validation set</code> 입니다. 그냥 <code class="language-plaintext highlighter-rouge">Training set</code>을 이용하여 학습하고 Test set으로 평가를 하면되는데 왜 Validation 이라는 개념을 만들었을까요?</p>
+
+<p>그 이유는 <code class="language-plaintext highlighter-rouge">Training Set</code>으로 학습했을때 발생하는 Overfittinig 과 underfitting 을 막기 위함에 있습니다. Model의 개선작업을 수행하는 역할을 하며 최종적인 평가 중에 예측모델을 조금씩 확인하는 개념으로 보시면 되겠습니다.</p>
+
+<p>하지만 데이터량이 너무 적은 경우에는  <code class="language-plaintext highlighter-rouge">Cross validation</code> 을 통해 Training Data를 나누고 Training 과 Test 를 반복합니다.</p>
+
+<p>그렇다면 Sklearn 을 통해서 실습을 해보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">accuracy_score</span>
+
+
+<span class="c1">#1. Raw Data Loading
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./data/bmi.csv'</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1">#2. 결측치 확인
+</span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">())</span>
+
+<span class="c1">#3. 이상치 확인
+</span><span class="n">zscore_threshold</span> <span class="o">=</span> <span class="mf">1.8</span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">outlier</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">stats</span><span class="p">.</span><span class="n">zscore</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]))</span> <span class="o">&gt;</span> <span class="n">zscore_threshold</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">isin</span><span class="p">(</span><span class="n">outlier</span><span class="p">)]</span>
+
+<span class="c1">#4. Data Split
+</span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">x_data_train</span><span class="p">,</span> <span class="n">x_data_test</span><span class="p">,</span> <span class="n">t_data_train</span><span class="p">,</span> <span class="n">t_data_test</span> <span class="o">=</span>\
+<span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s">'height'</span><span class="p">,</span><span class="s">'weight'</span><span class="p">]],</span> 
+                 <span class="n">df</span><span class="p">[</span><span class="s">'label'</span><span class="p">],</span> 
+                 <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> 
+                 <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># test data를 30% 로 설정
+</span>
+<span class="c1">#5. Normalization (정규화)
+</span><span class="n">x_scale</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">x_scale</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_data_train</span><span class="p">)</span>
+<span class="n">x_data_train_norm</span> <span class="o">=</span> <span class="n">x_scale</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x_data_train</span><span class="p">)</span>
+<span class="n">x_data_train_norm</span> <span class="o">=</span> <span class="n">x_scale</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x_data_test</span><span class="p">)</span>
+
+<span class="c1">#6. Sklearn으로 구현
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_data_train_norm</span><span class="p">,</span> <span class="n">t_data_train</span><span class="p">)</span>
+
+<span class="c1">#7. Cross Validation
+</span><span class="n">Kfold</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">Kfold_score</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">x_data_train_norm</span><span class="p">,</span> <span class="n">t_data_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">Kfold</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'##########cross validation############'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'score : {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">kfold_score</span><span class="p">))</span>
+<span class="s">'''
+score : [0.98       0.98642857 0.985      0.97642857 0.98642857 0.98428571
+ 0.98714286 0.97714286 0.97714286 0.98642857]
+'''</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'전체평균은 : {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">kfold_score</span><span class="p">.</span><span class="n">mean</span><span class="p">()))</span> 
+<span class="c1"># 전체평균은 : 0.9826428571428572
+</span>
+<span class="c1">#8. 최종모델 평가
+</span><span class="n">predict_val</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_data_train_norm</span><span class="p">)</span>
+<span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">predict_val</span><span class="p">,</span> <span class="n">t_data_test</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'우리 model의 최종 Accuracy : {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">acc</span><span class="p">))</span>
+
+<span class="c1">#9. predict
+</span><span class="n">height</span> <span class="o">=</span> <span class="mi">188</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mi">78</span>
+<span class="n">my_state</span> <span class="o">=</span> <span class="p">[[</span><span class="n">height</span><span class="p">,</span> <span class="n">weight</span><span class="p">]]</span>
+<span class="n">my_state_val</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">scaler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">my_state</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_state_val</span><span class="p">)</span>
+</code></pre></div></div>
+
+:ET
