@@ -181,6 +181,18 @@
 <lastmod>2020-10-16T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%88%98%EC%97%85/</loc>
+<lastmod>2020-10-17T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/python/Machine_learning-7/</loc>
+<lastmod>2020-10-17T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/python/Deep_learning-1/</loc>
+<lastmod>2020-10-18T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/archive-layout-with-content/</loc>
 </url>
 <url>
@@ -264,5 +276,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page9/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page10/</loc>
 </url>
 </urlset>
