@@ -1,0 +1,129 @@
+I"uR<h2 id="dropout--tf-115">Dropout -TF 1.15</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Dropout</code> 이란 overfitting을 막기위한 방법입니다. 데이터에서 어느정도의 비율을 제외하고 학습을 시키는 방법입니다. 하지만 <code class="language-plaintext highlighter-rouge">Dropout</code>의 경우 정해진 비율안에 랜덤으로 제외시키고 제외된 항목이 계속 변경되어 좀더 효율적이게 학습시키는 방법이라고 보시면 되겠습니다.</p>
+
+<p>핵심코드(1.15 버전)는 하기와 같습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tf</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">드롭아웃할레이어</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">dropout_rate</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="mnist_dropout-예제">MNIST_Dropout 예제</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span> <span class="c1"># Normalization
+</span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span> <span class="c1"># train, test 데이터분리
+</span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span> <span class="c1"># cross validation
+</span><span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">SGD</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+
+<span class="n">tf</span><span class="p">.</span><span class="n">reset_default_graph</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'/Users/admin/Downloads/Digit_Recognizer_train.csv'</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="c1"># 결측치 확인
+</span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">())</span>
+<span class="n">x_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">t_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'label'</span><span class="p">]</span>
+
+<span class="c1"># Data split
+</span><span class="n">x_data_train</span><span class="p">,</span> <span class="n">x_data_test</span><span class="p">,</span> <span class="n">t_data_train</span><span class="p">,</span> <span class="n">t_data_test</span><span class="o">=</span>\
+<span class="n">train_test_split</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span><span class="n">t_data</span><span class="p">,</span><span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># 데이터 정규화 (Normalization)
+</span><span class="n">x_scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">x_scaler</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_data_train</span><span class="p">)</span>
+<span class="n">x_data_train_norm</span> <span class="o">=</span> <span class="n">x_scaler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x_data_train</span><span class="p">)</span>
+<span class="n">x_data_test_norm</span> <span class="o">=</span> <span class="n">x_scaler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x_data_test</span><span class="p">)</span>
+
+<span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span>   <span class="c1"># Tensorflow node를 실행하기 위해서 session을 생성
+</span>
+<span class="c1"># One-hot encoding 
+</span><span class="n">t_data_train_onehot</span> <span class="o">=</span> <span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">t_data_train</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>  
+<span class="n">t_data_test_onehot</span> <span class="o">=</span> <span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">t_data_test</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+
+
+<span class="c1"># Placeholder
+</span><span class="n">X</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">shape</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">784</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">shape</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">dropout_rate</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="c1"># Weight &amp; bias
+</span><span class="n">W2</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">get_variable</span><span class="p">(</span><span class="s">'weight2'</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">784</span><span class="p">,</span><span class="mi">256</span><span class="p">],</span>
+                     <span class="n">initializer</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">contrib</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">variance_scaling_initializer</span><span class="p">())</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">([</span><span class="mi">256</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s">'bias2'</span><span class="p">)</span>
+<span class="n">_layer2</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">W2</span><span class="p">)</span> <span class="o">+</span> <span class="n">b2</span><span class="p">)</span>
+<span class="n">layer2</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">_layer2</span><span class="p">,</span> <span class="n">rate</span> <span class="o">=</span> <span class="n">dropout_rate</span><span class="p">)</span>
+
+
+<span class="n">W3</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">get_variable</span><span class="p">(</span><span class="s">'weight3'</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">256</span><span class="p">,</span><span class="mi">128</span><span class="p">],</span> 
+                     <span class="n">initializer</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">contrib</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">variance_scaling_initializer</span><span class="p">())</span>
+<span class="n">b3</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">([</span><span class="mi">128</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s">'bias3'</span><span class="p">)</span>
+<span class="n">_layer3</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">layer2</span><span class="p">,</span> <span class="n">W3</span><span class="p">)</span> <span class="o">+</span> <span class="n">b3</span><span class="p">)</span>
+<span class="n">layer3</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">_layer3</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">dropout_rate</span><span class="p">)</span>
+
+
+<span class="n">W4</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">get_variable</span><span class="p">(</span><span class="s">'weight4'</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">128</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> 
+                     <span class="n">initializer</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">contrib</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">variance_scaling_initializer</span><span class="p">())</span>
+<span class="n">b4</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">normal</span><span class="p">([</span><span class="mi">10</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s">'bias4'</span><span class="p">)</span>
+
+<span class="c1"># Hypothesis
+</span><span class="n">logit</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">layer3</span><span class="p">,</span> <span class="n">W4</span><span class="p">)</span> <span class="o">+</span> <span class="n">b4</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logit</span><span class="p">)</span>     <span class="c1"># Multinomial Hypothesis
+</span>
+<span class="c1"># Loss
+</span><span class="n">loss</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">softmax_cross_entropy_with_logits_v2</span><span class="p">(</span><span class="n">logits</span><span class="o">=</span><span class="n">logit</span><span class="p">,</span>
+                                                                 <span class="n">labels</span><span class="o">=</span><span class="n">T</span><span class="p">))</span>
+
+<span class="n">train</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">train</span><span class="p">.</span><span class="n">GradientDescentOptimizer</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">).</span><span class="n">minimize</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+
+
+
+<span class="n">num_of_epoch</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># 7. 학습진행
+</span><span class="k">def</span> <span class="nf">run_train</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span><span class="n">train_x</span><span class="p">,</span> <span class="n">train_t</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'### 학습 시작 ###'</span><span class="p">)</span>
+    <span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>  <span class="c1"># tf.Variable 초기화(W,b)
+</span>
+    <span class="n">total_batch</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">train_x</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_of_epoch</span><span class="p">):</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total_batch</span><span class="p">):</span>
+            <span class="n">batch_x</span> <span class="o">=</span> <span class="n">train_x</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">batch_size</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">batch_size</span><span class="p">]</span>
+            <span class="n">batch_t</span> <span class="o">=</span> <span class="n">train_t</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">batch_size</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">batch_size</span><span class="p">]</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">loss_val</span> <span class="o">=</span> <span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">([</span><span class="n">train</span><span class="p">,</span><span class="n">loss</span><span class="p">],</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">X</span><span class="p">:</span><span class="n">batch_x</span><span class="p">,</span>
+                                                            <span class="n">T</span><span class="p">:</span><span class="n">batch_t</span><span class="p">,</span>
+                                                           <span class="n">dropout_rate</span><span class="p">:</span><span class="mf">0.3</span><span class="p">})</span>
+        <span class="k">if</span> <span class="n">step</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'Loss : {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">loss_val</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'### 학습 끝 ###'</span><span class="p">)</span>
+
+    
+    
+<span class="c1"># Accuracy
+</span><span class="n">predict</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># [[0.1 0.3  0.2 0.2 ... 0.1]]
+</span>
+<span class="c1"># sklearn을 이용해서 classification_report를 출력해보아요!!
+</span>
+<span class="c1"># train데이터로 학습하고 train데이터로 성능평가를 해 보아요!!  
+</span>
+<span class="n">run_train</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span><span class="n">x_data_train_norm</span><span class="p">,</span><span class="n">t_data_train_onehot</span><span class="p">)</span>
+
+<span class="n">target_name</span> <span class="o">=</span> <span class="p">[</span><span class="s">'num 0'</span><span class="p">,</span> <span class="s">'num 1'</span><span class="p">,</span> <span class="s">'num 2'</span><span class="p">,</span> <span class="s">'num 3'</span><span class="p">,</span>
+               <span class="s">'num 4'</span><span class="p">,</span> <span class="s">'num 5'</span><span class="p">,</span> <span class="s">'num 6'</span><span class="p">,</span> <span class="s">'num 7'</span><span class="p">,</span>
+               <span class="s">'num 8'</span><span class="p">,</span> <span class="s">'num 9'</span><span class="p">]</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">t_data_test</span><span class="p">,</span>
+                            <span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">predict</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">X</span><span class="p">:</span><span class="n">x_data_test_norm</span><span class="p">,</span>
+                                                        <span class="n">dropout_rate</span><span class="p">:</span><span class="mi">0</span><span class="p">}),</span>
+                            <span class="n">target_names</span><span class="o">=</span><span class="n">target_name</span><span class="p">))</span>
+</code></pre></div></div>
+
+:ET
