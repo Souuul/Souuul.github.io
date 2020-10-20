@@ -133,11 +133,11 @@
 <lastmod>2020-09-04T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/python/PythonPage/</loc>
+<loc>http://localhost:4000/python/ndarray/</loc>
 <lastmod>2020-09-04T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/python/ndarray/</loc>
+<loc>http://localhost:4000/python/PythonPage/</loc>
 <lastmod>2020-09-04T00:00:00+09:00</lastmod>
 </url>
 <url>
@@ -203,6 +203,10 @@
 <url>
 <loc>http://localhost:4000/python/tensorflow/Deep_learning-4/</loc>
 <lastmod>2020-10-19T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/python/tensorflow/SVM/</loc>
+<lastmod>2020-10-20T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/archive-layout-with-content/</loc>
