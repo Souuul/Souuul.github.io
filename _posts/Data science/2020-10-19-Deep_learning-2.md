@@ -19,7 +19,7 @@ Hidden layer의 개수가 많아지면 많아질수록 학습이 제대로 이�
 
 sigmoid의 경우에 0과 1사이의 값을 가지고 있어 결국 layer 많아지는 경우 그 값이 0에 수렴하게 됩니다. 미분값이 결국에는 0으로 수렴하게 되어 경사가 사라지는 현상이 발생하는데 이를 `Vanishing Gradient`이라고 부릅니다. 즉 다음 layer로 전파가 되지않는 현상이 발생하게 되며 학습이 되지 않습니다.
 
-<p align='center'><img src="../../assets/image/images-3043271.png" alt="01. 활성함수(activation function) - Sigmoid, ReLU" style="zoom:150%;" /></p>
+<p align='center'><img src="../../assets/image/images-3043271.png" alt="01. 활성함수(activation function) - Sigmoid, ReLU" style="zoom:150%;" /></p>{: .shadow}
 
 
 

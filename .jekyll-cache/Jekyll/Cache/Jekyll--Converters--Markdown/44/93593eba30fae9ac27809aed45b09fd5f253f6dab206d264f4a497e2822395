@@ -1,8 +1,0 @@
-I"�<h2 id="svm-support-vector-machine">SVM (Support vector machine)</h2>
-
-<p><code class="language-plaintext highlighter-rouge">Support Vector machine</code>은 decision boundary (결정경계)를 생성하여 데이터를 분류하는 기법입니다.</p>
-
-<p><img src="../../assets/image/0*lyr5-f7HRu34OLvd.png" alt="0*lyr5-f7HRu34OLvd" style="zoom: 67%;" /></p>
-
-<p>데이터를 기반으로 support Vectors를 찾아내고 그사이의 Margin이 최대화되는 Separatin Hyperplane을 찾아냅니다.</p>
-:ET

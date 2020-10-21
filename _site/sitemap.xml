@@ -205,8 +205,12 @@
 <lastmod>2020-10-19T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/python/tensorflow/SVM/</loc>
+<loc>http://localhost:4000/python/SVM/</loc>
 <lastmod>2020-10-20T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/python/Decision_Tree/</loc>
+<lastmod>2020-10-21T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/archive-layout-with-content/</loc>

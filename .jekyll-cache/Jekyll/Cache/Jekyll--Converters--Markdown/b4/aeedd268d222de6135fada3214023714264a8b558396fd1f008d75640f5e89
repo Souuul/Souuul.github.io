@@ -1,0 +1,98 @@
+I"�2<h2 id="svm-support-vector-machine">SVM (Support vector machine)</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Support Vector machine</code>은 데이터를 선형으로 분리하여 최적의 decision boundary (결정경계)를 찾는 알고리즘입니다.</p>
+
+<p align="center"><img src="../../assets/image/SVM.png" style="zoom: 67%;" /></p>
+
+<p><img src="../../assets/image/SVM.png" alt="SVM" /></p>
+
+<p>데이터를 기반으로 support Vectors를 찾아내고 그사이의 Margin이 최대화되는 Separatin Hyperplane을 찾아냅니다. 하지만 데이터의 이상치가 있는경우에는 이상치가 support vector가 되는 경우가 발생하여 overfitting이 될 수 있습니다. 즉 이상치 처리없이 모든데이터로 SVM을 사용하면 overfitting 이 발생하고 이를 Hardmargin이라고 부릅니다. 그 반대의 상황은 Softmargin이라고 부릅니다.</p>
+
+<h3 id="cost-c">Cost (C)</h3>
+
+<p>하지만 모든데이터를 선형으로 정확하게 구분을 할수는 없는데 이를 해결하기위해 나온개념이 Cost(C) 입니다. C는 다른 클래스에 얼마만큼의 데이터가 들어갈지를 정합니다. C가 커지면 정확하게 선형을 구분하기위해서 overfitting이 될수 있으며 C가 너무 작으면 underfitting 가능성이 있습니다.</p>
+
+<p align="center"><img src="../../assets/image/SVM_COST.png" alt="img" /></p>
+
+<h3 id="kernel-기법">Kernel 기법</h3>
+
+<p>주어진 data를 고차원의 공간으로 투영(projection)하는 기법입니다. 기존차원에서 선형적으로 분류할 수 없는 데이터를 고차원에서 선형으로 분류할 수 있도록 하는 방법입니다. Kernel 기법에는 주로 3가지가 존재합니다.</p>
+
+<blockquote>
+  <ul>
+    <li><strong>Linear</strong></li>
+    <li><strong>Poly</strong></li>
+    <li><strong>rbf</strong></li>
+  </ul>
+</blockquote>
+
+<p>여기서 많이 사용되며 성능이 가장 좋은 것은 rbf kernel 이며, 매개변수 gamma를 조절해야합니다.</p>
+
+<h3 id="gamma">gamma</h3>
+
+<p>gamma는 데이터가 영향력을 행사하는 거리다. 결론부터 말하면 gamma가 작아지면 영향력이 커지며 underfitting이 발생하고 커지면 영향력이 작아져 overfitting 이 발생할 수 있다. gamma는 가우시안 함수의 표준편차와 관련되어 있으며 클수로 작은 표준편차를 가집니다.</p>
+
+<p>즉 , C와 gamma가 커지면 알고리즘의 복잡도가 증가합니다. (Overfitting)</p>
+
+<p>일반적으로 C와 gamma를 결정하기위해서 Grid search로 매개변수값을 찾아나가는데 sklearn에서 제공하는 코드를 통하여 최적의 매개변수를 찾아보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">reset</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">from</span> <span class="nn">mlxtend.plotting</span> <span class="kn">import</span> <span class="n">plot_decision_regions</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+
+<span class="c1"># training data set
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./data/bmi.csv'</span><span class="p">,</span> <span class="n">skiprows</span> <span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">x_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:].</span><span class="n">values</span> <span class="c1"># 2차원 형태의 numpy
+</span><span class="n">t_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">].</span><span class="n">values</span>
+
+<span class="n">x_scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">x_scaler</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_data</span><span class="p">)</span>
+<span class="n">x_data</span> <span class="o">=</span> <span class="n">x_scaler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x_data</span><span class="p">)</span>
+
+
+<span class="c1"># matplotlib을 이용해서 t_data가 0인경우 red, 1인경우 blue, 2인경우 green으로 표현
+# 총 2만개 중에 각각 30개씩만 뽑아서그래프를 그려보아요
+</span><span class="n">num_sample</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">df_0</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'label'</span><span class="p">]</span> <span class="o">==</span><span class="mi">0</span><span class="p">].</span><span class="n">head</span><span class="p">(</span><span class="n">num_sample</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_0</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">df_0</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s">'r'</span><span class="p">)</span>
+
+<span class="n">df_1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'label'</span><span class="p">]</span> <span class="o">==</span><span class="mi">1</span><span class="p">].</span><span class="n">head</span><span class="p">(</span><span class="n">num_sample</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_1</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">df_1</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s">'b'</span><span class="p">)</span>
+
+<span class="n">df_2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'label'</span><span class="p">]</span> <span class="o">==</span><span class="mi">2</span><span class="p">].</span><span class="n">head</span><span class="p">(</span><span class="n">num_sample</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_2</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">df_2</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s">'g'</span><span class="p">)</span>
+
+<span class="c1"># plt.show()
+</span><span class="n">x_data_sample</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">df_0</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span><span class="n">df_1</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span><span class="n">df_2</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]),</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">t_data_sample</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">df_0</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">df_1</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">df_2</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]),</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1">#sklearn 구현
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+
+<span class="n">param</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s">'kernel'</span><span class="p">:[</span><span class="s">'linear'</span><span class="p">],</span>
+    <span class="s">'C'</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">]},</span>
+    <span class="p">{</span><span class="s">'kernel'</span><span class="p">:</span> <span class="p">[</span><span class="s">'rbf'</span><span class="p">],</span>
+    <span class="s">'C'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">50000</span><span class="p">],</span>
+    <span class="s">'gamma'</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">]}</span>
+<span class="p">]</span>
+
+<span class="c1"># 만약 CV =6 + 64 = 70
+</span>
+<span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">model</span><span class="p">,</span>
+                          <span class="n">param</span><span class="p">,</span>
+                          <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                          <span class="n">scoring</span><span class="o">=</span><span class="s">'accuracy'</span><span class="p">,</span>
+                          <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">grid_search</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_data_sample</span><span class="p">,</span> <span class="n">t_data_sample</span><span class="p">)</span>
+</code></pre></div></div>
+
+:ET
