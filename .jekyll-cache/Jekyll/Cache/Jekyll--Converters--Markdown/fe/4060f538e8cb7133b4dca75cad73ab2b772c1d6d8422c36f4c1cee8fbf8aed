@@ -1,0 +1,19 @@
+I"<h2 id="decision-tree">Decision Tree</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Decision Tree</code> 는 Root Node를 시작으로 Decision Node를 기준으로 데이터를 분류하는 기법입니다. Decision Node에서 분류가 완료되면 Leaf Node에 도달하게되고 분류가 완료가 됩니다.</p>
+
+<p><img src="../../assets/image/decision-tree-classification-algorithm-20201022013018389.png" alt="Machine Learning Decision Tree Classification Algorithm - Javatpoint" /></p>
+
+<p>엔트로피와 불순도</p>
+
+<p><img src="../../assets/image/decision-tree.png" alt="img" style="zoom:150%;" /></p>
+
+<p>핵심코드는 하기와 같습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_data_sample</span><span class="p">,</span> <span class="n">t_data_sample</span><span class="p">)</span> 
+</code></pre></div></div>
+
+:ET
