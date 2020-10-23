@@ -1,7 +1,0 @@
-I"~<h2 id="svm-support-vector-machine">SVM (Support vector machine)</h2>
-
-<p><code class="language-plaintext highlighter-rouge">Support Vector machine</code>은 데이터를 선형으로 분리하여 최적의 decision boundary (결정경계)를 찾는 알고리즘입니다.</p>
-
-<p align="center"><img src="../../assets/image/SVM.png" alt="SVM" style="zoom: 67%;" />{: .shadow}</p>
-
-:ET

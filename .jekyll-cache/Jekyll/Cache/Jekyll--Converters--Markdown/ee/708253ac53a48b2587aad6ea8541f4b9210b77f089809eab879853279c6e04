@@ -1,0 +1,41 @@
+I"o
+<h2 id="cnn-convolutional-neural-network">CNN (Convolutional Neural Network)</h2>
+
+<p>이번시간에는 <code class="language-plaintext highlighter-rouge">CNN</code>에 대하여 알아보겠습니다. CNN 은 합성곱 신경망으로서 이미지의 특징을 검출하여 학습하는 방법입니다. DNN의 경우 MNIST에서 이미지를 판단할때 회전된 이미지의 대한 학습이 없다면 다른 이미지로 판단할 수 있습니다. 하지만 CNN 의 경우 이미지의 특징을 검출하기 시간과 효율이 좋습니다.</p>
+
+<p>하기 이미지를 보면서 설명을 해보도록하겠습니다.</p>
+
+<p align="center"><img src="../../assets/image/1*XbuW8WuRrAY5pC4t-9DZAQ-20201023100830148.jpeg" alt="Understanding of Convolutional Neural Network (CNN) — Deep Learning | by  Prabhu | Medium" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19" /></p>
+
+<p><em>Image credits : <a href="https://kr.mathworks.com/?s_tid=gn_logo">Mathworks</a></em></p>
+
+<p align="center"><img src="../../assets/image/1595600945708.jpg" alt="Deep Learning Workflow" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19" /></p>
+
+<p><em>Image credits : <a href="https://kr.mathworks.com/?s_tid=gn_logo">Mathworks</a></em></p>
+
+<p>CNN 은 Feature에 대한 학습을 먼저 진행하고 분류를 실행합니다. 특징을 학습하기 위해서 Filter 와 Convolution(합성곱)을 진행하게 됩니다.</p>
+
+<h3 id="convolution-합성곱">Convolution (합성곱)</h3>
+
+<p>이미지를 입력하면 Filter와 합성곱을 통해서 새로운 이미지를 만들어 낼 수 있습니다.</p>
+
+<p><img src="../../assets/image/image-20201023171607643.png" alt="image-20201023171607643" /></p>
+
+<p>필터는 한개만 존재하지 않고 여러개가 존재할 수 있습니다. 따라서 이미지 하나에서 여러개의 Filter와 Convolution을 진행하면 Filter의 개수만큼 출력이미지를 얻을 수 있습니다.</p>
+
+<h3 id="strides">Strides</h3>
+
+<p>Strides는 필터가 계산과정에서 이동하는 크기입니다. 기본값은 (1,1) 이며 (2,2), (3,3) 등으로 설정할수 있습니다. 하기 그림은 Strides 변환에 따른 출력이미지입니다.</p>
+
+<p><img src="../../assets/image/image-20201023172659442.png" alt="image-20201023172659442" style="zoom:33%;" /></p>
+
+<p align="center">Strides = 1</p>
+
+<p><img src="../../assets/image/image-20201023172647913.png" alt="image-20201023172647913" style="zoom:33%;" /></p>
+
+<p align="center">Strides = 2</p>
+
+<h3 id="padding">Padding</h3>
+
+<p>위에서 확인한바와 같이 필터와 합성곱을 진행하면</p>
+:ET
