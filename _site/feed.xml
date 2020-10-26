@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-24T23:36:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Python] Deep Learning - CNN</title><link href="http://localhost:4000/python/CNN/" rel="alternate" type="text/html" title="[Python] Deep Learning - CNN" /><published>2020-10-23T00:00:00+09:00</published><updated>2020-10-23T00:00:00+09:00</updated><id>http://localhost:4000/python/CNN</id><content type="html" xml:base="http://localhost:4000/python/CNN/">&lt;h2 id=&quot;cnn-convolutional-neural-network&quot;&gt;CNN (Convolutional Neural Network)&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-26T23:52:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Python] Deep Learning - CNN</title><link href="http://localhost:4000/python/CNN/" rel="alternate" type="text/html" title="[Python] Deep Learning - CNN" /><published>2020-10-23T00:00:00+09:00</published><updated>2020-10-23T00:00:00+09:00</updated><id>http://localhost:4000/python/CNN</id><content type="html" xml:base="http://localhost:4000/python/CNN/">&lt;h2 id=&quot;cnn-convolutional-neural-network&quot;&gt;CNN (Convolutional Neural Network)&lt;/h2&gt;
 
 &lt;p&gt;이번시간에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CNN&lt;/code&gt;에 대하여 알아보겠습니다. CNN 은 합성곱 신경망으로서 이미지의 특징을 검출하여 학습하는 방법입니다. DNN의 경우 MNIST에서 이미지를 판단할때 회전된 이미지의 대한 학습이 없다면 다른 이미지로 판단할 수 있습니다. 하지만 CNN 의 경우 이미지의 특징을 검출하기 시간과 효율이 좋습니다.&lt;/p&gt;
 
@@ -52,6 +52,20 @@
   &lt;p&gt;&lt;strong&gt;Same&lt;/strong&gt;&lt;/p&gt;
 
   &lt;p&gt;빈값을 넣어 원본이미지와 출력이미지가 동일한 크기가 되도록 빈값을 사용합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;이미지-표현&quot;&gt;이미지 표현&lt;/h4&gt;
+
+&lt;p&gt;코드구현에 앞서 이미지 표현에 대하여 알아보도록 하겠습니다. 이미지는 세가지로 표현할 수 있습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;binary :  0과 1로표현 (0 or 1)&lt;/p&gt;
+
+  &lt;p&gt;gray scale : 무채색을 0에서 255 단계로 나누어 표현합니다. (0 ~255)&lt;/p&gt;
+
+  &lt;p&gt;color image : RGB 컬러로 표현하며 (0~255,0~255,0~255) 로 표현이 가능하다.&lt;/p&gt;
+
+  &lt;p&gt;PNG : color 이미지에서 (R,G,B Alpha) 로 표현하며 Alpha 는 이미지의 투명도를 표현한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;코드로 구현을 해보도록 하겠습니다.&lt;/p&gt;

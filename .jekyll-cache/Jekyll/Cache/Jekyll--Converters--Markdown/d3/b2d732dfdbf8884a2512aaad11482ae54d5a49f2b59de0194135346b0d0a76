@@ -1,0 +1,153 @@
+I"�6<h2 id="cnn-convolutional-neural-network">CNN (Convolutional Neural Network)</h2>
+
+<p>이번시간에는 <code class="language-plaintext highlighter-rouge">CNN</code>에 대하여 알아보겠습니다. CNN 은 합성곱 신경망으로서 이미지의 특징을 검출하여 학습하는 방법입니다. DNN의 경우 MNIST에서 이미지를 판단할때 회전된 이미지의 대한 학습이 없다면 다른 이미지로 판단할 수 있습니다. 하지만 CNN 의 경우 이미지의 특징을 검출하기 시간과 효율이 좋습니다.</p>
+
+<p>하기 이미지를 보면서 설명을 해보도록하겠습니다.</p>
+
+<p align="center"><img src="../../assets/image/1*XbuW8WuRrAY5pC4t-9DZAQ-20201023100830148.jpeg" alt="Understanding of Convolutional Neural Network (CNN) — Deep Learning | by  Prabhu | Medium" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19" /></p>
+
+<p><em>Image credits : <a href="https://kr.mathworks.com/?s_tid=gn_logo">Mathworks</a></em></p>
+
+<p align="center"><img src="../../assets/image/1595600945708.jpg" alt="Deep Learning Workflow" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19" /></p>
+
+<p><em>Image credits : <a href="https://kr.mathworks.com/?s_tid=gn_logo">Mathworks</a></em></p>
+
+<p>CNN 은 Feature에 대한 학습을 먼저 진행하고 분류를 실행합니다. 특징을 학습하기 위해서 Filter 와 Convolution(합성곱)을 진행하게 됩니다.</p>
+
+<h3 id="convolution-합성곱">Convolution (합성곱)</h3>
+
+<p>이미지를 입력하면 Filter와 합성곱을 통해서 새로운 이미지를 만들어 낼 수 있습니다.</p>
+
+<p><img src="../../assets/image/image-20201023171607643.png" alt="image-20201023171607643" /></p>
+
+<p>필터는 한개만 존재하지 않고 여러개가 존재할 수 있습니다. 따라서 이미지 하나에서 여러개의 Filter와 Convolution을 진행하면 Filter의 개수만큼 출력이미지를 얻을 수 있습니다.</p>
+
+<h3 id="strides">Strides</h3>
+
+<p>Strides는 필터가 계산과정에서 이동하는 크기입니다. 기본값은 (1,1) 이며 (2,2), (3,3) 등으로 설정할수 있습니다. 하기 그림은 Strides 변환에 따른 출력이미지입니다.</p>
+
+<p><img src="../../assets/image/image-20201023172659442.png" alt="image-20201023172659442" style="zoom:33%;" /></p>
+
+<p align="center"><b>Strides = 1</b></p>
+
+<p><img src="../../assets/image/image-20201023172647913.png" alt="image-20201023172647913" style="zoom:33%;" /></p>
+
+<p align="center"><b>Strides = 2</b></p>
+
+<h3 id="padding">Padding</h3>
+
+<p>위에서 확인한바와 같이 필터와 합성곱을 진행하면 출력이미지의 크기가 작아지게 됩니다. 이를 보상하기 위하여 나온 개념이 Padding 입니다. 입력데이터 가장자리에 빈 값을 채워넣어 행렬곱을 연산하는 방식이 Padding 이라고 부르며 가장자리 값이 모두 0으로 채워진 경우 Zero padding 이라고 부릅니다.</p>
+
+<p align="center"><img src="../../assets/image/image-20201024232835532.png" alt="image-20201024232835532" style="zoom: 33%;" /></p>
+
+<div align="center"><b>Zero padding</b></div>
+
+<p>Padding 에는 두가지 방식이 존재합니다.</p>
+
+<blockquote>
+  <p><strong>VALID</strong></p>
+
+  <p>원본이미지에 비해 출력이미지가 작아지는 것을 허용합니다. 빈값을 채워넣지 않고 합성곱을 합니다.</p>
+
+  <p><strong>Same</strong></p>
+
+  <p>빈값을 넣어 원본이미지와 출력이미지가 동일한 크기가 되도록 빈값을 사용합니다.</p>
+</blockquote>
+
+<h4 id="이미지-표현">이미지 표현</h4>
+
+<p>이미지는 세가지로 표현할 수 있습니다.</p>
+
+<blockquote>
+  <p>binary : 0과 1로표현</p>
+
+  <p>gray scale : 0~255</p>
+
+  <p>color image : RGB 컬러로 표현하며 (0~255,0~255,0~255) 로 표현이 가능하다.</p>
+
+  <p>PNG : color 이미지에서 (R,G,B Alpha) 로 표현하며 Alpha 는 이미지의 투명도를 표현한다.</p>
+</blockquote>
+
+<p>color image &gt; gray scale</p>
+<ol>
+  <li>(RGB 평균, RGB 평균, RGB 평균)</li>
+  <li>(RGB 평균)</li>
+</ol>
+
+<p>PNG = (R,G,B Alpha) 
+Alpha 는 투명도 이미지를 더 다양하게 표현 가능</p>
+
+<p>코드로 구현을 해보도록 하겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">reset</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="n">img</span>
+
+<span class="c1"># sub plot을 2개 만들어 보아요!
+</span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># 가로 10인치, 세로 10인치
+</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 1,2는 행과 열을 의미, 마지막 1은 그중 몇번째 인지를 의미
+</span><span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> 
+
+<span class="n">ori_img</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">imread</span><span class="p">(</span><span class="s">'./images/Teddy.jpeg'</span><span class="p">)</span>
+<span class="n">ax1</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">ori_img</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s">'ori_img의 shape:{}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">ori_img</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+
+<span class="c1"># convolution 연산을 수행하려면 4차원이 필요!
+# 이미지가 3차원 + 그런 이미지가 여러장 이니까 4차원으로 표현!!
+# 현재 shape
+# 이미지 개수, height, width, color 이형식으로 convolution 입력으로 넣어요
+</span>
+<span class="n">input_image</span> <span class="o">=</span> <span class="n">ori_img</span><span class="p">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,)</span><span class="o">+</span> <span class="n">ori_img</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'input_image shape : {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">input_image</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="n">input_image</span> <span class="o">=</span> <span class="n">input_image</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># 정수형 ndarray를 실수형으로 변환
+</span>
+<span class="c1"># 입력이미지의 color 수를 변경 &gt; channel을 1로 변경
+</span><span class="n">input_image</span> <span class="o">=</span> <span class="n">input_image</span><span class="p">[:,:,:,:</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'변경된 input_image shape : {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">input_image</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+
+<span class="c1"># filter를 준비해야 해요!
+# filter : (height, width, color, filter 개수)
+# filter는 정방형 중에 3X3을 많이 사용!
+# filter : (3,3,1,1)
+</span><span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[[[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],[[</span><span class="mi">0</span><span class="p">]],[[</span><span class="mi">1</span><span class="p">]]],</span>
+                  <span class="p">[[[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],[[</span><span class="mi">0</span><span class="p">]],[[</span><span class="mi">1</span><span class="p">]]],</span>
+                  <span class="p">[[[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],[[</span><span class="mi">0</span><span class="p">]],[[</span><span class="mi">1</span><span class="p">]]]])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">weight</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">con2d</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">input_image</span><span class="p">,</span>
+                    <span class="n">weight</span><span class="p">,</span>
+                    <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="n">padding</span><span class="o">=</span><span class="s">'VALID'</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">con2d</span><span class="p">)</span> <span class="c1"># relu 가 안들어가 있어요!
+</span><span class="k">print</span><span class="p">(</span><span class="s">'결과 데이터의 shape : {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">shape</span><span class="p">))</span>
+
+<span class="n">t_image</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:,:]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t_image</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">ax2</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">t_image</span><span class="p">)</span>
+
+
+<span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">pool_process</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">max_pool</span><span class="p">(</span><span class="n">result</span><span class="p">,</span>  
+                              <span class="n">ksize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
+                              <span class="n">strides</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                              <span class="n">padding</span><span class="o">=</span><span class="s">'VALID'</span><span class="p">)</span>
+<span class="n">pool_result</span> <span class="o">=</span> <span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">pool_process</span><span class="p">)</span>
+<span class="n">pool_image</span> <span class="o">=</span> <span class="n">pool_result</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:,:]</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> 
+<span class="n">ax3</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">pool_image</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h4 id="결과">결과</h4>
+
+<p align="center"><img src="../../assets/image/0785F1F2-9AE8-47F0-B8E7-2CE4FFD4E53C.png" alt="img" style="zoom:150%;" /></p>
+:ET

@@ -382,6 +382,20 @@
   <p>빈값을 넣어 원본이미지와 출력이미지가 동일한 크기가 되도록 빈값을 사용합니다.</p>
 </blockquote>
 
+<h4 id="이미지-표현">이미지 표현</h4>
+
+<p>코드구현에 앞서 이미지 표현에 대하여 알아보도록 하겠습니다. 이미지는 세가지로 표현할 수 있습니다.</p>
+
+<blockquote>
+  <p>binary :  0과 1로표현 (0 or 1)</p>
+
+  <p>gray scale : 무채색을 0에서 255 단계로 나누어 표현합니다. (0 ~255)</p>
+
+  <p>color image : RGB 컬러로 표현하며 (0~255,0~255,0~255) 로 표현이 가능하다.</p>
+
+  <p>PNG : color 이미지에서 (R,G,B Alpha) 로 표현하며 Alpha 는 이미지의 투명도를 표현한다.</p>
+</blockquote>
+
 <p>코드로 구현을 해보도록 하겠습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">reset</span>
