@@ -1,4 +1,4 @@
-I"�-<h2 id="cnn---tensorflow-23-구현">CNN - Tensorflow 2.3 구현</h2>
+I"�-<h2 id="mnist---tensorflow-23-구현">MNIST - Tensorflow 2.3 구현</h2>
 
 <p>이번시간에는 Tensorflow 2.3 버전을 이용하여 kaggle의 MNIST를 학습하여 예측을 해보도록 하겠습니다.</p>
 
