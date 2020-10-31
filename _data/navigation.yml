@@ -4,6 +4,8 @@ main:
     url: /welcome/welcome/
   - title: "Python"
     url: /python/PythonPage/
+  - title: "Data Science"
+    url: /datascience/DataScience/ 
   - title: "HTML & CSS & JavaScript"
     url: /html/css/javascript/Web-CSS-JAVASCRIPT/
   - title: "Django"

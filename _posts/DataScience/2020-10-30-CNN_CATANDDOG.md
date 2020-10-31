@@ -1,5 +1,5 @@
 ---
-title:  "[Python] CNN - MNIST"
+title:  "[Python] CNN - Cat and Dog"
 header:
   teaser: "/assets/image/1200px-TensorFlowLogo.svg.png"
 categories: 
