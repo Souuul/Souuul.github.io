@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-05T23:56:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Data Science] 상관계수</title><link href="http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98/" rel="alternate" type="text/html" title="[Data Science] 상관계수" /><published>2020-11-04T00:00:00+09:00</published><updated>2020-11-04T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98</id><content type="html" xml:base="http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98/">&lt;h2 id=&quot;상관계수&quot;&gt;상관계수&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-06T08:52:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Data Science] 상관계수</title><link href="http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98/" rel="alternate" type="text/html" title="[Data Science] 상관계수" /><published>2020-11-04T00:00:00+09:00</published><updated>2020-11-04T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98</id><content type="html" xml:base="http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98/">&lt;h2 id=&quot;상관계수&quot;&gt;상관계수&lt;/h2&gt;
 
 &lt;p&gt;이번시간에는 상관계수에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
 
@@ -18,7 +18,7 @@
 
 &lt;p&gt;단조적 관계를 평가하는 계수입니다. 여기서 단조적 관계란 선형인지 비선형인지 판단하는 계수입니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;p-alinge-centerp&quot;&gt;&amp;lt;p alinge= 'center'&amp;gt;&lt;img src=&quot;../../assets/image/300px-Spearman_fig3.svg.png&quot; alt=&quot;img&quot; style=&quot;zoom: 67%;&quot; /&gt;&lt;img src=&quot;../../assets/image/300px-Spearman_fig2.svg.png&quot; alt=&quot;img&quot; style=&quot;zoom:67%;&quot; /&gt;&lt;img src=&quot;../../assets/image/300px-Spearman_fig1.svg.png&quot; alt=&quot;img&quot; style=&quot;zoom:67%;&quot; /&gt;&amp;lt;/p&amp;gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;img src=&quot;../../assets/image/300px-Spearman_fig3.svg.png&quot; alt=&quot;img&quot; style=&quot;zoom: 67%;&quot; /&gt;&lt;img src=&quot;../../assets/image/300px-Spearman_fig2.svg.png&quot; alt=&quot;img&quot; style=&quot;zoom:67%;&quot; /&gt;&lt;img src=&quot;../../assets/image/300px-Spearman_fig1.svg.png&quot; alt=&quot;img&quot; style=&quot;zoom:67%;&quot; /&gt;&lt;/h3&gt;
 
 &lt;p&gt;&lt;em&gt;Image credits : &lt;a href=&quot;https://ko.wikipedia.org/wiki/스피어만_상관_계수&quot;&gt;wikipedia&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
@@ -26,7 +26,7 @@
 
 &lt;p&gt;하나가 연속변수이고 다른 하나고 이분변수일 때 사용하는 상관계수입니다.&lt;/p&gt;
 
-&lt;p alinge=&quot;center&quot;&gt;&amp;lt;img src=&quot;../../assets/image/image094-20201105235159727.gif&quot; alt=&quot;image094&quot; style=box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) &lt;/p&gt;
+&lt;p alinge=&quot;center&quot;&gt;&amp;lt;img src=&quot;../../assets/image/image094-20201105235159727.gif&quot; alt=&quot;image094&quot; style=box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)&amp;gt;&lt;/p&gt;
 
 &lt;p&gt;Image credits : &lt;a href=&quot;https://www.statisticssolutions.com/point-biserial-correlation/&quot;&gt;statisticssolutions&lt;/a&gt;&lt;/p&gt;
 
