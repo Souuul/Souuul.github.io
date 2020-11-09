@@ -1,0 +1,39 @@
+I"e<h2 id="ensemble">Ensemble</h2>
+
+<p>이번시간에는 <code class="language-plaintext highlighter-rouge">Emsemble</code>에 대하여 알아보도록 하겠습니다.</p>
+
+<p>Ensemble(앙상블)은 말그대로 조화라는 의미입니다. 즉 기존모델들과 어우러져 더 좋은 성과를 얻을수 있는 방법을 의미합니다.</p>
+
+<h3 id="voting">Voting</h3>
+
+<p>Voting은 성격이 같은 모델이 같은 데이터 샘플링으로 학습하고 나온 결과 값을 가지고 투표하여 결정하는 방식입니다. Voting에는 하기와 같은 세가지 방식이 있습니다.</p>
+
+<ol>
+  <li><strong>Hard Voting</strong>
+    <ul>
+      <li>Hard Voting 은 각각의 모델이 예측하는 값중에 많이나온 값을 기준으로 예측값을 정하는 방법입니다.</li>
+    </ul>
+  </li>
+  <li><strong>Soft Voting</strong>
+    <ul>
+      <li>Soft Voting 은 각각의 모델이 class별로 예측한 확률값의 평균으로 가장 높은 확률 평균을 가진 값을 예측값으로 정하는 방법입니다.</li>
+    </ul>
+  </li>
+  <li><strong>Weighted Voting</strong>
+    <ul>
+      <li>Soft Voting개념에서 좀더 예측가능성이 높은데 가중치를 주어 계산하여 예측값을 정하는 방법입니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="bagging">Bagging</h3>
+
+<p>Bagging은 성격이 같은 모델이 다른 데이터 샘플링으로 학습하고 나온 결과 값을 가지고 투표하여 결정하는 방식입니다.</p>
+
+<p>가장 대표적인 모델이 Random Forest입니다.</p>
+
+<h3 id="boosting">Boosting</h3>
+
+<p>각 모델에 어떤 데이터를 담당할지</p>
+
+:ET
