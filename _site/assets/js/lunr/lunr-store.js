@@ -365,9 +365,15 @@ var store = [{
         "url": "http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98/",
         "teaser": "http://localhost:4000/assets/image/1200px-TensorFlowLogo.svg.png"
       },{
-        "title": "[Data Science] 상관계수 ",
+        "title": "[Data Science] Emsemble ",
         "excerpt":"Ensemble   이번시간에는 Emsemble에 대하여 알아보도록 하겠습니다.   Ensemble(앙상블)은 말그대로 조화라는 의미입니다. 즉 기존모델들과 어우러져 더 좋은 성과를 얻을수 있는 방법을 의미합니다.   Voting   Voting은 성격이 같은 모델이 같은 데이터 샘플링으로 학습하고 나온 결과 값을 가지고 투표하여 결정하는 방식입니다. Voting에는 하기와 같은 세가지 방식이 있습니다.      Hard Voting            Hard Voting 은 각각의 모델이 예측하는 값중에 많이나온 값을 기준으로 예측값을 정하는 방법입니다.           Soft Voting            Soft Voting 은 각각의 모델이 class별로 예측한 확률값의 평균으로 가장 높은 확률 평균을 가진 값을 예측값으로 정하는 방법입니다.           Weighted Voting            Soft Voting개념에서 좀더 예측가능성이 높은데 가중치를 주어 계산하여 예측값을 정하는 방법입니다.           Bagging   Bagging은 성격이 같은 모델이 다른 데이터 샘플링으로 학습하고 나온 결과 값을 가지고 투표하여 결정하는 방식입니다.   가장 대표적인 모델이 Random Forest입니다.   Boosting   모델이 오분류한 데이터에 대하여 가중치를 부여하여 오분류한 데이터다 분류가 잘될수 있도록 하는 방법입니다.   ","categories": ["Data Science"],
         "tags": ["Emsemble","Vote"],
         "url": "http://localhost:4000/data%20science/Emsemble/",
+        "teaser": "http://localhost:4000/assets/image/1200px-TensorFlowLogo.svg.png"
+      },{
+        "title": "[Data Science] VGG16",
+        "excerpt":"VGG16   이번시간에는 VGG에 대하여 알아보겠습니다. VGG는 CNN Architecures에 하나로 공간데이터를 분석하는데 이점이 있습니다.   VGG는 네트워크의 깊이를 깊이와 성능사이의 영향에 대하여 알기위하여 시작되었고, 깊이를 깊게하기 위하여 3X3필터를 사용하였다. 그 이유는 필터의 크기가 커지면 이미지가 쉽게 작아지기 때문에 3X3 필터를 이용했다고 보면된다. 결과적으로는 네트워크의 깊이가 깊어지면 성능이 높아진다는 것이 밝혀졌기 때문에 VGG16, VGG19와 같은 깊은 네트워크 이후로 생겨났습니다.   필터의 크기와의 상관관계   그렇다면 필터크기가 작은 것은 정확하게 어떤 영향을 미치는지 알아보겠습니다.   결정 함수 비선형성 증가   각 Convolution 연산은 ReLU 함수를 포함한다. 다시 말해, 1-layer 7x7 필터링의 경우 한 번의 비선형 함수가 적용되는 반면 3-layer 3x3 필터링은 세 번의 비선형 함수가 적용된다.   레이어가 증가함에 따라 비선형성이 증가하게 되고 이것은 모델을 좀더 잘 식별할 수 있게합니다.   학습 파라미터 수 감소   Convolutional Network 구조를 학습할 때, 학습 대상인 가중치(weight)는 필터의 크기에 해당합니다.   7x7필터 1개에 대한 학습 파라미터 수는 49인 것에 반해 3x3 필터 3개에 대한 학습 파라미터 수는 27(3x3x3)이 된다.   향후 논문에 대하여는 추가적으로 정리하여 올리도록 하겠습니다.      VGG-16 Architecture      13 Convolution Layers + 3 Fully-connected Layers   3x3 convolution filters   stride: 1 &amp; padding: 1   2x2 max pooling (stride : 2)   ReLU   ","categories": ["Data Science"],
+        "tags": ["ImageClassification"],
+        "url": "http://localhost:4000/data%20science/GoogleNet/",
         "teaser": "http://localhost:4000/assets/image/1200px-TensorFlowLogo.svg.png"
       }]
