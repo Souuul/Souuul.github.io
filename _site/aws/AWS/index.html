@@ -319,7 +319,7 @@
 
 
 
-  less than 1 minute read
+  1 minute read
 
 </p>
           
@@ -365,6 +365,25 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">with</span> <span class="n">tf</span><span class="p">.</span><span class="n">device</span><span class="p">(</span><span class="s">'/GPU:할당카드번호'</span><span class="p">):</span>
 </code></pre></div></div>
 
+<h3 id="그래픽--카드-메모리-제한">그래픽  카드 메모리 제한</h3>
+
+<p>하나의 환경을 다수의 사람이 사용할 경우 메모리를 할당하지 않으면 한사람이 모든 그래픽카드의 메모리를 사용하게 됩니다. 이것을 방지하기 위하여 하기코드를 실행하여 메모리를 할당할 수 있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+
+<span class="n">gpus</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">experimental</span><span class="p">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s">'GPU'</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">gpus</span><span class="p">:</span>
+    <span class="c1"># 특정(1번) GPU에 1GB 메모리만 할당하도록 제한
+</span>    <span class="k">try</span><span class="p">:</span>
+        <span class="n">tf</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">experimental</span><span class="p">.</span><span class="n">set_visible_devices</span><span class="p">(</span><span class="n">gpus</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">'GPU'</span><span class="p">)</span>
+        <span class="n">tf</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">experimental</span><span class="p">.</span><span class="n">set_virtual_device_configuration</span><span class="p">(</span>
+            <span class="n">gpus</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">[</span><span class="n">tf</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">experimental</span><span class="p">.</span><span class="n">VirtualDeviceConfiguration</span><span class="p">(</span><span class="n">memory_limit</span><span class="o">=</span><span class="mi">1024</span><span class="p">)])</span>
+    <span class="k">except</span> <span class="nb">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c1"># 프로그램 시작시에 가상 장치가 설정되어야만 합니다
+</span>        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</code></pre></div></div>
+
 <h3 id="그래픽-카드-활용-확인">그래픽 카드 활용 확인</h3>
 
 <p>그렇다면 세팅된 그래픽카드가 활용되는지 확인하기 위하여 하기 명령어를 작성해줍니다.</p>
@@ -373,6 +392,7 @@
 </span></code></pre></div></div>
 
 <p align="center" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19"><img src="../../assets/image/image-20201030225542239.png" alt="image-20201030225542239" style="zoom:67%;" /></p>
+
 
         
       </section>
