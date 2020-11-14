@@ -384,6 +384,15 @@
 </span>        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h3 id="멀티-gpu-사용">멀티 GPU 사용</h3>
+
+<p>멀티 GPU를 사용하는 환경에서 GPU를 모두 사용하기위해서는 하기 코드를 입력하여 사용하면 됩니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strategy</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">distribute</span><span class="p">.</span><span class="n">MirroredStrategy</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">strategy</span><span class="p">.</span><span class="n">scope</span><span class="p">():</span>
+</code></pre></div></div>
+
 <h3 id="그래픽-카드-활용-확인">그래픽 카드 활용 확인</h3>
 
 <p>그렇다면 세팅된 그래픽카드가 활용되는지 확인하기 위하여 하기 명령어를 작성해줍니다.</p>
