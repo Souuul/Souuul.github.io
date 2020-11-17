@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-14T22:49:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Data Science] VGG16</title><link href="http://localhost:4000/data%20science/GoogleNet/" rel="alternate" type="text/html" title="[Data Science] VGG16" /><published>2020-11-10T00:00:00+09:00</published><updated>2020-11-10T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/GoogleNet</id><content type="html" xml:base="http://localhost:4000/data%20science/GoogleNet/">&lt;h2 id=&quot;vgg16&quot;&gt;VGG16&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-17T17:41:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Data Science] Basic Theory - covariance</title><link href="http://localhost:4000/data%20science/Basic/" rel="alternate" type="text/html" title="[Data Science] Basic Theory - covariance" /><published>2020-11-17T00:00:00+09:00</published><updated>2020-11-17T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/Basic</id><content type="html" xml:base="http://localhost:4000/data%20science/Basic/">&lt;h2 id=&quot;기초이론&quot;&gt;기초이론&lt;/h2&gt;
+
+&lt;p&gt;이번시간에는 논문과 CNN 구조를 이해하기 위하여 기초이론에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;공분산-covariance&quot;&gt;공분산 (covariance)&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;공분산&lt;/code&gt; 은 확률론과 통계학에서 2개의 확률변수의 상관정도를 나타내는 값입니다. 1개의 이산정도를 나타내는 분산과는 다르게 2개의 확률변수를 다룬다는점이 차이점이라고 보시면 되겠습니다. 상관계수의 원리와 마찬가지로 하나의 변수가 상승하는 경향을 보일때 다른 변수도 상승하는 경항을 보인다면 공분산의 값은 양수 그 반대의 상황에서는 음수라고 보시면 되겠습니다.&lt;/p&gt;
+
+&lt;p&gt;다만 각자 가진 측정단위가 다르기 때문에 공분산을 통해서는 상관관계의 경향은 이해가 가능하나 정도는 파악하기 어렵습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;상관분석&quot;&gt;상관분석&lt;/h3&gt;
+
+&lt;h4 id=&quot;단순-상관분석&quot;&gt;단순 상관분석&lt;/h4&gt;
+
+&lt;p&gt;두 변수간에 어떤 선형적 혹은 비선형적 관계를 갖고 있는지 확인하는 방법입니다.&lt;/p&gt;
+
+&lt;h4 id=&quot;다중상관분석&quot;&gt;다중상관분석&lt;/h4&gt;
+
+&lt;p&gt;3개이상의 변수간 관계 강도를 측정하는 방법입니다.&lt;/p&gt;
+
+&lt;h4 id=&quot;평상관계-분석&quot;&gt;평상관계 분석&lt;/h4&gt;
+
+&lt;p&gt;다중상관분석에서 다른변수와의 관계를 고정하고 두변수의 관계강도를 나타내는 방법입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;상관-관계&quot;&gt;상관 관계&lt;/h3&gt;
+
+&lt;p&gt;상관 관계는 두 변수간의 관계의 강도를 나타내는 수치입니다.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../../assets/image/image-20201117150802508.png&quot; class=&quot;border-shadow&quot; style=&quot;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Image credits : &lt;a href=&quot;https://www.geeksforgeeks.org/mathematics-covariance-and-correlation/&quot;&gt;geeksforgeeks&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;###&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="covariance" /><summary type="html">기초이론</summary></entry><entry><title type="html">[Data Science] VGG16</title><link href="http://localhost:4000/data%20science/GoogleNet/" rel="alternate" type="text/html" title="[Data Science] VGG16" /><published>2020-11-10T00:00:00+09:00</published><updated>2020-11-10T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/GoogleNet</id><content type="html" xml:base="http://localhost:4000/data%20science/GoogleNet/">&lt;h2 id=&quot;vgg16&quot;&gt;VGG16&lt;/h2&gt;
 
 &lt;p&gt;이번시간에는 VGG에 대하여 알아보겠습니다. VGG는 CNN Architecures에 하나로 공간데이터를 분석하는데 이점이 있습니다.&lt;/p&gt;
 
@@ -86,86 +118,7 @@
 
 &lt;h3 id=&quot;boosting&quot;&gt;Boosting&lt;/h3&gt;
 
-&lt;p&gt;모델이 오분류한 데이터에 대하여 가중치를 부여하여 오분류한 데이터다 분류가 잘될수 있도록 하는 방법입니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="Emsemble" /><category term="Vote" /><summary type="html">Ensemble</summary></entry><entry><title type="html">[Data Science] 상관계수</title><link href="http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98/" rel="alternate" type="text/html" title="[Data Science] 상관계수" /><published>2020-11-04T00:00:00+09:00</published><updated>2020-11-04T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98</id><content type="html" xml:base="http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98/">&lt;h2 id=&quot;상관계수&quot;&gt;상관계수&lt;/h2&gt;
-
-&lt;p&gt;이번시간에는 상관계수에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;상관계수란 데이터가 얼마만큼 상관이 있는지를 수치로 나타낸 계수입니다. -1에서 1사이의 값을 가지며 0에 가까울수록 상관관계가 없다라는 개념입니다.&lt;/p&gt;
-
-&lt;p&gt;예를들어 A라는 주식이 오를때 B주식이 오른다면 양의상관관계가 있을 것이고 A주식이 떨어질때 B의 주식이 오른다면 음의상관관계가 성립이 하게 되는 것입니다. A주식이 많이 오를때 B주식도 같이 많이 오른다면 상관계수는 1에 가까워지며, A주식이 오르는데 비해 B주식이 상대적으로 오르지 않게된다면 1보다는 0에 가까운 상관관계를 가지는 것입니다.&lt;/p&gt;
-
-&lt;p&gt;오늘은 상관계수 중 하기 3가지의 상관계수에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;pearsonr-상관계수&quot;&gt;pearsonr 상관계수&lt;/h3&gt;
-
-&lt;p&gt;상관계수가 두변수사이의 선형관계를 평가하는 계수입니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;spearmanr-상관계수&quot;&gt;spearmanr 상관계수&lt;/h3&gt;
-
-&lt;p&gt;단조적 관계를 평가하는 계수입니다. 여기서 단조적 관계란 선형인지 비선형인지 판단하는 계수입니다.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot; style=&quot;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19&quot;&gt;
-&lt;img src=&quot;../../assets/image/300px-Spearman_fig3.svg.png&quot; alt=&quot;img&quot; style=&quot;zoom: 67%;&quot; /&gt;&lt;img src=&quot;../../assets/image/300px-Spearman_fig2.svg.png&quot; alt=&quot;img&quot; style=&quot;zoom:67%;&quot; /&gt;&lt;img src=&quot;../../assets/image/300px-Spearman_fig1.svg.png&quot; alt=&quot;img&quot; style=&quot;zoom:67%;&quot; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Image credits : &lt;a href=&quot;https://ko.wikipedia.org/wiki/스피어만_상관_계수&quot;&gt;wikipedia&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;pointbiserialr-상관계수&quot;&gt;pointbiserialr 상관계수&lt;/h3&gt;
-
-&lt;p&gt;하나가 연속변수이고 다른 하나고 이분변수일 때 사용하는 상관계수입니다.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../../assets/image/image094-20201105235159727.gif&quot; alt=&quot;image094&quot; style=&quot;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Image credits : &lt;a href=&quot;https://www.statisticssolutions.com/point-biserial-correlation/&quot;&gt;statisticssolutions&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;biserial-상관계수&quot;&gt;Biserial 상관계수&lt;/h3&gt;
-
-&lt;p&gt;하나가 연속변수이고 다른 하나고 이분변수일 때 사용하는 상관계수입니다. 하지만 Pointbiserialr과 다른점은 이분변수가 원래는 이분변수가아닌 연속변수이지만 이분화 할경우 사용됩니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;사용-코드&quot;&gt;사용 코드&lt;/h3&gt;
-
-&lt;p&gt;세함수 모두 scipy모듈안에 포함되어 있으며 사용방법은 하기와 같습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scipy.stats&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pearsonr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spearmanr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pointbiserialr&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;pearsonr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;spearmanr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;pointbiserialr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;#(0.86602540378443871, 0.011724811003954626)
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="spearmanr" /><category term="pearsonr" /><category term="pointbiserialr" /><summary type="html">상관계수</summary></entry><entry><title type="html">[Data Science] Model Save &amp;amp; Load</title><link href="http://localhost:4000/data%20science/Model_Save_and_Load/" rel="alternate" type="text/html" title="[Data Science] Model Save &amp;amp; Load" /><published>2020-11-04T00:00:00+09:00</published><updated>2020-11-04T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/Model_Save_and_Load</id><content type="html" xml:base="http://localhost:4000/data%20science/Model_Save_and_Load/">&lt;h2 id=&quot;model-save--load&quot;&gt;Model Save &amp;amp; Load&lt;/h2&gt;
-
-&lt;p&gt;이번시간에는 학습한 모델을 저장하고 불러와서 이용해보도록 하겠습니다. 지난시간에는 전의학습을 통해서 모델을 사용하는방법을 배웠다면 이번시간에는 중간에 종료된 모델을 다시 이어서 사용해보도록 하겠습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;model-save&quot;&gt;Model Save&lt;/h3&gt;
-
-&lt;p&gt;모델을 저장하는 방법에는 여러가지가 있지만 이번에는 keras의 model.save를 통해서 저장을 해보도록 하겠습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'경로/파일명.h5'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;먼저 학습을 진행하고 상기 명령어를 통하여 모델을 저장하면 h5 확장자의 파일이 지정된 경로에 저장됩니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;model-load&quot;&gt;Model Load&lt;/h3&gt;
-
-&lt;p&gt;그렇다면 저장된 모델을 불러와 보도록 하겠습니다. 사용할 모델을 그대로 사용하시려면 불러온 모델에 변수를 할당하고 compile과 fit을 통하여 학습을 진행하시면 됩니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Model Load
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keras&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load_model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./Contest_model/contest_vgg.h5'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Training
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optimizer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RMSprop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1e-4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-              &lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'sparse_categorical_crossentropy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-              &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'sparse_categorical_accuracy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;history&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit_generator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;trainGen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-    &lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;steps_per_epoch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-    &lt;span class=&quot;n&quot;&gt;validation_data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;validationGen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;validation_steps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="Model" /><category term="Save and Load" /><summary type="html">Model Save &amp;amp; Load</summary></entry><entry><title type="html">[Data Science] Transfer Learning</title><link href="http://localhost:4000/data%20science/Transfer_learning/" rel="alternate" type="text/html" title="[Data Science] Transfer Learning" /><published>2020-11-04T00:00:00+09:00</published><updated>2020-11-04T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/Transfer_learning</id><content type="html" xml:base="http://localhost:4000/data%20science/Transfer_learning/">&lt;h2 id=&quot;transfer-learning&quot;&gt;Transfer Learning&lt;/h2&gt;
+&lt;p&gt;모델이 오분류한 데이터에 대하여 가중치를 부여하여 오분류한 데이터다 분류가 잘될수 있도록 하는 방법입니다.&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="Emsemble" /><category term="Vote" /><summary type="html">Ensemble</summary></entry><entry><title type="html">[Data Science] Transfer Learning</title><link href="http://localhost:4000/data%20science/Transfer_learning/" rel="alternate" type="text/html" title="[Data Science] Transfer Learning" /><published>2020-11-04T00:00:00+09:00</published><updated>2020-11-04T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/Transfer_learning</id><content type="html" xml:base="http://localhost:4000/data%20science/Transfer_learning/">&lt;h2 id=&quot;transfer-learning&quot;&gt;Transfer Learning&lt;/h2&gt;
 
 &lt;p&gt;이번시간에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Transfer Learning&lt;/code&gt;(전이학습)에 대하여 알아보도록 하겠습니다. 전이학습이란 기존에 구축된 모델을 사용하여 학습할 모델에 적용하는 것을 의미합니다. 이미 훌륭한 알고리즘 및 모델을 이용하여 효과적이고 빠르게 새로운 모델을 구축할 수 있습니다.&lt;/p&gt;
 
@@ -232,7 +185,86 @@ Non-trainable params: 0
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Sequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model_base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Flatten&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input_shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;512&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,)))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="Deep learning" /><category term="CNN" /><category term="Cat VS Dog" /><category term="Kaggle" /><category term="Transfer Learning" /><summary type="html">Transfer Learning</summary></entry><entry><title type="html">[DataScience] DataScience Page</title><link href="http://localhost:4000/datascience/DataScience/" rel="alternate" type="text/html" title="[DataScience] DataScience Page" /><published>2020-10-30T00:00:00+09:00</published><updated>2020-10-30T00:00:00+09:00</updated><id>http://localhost:4000/datascience/DataScience</id><content type="html" xml:base="http://localhost:4000/datascience/DataScience/">&lt;h2 id=&quot;파이썬-머신러닝&quot;&gt;파이썬 머신러닝&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="Deep learning" /><category term="CNN" /><category term="Cat VS Dog" /><category term="Kaggle" /><category term="Transfer Learning" /><summary type="html">Transfer Learning</summary></entry><entry><title type="html">[Data Science] Model Save &amp;amp; Load</title><link href="http://localhost:4000/data%20science/Model_Save_and_Load/" rel="alternate" type="text/html" title="[Data Science] Model Save &amp;amp; Load" /><published>2020-11-04T00:00:00+09:00</published><updated>2020-11-04T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/Model_Save_and_Load</id><content type="html" xml:base="http://localhost:4000/data%20science/Model_Save_and_Load/">&lt;h2 id=&quot;model-save--load&quot;&gt;Model Save &amp;amp; Load&lt;/h2&gt;
+
+&lt;p&gt;이번시간에는 학습한 모델을 저장하고 불러와서 이용해보도록 하겠습니다. 지난시간에는 전의학습을 통해서 모델을 사용하는방법을 배웠다면 이번시간에는 중간에 종료된 모델을 다시 이어서 사용해보도록 하겠습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;model-save&quot;&gt;Model Save&lt;/h3&gt;
+
+&lt;p&gt;모델을 저장하는 방법에는 여러가지가 있지만 이번에는 keras의 model.save를 통해서 저장을 해보도록 하겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'경로/파일명.h5'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;먼저 학습을 진행하고 상기 명령어를 통하여 모델을 저장하면 h5 확장자의 파일이 지정된 경로에 저장됩니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;model-load&quot;&gt;Model Load&lt;/h3&gt;
+
+&lt;p&gt;그렇다면 저장된 모델을 불러와 보도록 하겠습니다. 사용할 모델을 그대로 사용하시려면 불러온 모델에 변수를 할당하고 compile과 fit을 통하여 학습을 진행하시면 됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Model Load
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keras&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load_model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./Contest_model/contest_vgg.h5'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Training
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optimizer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RMSprop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1e-4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+              &lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'sparse_categorical_crossentropy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'sparse_categorical_accuracy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;history&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit_generator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;trainGen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;steps_per_epoch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;validation_data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;validationGen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;validation_steps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="Model" /><category term="Save and Load" /><summary type="html">Model Save &amp;amp; Load</summary></entry><entry><title type="html">[Data Science] 상관계수</title><link href="http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98/" rel="alternate" type="text/html" title="[Data Science] 상관계수" /><published>2020-11-04T00:00:00+09:00</published><updated>2020-11-04T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98</id><content type="html" xml:base="http://localhost:4000/data%20science/%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98/">&lt;h2 id=&quot;상관계수&quot;&gt;상관계수&lt;/h2&gt;
+
+&lt;p&gt;이번시간에는 상관계수에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;상관계수란 데이터가 얼마만큼 상관이 있는지를 수치로 나타낸 계수입니다. -1에서 1사이의 값을 가지며 0에 가까울수록 상관관계가 없다라는 개념입니다.&lt;/p&gt;
+
+&lt;p&gt;예를들어 A라는 주식이 오를때 B주식이 오른다면 양의상관관계가 있을 것이고 A주식이 떨어질때 B의 주식이 오른다면 음의상관관계가 성립이 하게 되는 것입니다. A주식이 많이 오를때 B주식도 같이 많이 오른다면 상관계수는 1에 가까워지며, A주식이 오르는데 비해 B주식이 상대적으로 오르지 않게된다면 1보다는 0에 가까운 상관관계를 가지는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;오늘은 상관계수 중 하기 3가지의 상관계수에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;pearsonr-상관계수&quot;&gt;pearsonr 상관계수&lt;/h3&gt;
+
+&lt;p&gt;상관계수가 두변수사이의 선형관계를 평가하는 계수입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;spearmanr-상관계수&quot;&gt;spearmanr 상관계수&lt;/h3&gt;
+
+&lt;p&gt;단조적 관계를 평가하는 계수입니다. 여기서 단조적 관계란 선형인지 비선형인지 판단하는 계수입니다.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot; style=&quot;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19&quot;&gt;
+&lt;img src=&quot;../../assets/image/300px-Spearman_fig3.svg.png&quot; alt=&quot;img&quot; style=&quot;zoom: 67%;&quot; /&gt;&lt;img src=&quot;../../assets/image/300px-Spearman_fig2.svg.png&quot; alt=&quot;img&quot; style=&quot;zoom:67%;&quot; /&gt;&lt;img src=&quot;../../assets/image/300px-Spearman_fig1.svg.png&quot; alt=&quot;img&quot; style=&quot;zoom:67%;&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Image credits : &lt;a href=&quot;https://ko.wikipedia.org/wiki/스피어만_상관_계수&quot;&gt;wikipedia&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;pointbiserialr-상관계수&quot;&gt;pointbiserialr 상관계수&lt;/h3&gt;
+
+&lt;p&gt;하나가 연속변수이고 다른 하나고 이분변수일 때 사용하는 상관계수입니다.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../../assets/image/image094-20201105235159727.gif&quot; alt=&quot;image094&quot; style=&quot;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Image credits : &lt;a href=&quot;https://www.statisticssolutions.com/point-biserial-correlation/&quot;&gt;statisticssolutions&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;biserial-상관계수&quot;&gt;Biserial 상관계수&lt;/h3&gt;
+
+&lt;p&gt;하나가 연속변수이고 다른 하나고 이분변수일 때 사용하는 상관계수입니다. 하지만 Pointbiserialr과 다른점은 이분변수가 원래는 이분변수가아닌 연속변수이지만 이분화 할경우 사용됩니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;사용-코드&quot;&gt;사용 코드&lt;/h3&gt;
+
+&lt;p&gt;세함수 모두 scipy모듈안에 포함되어 있으며 사용방법은 하기와 같습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scipy.stats&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pearsonr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spearmanr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pointbiserialr&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pearsonr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;spearmanr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pointbiserialr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#(0.86602540378443871, 0.011724811003954626)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="spearmanr" /><category term="pearsonr" /><category term="pointbiserialr" /><summary type="html">상관계수</summary></entry><entry><title type="html">[DataScience] DataScience Page</title><link href="http://localhost:4000/datascience/DataScience/" rel="alternate" type="text/html" title="[DataScience] DataScience Page" /><published>2020-10-30T00:00:00+09:00</published><updated>2020-10-30T00:00:00+09:00</updated><id>http://localhost:4000/datascience/DataScience</id><content type="html" xml:base="http://localhost:4000/datascience/DataScience/">&lt;h2 id=&quot;파이썬-머신러닝&quot;&gt;파이썬 머신러닝&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/python.jpg&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Anaconda/&quot;&gt;[Python] Anaconda &amp;amp; JupyterNotebook&lt;/a&gt;&lt;/p&gt;
 
@@ -588,146 +620,4 @@ Non-trainable params: 0
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;history&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;history&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'val_sparse_categorical_accuracy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ylim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.95&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Deep learning" /><category term="CNN" /><category term="Sklearn" /><category term="Tensorflow" /><summary type="html">MNIST - Tensorflow 2.3 구현</summary></entry><entry><title type="html">[Python] Deep Learning - CNN</title><link href="http://localhost:4000/python/CNN/" rel="alternate" type="text/html" title="[Python] Deep Learning - CNN" /><published>2020-10-23T00:00:00+09:00</published><updated>2020-10-23T00:00:00+09:00</updated><id>http://localhost:4000/python/CNN</id><content type="html" xml:base="http://localhost:4000/python/CNN/">&lt;h2 id=&quot;cnn-convolutional-neural-network&quot;&gt;CNN (Convolutional Neural Network)&lt;/h2&gt;
-
-&lt;p&gt;이번시간에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CNN&lt;/code&gt;에 대하여 알아보겠습니다. CNN 은 합성곱 신경망으로서 이미지의 특징을 검출하여 학습하는 방법입니다. DNN의 경우 MNIST에서 이미지를 판단할때 회전된 이미지의 대한 학습이 없다면 다른 이미지로 판단할 수 있습니다. 하지만 CNN 의 경우 이미지의 특징을 검출하기 시간과 효율이 좋습니다.&lt;/p&gt;
-
-&lt;p&gt;하기 이미지를 보면서 설명을 해보도록하겠습니다.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../../assets/image/1*XbuW8WuRrAY5pC4t-9DZAQ-20201023100830148.jpeg&quot; alt=&quot;Understanding of Convolutional Neural Network (CNN) — Deep Learning | by  Prabhu | Medium&quot; style=&quot;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Image credits : &lt;a href=&quot;https://kr.mathworks.com/?s_tid=gn_logo&quot;&gt;Mathworks&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../../assets/image/1595600945708.jpg&quot; alt=&quot;Deep Learning Workflow&quot; style=&quot;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Image credits : &lt;a href=&quot;https://kr.mathworks.com/?s_tid=gn_logo&quot;&gt;Mathworks&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;CNN 은 Feature에 대한 학습을 먼저 진행하고 분류를 실행합니다. 특징을 학습하기 위해서 Filter 와 Convolution(합성곱)을 진행하게 됩니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;convolution-합성곱&quot;&gt;Convolution (합성곱)&lt;/h3&gt;
-
-&lt;p&gt;이미지를 입력하면 Filter와 합성곱을 통해서 새로운 이미지를 만들어 낼 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/image/image-20201023171607643.png&quot; alt=&quot;image-20201023171607643&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;필터는 한개만 존재하지 않고 여러개가 존재할 수 있습니다. 따라서 이미지 하나에서 여러개의 Filter와 Convolution을 진행하면 Filter의 개수만큼 출력이미지를 얻을 수 있습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;strides&quot;&gt;Strides&lt;/h3&gt;
-
-&lt;p&gt;Strides는 필터가 계산과정에서 이동하는 크기입니다. 기본값은 (1,1) 이며 (2,2), (3,3) 등으로 설정할수 있습니다. 하기 그림은 Strides 변환에 따른 출력이미지입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/image/image-20201023172659442.png&quot; alt=&quot;image-20201023172659442&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;b&gt;Strides = 1&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/image/image-20201023172647913.png&quot; alt=&quot;image-20201023172647913&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;b&gt;Strides = 2&lt;/b&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;padding&quot;&gt;Padding&lt;/h3&gt;
-
-&lt;p&gt;위에서 확인한바와 같이 필터와 합성곱을 진행하면 출력이미지의 크기가 작아지게 됩니다. 이를 보상하기 위하여 나온 개념이 Padding 입니다. 입력데이터 가장자리에 빈 값을 채워넣어 행렬곱을 연산하는 방식이 Padding 이라고 부르며 가장자리 값이 모두 0으로 채워진 경우 Zero padding 이라고 부릅니다.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../../assets/image/image-20201024232835532.png&quot; alt=&quot;image-20201024232835532&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/p&gt;
-
-&lt;div align=&quot;center&quot;&gt;&lt;b&gt;Zero padding&lt;/b&gt;&lt;/div&gt;
-
-&lt;p&gt;Padding 에는 두가지 방식이 존재합니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;VALID&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;p&gt;원본이미지에 비해 출력이미지가 작아지는 것을 허용합니다. 빈값을 채워넣지 않고 합성곱을 합니다.&lt;/p&gt;
-
-  &lt;p&gt;&lt;strong&gt;Same&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;p&gt;빈값을 넣어 원본이미지와 출력이미지가 동일한 크기가 되도록 빈값을 사용합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&quot;이미지-표현&quot;&gt;이미지 표현&lt;/h4&gt;
-
-&lt;p&gt;코드구현에 앞서 이미지 표현에 대하여 알아보도록 하겠습니다. 이미지는 세가지로 표현할 수 있습니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;binary :  0과 1로표현 (0 or 1)&lt;/p&gt;
-
-  &lt;p&gt;gray scale : 무채색을 0에서 255 단계로 나누어 표현합니다. (0 ~255)&lt;/p&gt;
-
-  &lt;p&gt;color image : RGB 컬러로 표현하며 (0~255,0~255,0~255) 로 표현이 가능하다.&lt;/p&gt;
-
-  &lt;p&gt;PNG : color 이미지에서 (R,G,B Alpha) 로 표현하며 Alpha 는 이미지의 투명도를 표현한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;코드로 구현을 해보도록 하겠습니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reset&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.image&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# sub plot을 2개 만들어 보아요!
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fig&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;figure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;figsize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 가로 10인치, 세로 10인치
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ax1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_subplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 1,2는 행과 열을 의미, 마지막 1은 그중 몇번째 인지를 의미
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ax2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_subplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-
-&lt;span class=&quot;n&quot;&gt;ori_img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./images/Teddy.jpeg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ax1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imshow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ori_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ori_img의 shape:{}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ori_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# convolution 연산을 수행하려면 4차원이 필요!
-# 이미지가 3차원 + 그런 이미지가 여러장 이니까 4차원으로 표현!!
-# 현재 shape
-# 이미지 개수, height, width, color 이형식으로 convolution 입력으로 넣어요
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;input_image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ori_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reshape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ori_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'input_image shape : {}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input_image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;input_image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input_image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 정수형 ndarray를 실수형으로 변환
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 입력이미지의 color 수를 변경 &amp;gt; channel을 1로 변경
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input_image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input_image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,:,:,:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'변경된 input_image shape : {}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input_image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# filter를 준비해야 해요!
-# filter : (height, width, color, filter 개수)
-# filter는 정방형 중에 3X3을 많이 사용!
-# filter : (3,3,1,1)
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([[[[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]],&lt;/span&gt;
-                  &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]],&lt;/span&gt;
-                  &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]]])&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;con2d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conv2d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input_image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;strides&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'VALID'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;con2d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# relu 가 안들어가 있어요!
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'결과 데이터의 shape : {}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;t_image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,:,:,:]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t_image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ax2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imshow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t_image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;pool_process&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_pool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  
-                              &lt;span class=&quot;n&quot;&gt;ksize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; 
-                              &lt;span class=&quot;n&quot;&gt;strides&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-                              &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'VALID'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;pool_result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pool_process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;pool_image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pool_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,:,:,:]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ax3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_subplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-&lt;span class=&quot;n&quot;&gt;ax3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imshow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pool_image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;결과&quot;&gt;결과&lt;/h4&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../../assets/image/0785F1F2-9AE8-47F0-B8E7-2CE4FFD4E53C.png&quot; alt=&quot;img&quot; style=&quot;zoom:150%;&quot; /&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Deep learning" /><category term="CNN" /><category term="Sklearn" /><category term="Tensorflow" /><summary type="html">CNN (Convolutional Neural Network)</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Python" /><category term="Deep learning" /><category term="CNN" /><category term="Sklearn" /><category term="Tensorflow" /><summary type="html">MNIST - Tensorflow 2.3 구현</summary></entry></feed>
