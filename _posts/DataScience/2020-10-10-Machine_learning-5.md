@@ -1,9 +1,9 @@
 ---
-title:  "[Python] Evaluation - Sklearn"
+title:  "[Data Science] Evaluation - Sklearn"
 header:
   teaser: "/assets/image/1200px-TensorFlowLogo.svg.png"
 categories: 
-  - Python
+  - Data Science
 tags:
   - Machin learning
   - Sklearn
