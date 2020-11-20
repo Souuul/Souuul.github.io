@@ -261,6 +261,10 @@
 <lastmod>2020-11-17T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/data%20science/DenseNet/</loc>
+<lastmod>2020-11-20T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/archive-layout-with-content/</loc>
 </url>
 <url>
@@ -356,5 +360,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page13/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page14/</loc>
 </url>
 </urlset>
