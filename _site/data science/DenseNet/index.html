@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Data Science] VGG19 - Sol Tech</title>
-<meta name="description" content="VGG19">
+<!-- begin _includes/seo.html --><title>[Data Science] DenseNet - Sol Tech</title>
+<meta name="description" content="DenseNet (작성중)">
 
 
   <meta name="author" content="Sol Han">
@@ -19,11 +19,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Sol Tech">
-<meta property="og:title" content="[Data Science] VGG19">
+<meta property="og:title" content="[Data Science] DenseNet">
 <meta property="og:url" content="http://localhost:4000/data%20science/DenseNet/">
 
 
-  <meta property="og:description" content="VGG19">
+  <meta property="og:description" content="DenseNet (작성중)">
 
 
 
@@ -303,15 +303,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Data Science] VGG19">
-    <meta itemprop="description" content="VGG19">
+    <meta itemprop="headline" content="[Data Science] DenseNet">
+    <meta itemprop="description" content="DenseNet (작성중)">
     <meta itemprop="datePublished" content="2020-11-20T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[Data Science] VGG19
+          <h1 id="page-title" class="page__title" itemprop="headline">[Data Science] DenseNet
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -319,7 +319,7 @@
 
 
 
-  1 minute read
+  less than 1 minute read
 
 </p>
           
@@ -328,50 +328,17 @@
 
       <section class="page__content" itemprop="text">
         
-        <h2 id="vgg19">VGG19</h2>
+        <h2 id="densenet-작성중">DenseNet (작성중)</h2>
 
-<p>이번시간에는 VGG에 대하여 알아보겠습니다. VGG는 CNN Architecures에 하나로 공간데이터를 분석하는데 이점이 있습니다. VGG는 19층으로 이루어진</p>
+<p>이번 시간에는 빠르게 DenseNet에 대하여 알아보겠습니다. DenseNet은 다른 알고리즘과는 다르게 각각의 Layer의 output이 다음 모든 Layer로 전파하는 구조로 되어있습니다.</p>
 
-<p>VGG는 네트워크의 깊이를 깊이와 성능사이의 영향에 대하여 알기위하여 시작되었고, 깊이를 깊게하기 위하여 3X3필터를 사용하였다. 그 이유는 필터의 크기가 커지면 이미지가 쉽게 작아지기 때문에 3X3 필터를 이용했다고 보면된다. 결과적으로는 네트워크의 깊이가 깊어지면 성능이 높아진다는 것이 밝혀졌기 때문에 VGG16, VGG19와 같은 깊은 네트워크 이후로 생겨났습니다.</p>
+<p><img src="../../assets/image/image-20201122233712078.png" alt="img" class="border-shadow" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" /></p>
 
-<h3 id="필터의-크기와의-상관관계">필터의 크기와의 상관관계</h3>
+<p>그렇다면 이런 구조는 어떠한 장점을 가지는지 알아보도록 하겠습니다.</p>
 
-<p>그렇다면 필터크기가 작은 것은 정확하게 어떤 영향을 미치는지 알아보겠습니다.</p>
+<h3 id="non-washing-gradient">Non-Washing Gradient</h3>
 
-<h4 id="결정-함수-비선형성-증가">결정 함수 비선형성 증가</h4>
-
-<p>각 Convolution 연산은 ReLU 함수를 포함한다. 다시 말해, 1-layer 7x7 필터링의 경우 한 번의 비선형 함수가 적용되는 반면 3-layer 3x3 필터링은 세 번의 비선형 함수가 적용됩니다. 레이어가 증가함에 따라 비선형성이 증가하게 되고 이것은 모델을 잘 식별할 수 있게합니다.</p>
-
-<h4 id="학습-파라미터-수-감소">학습 파라미터 수 감소</h4>
-
-<p>Convolutional Network 구조를 학습할 때, 학습 대상인 가중치(weight)는 필터의 크기에 해당합니다.</p>
-
-<p>7x7 이미지에 대하여 학습을 진행한다고 가정해 보도록 하겠습니다.</p>
-
-<p align="center"><img src="../../assets/image/image-20201118162528701.png" alt="image-20201118162528701" style="zoom:100%;" /></p>
-
-<p>3x3필터의 경우 3x3연산을 3번을 실시하면 1x1 이미지로 출력이 됩니다.</p>
-
-<p align="center"><img src="../../assets/image/image-20201118162149035.png" alt="image-20201118162149035" style="zoom:50%;" /></p>
-
-<p>7x7필터의 경우 1번을 실시하면 1x1 이미지로 출력이 됩니다.</p>
-
-<p>즉 7x7필터 1개에 대한 학습 파라미터 수는 49인 것에 반해 3x3 필터 3개에 대한 학습 파라미터 수는 27(3x3x3)이 된다. 3x3 필더가 연산이 더많아지지만 이것은 단순연산이고 가중치를 업데이트하는 것보다는 시간이 적게소요되기 때문에 3x3필터를 적용하는 것이 결과적으로 층을 더욱 깊고 연산속도를 빠르게 할 수 있습니다.</p>
-
-<h3 id="vgg-16-architecture">VGG-16 Architecture</h3>
-
-<p align="center"><img src="../../assets/image/img.png" alt="img" style="zoom:67%;" /></p>
-
-<ul>
-  <li><strong>13 Convolution Layers + 3 Fully-connected Layers</strong></li>
-  <li><strong>3x3 convolution filters</strong></li>
-  <li><strong>stride: 1 &amp; padding: 1</strong> : 이미지 사이즈 유지</li>
-  <li>**2x2 max pooling **(stride : 2) : 특징맵을 1/4로 축소</li>
-  <li><strong>ReLU</strong></li>
-  <li><strong>1x1 Conv Layer</strong> (1x1 filter, stride = 1) : 차원축소로 인한 연산량 감소가 목적</li>
-  <li><strong>Fully-Connected Layer</strong> (4096 -&gt; 4096 -&gt; 1000) : 세 장으로 고정된 FCL 사용</li>
-</ul>
-
+<p>앞선 포스트에서 설명한 것과 같이 Layer가 많아지면 많아질수록 Gradient Vanishing 현상이 발생합니다. 하지만 Input과 output Layer 간의 short Connection이 존재할 경우 깊고 효율적으로 학습이 가능합니다. DenseNet의 경우에는 모든 Layer 층이 가깝게 연결되어</p>
 
         
       </section>
@@ -389,6 +356,10 @@
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#densenet" class="page__taxonomy-item" rel="tag">DenseNet</a><span class="sep">, </span>
     
       
       
@@ -430,7 +401,7 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BData+Science%5D+VGG19%20http%3A%2F%2Flocalhost%3A4000%2Fdata%2520science%2FDenseNet%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BData+Science%5D+DenseNet%20http%3A%2F%2Flocalhost%3A4000%2Fdata%2520science%2FDenseNet%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdata%2520science%2FDenseNet%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 

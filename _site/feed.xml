@@ -1,46 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-20T23:41:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Data Science] VGG19</title><link href="http://localhost:4000/data%20science/DenseNet/" rel="alternate" type="text/html" title="[Data Science] VGG19" /><published>2020-11-20T00:00:00+09:00</published><updated>2020-11-20T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/DenseNet</id><content type="html" xml:base="http://localhost:4000/data%20science/DenseNet/">&lt;h2 id=&quot;vgg19&quot;&gt;VGG19&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-22T23:52:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Data Science] DenseNet</title><link href="http://localhost:4000/data%20science/DenseNet/" rel="alternate" type="text/html" title="[Data Science] DenseNet" /><published>2020-11-20T00:00:00+09:00</published><updated>2020-11-20T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/DenseNet</id><content type="html" xml:base="http://localhost:4000/data%20science/DenseNet/">&lt;h2 id=&quot;densenet-작성중&quot;&gt;DenseNet (작성중)&lt;/h2&gt;
 
-&lt;p&gt;이번시간에는 VGG에 대하여 알아보겠습니다. VGG는 CNN Architecures에 하나로 공간데이터를 분석하는데 이점이 있습니다. VGG는 19층으로 이루어진&lt;/p&gt;
+&lt;p&gt;이번 시간에는 빠르게 DenseNet에 대하여 알아보겠습니다. DenseNet은 다른 알고리즘과는 다르게 각각의 Layer의 output이 다음 모든 Layer로 전파하는 구조로 되어있습니다.&lt;/p&gt;
 
-&lt;p&gt;VGG는 네트워크의 깊이를 깊이와 성능사이의 영향에 대하여 알기위하여 시작되었고, 깊이를 깊게하기 위하여 3X3필터를 사용하였다. 그 이유는 필터의 크기가 커지면 이미지가 쉽게 작아지기 때문에 3X3 필터를 이용했다고 보면된다. 결과적으로는 네트워크의 깊이가 깊어지면 성능이 높아진다는 것이 밝혀졌기 때문에 VGG16, VGG19와 같은 깊은 네트워크 이후로 생겨났습니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../assets/image/image-20201122233712078.png&quot; alt=&quot;img&quot; class=&quot;border-shadow&quot; style=&quot;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;필터의-크기와의-상관관계&quot;&gt;필터의 크기와의 상관관계&lt;/h3&gt;
+&lt;p&gt;그렇다면 이런 구조는 어떠한 장점을 가지는지 알아보도록 하겠습니다.&lt;/p&gt;
 
-&lt;p&gt;그렇다면 필터크기가 작은 것은 정확하게 어떤 영향을 미치는지 알아보겠습니다.&lt;/p&gt;
+&lt;h3 id=&quot;non-washing-gradient&quot;&gt;Non-Washing Gradient&lt;/h3&gt;
 
-&lt;h4 id=&quot;결정-함수-비선형성-증가&quot;&gt;결정 함수 비선형성 증가&lt;/h4&gt;
-
-&lt;p&gt;각 Convolution 연산은 ReLU 함수를 포함한다. 다시 말해, 1-layer 7x7 필터링의 경우 한 번의 비선형 함수가 적용되는 반면 3-layer 3x3 필터링은 세 번의 비선형 함수가 적용됩니다. 레이어가 증가함에 따라 비선형성이 증가하게 되고 이것은 모델을 잘 식별할 수 있게합니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;학습-파라미터-수-감소&quot;&gt;학습 파라미터 수 감소&lt;/h4&gt;
-
-&lt;p&gt;Convolutional Network 구조를 학습할 때, 학습 대상인 가중치(weight)는 필터의 크기에 해당합니다.&lt;/p&gt;
-
-&lt;p&gt;7x7 이미지에 대하여 학습을 진행한다고 가정해 보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../../assets/image/image-20201118162528701.png&quot; alt=&quot;image-20201118162528701&quot; style=&quot;zoom:100%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;3x3필터의 경우 3x3연산을 3번을 실시하면 1x1 이미지로 출력이 됩니다.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../../assets/image/image-20201118162149035.png&quot; alt=&quot;image-20201118162149035&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;7x7필터의 경우 1번을 실시하면 1x1 이미지로 출력이 됩니다.&lt;/p&gt;
-
-&lt;p&gt;즉 7x7필터 1개에 대한 학습 파라미터 수는 49인 것에 반해 3x3 필터 3개에 대한 학습 파라미터 수는 27(3x3x3)이 된다. 3x3 필더가 연산이 더많아지지만 이것은 단순연산이고 가중치를 업데이트하는 것보다는 시간이 적게소요되기 때문에 3x3필터를 적용하는 것이 결과적으로 층을 더욱 깊고 연산속도를 빠르게 할 수 있습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;vgg-16-architecture&quot;&gt;VGG-16 Architecture&lt;/h3&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;../../assets/image/img.png&quot; alt=&quot;img&quot; style=&quot;zoom:67%;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;13 Convolution Layers + 3 Fully-connected Layers&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;3x3 convolution filters&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;stride: 1 &amp;amp; padding: 1&lt;/strong&gt; : 이미지 사이즈 유지&lt;/li&gt;
-  &lt;li&gt;**2x2 max pooling **(stride : 2) : 특징맵을 1/4로 축소&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ReLU&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;1x1 Conv Layer&lt;/strong&gt; (1x1 filter, stride = 1) : 차원축소로 인한 연산량 감소가 목적&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Fully-Connected Layer&lt;/strong&gt; (4096 -&amp;gt; 4096 -&amp;gt; 1000) : 세 장으로 고정된 FCL 사용&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="ImageClassification" /><summary type="html">VGG19</summary></entry><entry><title type="html">[Data Science] Basic Theory - covariance</title><link href="http://localhost:4000/data%20science/Basic/" rel="alternate" type="text/html" title="[Data Science] Basic Theory - covariance" /><published>2020-11-17T00:00:00+09:00</published><updated>2020-11-17T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/Basic</id><content type="html" xml:base="http://localhost:4000/data%20science/Basic/">&lt;h2 id=&quot;기초이론&quot;&gt;기초이론&lt;/h2&gt;
+&lt;p&gt;앞선 포스트에서 설명한 것과 같이 Layer가 많아지면 많아질수록 Gradient Vanishing 현상이 발생합니다. 하지만 Input과 output Layer 간의 short Connection이 존재할 경우 깊고 효율적으로 학습이 가능합니다. DenseNet의 경우에는 모든 Layer 층이 가깝게 연결되어&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="ImageClassification" /><category term="DenseNet" /><summary type="html">DenseNet (작성중)</summary></entry><entry><title type="html">[Data Science] Basic Theory - covariance</title><link href="http://localhost:4000/data%20science/Basic/" rel="alternate" type="text/html" title="[Data Science] Basic Theory - covariance" /><published>2020-11-17T00:00:00+09:00</published><updated>2020-11-17T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/Basic</id><content type="html" xml:base="http://localhost:4000/data%20science/Basic/">&lt;h2 id=&quot;기초이론&quot;&gt;기초이론&lt;/h2&gt;
 
 &lt;p&gt;이번시간에는 논문과 CNN 구조를 이해하기 위하여 기초이론에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
 
@@ -114,7 +82,7 @@
   &lt;li&gt;&lt;strong&gt;ReLU&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;1x1 Conv Layer&lt;/strong&gt; (1x1 filter, stride = 1) : 차원축소로 인한 연산량 감소가 목적&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Fully-Connected Layer&lt;/strong&gt; (4096 -&amp;gt; 4096 -&amp;gt; 1000) : 세 장으로 고정된 FCL 사용&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="ImageClassification" /><summary type="html">VGG19</summary></entry><entry><title type="html">[Data Science] Emsemble</title><link href="http://localhost:4000/data%20science/Emsemble/" rel="alternate" type="text/html" title="[Data Science] Emsemble" /><published>2020-11-09T00:00:00+09:00</published><updated>2020-11-09T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/Emsemble</id><content type="html" xml:base="http://localhost:4000/data%20science/Emsemble/">&lt;h2 id=&quot;ensemble&quot;&gt;Ensemble&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="Data Science" /><category term="ImageClassification" /><category term="VGG" /><summary type="html">VGG19</summary></entry><entry><title type="html">[Data Science] Emsemble</title><link href="http://localhost:4000/data%20science/Emsemble/" rel="alternate" type="text/html" title="[Data Science] Emsemble" /><published>2020-11-09T00:00:00+09:00</published><updated>2020-11-09T00:00:00+09:00</updated><id>http://localhost:4000/data%20science/Emsemble</id><content type="html" xml:base="http://localhost:4000/data%20science/Emsemble/">&lt;h2 id=&quot;ensemble&quot;&gt;Ensemble&lt;/h2&gt;
 
 &lt;p&gt;이번시간에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Emsemble&lt;/code&gt;에 대하여 알아보도록 하겠습니다.&lt;/p&gt;
 
