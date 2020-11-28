@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-28T09:43:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Data Science] DenseNet</title><link href="http://localhost:4000/datascience/DenseNet/" rel="alternate" type="text/html" title="[Data Science] DenseNet" /><published>2020-11-20T00:00:00+09:00</published><updated>2020-11-20T00:00:00+09:00</updated><id>http://localhost:4000/datascience/DenseNet</id><content type="html" xml:base="http://localhost:4000/datascience/DenseNet/">&lt;h2 id=&quot;densenet-작성중&quot;&gt;DenseNet (작성중)&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-28T09:55:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sol Tech</title><subtitle>An amazing website.</subtitle><author><name>Sol Han</name><email>hans53400@naver.com</email></author><entry><title type="html">[Data Science] DenseNet</title><link href="http://localhost:4000/datascience/DenseNet/" rel="alternate" type="text/html" title="[Data Science] DenseNet" /><published>2020-11-20T00:00:00+09:00</published><updated>2020-11-20T00:00:00+09:00</updated><id>http://localhost:4000/datascience/DenseNet</id><content type="html" xml:base="http://localhost:4000/datascience/DenseNet/">&lt;h2 id=&quot;densenet-작성중&quot;&gt;DenseNet (작성중)&lt;/h2&gt;
 
 &lt;p&gt;이번 시간에는 빠르게 DenseNet에 대하여 알아보겠습니다. DenseNet은 다른 알고리즘과는 다르게 각각의 Layer의 output이 다음 모든 Layer로 전파하는 구조로 되어있습니다.&lt;/p&gt;
 
@@ -480,9 +480,7 @@ Non-trainable params: 0
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Epoch 32/32
 437/437 &lt;span class=&quot;o&quot;&gt;[==============================]&lt;/span&gt; - 23s 53ms/step - loss: 0.0785 - acc: 0.9729
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="DataScience" /><category term="Deep learning" /><category term="CNN" /><category term="Cat VS Dog" /><category term="Kaggle" /><category term="ImageDataGenerator" /><summary type="html">개와 고양이 이미지 분류 (Kaggle)</summary></entry><entry><title type="html">[DataScience] DataScience Page</title><link href="http://localhost:4000/datascience/DataScience_page/" rel="alternate" type="text/html" title="[DataScience] DataScience Page" /><published>2020-10-30T00:00:00+09:00</published><updated>2020-10-30T00:00:00+09:00</updated><id>http://localhost:4000/datascience/DataScience_page</id><content type="html" xml:base="http://localhost:4000/datascience/DataScience_page/">&lt;h2 id=&quot;파이썬-머신러닝&quot;&gt;파이썬 머신러닝&lt;/h2&gt;
-
-&lt;p&gt;DataScience&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="DataScience" /><category term="Deep learning" /><category term="CNN" /><category term="Cat VS Dog" /><category term="Kaggle" /><category term="ImageDataGenerator" /><summary type="html">개와 고양이 이미지 분류 (Kaggle)</summary></entry><entry><title type="html">[DataScience] DataScience Page</title><link href="http://localhost:4000/datascience/DataScience_page/" rel="alternate" type="text/html" title="[DataScience] DataScience Page" /><published>2020-10-30T00:00:00+09:00</published><updated>2020-10-30T00:00:00+09:00</updated><id>http://localhost:4000/datascience/DataScience_page</id><content type="html" xml:base="http://localhost:4000/datascience/DataScience_page/">&lt;h2 id=&quot;머신러닝&quot;&gt;머신러닝&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/images-6504576.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Anaconda/&quot;&gt;[Data Science] Anaconda &amp;amp; JupyterNotebook&lt;/a&gt;&lt;/p&gt;
 
@@ -496,51 +494,51 @@ Non-trainable params: 0
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/pandas-logo.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/python/Pandas_2/&quot;&gt;[Data Science]Pandas-2&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Machine_learning_basic/&quot;&gt;[Data Science]머신러닝 기초&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Machine_learning_basic/&quot;&gt;[Data Science]머신러닝 기초&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Machine_learning_LinearRegression/&quot;&gt;[Data Science]Linear Regression&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Machine_learning_LinearRegression/&quot;&gt;[Data Science]Linear Regression&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Machine_learning_Preprocessing/&quot;&gt;[Data Science] Preprocessing&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Machine_learning_Preprocessing/&quot;&gt;[Data Science] Preprocessing&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Machine_learning-Tensorflow/&quot;&gt;[Data Science] Tensorflow 1.15&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Machine_learning-Tensorflow/&quot;&gt;[Data Science] Tensorflow 1.15&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Machine_learning_Evaluation/&quot;&gt;[Data Science] Evaluation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Machine_learning_Evaluation/&quot;&gt;[Data Science] Evaluation&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Machine_learning-Evaluation_tf/&quot;&gt;[Data Science] Evaluation with TF1.X&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Machine_learning-Evaluation_tf/&quot;&gt;[Data Science] Evaluation with TF1.X&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Deep_learning_Perceptron/&quot;&gt;[Data Science] Perceptron&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Deep_learning_Perceptron/&quot;&gt;[Data Science] Perceptron&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Deep_learning_Relu/&quot;&gt;[Data Science] Relu&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Deep_learning_Relu/&quot;&gt;[Data Science] Relu&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Deep_learning_Dropout/&quot;&gt;[Data Science] Dropout with TF1.X&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Deep_learning_Dropout/&quot;&gt;[Data Science] Dropout with TF1.X&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Deep_learning-Dropout_tf2/&quot;&gt;[Data Science] Dropout with TF2.X&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Deep_learning-Dropout_tf2/&quot;&gt;[Data Science] Dropout with TF2.X&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Machine_learning-Classification/&quot;&gt;[Data Science] Classification&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Machine_learning-Classification/&quot;&gt;[Data Science] Classification&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/SVM/&quot;&gt;[Data Science] SVM&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/SVM/&quot;&gt;[Data Science] SVM&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Decision_Tree/&quot;&gt;[Data Science] Decision Tree&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Decision_Tree/&quot;&gt;[Data Science] Decision Tree&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/CNN/&quot;&gt;[Data Science] CNN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/CNN/&quot;&gt;[Data Science] CNN&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/CNN_MNIST/&quot;&gt;[Data Science] CNN_MNIST&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/CNN_MNIST/&quot;&gt;[Data Science] CNN_MNIST&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/CNN_CATANDDOG/&quot;&gt;[Data Science] CNN_개 고양이 분류&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/CNN_CATANDDOG/&quot;&gt;[Data Science] CNN_개 고양이 분류&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Transfer_learning/&quot;&gt;[Data Science] 전이학습&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Transfer_learning/&quot;&gt;[Data Science] 전이학습&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Model_Save_and_Load/&quot;&gt;[Data Science] Model Save &amp;amp; Load&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Model_Save_and_Load/&quot;&gt;[Data Science] Model Save &amp;amp; Load&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/covariance/&quot;&gt;[Data Science] 공분산과 상관&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/covariance/&quot;&gt;[Data Science] 공분산과 상관&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/상관계수/&quot;&gt;[Data Science] 상관계수&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/상관계수/&quot;&gt;[Data Science] 상관계수&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/Emsemble/&quot;&gt;[Data Science] Emsemble&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/Emsemble/&quot;&gt;[Data Science] Emsemble&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/VGG/&quot;&gt;[Data Science] VGG&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/VGG/&quot;&gt;[Data Science] VGG&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/DataScience/DenseNet/&quot;&gt;[Data Science] DenseNet&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="DataScience" /><category term="Machine Learning" /><category term="Deep learning" /><category term="Numpy" /><category term="Pandas" /><category term="Jupyter Notebook" /><category term="AWS" /><category term="Kaggle" /><category term="Colab" /><summary type="html">파이썬 머신러닝</summary></entry><entry><title type="html">[AWS] EC2 사용방법</title><link href="http://localhost:4000/aws/AWS/" rel="alternate" type="text/html" title="[AWS] EC2 사용방법" /><published>2020-10-28T00:00:00+09:00</published><updated>2020-10-28T00:00:00+09:00</updated><id>http://localhost:4000/aws/AWS</id><content type="html" xml:base="http://localhost:4000/aws/AWS/">&lt;h2 id=&quot;aws&quot;&gt;AWS&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/1200px-TensorFlowLogo.svg-6505231.png&quot; alt=&quot;python&quot; style=&quot;width:50px&quot; /&gt;&lt;a href=&quot;/datascience/DenseNet/&quot;&gt;[Data Science] DenseNet&lt;/a&gt;&lt;/p&gt;</content><author><name>Sol Han</name><email>hans53400@naver.com</email></author><category term="DataScience" /><category term="Machine Learning" /><category term="Deep learning" /><category term="Numpy" /><category term="Pandas" /><category term="Jupyter Notebook" /><category term="AWS" /><category term="Kaggle" /><category term="Colab" /><summary type="html">머신러닝</summary></entry><entry><title type="html">[AWS] EC2 사용방법</title><link href="http://localhost:4000/aws/AWS/" rel="alternate" type="text/html" title="[AWS] EC2 사용방법" /><published>2020-10-28T00:00:00+09:00</published><updated>2020-10-28T00:00:00+09:00</updated><id>http://localhost:4000/aws/AWS</id><content type="html" xml:base="http://localhost:4000/aws/AWS/">&lt;h2 id=&quot;aws&quot;&gt;AWS&lt;/h2&gt;
 
 &lt;p&gt;오늘은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AWS&lt;/code&gt;의 사용방법에 대해 알아보도록 하겠습니다. 저는 Mac os 를 사용하므로 터미널을 이용하여 접속해보도록 하겠습니다. 윈도우 사용자분들은 Putty같은 접속프로그램을 사용하시면 손쉽게 접근하실 수 있습니다.&lt;/p&gt;
 

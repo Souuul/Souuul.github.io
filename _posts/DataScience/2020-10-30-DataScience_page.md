@@ -14,9 +14,7 @@ tags:
   - Kaggle
   - Colab
 ---
-## 파이썬 머신러닝
-
-DataScience
+## 머신러닝
 
 <img src="/assets/image/images-6504576.png" alt="python" style="width:50px">[[Data Science] Anaconda & JupyterNotebook](/python/Anaconda/) 
 
@@ -30,48 +28,48 @@ DataScience
 
 <img src="/assets/image/pandas-logo.png" alt="python" style="width:50px">[[Data Science]Pandas-2](/python/Pandas_2/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science]머신러닝 기초](/DataScience/Machine_learning_basic/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science]머신러닝 기초](/datascience/Machine_learning_basic/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science]Linear Regression](/DataScience/Machine_learning_LinearRegression/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science]Linear Regression](/datascience/Machine_learning_LinearRegression/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Preprocessing](/DataScience/Machine_learning_Preprocessing/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Preprocessing](/datascience/Machine_learning_Preprocessing/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Tensorflow 1.15](/DataScience/Machine_learning-Tensorflow/)
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Tensorflow 1.15](/datascience/Machine_learning-Tensorflow/)
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Evaluation](/DataScience/Machine_learning_Evaluation/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Evaluation](/datascience/Machine_learning_Evaluation/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Evaluation with TF1.X](/DataScience/Machine_learning-Evaluation_tf/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Evaluation with TF1.X](/datascience/Machine_learning-Evaluation_tf/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Perceptron](/DataScience/Deep_learning_Perceptron/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Perceptron](/datascience/Deep_learning_Perceptron/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Relu](/DataScience/Deep_learning_Relu/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Relu](/datascience/Deep_learning_Relu/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Dropout with TF1.X](/DataScience/Deep_learning_Dropout/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Dropout with TF1.X](/datascience/Deep_learning_Dropout/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Dropout with TF2.X](/DataScience/Deep_learning-Dropout_tf2/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Dropout with TF2.X](/datascience/Deep_learning-Dropout_tf2/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Classification](/DataScience/Machine_learning-Classification/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Classification](/datascience/Machine_learning-Classification/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] SVM](/DataScience/SVM/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] SVM](/datascience/SVM/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Decision Tree](/DataScience/Decision_Tree/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Decision Tree](/datascience/Decision_Tree/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] CNN](/DataScience/CNN/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] CNN](/datascience/CNN/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] CNN_MNIST](/DataScience/CNN_MNIST/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] CNN_MNIST](/datascience/CNN_MNIST/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] CNN_개 고양이 분류](/DataScience/CNN_CATANDDOG/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] CNN_개 고양이 분류](/datascience/CNN_CATANDDOG/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] 전이학습](/DataScience/Transfer_learning/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] 전이학습](/datascience/Transfer_learning/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Model Save & Load](/DataScience/Model_Save_and_Load/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Model Save & Load](/datascience/Model_Save_and_Load/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] 공분산과 상관](/DataScience/covariance/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] 공분산과 상관](/datascience/covariance/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] 상관계수](/DataScience/상관계수/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] 상관계수](/datascience/상관계수/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Emsemble](/DataScience/Emsemble/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] Emsemble](/datascience/Emsemble/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] VGG](/DataScience/VGG/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] VGG](/datascience/VGG/) 
 
-<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] DenseNet](/DataScience/DenseNet/) 
+<img src="/assets/image/1200px-TensorFlowLogo.svg-6505231.png" alt="python" style="width:50px">[[Data Science] DenseNet](/datascience/DenseNet/) 
