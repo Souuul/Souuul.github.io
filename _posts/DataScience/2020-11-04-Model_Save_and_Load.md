@@ -3,7 +3,7 @@ title:  "[Data Science] Model Save & Load"
 header:
   teaser: "/assets/image/1200px-TensorFlowLogo.svg.png"
 categories: 
-  - Data Science
+  - DataScience
 tags:
   - Model
   - Save and Load

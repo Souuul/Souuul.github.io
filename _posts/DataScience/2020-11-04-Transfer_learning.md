@@ -3,7 +3,7 @@ title:  "[Data Science] Transfer Learning"
 header:
   teaser: "/assets/image/1200px-TensorFlowLogo.svg.png"
 categories: 
-  - Data Science
+  - DataScience
 tags:
   - Deep learning
   - CNN

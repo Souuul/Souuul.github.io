@@ -1,9 +1,9 @@
 ---
-title:  "[Python] CNN - Cat and Dog"
+title:  "[Data Science] CNN - Cat and Dog"
 header:
   teaser: "/assets/image/1200px-TensorFlowLogo.svg.png"
 categories: 
-  - Python
+  - DataScience
 tags:
   - Deep learning
   - CNN

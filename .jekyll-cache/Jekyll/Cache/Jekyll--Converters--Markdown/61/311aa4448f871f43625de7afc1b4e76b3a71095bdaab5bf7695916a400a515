@@ -1,8 +1,0 @@
-I":<h2 id="densenet-작성중">DenseNet (작성중)</h2>
-
-<p>이번 시간에는 빠르게 DenseNet에 대하여 알아보겠습니다. DenseNet은 다른 알고리즘과는 다르게 각각의 Layer의 output이 다음 모든 Layer로 전파하는 구조로 되어있습니다.</p>
-
-<p><img src="../../assets/image/image-20201122233712078.png" alt="img" class="border-shadow" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" /></p>
-
-<p>그렇다면 이런 구조는 어떠한 장점을 가지는지 알아보도록 하겠습니다.</p>
-:ET

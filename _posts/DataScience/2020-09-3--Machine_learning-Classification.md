@@ -3,7 +3,7 @@ title:  "[Data Science] Classification"
 header:
   teaser: "/assets/image/1200px-TensorFlowLogo.svg.png"
 categories: 
-  - Data Science
+  - DataScience
 tags:
   - Machin learning
   - Tensorflow

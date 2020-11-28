@@ -5,7 +5,7 @@ main:
   - title: "Python"
     url: /python/PythonPage/
   - title: "Data Science"
-    url: /datascience/DataScience/ 
+    url: /datascience/DataScience_page/ 
   - title: "HTML & CSS & JavaScript"
     url: /html/css/javascript/Web-CSS-JAVASCRIPT/
   - title: "Django"

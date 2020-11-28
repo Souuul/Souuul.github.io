@@ -1,9 +1,9 @@
 ---
-title:  "[Python] Machine Learning - Decision Tree"
+title:  "[Data Science] Machine Learning - Decision Tree"
 header:
   teaser: "/assets/image/1200px-TensorFlowLogo.svg.png"
 categories: 
-  - Python
+  - DataScience
 tags:
   - Machine learning
   - Decision Tree

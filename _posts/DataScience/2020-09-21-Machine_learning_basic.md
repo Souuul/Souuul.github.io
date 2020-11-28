@@ -3,7 +3,7 @@ title:  "[Data Science] Machin Learning Basic"
 header:
   teaser: "/assets/image/1200px-Pandas_logo.svg.png"
 categories: 
-  - Data Science
+  - DataScience
 tags:
   - Machin learning
 ---
